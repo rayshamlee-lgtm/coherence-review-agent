@@ -1,0 +1,150 @@
+/**
+ * Bing Design System - Typography Tokens
+ *
+ * 字体相关 token
+ * 命名格式：--bing-smtc-text-global-{category}{level}[-variant]
+ *
+ * 来源：Figma Typography token naming migration (ACF → MAI)
+ */
+
+:root {
+  /* ============================================
+   * Font Family
+   * ============================================ */
+
+  /* 默认字体 - Roboto 优先 */
+  --bing-smtc-text-style-default-regular-fontFamily: Roboto, 'Segoe UI Variable', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* 代码字体 - 用于代码块、等宽文本 */
+  --bing-smtc-text-style-code-fontFamily: 'Cascadia Code', 'Courier New', 'Consolas', 'Monaco', monospace;
+
+  /* Font Weight */
+  --bing-smtc-text-style-default-regular-weight: 400;
+  --bing-smtc-text-style-default-header-weight: 700;
+
+  /* ============================================
+   * Display - 大标题
+   * 用于 Hero 区域、重要数字展示
+   * ============================================ */
+
+  /* --bing-smtc-text-global-display1 - 54px/64px Bold */
+  --bing-smtc-text-global-display1-fontSize: 54px;
+  --bing-smtc-text-global-display1-lineHeight: 64px;
+  --bing-smtc-text-global-display1-fontWeight: 700;
+
+  /* --bing-smtc-text-global-display2 - 40px/48px Bold */
+  --bing-smtc-text-global-display2-fontSize: 40px;
+  --bing-smtc-text-global-display2-lineHeight: 48px;
+  --bing-smtc-text-global-display2-fontWeight: 700;
+
+  /* ============================================
+   * Title - 标题
+   * 用于页面标题、卡片标题
+   * ============================================ */
+
+  /* --bing-smtc-text-global-title1 - 36px/48px Bold */
+  --bing-smtc-text-global-title1-fontSize: 36px;
+  --bing-smtc-text-global-title1-lineHeight: 48px;
+  --bing-smtc-text-global-title1-fontWeight: 700;
+
+  /* --bing-smtc-text-global-title2 - 24px/32px Regular */
+  --bing-smtc-text-global-title2-fontSize: 24px;
+  --bing-smtc-text-global-title2-lineHeight: 32px;
+  --bing-smtc-text-global-title2-fontWeight: 400;
+
+  /* --bing-smtc-text-global-title2-strong - 24px/32px Bold */
+  --bing-smtc-text-global-title2-strong-fontSize: 24px;
+  --bing-smtc-text-global-title2-strong-lineHeight: 32px;
+  --bing-smtc-text-global-title2-strong-fontWeight: 700;
+
+  /* ============================================
+   * Subtitle - 副标题
+   * 用于区块标题、列表标题
+   * ============================================ */
+
+  /* --bing-smtc-text-global-subtitle1 - 20px/26px Regular */
+  --bing-smtc-text-global-subtitle1-fontSize: 20px;
+  --bing-smtc-text-global-subtitle1-lineHeight: 26px;
+  --bing-smtc-text-global-subtitle1-fontWeight: 400;
+
+  /* --bing-smtc-text-global-subtitle1-strong - 20px/26px Bold */
+  --bing-smtc-text-global-subtitle1-strong-fontSize: 20px;
+  --bing-smtc-text-global-subtitle1-strong-lineHeight: 26px;
+  --bing-smtc-text-global-subtitle1-strong-fontWeight: 700;
+
+  /* --bing-smtc-text-global-subtitle2 - 18px/22px Regular */
+  --bing-smtc-text-global-subtitle2-fontSize: 18px;
+  --bing-smtc-text-global-subtitle2-lineHeight: 22px;
+  --bing-smtc-text-global-subtitle2-fontWeight: 400;
+
+  /* --bing-smtc-text-global-subtitle2-strong - 18px/22px Bold */
+  --bing-smtc-text-global-subtitle2-strong-fontSize: 18px;
+  --bing-smtc-text-global-subtitle2-strong-lineHeight: 22px;
+  --bing-smtc-text-global-subtitle2-strong-fontWeight: 700;
+
+  /* ============================================
+   * Body - 正文
+   * 用于段落文本、描述文字
+   * ============================================ */
+
+  /* --bing-smtc-text-global-body1 - 18px/28px Regular */
+  --bing-smtc-text-global-body1-fontSize: 18px;
+  --bing-smtc-text-global-body1-lineHeight: 28px;
+  --bing-smtc-text-global-body1-fontWeight: 400;
+
+  /* --bing-smtc-text-global-body1-strong - 18px/28px Bold */
+  --bing-smtc-text-global-body1-strong-fontSize: 18px;
+  --bing-smtc-text-global-body1-strong-lineHeight: 28px;
+  --bing-smtc-text-global-body1-strong-fontWeight: 700;
+
+  /* --bing-smtc-text-global-body2 - 16px/26px Regular */
+  --bing-smtc-text-global-body2-fontSize: 16px;
+  --bing-smtc-text-global-body2-lineHeight: 26px;
+  --bing-smtc-text-global-body2-fontWeight: 400;
+
+  /* --bing-smtc-text-global-body2-strong - 16px/26px Bold */
+  --bing-smtc-text-global-body2-strong-fontSize: 16px;
+  --bing-smtc-text-global-body2-strong-lineHeight: 26px;
+  --bing-smtc-text-global-body2-strong-fontWeight: 700;
+
+  /* --bing-smtc-text-global-body3 - 14px/22px Regular */
+  --bing-smtc-text-global-body3-fontSize: 14px;
+  --bing-smtc-text-global-body3-lineHeight: 22px;
+  --bing-smtc-text-global-body3-fontWeight: 400;
+
+  /* --bing-smtc-text-global-body3-strong - 14px/22px Bold */
+  --bing-smtc-text-global-body3-strong-fontSize: 14px;
+  --bing-smtc-text-global-body3-strong-lineHeight: 22px;
+  --bing-smtc-text-global-body3-strong-fontWeight: 700;
+
+  /* --bing-smtc-text-global-body3-mono - 14px/22px Regular (Monospace) */
+  --bing-smtc-text-global-body3-mono-fontSize: 14px;
+  --bing-smtc-text-global-body3-mono-lineHeight: 22px;
+  --bing-smtc-text-global-body3-mono-fontWeight: 400;
+  --bing-smtc-text-global-body3-mono-fontFamily: var(--bing-smtc-text-style-code-fontFamily);
+
+  /* ============================================
+   * Caption - 辅助文字
+   * 用于标签、时间戳、脚注
+   * ============================================ */
+
+  /* --bing-smtc-text-global-caption1 - 13px/20px Regular */
+  --bing-smtc-text-global-caption1-fontSize: 13px;
+  --bing-smtc-text-global-caption1-lineHeight: 20px;
+  --bing-smtc-text-global-caption1-fontWeight: 400;
+
+  /* --bing-smtc-text-global-caption1-strong - 13px/20px Bold */
+  --bing-smtc-text-global-caption1-strong-fontSize: 13px;
+  --bing-smtc-text-global-caption1-strong-lineHeight: 20px;
+  --bing-smtc-text-global-caption1-strong-fontWeight: 700;
+
+  /* --bing-smtc-text-global-caption2 - 11px/13px Regular */
+  --bing-smtc-text-global-caption2-fontSize: 11px;
+  --bing-smtc-text-global-caption2-lineHeight: 13px;
+  --bing-smtc-text-global-caption2-fontWeight: 400;
+
+  /* --bing-smtc-text-global-caption2-strong - 11px/13px Bold */
+  --bing-smtc-text-global-caption2-strong-fontSize: 11px;
+  --bing-smtc-text-global-caption2-strong-lineHeight: 13px;
+  --bing-smtc-text-global-caption2-strong-fontWeight: 700;
+}

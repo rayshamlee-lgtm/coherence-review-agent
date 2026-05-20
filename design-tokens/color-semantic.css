@@ -1,0 +1,173 @@
+/**
+ * Bing Design System - Semantic (Status) Color Tokens
+ *
+ * 语义色/状态色 token
+ * 包含 Success, Warning, Error, Info, Link 等
+ */
+
+:root {
+  /* ============================================
+   * Success / Positive
+   * 成功状态
+   * ============================================ */
+
+  /* Success foreground */
+  --smtc-status-success-foreground: #107c10;
+
+  /* Success tint foreground */
+  --smtc-status-success-tint-foreground: #107c10;
+
+  /* Success background */
+  --smtc-status-success-background: #dff6dd;
+
+  /* Success tint background */
+  --smtc-status-success-tint-background: #dff6dd;
+
+  /* Success stroke */
+  --smtc-status-success-stroke: #107c10;
+
+  /* ============================================
+   * Warning / Caution
+   * 警告状态
+   * ============================================ */
+
+  /* Warning foreground */
+  --smtc-status-warning-foreground: #797400;
+
+  /* Warning tint foreground */
+  --smtc-status-warning-tint-foreground: #797400;
+
+  /* Warning background */
+  --smtc-status-warning-background: #fff4ce;
+
+  /* Warning tint background */
+  --smtc-status-warning-tint-background: #fff4ce;
+
+  /* Warning stroke */
+  --smtc-status-warning-stroke: #797400;
+
+  /* ============================================
+   * Error / Danger / Alert
+   * 错误状态
+   * ============================================ */
+
+  /* Danger foreground */
+  --smtc-status-danger-foreground: #c4281c;
+
+  /* Danger tint foreground */
+  --smtc-status-danger-tint-foreground: #c4281c;
+
+  /* Danger background */
+  --smtc-status-danger-background: #fde7e9;
+
+  /* Danger tint background */
+  --smtc-status-danger-tint-background: #fde7e9;
+
+  /* Danger stroke */
+  --smtc-status-danger-stroke: #c4281c;
+
+  /* ============================================
+   * Info / Informative
+   * 信息状态
+   * ============================================ */
+
+  /* Info foreground */
+  --smtc-status-info-foreground: #0078d4;
+
+  /* Info tint foreground */
+  --smtc-status-info-tint-foreground: #0078d4;
+
+  /* Info background */
+  --smtc-status-info-background: #e6f2ff;
+
+  /* Info tint background (same as informative-tint-background in neutral) */
+  --smtc-status-info-tint-background: #e6f2ff;
+
+  /* Info stroke */
+  --smtc-status-info-stroke: #0078d4;
+
+  /* ============================================
+   * Neutral Background (Gray Badge)
+   * 中性灰 Badge 背景 (newly added)
+   * ============================================ */
+
+  --bing-smtc-status-informative-neutral-background: #f0f0f0;
+
+  /* ============================================
+   * Link Colors
+   * 链接颜色
+   * ============================================ */
+
+  /* Link default */
+  --smtc-foreground-content-link-default: #0068b8;
+
+  /* Link hover */
+  --smtc-foreground-content-link-hover: #004578;
+
+  /* Link visited */
+  --smtc-foreground-content-link-visited: #6b3fa0;
+
+  /* Link pressed */
+  --smtc-foreground-content-link-pressed: #002d4d;
+
+  /* Link foreground brand alt visited (newly added) */
+  --bing-smtc-ctrl-link-foreground-brand-alt-visited: #800080;
+
+  /* ============================================
+   * Other Status Colors
+   * 其他状态颜色
+   * ============================================ */
+
+  /* Disabled 状态透明度 */
+  --smtc-foreground-ctrl-neutral-primary-disabled: rgba(0, 0, 0, 0.35);
+
+  /* Cash back icon (newly added) */
+  --smtc-status-brand-background: #dff6dd;
+}
+
+/* ============================================
+ * Dark Mode
+ * ============================================ */
+[data-theme="dark"] {
+  /* Success / Positive */
+  --smtc-status-success-foreground: #6ccb5f;
+  --smtc-status-success-tint-foreground: #6ccb5f;
+  --smtc-status-success-background: #1e3a1e;
+  --smtc-status-success-tint-background: #1e3a1e;
+  --smtc-status-success-stroke: #6ccb5f;
+
+  /* Warning / Caution */
+  --smtc-status-warning-foreground: #f9e076;
+  --smtc-status-warning-tint-foreground: #f9e076;
+  --smtc-status-warning-background: #3d3518;
+  --smtc-status-warning-tint-background: #3d3518;
+  --smtc-status-warning-stroke: #f9e076;
+
+  /* Error / Danger / Alert */
+  --smtc-status-danger-foreground: #ff6b68;
+  --smtc-status-danger-tint-foreground: #ff6b68;
+  --smtc-status-danger-background: #3d1e1e;
+  --smtc-status-danger-tint-background: #3d1e1e;
+  --smtc-status-danger-stroke: #ff6b68;
+
+  /* Info / Informative */
+  --smtc-status-info-foreground: #4cc2ff;
+  --smtc-status-info-tint-foreground: #4cc2ff;
+  --smtc-status-info-background: #1d2b36;
+  --smtc-status-info-tint-background: #1d2b36;
+  --smtc-status-info-stroke: #4cc2ff;
+
+  /* Neutral Background (Gray Badge) */
+  --bing-smtc-status-informative-neutral-background: #333333;
+
+  /* Link Colors */
+  --smtc-foreground-content-link-default: #4cc2ff;
+  --smtc-foreground-content-link-hover: #82c7ff;
+  --smtc-foreground-content-link-visited: #b8a3d9;
+  --smtc-foreground-content-link-pressed: #2899f5;
+  --bing-smtc-ctrl-link-foreground-brand-alt-visited: #0da0dd;
+
+  /* Other Status Colors */
+  --smtc-foreground-ctrl-neutral-primary-disabled: rgba(255, 255, 255, 0.35);
+  --smtc-status-brand-background: #1e3a1e;
+}

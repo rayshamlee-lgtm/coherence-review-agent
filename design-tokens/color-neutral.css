@@ -1,0 +1,567 @@
+/**
+ * Bing Design System - Neutral Color Tokens
+ *
+ * 中性色 token：前景、背景、描边
+ * 包含 Light 和 Dark 模式
+ */
+
+:root {
+  /* ============================================
+   * Foreground - Content Neutral
+   * 中性前景色（文字、图标）
+   * ============================================ */
+
+  /* Primary - 标题、正文 */
+  --smtc-foreground-content-neutral-primary: black;
+
+  /* Secondary - 卡片正文 */
+  --smtc-foreground-content-neutral-secondary: rgba(0, 0, 0, 0.8);
+
+  /* Secondary Alt - 网站归属文字 (newly added) */
+  --bing-smtc-foreground-content-neutral-secondary-alt: rgba(0, 0, 0, 0.75);
+
+  /* Tertiary - 运动卡片类型、广告标签 (newly added) */
+  --bing-smtc-foreground-content-neutral-tertiary: rgba(0, 0, 0, 0.6);
+
+  /* White - 深色背景上的文字 */
+  --smtc-foreground-content-neutral-white: white;
+
+  /* ============================================
+   * Foreground - Control Neutral
+   * 控件前景色
+   * ============================================ */
+
+  /* Disabled - 禁用状态 */
+  --smtc-foreground-ctrl-neutral-primary-disabled: rgba(0, 0, 0, 0.35);
+
+  /* Dropdown 按钮 (newly added) */
+  --bing-smtc-foreground-ctrl-neutral-primary-rest: rgba(0, 0, 0, 0.8);
+
+  /* ============================================
+   * Foreground - On Image
+   * 图片上的前景色（始终浅色）
+   * ============================================ */
+
+  /* 图片上的 overlay 按钮、badge 文字 */
+  --mai-smtc-foreground-ctrl-on-image-rest: white;
+
+  /* 补充文字 overlaying (newly added) */
+  --bing-smtc-foreground-ctrl-on-image-alt-rest: white;
+
+  /* ============================================
+   * Foreground - Overlay (Switchable)
+   * 可切换的 overlay 前景色
+   * ============================================ */
+
+  /* Overlay 按钮, switchable dark/light (#FFF) */
+  --bing-smtc-foreground-ctrl-on-image-switchable-rest: white;
+
+  /* Overlay hover 状态, switchable (#FFF) */
+  --bing-smtc-foreground-ctrl-on-image-switchable-hover: white;
+
+  /* Overlay pressed 状态, switchable (#FFF 60%) */
+  --bing-smtc-foreground-ctrl-on-image-switchable-pressed: rgba(255, 255, 255, 0.6);
+
+  /* ============================================
+   * Foreground - Other
+   * 其他前景色
+   * ============================================ */
+
+  /* Overlay foreground rest */
+  --bing-smtc-foreground-ctrl-on-transparent-rest: white;
+
+  /* Overlay foreground hover */
+  --smtc-foreground-ctrl-on-transparent-hover: white;
+
+  /* Overlay foreground tertiary */
+  --bing-smtc-foreground-ctrl-on-transparent-tertiary: rgba(255, 255, 255, 0.6);
+
+  /* ============================================
+   * Background - Page/Container
+   * 页面和容器背景
+   * ============================================ */
+
+  /* Primary - 主页面背景 */
+  --smtc-background-layer-primary-solid: white;
+
+  /* Secondary - Container / large section 背景 */
+  --bing-smtc-background-container: #f5f5f5;
+
+  /* Tertiary - Card content background */
+  --bing-smtc-background-on-container-card: #ededed;
+
+  /* Container alt - Algo block background */
+  --bing-smtc-background-container-alt: #ededed;
+
+  /* Quaternary - 四级背景 */
+  --smtc-background-layer-quaternary: #e3e3e3;
+
+  /* Subtle - 微妙背景 */
+  --smtc-background-subtle: rgba(0, 0, 0, 0.03);
+
+  /* Highlight - 高亮背景 */
+  --smtc-background-highlight: #f4f4f4;
+
+  /* Transparent Primary */
+  --smtc-background-transparent-primary: rgba(255, 255, 255, 0);
+
+  /* Transparent Secondary */
+  --smtc-background-transparent-secondary: rgba(255, 255, 255, 0);
+
+  /* Black */
+  --smtc-background-black: black;
+
+  /* Black Transparent */
+  --smtc-background-black-transparent: rgba(0, 0, 0, 0);
+
+  /* ============================================
+   * Background - Card
+   * 卡片背景
+   * ============================================ */
+
+  /* Card 默认 rest (unthemed) */
+  --smtc-background-card-on-primary-default-rest: white;
+
+  /* Card 默认 hover (unthemed) */
+  --smtc-background-card-on-primary-default-hover: rgba(0, 0, 0, 0.02);
+
+  /* Card 默认 pressed */
+  --smtc-background-card-on-primary-default-pressed: rgba(0, 0, 0, 0.05);
+
+  /* Card alt rest */
+  --smtc-background-card-on-primary-alt-rest: #EBF6FF;
+
+  /* Card alt hover */
+  --smtc-background-card-on-primary-alt-hover: #ebebeb;
+
+  /* Card alt pressed */
+  --smtc-background-card-on-primary-alt-pressed: #e0e0e0;
+
+  /* Card alt selected */
+  --mai-smtc-background-card-on-primary-alt-selected: #e8e8e8;
+
+  /* Secondary card alt */
+  --smtc-background-card-on-secondary-alt-rest: #ededed;
+
+  /* ============================================
+   * Background - Control
+   * 控件背景
+   * ============================================ */
+
+  /* Material overlay (newly added) */
+  --bing-smtc-background-with-material-overlay: rgba(255, 255, 255, 0.7);
+
+  /* FAB background rest */
+  --smtc-ctrl-fab-background-rest: white;
+
+  /* FAB background hover */
+  --smtc-ctrl-fab-background-hover: #f5f5f5;
+
+  /* FAB background pressed */
+  --smtc-ctrl-fab-background-pressed: #ededed;
+
+  /* Citation background (newly added) */
+  --bing-smtc-background-with-material-citation: rgba(255, 255, 255, 0.85);
+
+  /* Citation flyout (newly added) */
+  --bing-smtc-background-citation-flyout: white;
+
+  /* Subtle rest */
+  --smtc-background-ctrl-subtle-rest: rgba(0, 0, 0, 0.03);
+
+  /* Subtle hover */
+  --smtc-background-ctrl-subtle-hover: rgba(0, 0, 0, 0.06);
+
+  /* Subtle pressed */
+  --smtc-background-ctrl-subtle-pressed: rgba(0, 0, 0, 0.09);
+
+  /* Subtle disabled */
+  --smtc-background-ctrl-subtle-disabled: rgba(0, 0, 0, 0.03);
+
+  /* Outline rest */
+  --smtc-background-ctrl-outline-rest: transparent;
+
+  /* Outline hover */
+  --bing-smtc-background-ctrl-outline-hover: rgba(0, 0, 0, 0.03);
+
+  /* Outline pressed */
+  --bing-smtc-background-ctrl-outline-pressed: rgba(0, 0, 0, 0.06);
+
+  /* Outline disabled */
+  --smtc-background-ctrl-outline-disabled: transparent;
+
+  /* Neutral rest */
+  --bing-smtc-background-ctrl-neutral-rest: #f5f5f5;
+
+  /* Neutral hover */
+  --smtc-background-ctrl-neutral-hover: #ebebeb;
+
+  /* Neutral pressed */
+  --smtc-background-ctrl-neutral-pressed: #e0e0e0;
+
+  /* Neutral disabled */
+  --smtc-background-ctrl-neutral-disabled: rgba(0, 0, 0, 0.03);
+
+  /* Ghost hover */
+  --bing-smtc-background-ctrl-ghost-hover: rgba(0, 0, 0, 0.03);
+
+  /* Ghost pressed */
+  --bing-smtc-background-ctrl-ghost-pressed: rgba(0, 0, 0, 0.06);
+
+  /* Input disabled */
+  --smtc-ctrl-input-background-disabled: rgba(0, 0, 0, 0.03);
+
+  /* Input rest */
+  --smtc-ctrl-input-background-rest: white;
+
+  /* Input pressed */
+  --smtc-ctrl-input-background-pressed: #f5f5f5;
+
+  /* Input hover */
+  --smtc-ctrl-input-background-hover: #fafafa;
+
+  /* Input error */
+  --smtc-ctrl-input-background-error: #fff5f5;
+
+  /* Scroll bar rest (newly added) */
+  --bing-smtc-background-ctrl-scroll-rest: rgba(0, 0, 0, 0.3);
+
+  /* Skeleton radial background (newly added) */
+  --bing-smtc-background-ctrl-fade-stop-0: rgba(0, 0, 0, 0.03);
+
+  /* ============================================
+   * Background - On Image
+   * 图片上的背景
+   * ============================================ */
+
+  /* Image default (newly added) */
+  --bing-smtc-background-card-on-image-default: rgba(0, 0, 0, 0.5);
+
+  /* Product image background (newly added) */
+  --bing-smtc-background-card-on-image-default-product: rgba(0, 0, 0, 0.4);
+
+  /* On image rest */
+  --mai-smtc-background-ctrl-on-image-rest: rgba(0, 0, 0, 0.5);
+
+  /* On image hover */
+  --mai-smtc-background-ctrl-on-image-hover: rgba(0, 0, 0, 0.6);
+
+  /* On image switchable rest */
+  --bing-smtc-background-ctrl-on-image-switchable-rest: rgba(0, 0, 0, 0.5);
+
+  /* On image switchable hover */
+  --bing-smtc-background-ctrl-on-image-switchable-hover: rgba(0, 0, 0, 0.6);
+
+  /* On image switchable pressed */
+  --bing-smtc-background-ctrl-on-image-switchable-pressed: rgba(0, 0, 0, 0.7);
+
+  /* ============================================
+   * Background - Other
+   * 其他背景
+   * ============================================ */
+
+  /* Transparent/Light (fade) */
+  --bing-smtc-background-ctrl-fade-on-primary-stop-0: rgba(255, 255, 255, 0);
+
+  /* Carousel fading on white */
+  --bing-smtc-background-carousel-alt-stop-0: rgba(255, 255, 255, 0);
+
+  /* Tooltip background */
+  --smtc-background-ctrl-brand-rest-tooltip: #333333;
+
+  /* Badge default (Fill=Tint) */
+  --smtc-status-informative-tint-background: #e6f2ff;
+
+  /* Citation rest */
+  --mai-smtc-ctrl-citation-background-rest: rgba(0, 0, 0, 0.05);
+
+  /* Citation hover */
+  --mai-smtc-ctrl-citation-background-hover: rgba(0, 0, 0, 0.08);
+
+  /* Citation pressed */
+  --mai-smtc-ctrl-citation-background-pressed: rgba(0, 0, 0, 0.12);
+
+  /* Tab in card hover */
+  --bing-smtc-ctrl-tab-in-card-background-hover: rgba(0, 0, 0, 0.03);
+
+  /* Tab in card pressed */
+  --bing-smtc-ctrl-tab-in-card-background-pressed: rgba(0, 0, 0, 0.06);
+
+  /* Tab in card selected */
+  --bing-smtc-ctrl-tab-in-card-background-selected: rgba(0, 0, 0, 0.05);
+
+  /* Citation on card background rest */
+  --bing-smtc-ctrl-citation-on-card-background-rest: rgba(0, 0, 0, 0.03);
+
+  /* Citation on card background hover */
+  --bing-smtc-ctrl-citation-on-card-background-hover: rgba(0, 0, 0, 0.06);
+
+  /* Citation foreground rest */
+  --bing-smtc-ctrl-citation-foreground-rest: rgba(0, 0, 0, 0.7);
+
+  /* Citation foreground hover */
+  --bings-smtc-ctrl-citation-foreground-hover: rgba(0, 0, 0, 0.8);
+
+  /* Citation foreground pressed */
+  --bing-smtc-ctrl-citation-foreground-pressed: rgba(0, 0, 0, 0.9);
+
+  /* Skeleton layer */
+  --bing-smtc-ctrl-skeleton-background-default-layer1-stop1: rgba(0, 0, 0, 0.05);
+
+  /* Lite filter selected */
+  --smtc-ctrl-lite-filter-background-selected: rgba(0, 0, 0, 0.08);
+
+  /* Favicon background */
+  --bing-smtc-ctrl-favicon-background: #f5f5f5;
+
+  /* Placeholder default (newly added) */
+  --bing-smtc-background-ctrl-image-placeholder-default: #f0f0f0;
+
+  /* ============================================
+   * Background - Switch/Choice
+   * 开关和选择控件背景
+   * ============================================ */
+
+  /* Switch selected rest */
+  --mai-smtc-choice-switch-background-selected-rest: #0078d4;
+
+  /* Switch selected hover */
+  --mai-smtc-choice-switch-background-selected-hover: #106ebe;
+
+  /* Switch selected pressed */
+  --mai-smtc-choice-switch-background-selected-pressed: #005a9e;
+
+  /* ============================================
+   * Stroke - Neutral
+   * 中性描边
+   * ============================================ */
+
+  /* Decorative - 卡片外边框 */
+  --smtc-stroke-ctrl-default: rgba(0, 0, 0, 0.1);
+
+  /* Strong (newly added) */
+  --bing-smtc-stroke-ctrl-strong: rgba(0, 0, 0, 0.35);
+
+  /* Subtle (newly added) */
+  --bing-smtc-stroke-ctrl-subtle: rgba(0, 0, 0, 0.06);
+
+  /* Disable (newly added) */
+  --bing-smtc-stroke-ctrl-disable: rgba(0, 0, 0, 0.06);
+
+  /* Divider stop-0 (newly added) */
+  --bing-smtc-stroke-divider-stop-0: rgba(0, 0, 0, 0);
+
+  /* Divider default */
+  --smtc-stroke-divider-default: rgba(0, 0, 0, 0.08);
+
+  /* Divider stop (footer divider) */
+  --bing-smtc-stroke-divider-stop: rgba(0, 0, 0, 0.06);
+
+  /* Focus outer stroke */
+  --smtc-ctrl-focus-outer-stroke: black;
+
+  /* Focus inner stroke */
+  --smtc-ctrl-focus-inner-stroke: white;
+
+  /* On neutral rest */
+  --smtc-stroke-ctrl-on-neutral-rest: rgba(0, 0, 0, 0.1);
+
+  /* Card on primary rest */
+  --smtc-stroke-card-on-primary-rest: rgba(0, 0, 0, 0.05);
+
+  /* On image default (newly added) */
+  --bing-smtc-ctrl-on-image-default: rgba(255, 255, 255, 0.2);
+
+  /* Choice stroke neutral rest (newly added) */
+  --bing-smtc-ctrl-choice-stroke-neutral-rest: rgba(0, 0, 0, 0.45);
+
+  /* Progress background empty */
+  --smtc-ctrl-progress-background-empty: rgba(0, 0, 0, 0.1);
+
+  /* Solid (stroke-neutral-solid black) */
+  --smtc-stroke-ctrl-solid: black;
+
+  /* Transparent */
+  --smtc-stroke-ctrl-transparent: transparent;
+
+  /* ============================================
+   * Stroke - Control States
+   * 控件状态描边
+   * ============================================ */
+
+  /* Input stroke hover */
+  --smtc-ctrl-input-stroke-hover: rgba(0, 0, 0, 0.3);
+
+  /* Input stroke selected */
+  --smtc-ctrl-input-stroke-selected: #0078d4;
+
+  /* Input stroke pressed */
+  --smtc-ctrl-input-stroke-pressed: rgba(0, 0, 0, 0.4);
+
+  /* Choice base stroke hover */
+  --smtc-ctrl-choice-base-stroke-hover: rgba(0, 0, 0, 0.3);
+
+  /* Switch stroke rest */
+  --mai-smtc-ctrl-choice-switch-stroke-rest: rgba(0, 0, 0, 0.45);
+
+  /* Switch stroke hover */
+  --mai-smtc-ctrl-choice-switch-stroke-hover: rgba(0, 0, 0, 0.55);
+
+  /* Switch stroke pressed */
+  --mai-smtc-ctrl-choice-switch-stroke-pressed: rgba(0, 0, 0, 0.65);
+
+  /* Outline rest */
+  --smtc-stroke-ctrl-on-outline-rest: rgba(0, 0, 0, 0.2);
+
+  /* Outline hover */
+  --smtc-stroke-ctrl-on-outline-hover: rgba(0, 0, 0, 0.3);
+
+  /* Outline pressed */
+  --smtc-stroke-ctrl-on-outline-pressed: rgba(0, 0, 0, 0.4);
+
+  /* Width ctrl outline rest */
+  --smtc-stroke-width-ctrl-outline-rest: 1px;
+
+  /* Width ctrl outline hover */
+  --smtc-stroke-width-ctrl-outline-hover: 1px;
+
+  /* Highlight ring stroke stop1 */
+  --bing-smtc-ctrl-highlight-ring-stroke-stop1: rgba(0, 0, 0, 0.1);
+
+  /* Highlight ring stroke stop2 */
+  --bing-smtc-ctrl-highlightRing-stroke-stop2: rgba(0, 0, 0, 0.05);
+}
+
+/* ============================================
+ * Dark Mode
+ * ============================================ */
+[data-theme="dark"] {
+  /* Foreground - Content Neutral */
+  --smtc-foreground-content-neutral-primary: white;
+  --smtc-foreground-content-neutral-secondary: rgba(255, 255, 255, 0.8);
+  --bing-smtc-foreground-content-neutral-secondary-alt: rgba(255, 255, 255, 0.75);
+  --bing-smtc-foreground-content-neutral-tertiary: rgba(255, 255, 255, 0.6);
+  --smtc-foreground-content-neutral-white: white;
+
+  /* Foreground - Control Neutral */
+  --smtc-foreground-ctrl-neutral-primary-disabled: rgba(255, 255, 255, 0.35);
+  --bing-smtc-foreground-ctrl-neutral-primary-rest: rgba(255, 255, 255, 0.8);
+
+  /* Background - Page/Container */
+  --smtc-background-layer-primary-solid: #1b1a19;
+  --smtc-background-container: #262626;
+  --smtc-background-container-alt: #2a2a2a;
+  --smtc-background-layer-quaternary: #333333;
+  --smtc-background-subtle: rgba(255, 255, 255, 0.03);
+  --smtc-background-highlight: #333333;
+  --smtc-background-transparent-primary: rgba(27, 26, 25, 0);
+  --smtc-background-transparent-secondary: rgba(41, 48, 39, 0);
+  --smtc-background-black: black;
+  --smtc-background-black-transparent: rgba(0, 0, 0, 0);
+
+  /* Background - Card */
+  --smtc-background-card-on-primary-default-rest: #262626;
+  --smtc-background-card-on-primary-default-hover: rgba(255, 255, 255, 0.02);
+  --smtc-background-card-on-primary-default-pressed: rgba(255, 255, 255, 0.05);
+  --smtc-background-card-on-primary-alt-rest: #2a2a2a;
+  --smtc-background-card-on-primary-alt-hover: #333333;
+  --smtc-background-card-on-primary-alt-pressed: #3d3d3d;
+  --mai-smtc-background-card-on-primary-alt-selected: #383838;
+  --smtc-background-card-on-secondary-alt-rest: #333333;
+
+  /* Background - Control */
+  --bing-smtc-background-with-material-overlay: rgba(30, 30, 30, 0.7);
+  --smtc-ctrl-fab-background-rest: #333333;
+  --smtc-ctrl-fab-background-hover: #3d3d3d;
+  --smtc-ctrl-fab-background-pressed: #474747;
+  --bing-smtc-background-with-material-citation: rgba(30, 30, 30, 0.85);
+  --bing-smtc-background-citation-flyout: #2a2a2a;
+  --smtc-background-ctrl-subtle-rest: rgba(255, 255, 255, 0.03);
+  --smtc-background-ctrl-subtle-hover: rgba(255, 255, 255, 0.06);
+  --smtc-background-ctrl-subtle-pressed: rgba(255, 255, 255, 0.09);
+  --smtc-background-ctrl-subtle-disabled: rgba(255, 255, 255, 0.03);
+  --smtc-background-ctrl-outline-rest: transparent;
+  --bing-smtc-background-ctrl-outline-hover: rgba(255, 255, 255, 0.03);
+  --bing-smtc-background-ctrl-outline-pressed: rgba(255, 255, 255, 0.06);
+  --smtc-background-ctrl-outline-disabled: transparent;
+  --bing-smtc-background-ctrl-neutral-rest: #333333;
+  --smtc-background-ctrl-neutral-hover: #3d3d3d;
+  --smtc-background-ctrl-neutral-pressed: #474747;
+  --smtc-background-ctrl-neutral-disabled: rgba(255, 255, 255, 0.03);
+  --bing-smtc-background-ctrl-ghost-hover: rgba(255, 255, 255, 0.03);
+  --bing-smtc-background-ctrl-ghost-pressed: rgba(255, 255, 255, 0.06);
+  --smtc-ctrl-input-background-disabled: rgba(255, 255, 255, 0.03);
+  --smtc-ctrl-input-background-rest: #262626;
+  --smtc-ctrl-input-background-pressed: #2a2a2a;
+  --smtc-ctrl-input-background-hover: #2d2d2d;
+  --smtc-ctrl-input-background-error: #3d1c1c;
+  --bing-smtc-background-ctrl-scroll-rest: rgba(255, 255, 255, 0.3);
+  --bing-smtc-background-ctrl-fade-stop-0: rgba(255, 255, 255, 0.03);
+
+  /* Background - On Image */
+  --bing-smtc-background-card-on-image-default: rgba(0, 0, 0, 0.6);
+  --bing-smtc-background-card-on-image-default-product: rgba(0, 0, 0, 0.5);
+  --mai-smtc-background-ctrl-on-image-rest: rgba(0, 0, 0, 0.5);
+  --mai-smtc-background-ctrl-on-image-hover: rgba(0, 0, 0, 0.6);
+  --bing-smtc-background-ctrl-on-image-switchable-rest: rgba(255, 255, 255, 0.1);
+  --bing-smtc-background-ctrl-on-image-switchable-hover: rgba(255, 255, 255, 0.15);
+  --bing-smtc-background-ctrl-on-image-switchable-pressed: rgba(255, 255, 255, 0.2);
+
+  /* Background - Other */
+  --bing-smtc-background-ctrl-fade-on-primary-stop-0: rgba(27, 26, 25, 0);
+  --bing-smtc-background-carousel-alt-stop-0: rgba(27, 26, 25, 0);
+  --smtc-background-ctrl-brand-rest-tooltip: #e0e0e0;
+  --smtc-status-informative-tint-background: #1d2b36;
+  --mai-smtc-ctrl-citation-background-rest: rgba(255, 255, 255, 0.05);
+  --mai-smtc-ctrl-citation-background-hover: rgba(255, 255, 255, 0.08);
+  --mai-smtc-ctrl-citation-background-pressed: rgba(255, 255, 255, 0.12);
+  --bing-smtc-ctrl-tab-in-card-background-hover: rgba(255, 255, 255, 0.03);
+  --bing-smtc-ctrl-tab-in-card-background-pressed: rgba(255, 255, 255, 0.06);
+  --bing-smtc-ctrl-tab-in-card-background-selected: rgba(255, 255, 255, 0.05);
+  --bing-smtc-ctrl-citation-on-card-background-rest: rgba(255, 255, 255, 0.03);
+  --bing-smtc-ctrl-citation-on-card-background-hover: rgba(255, 255, 255, 0.06);
+  --bing-smtc-ctrl-citation-foreground-rest: rgba(255, 255, 255, 0.7);
+  --bings-smtc-ctrl-citation-foreground-hover: rgba(255, 255, 255, 0.8);
+  --bing-smtc-ctrl-citation-foreground-pressed: rgba(255, 255, 255, 0.9);
+  --bing-smtc-ctrl-skeleton-background-default-layer1-stop1: rgba(255, 255, 255, 0.05);
+  --smtc-ctrl-lite-filter-background-selected: rgba(255, 255, 255, 0.08);
+  --bing-smtc-ctrl-favicon-background: #333333;
+  --bing-smtc-background-ctrl-image-placeholder-default: #2a2a2a;
+
+  /* Background - Switch/Choice */
+  --mai-smtc-choice-switch-background-selected-rest: #4db3ff;
+  --mai-smtc-choice-switch-background-selected-hover: #82c7ff;
+  --mai-smtc-choice-switch-background-selected-pressed: #2899f5;
+
+  /* Stroke - Neutral */
+  --smtc-stroke-ctrl-default: rgba(255, 255, 255, 0.1);
+  --bing-smtc-stroke-ctrl-strong: rgba(255, 255, 255, 0.35);
+  --bing-smtc-stroke-ctrl-subtle: rgba(255, 255, 255, 0.06);
+  --bing-smtc-stroke-ctrl-disable: rgba(255, 255, 255, 0.06);
+  --bing-smtc-stroke-divider-stop-0: rgba(255, 255, 255, 0);
+  --smtc-stroke-divider-default: rgba(255, 255, 255, 0.08);
+  --bing-smtc-stroke-divider-stop: rgba(255, 255, 255, 0.06);
+  --smtc-ctrl-focus-outer-stroke: white;
+  --smtc-ctrl-focus-inner-stroke: black;
+  --smtc-stroke-ctrl-on-neutral-rest: rgba(255, 255, 255, 0.1);
+  --smtc-stroke-card-on-primary-rest: rgba(255, 255, 255, 0.05);
+  --bing-smtc-ctrl-on-image-default: rgba(255, 255, 255, 0.2);
+  --bing-smtc-ctrl-choice-stroke-neutral-rest: rgba(255, 255, 255, 0.45);
+  --smtc-ctrl-progress-background-empty: rgba(255, 255, 255, 0.1);
+  --smtc-stroke-ctrl-solid: white;
+  --smtc-stroke-ctrl-transparent: transparent;
+
+  /* Stroke - Control States */
+  --smtc-ctrl-input-stroke-hover: rgba(255, 255, 255, 0.3);
+  --smtc-ctrl-input-stroke-selected: #4db3ff;
+  --smtc-ctrl-input-stroke-pressed: rgba(255, 255, 255, 0.4);
+  --smtc-ctrl-choice-base-stroke-hover: rgba(255, 255, 255, 0.3);
+  --mai-smtc-ctrl-choice-switch-stroke-rest: rgba(255, 255, 255, 0.45);
+  --mai-smtc-ctrl-choice-switch-stroke-hover: rgba(255, 255, 255, 0.55);
+  --mai-smtc-ctrl-choice-switch-stroke-pressed: rgba(255, 255, 255, 0.65);
+  --smtc-stroke-ctrl-on-outline-rest: rgba(255, 255, 255, 0.2);
+  --smtc-stroke-ctrl-on-outline-hover: rgba(255, 255, 255, 0.3);
+  --smtc-stroke-ctrl-on-outline-pressed: rgba(255, 255, 255, 0.4);
+  --bing-smtc-ctrl-highlight-ring-stroke-stop1: rgba(255, 255, 255, 0.1);
+  --bing-smtc-ctrl-highlightRing-stroke-stop2: rgba(255, 255, 255, 0.05);
+}

@@ -1,0 +1,83 @@
+/**
+ * Bing Design System - Corner (Border Radius) Tokens
+ *
+ * 圆角 token，ACF → SMTC 映射
+ * 来源：Corner Migration Guide
+ */
+
+:root {
+
+  /* ============================================
+   * SMTC Corner Tokens - Small (4px)
+   * 用于：Badge, Checkbox, List, Favicon, 小按钮
+   * ============================================ */
+
+  /* 小控件圆角 - rest/hover/pressed 状态 */
+  --smtc-corner-ctrl-sm-rest: 4px;
+  --smtc-corner-ctrl-sm-hover: 4px;
+  --smtc-corner-ctrl-sm-pressed: 4px;
+
+  /* Badge 小尺寸圆角 */
+  --smtc-ctrl-badge-sm-corner: 4px;
+
+  /* Checkbox 圆角 */
+  --smtc-ctrl-choice-checkbox-corner: 4px;
+
+  /* List 圆角 */
+  --smtc-ctrl-list-corner-rest: 4px;
+  --smtc-ctrl-list-corner-hover: 4px;
+  --smtc-ctrl-list-corner-pressed: 4px;
+
+  /* Favicon 圆角 */
+  --mai-smtc-corner-favicon: 4px;
+
+  /* ============================================
+   * SMTC Corner Tokens - Medium (8px)
+   * 用于：Button, Menu item, Option, Badge 标准
+   * ============================================ */
+
+  /* 标准控件圆角 - rest/hover/pressed 状态 */
+  --smtc-corner-ctrl-rest: 8px;
+  --smtc-corner-ctrl-hover: 8px;
+  --smtc-corner-ctrl-pressed: 8px;
+
+  /* 大控件圆角 - rest/hover/pressed 状态 */
+  --smtc-corner-ctrl-lg-rest: 8px;
+  --smtc-corner-ctrl-lg-hover: 8px;
+  --smtc-corner-ctrl-lg-pressed: 8px;
+
+  /* Badge 标准圆角 */
+  --smtc-ctrl-badge-corner: 8px;
+
+  /* ============================================
+   * SMTC Corner Tokens - Large (16px)
+   * 用于：Card, Answer Card, Video, Image, Map, Q&A 等
+   * ============================================ */
+
+  /* 卡片圆角 */
+  --smtc-corner-card-rest: 16px;
+
+  /* 嵌套卡片默认圆角 */
+  --mai-smtc-corner-list-card-nested-default: 8px;
+
+  /* ============================================
+   * SMTC Corner Tokens - XL (16px)
+   * 用于：Tab, Suggestion chip
+   * ============================================ */
+
+  --mai-smtc-corner-ctrl-xl-rest: 16px;
+
+  /* ============================================
+   * SMTC Corner Tokens - Flyout/Popover
+   * 用于：Flyout, Popover 组件
+   * ============================================ */
+
+  --bing-smtc-corner-flyout-popover-rest: 16px;
+
+  /* ============================================
+   * SMTC Corner Tokens - Circular (9999px)
+   * 用于：Circular buttons, Pills, Avatar
+   * ============================================ */
+
+  --smtc-corner-circular: 9999px;
+}

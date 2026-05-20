@@ -1,0 +1,109 @@
+/**
+ * Bing Design System - Shadow (Elevation) Tokens
+ *
+ * 阴影 token，共 17 个
+ * 来源：Shadow/Elevation tokens 截图
+ */
+
+:root {
+  /* ============================================
+   * Avatar Shadow
+   * ============================================ */
+
+  /* Avatar 阴影 */
+  --smtc-shadow-avatar: 0 1px 3px 0 rgba(0, 0, 0, 0.15);
+
+  /* ============================================
+   * Switch Shadow
+   * ============================================ */
+
+  /* Switch 滑块阴影 */
+  --smtc-shadow-switch-thumb: 0 1px 3px 0 rgba(0, 0, 0, 0.15);
+
+  /* ============================================
+   * Button Shadows
+   * ============================================ */
+
+  /* Neutral 按钮阴影 */
+  --smtc-shadow-button-neutral: 0 1px 3px 0 rgba(0, 0, 0, 0.15);
+
+  /* Neutral 按钮内阴影 */
+  --smtc-shadow-button-neutral-inset: inset 0 8.5px 0 rgba(0, 0, 0, 0.05);
+
+  /* Brand 按钮阴影 */
+  --smtc-shadow-button-brand: 0 1px 3px 0 rgba(0, 0, 0, 0.15);
+
+  /* ============================================
+   * Card Shadows
+   * ============================================ */
+
+  /* Card 默认阴影 (subtle) */
+  --smtc-shadow-card: 0 0 1px rgba(0, 0, 0, 0.05);
+
+  /* Card hover 阴影 (standard) */
+  --smtc-shadow-card-hover: 0 1px 2px rgba(0, 0, 0, 0.1);
+
+  /* Card hover 阴影 1 - 复合 */
+  --bing-smtc-shadow-card-hover-1:
+    0 1px 2px rgba(0, 0, 0, 0.1),
+    0 2px 4px rgba(0, 0, 0, 0.05);
+
+  /* Card hover strong 阴影 */
+  --bing-smtc-shadow-card-hover-strong-1:
+    0 2px 4px rgba(0, 0, 0, 0.12),
+    0 4px 8px rgba(0, 0, 0, 0.08);
+
+  /* Card hover 阴影 3 - large */
+  --bing-smtc-shadow-card-hover-3:
+    0 4px 8px rgba(0, 0, 0, 0.1),
+    0 8px 16px rgba(0, 0, 0, 0.05);
+
+  /* ============================================
+   * Flyout/Popup Shadows
+   * ============================================ */
+
+  /* Flyout 阴影 */
+  --smtc-shadow-flyout: -5px 4px 12px rgba(0, 0, 0, 0.1);
+
+  /* ============================================
+   * FAB (Floating Action Button) Shadows
+   * ============================================ */
+
+  /* FAB rest 状态 */
+  --smtc-shadow-floating-action-button-rest:
+    0 2px 4px rgba(0, 0, 0, 0.12),
+    0 4px 8px rgba(0, 0, 0, 0.08);
+
+  /* FAB hover 状态 */
+  --smtc-shadow-floating-action-button-hover:
+    0 4px 8px rgba(0, 0, 0, 0.12),
+    0 8px 16px rgba(0, 0, 0, 0.08);
+
+  /* FAB pressed 状态 */
+  --smtc-shadow-floating-action-button-pressed:
+    0 1px 2px rgba(0, 0, 0, 0.12),
+    0 2px 4px rgba(0, 0, 0, 0.08);
+
+  /* ============================================
+   * Overlay Shadow
+   * ============================================ */
+
+  /* Overlay 阴影 */
+  --bing-smtc-shadow-overlay:
+    0 4px 8px rgba(0, 0, 0, 0.1),
+    0 8px 16px rgba(0, 0, 0, 0.08);
+
+  /* ============================================
+   * Tooltip Shadow
+   * ============================================ */
+
+  /* Tooltip 阴影 */
+  --smtc-shadow-tooltip: -5px 4px 12px rgba(0, 0, 0, 0.1);
+
+  /* ============================================
+   * Dialog Shadow
+   * ============================================ */
+
+  /* Dialog 阴影 */
+  --smtc-shadow-dialog: -5px 4px 12px rgba(0, 0, 0, 0.15);
+}

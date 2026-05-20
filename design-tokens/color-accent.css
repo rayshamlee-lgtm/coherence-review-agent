@@ -1,0 +1,248 @@
+/**
+ * Bing Design System - Accent (Brand) Color Tokens
+ *
+ * 品牌色/强调色 token
+ * 包含 Foreground, Background, Stroke
+ *
+ * 注意：部分值需要 Figma 确认
+ */
+
+:root {
+  /* ============================================
+   * Foreground - Brand/Accent
+   * 品牌色前景（文字、图标）
+   * ============================================ */
+
+  /* Brand primary - 品牌蓝文字 */
+  --smtc-foreground-content-brand-primary: #0078d4;
+
+  /* On brand rest - Brand 按钮上的文字 */
+  --smtc-foreground-ctrl-on-brand-rest: white;
+
+  /* On brand hover */
+  --smtc-foreground-ctrl-on-brand-hover: white;
+
+  /* On brand pressed */
+  --smtc-foreground-ctrl-on-brand-pressed: white;
+
+  /* On subtle rest */
+  --smtc-foreground-ctrl-on-subtle-rest: rgba(0, 0, 0, 0.8);
+
+  /* On subtle hover */
+  --smtc-foreground-ctrl-on-subtle-hover: rgba(0, 0, 0, 0.8);
+
+  /* On subtle pressed */
+  --smtc-foreground-ctrl-on-subtle-pressed: rgba(0, 0, 0, 0.8);
+
+  /* On transparent rest */
+  --smtc-foreground-ctrl-on-transparent-rest: rgba(0, 0, 0, 0.8);
+
+  /* On transparent hover */
+  --smtc-foreground-ctrl-on-transparent-hover: rgba(0, 0, 0, 0.8);
+
+  /* On transparent pressed */
+  --smtc-foreground-ctrl-on-transparent-pressed: rgba(0, 0, 0, 0.8);
+
+  /* On active brand rest */
+  --smtc-foreground-ctrl-on-active-brand-rest: white;
+
+  /* On active brand hover */
+  --smtc-foreground-ctrl-on-active-brand-hover: white;
+
+  /* On active brand pressed */
+  --smtc-foreground-ctrl-on-active-brand-pressed: white;
+
+  /* Active brand rest */
+  --smtc-foreground-ctrl-active-brand-rest: #0078d4;
+
+  /* Active brand hover */
+  --smtc-foreground-ctrl-active-brand-hover: #106ebe;
+
+  /* Active brand pressed */
+  --smtc-foreground-ctrl-active-brand-pressed: #005a9e;
+
+  /* Icon on neutral rest */
+  --smtc-foreground-ctrl-icon-on-neutral-rest: rgba(0, 0, 0, 0.7);
+
+  /* Icon on neutral hover */
+  --smtc-foreground-ctrl-icon-on-neutral-hover: rgba(0, 0, 0, 0.8);
+
+  /* Icon on neutral pressed */
+  --smtc-foreground-ctrl-icon-on-neutral-pressed: rgba(0, 0, 0, 0.9);
+
+  /* Icon on subtle rest */
+  --smtc-foreground-ctrl-icon-on-subtle-rest: rgba(0, 0, 0, 0.7);
+
+  /* Icon on subtle hover */
+  --smtc-foreground-ctrl-icon-on-subtle-hover: rgba(0, 0, 0, 0.8);
+
+  /* Icon on subtle pressed */
+  --smtc-foreground-ctrl-icon-on-subtle-pressed: rgba(0, 0, 0, 0.9);
+
+  /* Icon on outline rest */
+  --smtc-foreground-ctrl-icon-on-outline-rest: rgba(0, 0, 0, 0.7);
+
+  /* Icon on outline hover */
+  --smtc-foreground-ctrl-icon-on-outline-hover: rgba(0, 0, 0, 0.8);
+
+  /* Icon on outline pressed */
+  --smtc-foreground-ctrl-icon-on-outline-pressed: rgba(0, 0, 0, 0.9);
+
+  /* Neutral primary hover */
+  --smtc-foreground-ctrl-neutral-primary-hover: rgba(0, 0, 0, 0.85);
+
+  /* Neutral primary pressed */
+  --smtc-foreground-ctrl-neutral-primary-pressed: rgba(0, 0, 0, 0.9);
+
+  /* Brand content rest (newly added) */
+  --bing-smtc-foreground-content-brand-rest: #0078d4;
+
+  /* Brand content hover (newly added) */
+  --bing-smtc-foreground-content-brand-hover: #106ebe;
+
+  /* Brand content pressed (newly added) */
+  --bing-smtc-foreground-content-brand-pressed: #005a9e;
+
+  /* Neutral primary alt rest (newly added) */
+  --bing-smtc-foreground-ctrl-neutral-primary-alt-rest: rgba(0, 0, 0, 0.7);
+
+  /* Link foreground brand rest (newly added) */
+  --bing-smtc-ctrl-link-foreground-brand-rest: #0078d4;
+
+  /* Link foreground brand hover (newly added) */
+  --smtc-ctrl-link-foreground-brand-hover: #106ebe;
+
+  /* Link foreground brand pressed (newly added) */
+  --smtc-ctrl-link-foreground-brand-pressed: #005a9e;
+
+  /* Progress background filled */
+  --smtc-ctrl-progress-background-filled: #0078d4;
+
+  /* Status brand foreground */
+  --smtc-status-brand-foreground: #0078d4;
+
+  /* Status brand tint foreground */
+  --smtc-status-brand-tint-foreground: #0078d4;
+
+  /* Chart indicator foreground (newly added) */
+  --bing-smtc-ctrl-chart-indicator-foreground: #0078d4;
+
+  /* ============================================
+   * Background - Brand/Accent
+   * 品牌色背景
+   * ============================================ */
+
+  /* Brand rest */
+  --smtc-background-ctrl-brand-rest: #0078d4;
+
+  /* Brand hover */
+  --smtc-background-ctrl-brand-hover: #106ebe;
+
+  /* Brand pressed */
+  --smtc-background-ctrl-brand-pressed: #005a9e;
+
+  /* Brand disabled */
+  --smtc-background-ctrl-brand-disabled: rgba(0, 0, 0, 0.06);
+
+  /* Active brand rest */
+  --smtc-background-ctrl-active-brand-rest: #0078d4;
+
+  /* Active brand hover */
+  --smtc-background-ctrl-active-brand-hover: #106ebe;
+
+  /* Active brand pressed */
+  --smtc-background-ctrl-active-brand-pressed: #005a9e;
+
+  /* Active brand disabled */
+  --smtc-background-ctrl-active-brand-disabled: rgba(0, 0, 0, 0.06);
+
+  /* Status brand background */
+  --bing-smtc-status-brand-background: #ebf6ff;
+
+  /* ============================================
+   * Stroke - Brand/Accent
+   * 品牌色描边
+   * ============================================ */
+
+  /* Brand rest */
+  --smtc-stroke-ctrl-brand-rest: #0078d4;
+
+  /* Brand hover */
+  --smtc-stroke-ctrl-brand-hover: #106ebe;
+
+  /* Brand pressed */
+  --smtc-stroke-ctrl-brand-pressed: #005a9e;
+
+  /* On outline rest (品牌 outline 按钮) */
+  --smtc-stroke-ctrl-on-brand-outline-rest: #0078d4;
+
+  /* On outline hover */
+  --smtc-stroke-ctrl-on-brand-outline-hover: #106ebe;
+
+  /* On outline pressed */
+  --smtc-stroke-ctrl-on-brand-outline-pressed: #005a9e;
+}
+
+/* ============================================
+ * Dark Mode
+ * ============================================ */
+[data-theme="dark"] {
+  /* Foreground - Brand/Accent */
+  --smtc-foreground-content-brand-primary: #4cc2ff;
+  --smtc-foreground-ctrl-on-brand-rest: black;
+  --smtc-foreground-ctrl-on-brand-hover: black;
+  --smtc-foreground-ctrl-on-brand-pressed: black;
+  --smtc-foreground-ctrl-on-subtle-rest: rgba(255, 255, 255, 0.8);
+  --smtc-foreground-ctrl-on-subtle-hover: rgba(255, 255, 255, 0.8);
+  --smtc-foreground-ctrl-on-subtle-pressed: rgba(255, 255, 255, 0.8);
+  --smtc-foreground-ctrl-on-transparent-rest: rgba(255, 255, 255, 0.8);
+  --smtc-foreground-ctrl-on-transparent-hover: rgba(255, 255, 255, 0.8);
+  --smtc-foreground-ctrl-on-transparent-pressed: rgba(255, 255, 255, 0.8);
+  --smtc-foreground-ctrl-on-active-brand-rest: black;
+  --smtc-foreground-ctrl-on-active-brand-hover: black;
+  --smtc-foreground-ctrl-on-active-brand-pressed: black;
+  --smtc-foreground-ctrl-active-brand-rest: #4cc2ff;
+  --smtc-foreground-ctrl-active-brand-hover: #82c7ff;
+  --smtc-foreground-ctrl-active-brand-pressed: #2899f5;
+  --smtc-foreground-ctrl-icon-on-neutral-rest: rgba(255, 255, 255, 0.7);
+  --smtc-foreground-ctrl-icon-on-neutral-hover: rgba(255, 255, 255, 0.8);
+  --smtc-foreground-ctrl-icon-on-neutral-pressed: rgba(255, 255, 255, 0.9);
+  --smtc-foreground-ctrl-icon-on-subtle-rest: rgba(255, 255, 255, 0.7);
+  --smtc-foreground-ctrl-icon-on-subtle-hover: rgba(255, 255, 255, 0.8);
+  --smtc-foreground-ctrl-icon-on-subtle-pressed: rgba(255, 255, 255, 0.9);
+  --smtc-foreground-ctrl-icon-on-outline-rest: rgba(255, 255, 255, 0.7);
+  --smtc-foreground-ctrl-icon-on-outline-hover: rgba(255, 255, 255, 0.8);
+  --smtc-foreground-ctrl-icon-on-outline-pressed: rgba(255, 255, 255, 0.9);
+  --smtc-foreground-ctrl-neutral-primary-hover: rgba(255, 255, 255, 0.85);
+  --smtc-foreground-ctrl-neutral-primary-pressed: rgba(255, 255, 255, 0.9);
+  --bing-smtc-foreground-content-brand-rest: #4cc2ff;
+  --bing-smtc-foreground-content-brand-hover: #82c7ff;
+  --bing-smtc-foreground-content-brand-pressed: #2899f5;
+  --bing-smtc-foreground-ctrl-neutral-primary-alt-rest: rgba(255, 255, 255, 0.7);
+  --bing-smtc-ctrl-link-foreground-brand-rest: #4cc2ff;
+  --smtc-ctrl-link-foreground-brand-hover: #82c7ff;
+  --smtc-ctrl-link-foreground-brand-pressed: #2899f5;
+  --smtc-ctrl-progress-background-filled: #4cc2ff;
+  --smtc-status-brand-foreground: #4cc2ff;
+  --smtc-status-brand-tint-foreground: #4cc2ff;
+  --bing-smtc-ctrl-chart-indicator-foreground: #4cc2ff;
+
+  /* Background - Brand/Accent */
+  --smtc-background-ctrl-brand-rest: #4cc2ff;
+  --smtc-background-ctrl-brand-hover: #82c7ff;
+  --smtc-background-ctrl-brand-pressed: #2899f5;
+  --smtc-background-ctrl-brand-disabled: rgba(255, 255, 255, 0.06);
+  --smtc-background-ctrl-active-brand-rest: #4cc2ff;
+  --smtc-background-ctrl-active-brand-hover: #82c7ff;
+  --smtc-background-ctrl-active-brand-pressed: #2899f5;
+  --smtc-background-ctrl-active-brand-disabled: rgba(255, 255, 255, 0.06);
+  --bing-smtc-status-brand-background: #1d2b36;
+
+  /* Stroke - Brand/Accent */
+  --smtc-stroke-ctrl-brand-rest: #4cc2ff;
+  --smtc-stroke-ctrl-brand-hover: #82c7ff;
+  --smtc-stroke-ctrl-brand-pressed: #2899f5;
+  --smtc-stroke-ctrl-on-brand-outline-rest: #4cc2ff;
+  --smtc-stroke-ctrl-on-brand-outline-hover: #82c7ff;
+  --smtc-stroke-ctrl-on-brand-outline-pressed: #2899f5;
+}

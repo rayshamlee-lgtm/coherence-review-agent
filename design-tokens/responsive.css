@@ -1,0 +1,121 @@
+/**
+ * Bing Design System - Responsive Page-Level Tokens
+ *
+ * Production 7-breakpoint system controlling the SERP page shell:
+ * header, body padding, right-rail, section grid columns/rows.
+ *
+ * Source of truth: dynamic-search-page pagelevel.md
+ *
+ * Breakpoints (max-width):
+ *   Default  >1342px  — 12 columns, full layout
+ *   ≤1342px           — 10 columns, right-rail shrinks
+ *   ≤1254px           — 10 columns, header padding tightens
+ *   ≤1178px           — 8 columns, body gap narrows
+ *   ≤1015px           — 8 columns, left padding shrinks, logo shrinks
+ *   ≤884px            — 4 columns, right-rail hidden, Zone C reflows
+ *   ≤499px            — 2 columns, all zones stacked
+ */
+
+/* ===========================
+   Default (>1342px) — 12 columns
+   =========================== */
+:root {
+  --bing-smtc-header-gap: 24px;
+  --bing-smtc-header-left-padding: 24px;
+  --bing-smtc-header-right-padding: 60px;
+  --bing-smtc-header-top-padding: 12px;
+  --bing-smtc-header-top-right-module-width: 215px;
+  --bing-smtc-page-body-gap: 80px;
+  --bing-smtc-page-bottom-padding: 40px;
+  --bing-smtc-page-left-padding: 160px;
+  --bing-smtc-page-right-padding: 20px;
+  --bing-smtc-page-rr-max-width: 472px;
+  --bing-smtc-page-top-padding: 32px;
+  --bing-smtc-scope-left-padding: 160px;
+  --bing-smtc-section-body-max-height: 424px;
+  --bing-smtc-section-grid-column-count: 12;
+  --bing-smtc-section-grid-row-count: 4;
+  --bing-smtc-section-max-width: 1200px;
+  --bing-smtc-top-logo-width: 116px;
+}
+
+/* ===========================
+   ≤1342px — 10 columns
+   Right-rail shrinks to 384px, body gap to 40px
+   =========================== */
+@media (max-width: 1342px) {
+  :root {
+    --bing-smtc-page-body-gap: 40px;
+    --bing-smtc-page-rr-max-width: 384px;
+    --bing-smtc-section-grid-column-count: 10;
+  }
+}
+
+/* ===========================
+   ≤1254px — 10 columns
+   Header right padding tightens, right-rail to 296px
+   =========================== */
+@media (max-width: 1254px) {
+  :root {
+    --bing-smtc-header-right-padding: 20px;
+    --bing-smtc-page-rr-max-width: 296px;
+  }
+}
+
+/* ===========================
+   ≤1178px — 8 columns
+   Body gap to 20px
+   =========================== */
+@media (max-width: 1178px) {
+  :root {
+    --bing-smtc-page-body-gap: 20px;
+    --bing-smtc-section-grid-column-count: 8;
+  }
+}
+
+/* ===========================
+   ≤1015px — 8 columns
+   Left padding shrinks to 113px, logo to 65px,
+   top-right module to 175px
+   =========================== */
+@media (max-width: 1015px) {
+  :root {
+    --bing-smtc-header-top-right-module-width: 175px;
+    --bing-smtc-page-left-padding: 113px;
+    --bing-smtc-scope-left-padding: 113px;
+    --bing-smtc-top-logo-width: 65px;
+  }
+}
+
+/* ===========================
+   ≤884px — 4 columns (Reflow point)
+   Right-rail hidden, all padding to 20px,
+   header gap tightens, Zone C reflows below A+B,
+   grid rows expand to 6, top-right module collapses
+   =========================== */
+@media (max-width: 884px) {
+  :root {
+    --bing-smtc-header-gap: 20px;
+    --bing-smtc-header-left-padding: 20px;
+    --bing-smtc-header-top-right-module-width: 60px;
+    --bing-smtc-page-left-padding: 20px;
+    --bing-smtc-page-rr-max-width: 0px;
+    --bing-smtc-scope-left-padding: 20px;
+    --bing-smtc-section-grid-column-count: 4;
+    --bing-smtc-section-grid-row-count: 6;
+  }
+}
+
+/* ===========================
+   ≤499px — 2 columns (Mobile)
+   All zones stack, scope padding to 8px,
+   top padding to 16px, grid rows expand to 10
+   =========================== */
+@media (max-width: 499px) {
+  :root {
+    --bing-smtc-page-top-padding: 16px;
+    --bing-smtc-scope-left-padding: 8px;
+    --bing-smtc-section-grid-column-count: 2;
+    --bing-smtc-section-grid-row-count: 10;
+  }
+}

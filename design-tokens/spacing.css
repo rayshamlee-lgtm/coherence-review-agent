@@ -1,0 +1,130 @@
+/**
+ * Bing Design System - Spacing Tokens
+ *
+ * 间距 token：Gap (间距) 和 Padding (内边距)
+ * 来源：ACF Token Migration Guide (Spacing)
+ *
+ * 命名格式：--smtc-{type}-{context}-{property}
+ */
+
+:root {
+
+  /* ============================================
+   * Gap Tokens (间距)
+   * 用于元素之间的间距
+   * ============================================ */
+
+  /* 2px - 最小内容间距 */
+  --smtc-gap-between-content-xxx-small: 2px;
+
+  /* 4px - 超小内容间距 */
+  --smtc-gap-between-content-xx-small: 4px;
+
+  /* 8px - 小内容间距 */
+  --smtc-gap-between-content-x-small: 8px;
+
+  /* 小间距 - 待确认 */
+  --smtc-gap-between-content-small: 12px;
+
+  /* 中间距 - 待确认 */
+  --smtc-gap-between-content-medium: 16px;
+
+  /* 大间距 - 待确认 */
+  --smtc-gap-between-content-x-large: 24px;
+
+  /* 超大间距 - 待确认 */
+  --smtc-gap-between-content-xx-large: 32px;
+
+  /* 4px - 控件内图标间距 */
+  --smtc-gap-inside-ctrl-to-secondary-icon: 4px;
+
+  /* 8px - 大控件内图标间距 */
+  --smtc-gap-inside-ctrl-lg-to-secondary-icon: 8px;
+
+  /* Badge 内间距 - 待确认 */
+  --smtc-ctrl-badge-gap: 4px;
+
+  /* ============================================
+   * Padding Tokens (内边距)
+   * 用于控件内部的边距
+   * ============================================ */
+
+  /* --- 控件文字侧边距 --- */
+
+  /* 2px - 控件文字侧边距 */
+  --smtc-padding-ctrl-text-side: 2px;
+
+  /* --- 控件文字上下边距 (Default) --- */
+
+  /* 8px - 控件文字上边距 */
+  --smtc-padding-ctrl-text-top: 8px;
+
+  /* 8px - 控件文字下边距 */
+  --smtc-padding-ctrl-text-bottom: 8px;
+
+  /* 12px - 控件默认水平边距 */
+  --smtc-padding-ctrl-horizontal-default: 12px;
+
+  /* --- 小控件边距 (Small) --- */
+
+  /* 3px - 小控件文字上边距 */
+  --smtc-padding-ctrl-sm-text-top: 3px;
+
+  /* 3px - 小控件文字下边距 */
+  --smtc-padding-ctrl-sm-text-bottom: 3px;
+
+  /* 8px - 小控件水平边距 */
+  --smtc-padding-ctrl-sm-horizontal-default: 8px;
+
+  /* --- 大控件边距 (Large) --- */
+
+  /* 12px - 大控件文字上边距 */
+  --smtc-padding-ctrl-lg-text-top: 12px;
+
+  /* 12px - 大控件文字下边距 */
+  --smtc-padding-ctrl-lg-text-bottom: 12px;
+
+  /* 16px - 大控件水平边距 */
+  --smtc-padding-ctrl-lg-horizontal-default: 16px;
+
+  /* --- 超小控件边距 (XS) --- */
+
+  /* 4px - 超小控件水平边距 */
+  --bing-smtc-padding-ctrl-xs-horizontal: 4px;
+
+  /* 4px - 大控件文字侧边距 */
+  --bing-smtc-padding-ctrl-text-side-large: 4px;
+
+  /* --- 卡片边距 --- */
+
+  /* 卡片默认边距 - Bing Classic */
+  --smtc-padding-card-default: 16px;
+
+  /* 卡片默认边距 - Stone/MAI (Figma confirmed) */
+  --mai-smtc-padding-card-default: 20px;
+
+  /* 内容超大边距 - 待确认 */
+  --smtc-padding-content-xx-large: 24px;
+
+  /* 内容超超大边距 - 待确认 */
+  --smtc-padding-content-xxx-large: 32px;
+
+  /* ============================================
+   * Badge Specific Tokens
+   * Badge 组件专用
+   * ============================================ */
+
+  /* 8px - Badge 边距 */
+  --smtc-ctrl-badge-padding: 8px;
+
+  /* 4px - 小 Badge 边距 */
+  --smtc-ctrl-badge-sm-padding: 4px;
+
+  /* 2px - 小 Badge 文字上边距 */
+  --smtc-ctrl-badge-sm-text-padding-top: 2px;
+
+  /* 2px - 小 Badge 文字下边距 */
+  --smtc-ctrl-badge-sm-text-padding-bottom: 2px;
+
+
+}

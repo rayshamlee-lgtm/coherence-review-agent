@@ -1,0 +1,43 @@
+/**
+ * Bing Design System - Token Entry File
+ *
+ * 统一导入所有 design token 文件
+ * 使用时只需引入此文件即可获取所有 token
+ *
+ * @example
+ * <link rel="stylesheet" href="design-tokens/index.css">
+ *
+ * 或在 CSS 中:
+ * @import url('design-tokens/index.css');
+ *
+ * Dark Mode 使用方法:
+ * <html data-theme="dark">
+ */
+
+/* Typography - 字体相关 (待填充具体值) */
+@import url('./typography.css');
+
+/* Spacing - 间距、控件尺寸 */
+@import url('./spacing.css');
+
+/* Corner - 圆角 */
+@import url('./corner.css');
+
+/* Shadow - 阴影 */
+@import url('./shadow.css');
+
+/* Color - Neutral 中性色 (前景、背景、描边) */
+@import url('./color-neutral.css');
+
+/* Color - Accent 品牌色/强调色 */
+@import url('./color-accent.css');
+
+/* Color - Semantic 语义色/状态色 */
+@import url('./color-semantic.css');
+
+/* Theme Variants - 主题变体 */
+@import url('./theme-stone.css');
+@import url('./theme-stone-blue.css');
+
+/* Responsive - 响应式页面级 token (7 breakpoints) */
+@import url('./responsive.css');

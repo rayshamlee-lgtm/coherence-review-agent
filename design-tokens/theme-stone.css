@@ -1,0 +1,86 @@
+/**
+ * Bing Design System - Stone Theme
+ *
+ * 暖色石头色调主题（棕色品牌色）
+ * 只定义与 Bing 默认主题的差异化 token
+ * 未定义的 token 自动回退到 :root 默认值
+ *
+ * 使用方法: <html data-theme="stone">
+ */
+
+[data-theme="stone"] {
+  /* ============================================
+   * Background - Webpage & Card
+   * 页面和卡片背景（暖米色调）
+   * ============================================ */
+
+  /* Primary - 主页面背景 */
+  --smtc-background-webpage-primary: #f8f4f1;
+
+  /* Card alt rest - 卡片备选背景 */
+  --bing-smtc-background-card-on-primary-alt-rest: #f8f4f1;
+
+  /* Card alt selected - 卡片选中状态 */
+  --mai-smtc-background-card-on-primary-alt-selected: #efeae7;
+
+  /* ============================================
+   * Background - Control
+   * 控件背景
+   * ============================================ */
+
+  /* Brand rest - 品牌按钮背景（深棕色） */
+  --bing-smtc-background-ctrl-brand-rest: #322d29;
+
+  /* Neutral rest - 中性控件背景 */
+  --bing-smtc-background-ctrl-neutral-rest: #efeae7;
+
+  /* Tab in card selected - 卡片内标签选中状态 */
+  --bing-smtc-tab-in-card-background-selected: #efeae7;
+
+  /* ============================================
+   * Foreground - Content Neutral
+   * 中性前景色（暖色文字）
+   * ============================================ */
+
+  /* Primary - 标题、正文 */
+  --smtc-foreground-content-neutral-primary: #272320;
+
+  /* Secondary - 卡片正文 */
+  --smtc-foreground-content-neutral-secondary: #4c4642;
+
+  /* ============================================
+   * Foreground - Control
+   * 控件前景色
+   * ============================================ */
+
+  /* Neutral primary rest */
+  --smtc-foreground-ctrl-neutral-primary-rest: #272320;
+
+  /* On subtle rest */
+  --smtc-foreground-ctrl-on-subtle-rest: #272320;
+
+  /* ============================================
+   * Foreground - Citation & Link
+   * 引用和链接前景色
+   * ============================================ */
+
+  /* Citation foreground rest */
+  --bing-smtc-ctrl-citation-foreground-rest: #322d29;
+
+  /* Link foreground brand rest */
+  --bing-smtc-ctrl-link-foreground-brand-rest: #3f3935;
+
+  /* ============================================
+   * Corner - 更圆润的圆角
+   * ============================================ */
+
+  /* 标准控件圆角 */
+  --smtc-corner-ctrl-rest: 12px;
+  --smtc-corner-ctrl-hover: 12px;
+  --smtc-corner-ctrl-pressed: 12px;
+
+  /* 小控件圆角 */
+  --smtc-corner-ctrl-sm-rest: 12px;
+  --smtc-corner-ctrl-sm-hover: 12px;
+  --smtc-corner-ctrl-sm-pressed: 12px;
+}
