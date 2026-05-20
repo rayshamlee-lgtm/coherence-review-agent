@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en" data-theme="stone">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Coherence Review Agent · Demo</title>
+  <link rel="stylesheet" href="design-tokens/index.css" />
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">CR</span>
+      <span class="brand-name">Coherence Review Agent</span>
+      <span class="brand-sub">Demo · L1 + L2 + L3</span>
+    </div>
+    <button id="settingsToggle" class="btn ghost" type="button">⚙ Settings</button>
+  </header>
+
+  <main class="container">
+
+    <section id="settingsPanel" class="panel settings">
+      <h2>Settings</h2>
+      <p class="muted">Stored only in your browser's localStorage. Required to call Figma + Azure OpenAI from this page.</p>
+      <div class="grid">
+        <label>
+          <span>Figma Personal Access Token</span>
+          <input id="figmaToken" type="password" placeholder="figd_..." autocomplete="off" />
+          <small class="muted">Figma → Settings → Personal access tokens. Needs <code>file_content:read</code>.</small>
+        </label>
+        <label>
+          <span>Azure OpenAI endpoint</span>
+          <input id="azEndpoint" type="text" placeholder="https://my-aoai.openai.azure.com" />
+        </label>
+        <label>
+          <span>Deployment name</span>
+          <input id="azDeployment" type="text" placeholder="gpt-4o" />
+          <small class="muted">Must be a vision-capable model (gpt-4o / gpt-4.1 / gpt-5).</small>
+        </label>
+        <label>
+          <span>API version</span>
+          <input id="azApiVersion" type="text" value="2024-08-01-preview" />
+        </label>
+        <label class="full">
+          <span>Azure OpenAI API key</span>
+          <input id="azApiKey" type="password" placeholder="••••" autocomplete="off" />
+          <small class="muted">CORS must be enabled on the Azure resource for this origin.</small>
+        </label>
+      </div>
+      <div class="actions">
+        <button id="saveSettings" class="btn brand" type="button">Save</button>
+      </div>
+    </section>
+
+    <section class="panel hero">
+      <h1>Paste a Figma link, get a coherence review.</h1>
+      <p class="muted">
+        Level 1 checks tokens against the Bing Design System catalog · Level 2 asks
+        a vision LLM for application-quality judgment · Level 3 raises
+        cross-team coherence flags (warnings only).
+      </p>
+      <div class="run-row">
+        <input id="figmaUrl" type="text" placeholder="https://www.figma.com/design/.../?node-id=12-345" />
+        <button id="runBtn" class="btn brand" type="button">Review</button>
+      </div>
+      <p class="muted small">Tip: include a frame's <code>node-id</code> in the URL so the agent can render and judge a specific view.</p>
+      <details class="context-box">
+        <summary>Add project context <span class="muted small">(optional — helps the agent review better)</span></summary>
+
+        <div class="context-field">
+          <label for="projectContext"><b>Project background</b></label>
+          <p class="muted small">Briefly describe the <b>background context</b>, the <b>problem you're trying to solve</b>, your <b>goal</b>, and the <b>approach / solution</b>. The agent will use this to interpret intent and avoid wrong assumptions.</p>
+          <textarea id="projectContext" rows="8" placeholder="Background context — where does this design live, who is it for, what triggered the work?&#10;&#10;Problem — what user / business problem are you trying to solve?&#10;&#10;Goal — what does success look like for this design?&#10;&#10;Approach & solution — what did you decide to build, and why this direction over alternatives?"></textarea>
+        </div>
+
+        <div class="context-field">
+          <label for="reviewScope"><b>What should be reviewed?</b> <span class="muted small">— scope the agent to your design, not the surrounding page</span></label>
+          <p class="muted small">If your frame includes elements outside your design (e.g. related searches, surrounding SERP modules, navigation chrome), call out what is <b>in scope</b> and what to <b>ignore</b>. Otherwise the agent may review the whole frame.</p>
+          <textarea id="reviewScope" rows="3" placeholder="e.g. Please review only the Harvard application answer (magazine answer) at the top. Ignore the related searches, ads, and the left-rail navigation — those are not part of this design."></textarea>
+        </div>
+      </details>
+    </section>
+
+    <section class="panel progress">
+      <h3>Pipeline</h3>
+      <ol id="steps" class="steps"></ol>
+      <div id="errorBox" class="error hidden"></div>
+    </section>
+
+    <section id="result" class="panel result hidden"></section>
+
+  </main>
+
+  <footer class="footer muted">
+    Built against BingDesignSkill V1.2 + the Coherence Review PRD. Demo only.
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

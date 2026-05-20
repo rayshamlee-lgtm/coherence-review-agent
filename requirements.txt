@@ -1,0 +1,2 @@
+# serve.py uses only the Python standard library — no deps needed.
+# This file's presence is what tells Render this is a Python project.
