@@ -1,10 +1,10 @@
-// L1 rules engine (V1.2).
+// L1 rules engine.
 //
 // Two passes per node:
 //   1. Bound-to-style check — is this value bound to a style or variable?
 //      Unbound literals get flagged as a "hard-coded" warning.
 //   2. Catalog check — when a value IS a literal, also compare it against
-//      the BingDesignSkill V1.2 token catalog. Literals that match a token
+//      the BingDesignSkill V2 token catalog. Literals that match a token
 //      are downgraded to "info" (designer used a legal value but didn't
 //      bind it). Literals outside the catalog are upgraded to "error" —
 //      these are genuine off-ramps from the design system.
@@ -152,7 +152,7 @@ function checkCornerRadius(node, parent, findings) {
     if (inCatalog) continue;     // matches a token — no finding needed
     findings.push(findingFor(
       node, parent, "L1.cornerRadius", "error",
-      `Corner radius ${rounded}px is not a Bing corner token (allowed: 0, 4, 8, 16, 9999).`,
+      `Corner radius ${rounded}px is not a Bing corner token (allowed: 0, 4, 8, 12, 16, 24, 9999).`,
       { value: rounded },
     ));
   }
@@ -178,7 +178,7 @@ function checkSpacing(node, parent, findings) {
     if (TOKEN_CATALOG.spacing.has(v)) continue;
     findings.push(findingFor(
       node, parent, "L1.spacing", "error",
-      `${key} ${v}px is not a Bing spacing token (allowed: 2, 3, 4, 8, 12, 16, 20, 24, 32).`,
+      `${key} ${v}px is not a Bing spacing token (allowed: 2, 3, 4, 6, 8, 9, 12, 16, 20, 24).`,
       { property: key, value: v },
     ));
   }
@@ -193,16 +193,6 @@ export function runL1(root) {
     checkTypography(node, parent, findings);
     checkCornerRadius(node, parent, findings);
     checkSpacing(node, parent, findings);
-  }
-
-  // ⚠️ DEMO CAP — remove before going back to normal.
-  // Catalog is out of date so the raw run produces hundreds of false
-  // positives. Keep the top N findings for the leadership demo so the UI
-  // stays readable. Delete this block (and the comment) to restore real
-  // behavior.
-  const DEMO_MAX_L1_FINDINGS = 2;
-  if (findings.length > DEMO_MAX_L1_FINDINGS) {
-    findings.length = DEMO_MAX_L1_FINDINGS;
   }
 
   // Aggregate score: start at 10, deduct per finding (capped).

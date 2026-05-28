@@ -1,0 +1,4975 @@
+[
+  {
+    "cssVariable": "--bing-smtc-background-card-on-primary-alt-gradient-stop-1",
+    "category": "background",
+    "values": {
+      "light": "#f8f4f1",
+      "dark": "#232738"
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/background/card/on-primary/alt/gradient/stop-1",
+    "minifiedVar": "--vdl",
+    "usage": "Background color for card components"
+  },
+  {
+    "cssVariable": "--bing-smtc-background-card-on-primary-alt-rest",
+    "category": "background",
+    "values": {
+      "light": "#f8f4f1",
+      "dark": "#232738"
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/background/card/on-primary/alt/rest",
+    "minifiedVar": "--mbk",
+    "usage": "Background color for card components \u2014 rest state"
+  },
+  {
+    "cssVariable": "--bing-smtc-background-card-on-primary-alt-hover",
+    "category": "background",
+    "values": {
+      "light": "#efeae7",
+      "dark": "#272b3e"
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/background/card/on-primary/alt/hover",
+    "minifiedVar": "--flh",
+    "usage": "Background color for card components \u2014 hover state"
+  },
+  {
+    "cssVariable": "--bing-smtc-background-card-on-primary-alt-pressed",
+    "category": "background",
+    "values": {
+      "light": "#e2ddd9",
+      "dark": "#2a2f43"
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/background/card/on-primary/alt/pressed",
+    "minifiedVar": "--jgm",
+    "usage": "Background color for card components \u2014 pressed state"
+  },
+  {
+    "cssVariable": "--bing-smtc-background-ctrl-active-brand-rest",
+    "category": "background",
+    "values": {
+      "light": "#f8f4f1",
+      "dark": "#232738"
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/background/ctrl/active/brand/rest",
+    "minifiedVar": "--rsg",
+    "usage": "Background color for controls/interactive elements (brand/accent themed) \u2014 rest state"
+  },
+  {
+    "cssVariable": "--bing-smtc-background-ctrl-active-brand-hover",
+    "category": "background",
+    "values": {
+      "light": "#efeae7",
+      "dark": "#272b3e"
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/background/ctrl/active/brand/hover",
+    "minifiedVar": "--hvx",
+    "usage": "Background color for controls/interactive elements (brand/accent themed) \u2014 hover state"
+  },
+  {
+    "cssVariable": "--bing-smtc-ctrl-background-fade-stop-0",
+    "category": "background",
+    "values": {
+      "light": "rgba(245, 245, 245, 0)",
+      "dark": "rgba(35, 39, 56, 0)"
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/ctrl/background/fade/stop-0",
+    "minifiedVar": "--fnr",
+    "usage": "Background color for controls/interactive elements"
+  },
+  {
+    "cssVariable": "--bing-smtc-ctrl-citation-background-rest",
+    "category": "background",
+    "values": {
+      "light": "#f8f4f1",
+      "dark": "#232738"
+    },
+    "isShipped": true,
+    "figmaName": "mai/smtc/ctrl/citation/background/rest",
+    "minifiedVar": "--qgj",
+    "usage": "Background color for controls/interactive elements \u2014 rest state"
+  },
+  {
+    "cssVariable": "--bing-smtc-ctrl-citation-background-hover",
+    "category": "background",
+    "values": {
+      "light": "#efeae7",
+      "dark": "#272b3e"
+    },
+    "isShipped": true,
+    "figmaName": "mai/smtc/ctrl/citation/background/hover",
+    "minifiedVar": "--mgq",
+    "usage": "Background color for controls/interactive elements \u2014 hover state"
+  },
+  {
+    "cssVariable": "--bing-smtc-ctrl-citation-background-pressed",
+    "category": "background",
+    "values": {
+      "light": "#e2ddd9",
+      "dark": "#2a2f43"
+    },
+    "isShipped": true,
+    "figmaName": "mai/smtc/ctrl/citation/background/pressed",
+    "minifiedVar": "--tps",
+    "usage": "Background color for controls/interactive elements \u2014 pressed state"
+  },
+  {
+    "cssVariable": "--bing-smtc-ctrl-spinner-backdrop-background",
+    "category": "background",
+    "values": {
+      "light": "rgba(248, 244, 241, 0.85)",
+      "dark": "rgba(31, 36, 49, 0.85)"
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/ctrl/spinner/backdrop/background",
+    "minifiedVar": "--khb",
+    "usage": "Background color for controls/interactive elements"
+  },
+  {
+    "cssVariable": "--bing-smtc-background-card-on-image-default",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/background/card/on-image/default",
+    "minifiedVar": "--gvs",
+    "usage": "Background color for card components"
+  },
+  {
+    "cssVariable": "--bing-smtc-background-ctrl-fade-on-image-stop-0",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/background/ctrl/fade/on-image/stop-0",
+    "minifiedVar": "--sqh",
+    "usage": "Background color for controls/interactive elements"
+  },
+  {
+    "cssVariable": "--bing-smtc-background-ctrl-fade-on-primary-stop-0",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/background/ctrl/fade/on-primary/stop-0",
+    "minifiedVar": "--hkb",
+    "usage": "Background color for controls/interactive elements"
+  },
+  {
+    "cssVariable": "--bing-smtc-background-ctrl-image-placeholder-default",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/background/ctrl/image/placeholder/default",
+    "minifiedVar": "--syn",
+    "usage": "Background color for controls/interactive elements"
+  },
+  {
+    "cssVariable": "--bing-smtc-background-ctrl-on-image-switchable-rest",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/background/ctrl/on-image/switchable/rest",
+    "minifiedVar": "--kdb",
+    "usage": "Background color for controls/interactive elements \u2014 rest state"
+  },
+  {
+    "cssVariable": "--bing-smtc-background-ctrl-on-image-switchable-hover",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/background/ctrl/on-image/switchable/hover",
+    "minifiedVar": "--fnf",
+    "usage": "Background color for controls/interactive elements \u2014 hover state"
+  },
+  {
+    "cssVariable": "--bing-smtc-background-ctrl-on-image-switchable-pressed",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/background/ctrl/on-image/switchable/pressed",
+    "minifiedVar": "--lnf",
+    "usage": "Background color for controls/interactive elements \u2014 pressed state"
+  },
+  {
+    "cssVariable": "--bing-smtc-background-with-material-citation",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/background/with-material/citation",
+    "minifiedVar": "--jbx",
+    "usage": "Background color"
+  },
+  {
+    "cssVariable": "--bing-smtc-background-with-material-overlay",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/background/with-material/overlay",
+    "minifiedVar": "--bsr",
+    "usage": "Background color"
+  },
+  {
+    "cssVariable": "--bing-smtc-ctrl-favicon-background",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/ctrl/favicon/background",
+    "minifiedVar": "--jvf",
+    "usage": "Background color for controls/interactive elements"
+  },
+  {
+    "cssVariable": "--bing-smtc-status-informative-neutral-background",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/status/informative/neutral/background",
+    "minifiedVar": "--qyc",
+    "usage": "Background color (neutral)"
+  },
+  {
+    "cssVariable": "--bing-smtc-corner-flyout-popover-rest",
+    "category": "corner-radius",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/corner/flyout/popover/rest",
+    "minifiedVar": "--lqb",
+    "usage": "Corner radius \u2014 rest state"
+  },
+  {
+    "cssVariable": "--bing-smtc-background-ctrl-brand-rest",
+    "category": "background",
+    "values": {
+      "light": "#4f6bed",
+      "dark": "#d9dffb"
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/background/ctrl/brand/rest",
+    "minifiedVar": "--hbd",
+    "usage": "Background color for controls/interactive elements (brand/accent themed) \u2014 rest state"
+  },
+  {
+    "cssVariable": "--bing-smtc-background-ctrl-ghost-hover",
+    "category": "background",
+    "values": {
+      "light": "#e2ddd9",
+      "dark": "#3e4760"
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/background/ctrl/ghost/hover",
+    "minifiedVar": "--rwg",
+    "usage": "Background color for controls/interactive elements \u2014 hover state"
+  },
+  {
+    "cssVariable": "--bing-smtc-background-ctrl-ghost-pressed",
+    "category": "background",
+    "values": {
+      "light": "#cfc9c5",
+      "dark": "#4a5471"
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/background/ctrl/ghost/pressed",
+    "minifiedVar": "--jhw",
+    "usage": "Background color for controls/interactive elements \u2014 pressed state"
+  },
+  {
+    "cssVariable": "--bing-smtc-background-ctrl-neutral-rest",
+    "category": "background",
+    "values": {
+      "light": "#d9dffb",
+      "dark": "#2c3459"
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/background/ctrl/neutral/rest",
+    "minifiedVar": "--pyy",
+    "usage": "Background color for controls/interactive elements (neutral) \u2014 rest state"
+  },
+  {
+    "cssVariable": "--bing-smtc-background-ctrl-outline-hover",
+    "category": "background",
+    "values": {
+      "light": "#c1c1c1",
+      "dark": "#333c62"
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/background/ctrl/outline/hover",
+    "minifiedVar": "--cjn",
+    "usage": "Background color for controls/interactive elements \u2014 hover state"
+  },
+  {
+    "cssVariable": "--bing-smtc-background-ctrl-outline-pressed",
+    "category": "background",
+    "values": {
+      "light": "#ababab",
+      "dark": "#37416b"
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/background/ctrl/outline/pressed",
+    "minifiedVar": "--ggn",
+    "usage": "Background color for controls/interactive elements \u2014 pressed state"
+  },
+  {
+    "cssVariable": "--bing-smtc-ctrl-citation-foreground-rest",
+    "category": "foreground",
+    "values": {
+      "light": "#322d29",
+      "dark": "#d9dffb"
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/ctrl/citation/foreground/rest",
+    "minifiedVar": "--hvm",
+    "usage": "Foreground/text color for controls/interactive elements \u2014 rest state"
+  },
+  {
+    "cssVariable": "--bing-smtc-ctrl-citation-foreground-hover",
+    "category": "foreground",
+    "values": {
+      "light": "#272320",
+      "dark": "#bec6e8"
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/ctrl/citation/foreground/hover",
+    "minifiedVar": "--cnn",
+    "usage": "Foreground/text color for controls/interactive elements \u2014 hover state"
+  },
+  {
+    "cssVariable": "--bing-smtc-ctrl-citation-foreground-pressed",
+    "category": "foreground",
+    "values": {
+      "light": "#14110e",
+      "dark": "#aeb5d4"
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/ctrl/citation/foreground/pressed",
+    "minifiedVar": "--prx",
+    "usage": "Foreground/text color for controls/interactive elements \u2014 pressed state"
+  },
+  {
+    "cssVariable": "--bing-smtc-ctrl-citation-on-card-background-rest",
+    "category": "background",
+    "values": {
+      "light": "#d7d7d7",
+      "dark": "#2c3459"
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/ctrl/citation/on-card/background/rest",
+    "minifiedVar": "--fks",
+    "usage": "Background color for controls/interactive elements \u2014 rest state"
+  },
+  {
+    "cssVariable": "--bing-smtc-ctrl-citation-on-card-background-hover",
+    "category": "background",
+    "values": {
+      "light": "#c1c1c1",
+      "dark": "#333c62"
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/ctrl/citation/on-card/background/hover",
+    "minifiedVar": "--vyh",
+    "usage": "Background color for controls/interactive elements \u2014 hover state"
+  },
+  {
+    "cssVariable": "--bing-smtc-ctrl-skeleton-background-default-layer-1-stop-1",
+    "category": "background",
+    "values": {
+      "light": "#322d29",
+      "dark": "#d9dffb"
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/ctrl/skeleton/background/default/layer/1/stop-1",
+    "minifiedVar": "--bmc",
+    "usage": "Background color for controls/interactive elements"
+  },
+  {
+    "cssVariable": "--bing-smtc-ctrl-tab-ghost-background-hover",
+    "category": "background",
+    "values": {
+      "light": "#c1c1c1",
+      "dark": "#333c62"
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/ctrl/tab/ghost/background/hover",
+    "minifiedVar": "--trn",
+    "usage": "Background color for controls/interactive elements \u2014 hover state"
+  },
+  {
+    "cssVariable": "--bing-smtc-ctrl-tab-ghost-background-pressed",
+    "category": "background",
+    "values": {
+      "light": "#ababab",
+      "dark": "#37416b"
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/ctrl/tab/ghost/background/pressed",
+    "minifiedVar": "--vnq",
+    "usage": "Background color for controls/interactive elements \u2014 pressed state"
+  },
+  {
+    "cssVariable": "--bing-smtc-ctrl-tab-ghost-background-selected",
+    "category": "background",
+    "values": {
+      "light": "#d7d7d7",
+      "dark": "#2c3459"
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/ctrl/tab/ghost/background/selected",
+    "minifiedVar": "--xyj",
+    "usage": "Background color for controls/interactive elements \u2014 selected state"
+  },
+  {
+    "cssVariable": "--bing-smtc-foreground-ctrl-on-transparent-rest",
+    "category": "foreground",
+    "values": {
+      "light": "#f8f4f1",
+      "dark": "#d9dffb"
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/foreground/ctrl/on-transparent/rest",
+    "minifiedVar": "--jdx",
+    "usage": "Foreground/text color for controls/interactive elements \u2014 rest state"
+  },
+  {
+    "cssVariable": "--bing-smtc-status-brand-background",
+    "category": "background",
+    "values": {
+      "light": "#515151",
+      "dark": "#d9dffb"
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/status/brand/background",
+    "minifiedVar": "--yqk",
+    "usage": "Background color (brand/accent themed)"
+  },
+  {
+    "cssVariable": "--bing-smtc-ctrl-link-foreground-brand-alt-visited",
+    "category": "foreground",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/ctrl/link/foreground/brand/alt/visited",
+    "minifiedVar": "--hps",
+    "usage": "Foreground/text color for controls/interactive elements (brand/accent themed)"
+  },
+  {
+    "cssVariable": "--bing-smtc-foreground-content-neutral-secondary-alt",
+    "category": "foreground",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/foreground/content/neutral/secondary/alt",
+    "minifiedVar": "--cjk",
+    "usage": "Foreground/text color for content areas (neutral)"
+  },
+  {
+    "cssVariable": "--bing-smtc-foreground-content-neutral-tertiary",
+    "category": "foreground",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/foreground/content/neutral/tertiary",
+    "minifiedVar": "--qhp",
+    "usage": "Foreground/text color for content areas (neutral)"
+  },
+  {
+    "cssVariable": "--bing-smtc-foreground-ctrl-neutral-primary-rest",
+    "category": "foreground",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/foreground/ctrl/neutral/primary/rest",
+    "minifiedVar": "--pdx",
+    "usage": "Foreground/text color for controls/interactive elements (neutral) \u2014 rest state"
+  },
+  {
+    "cssVariable": "--bing-smtc-foreground-ctrl-on-image-alt-rest",
+    "category": "foreground",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/foreground/ctrl/on-image/alt/rest",
+    "minifiedVar": "--jdw",
+    "usage": "Foreground/text color for controls/interactive elements \u2014 rest state"
+  },
+  {
+    "cssVariable": "--bing-smtc-foreground-ctrl-on-image-switchable-rest",
+    "category": "foreground",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/foreground/ctrl/on-image/switchable/rest",
+    "minifiedVar": "--hys",
+    "usage": "Foreground/text color for controls/interactive elements \u2014 rest state"
+  },
+  {
+    "cssVariable": "--bing-smtc-foreground-ctrl-on-image-switchable-hover",
+    "category": "foreground",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/foreground/ctrl/on-image/switchable/hover",
+    "minifiedVar": "--kfg",
+    "usage": "Foreground/text color for controls/interactive elements \u2014 hover state"
+  },
+  {
+    "cssVariable": "--bing-smtc-foreground-ctrl-on-image-switchable-pressed",
+    "category": "foreground",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/foreground/ctrl/on-image/switchable/pressed",
+    "minifiedVar": "--hyv",
+    "usage": "Foreground/text color for controls/interactive elements \u2014 pressed state"
+  },
+  {
+    "cssVariable": "--bing-smtc-ctrl-link-foreground-brand-rest",
+    "category": "foreground",
+    "values": {
+      "light": "#3c51b4",
+      "dark": "#d9dffb"
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/ctrl/link/foreground/brand/rest",
+    "minifiedVar": "--hmd",
+    "usage": "Foreground/text color for controls/interactive elements (brand/accent themed) \u2014 rest state"
+  },
+  {
+    "cssVariable": "--bing-smtc-foreground-content-brand-rest",
+    "category": "foreground",
+    "values": {
+      "light": "#3c51b4",
+      "dark": "#d9dffb"
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/foreground/content/brand/rest",
+    "minifiedVar": "--rys",
+    "usage": "Foreground/text color for content areas (brand/accent themed) \u2014 rest state"
+  },
+  {
+    "cssVariable": "--bing-smtc-foreground-content-brand-hover",
+    "category": "foreground",
+    "values": {
+      "light": "#191919",
+      "dark": "#bec6e8"
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/foreground/content/brand/hover",
+    "minifiedVar": "--vrg",
+    "usage": "Foreground/text color for content areas (brand/accent themed) \u2014 hover state"
+  },
+  {
+    "cssVariable": "--bing-smtc-foreground-content-brand-pressed",
+    "category": "foreground",
+    "values": {
+      "light": "#141414",
+      "dark": "#aeb5d4"
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/foreground/content/brand/pressed",
+    "minifiedVar": "--kst",
+    "usage": "Foreground/text color for content areas (brand/accent themed) \u2014 pressed state"
+  },
+  {
+    "cssVariable": "--bing-smtc-foreground-ctrl-neutral-primary-alt-rest",
+    "category": "foreground",
+    "values": {
+      "light": "#0159ba",
+      "dark": "#d9dffb"
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/foreground/ctrl/neutral/primary/alt/rest",
+    "minifiedVar": "--btx",
+    "usage": "Foreground/text color for controls/interactive elements (neutral) \u2014 rest state"
+  },
+  {
+    "cssVariable": "--bing-smtc-background-container",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/background/container",
+    "minifiedVar": "--rwk",
+    "usage": "Background color"
+  },
+  {
+    "cssVariable": "--bing-smtc-background-container-alt",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/background/container/alt",
+    "minifiedVar": "--dnl",
+    "usage": "Background color"
+  },
+  {
+    "cssVariable": "--bing-smtc-background-container-highlight",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/background/container/highlight",
+    "minifiedVar": "--qmp",
+    "usage": "Background color"
+  },
+  {
+    "cssVariable": "--bing-smtc-background-on-container-card",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/background/on-container-card",
+    "minifiedVar": "--gsd",
+    "usage": "Background color for card components"
+  },
+  {
+    "cssVariable": "--bing-smtc-background-overlay",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/background/overlay",
+    "minifiedVar": "--klr",
+    "usage": "Background color"
+  },
+  {
+    "cssVariable": "--bing-smtc-ctrl-carousel-alt-stop-0",
+    "category": "effects",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/ctrl/carousel/alt/stop-0",
+    "minifiedVar": "--jtq",
+    "usage": "for controls/interactive elements"
+  },
+  {
+    "cssVariable": "--bing-smtc-ctrl-carousel-stop-0",
+    "category": "effects",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/ctrl/carousel/stop-0",
+    "minifiedVar": "--yhm",
+    "usage": "for controls/interactive elements"
+  },
+  {
+    "cssVariable": "--bing-smtc-ctrl-search-box-background-rest",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/ctrl/search-box/background/rest",
+    "minifiedVar": "--vsc",
+    "usage": "Background color for controls/interactive elements \u2014 rest state"
+  },
+  {
+    "cssVariable": "--bing-smtc-ctrl-spinner-background-default",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/ctrl/spinner/background/default",
+    "minifiedVar": "--nvy",
+    "usage": "Background color for controls/interactive elements"
+  },
+  {
+    "cssVariable": "--bing-smtc-padding-ctrl-text-side-large",
+    "category": "padding",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/padding/ctrl/text-side/large",
+    "minifiedVar": "--yvd",
+    "usage": "Padding for controls/interactive elements"
+  },
+  {
+    "cssVariable": "--bing-smtc-ctrl-highlight-ring-stroke-stop-1",
+    "category": "stroke",
+    "values": {
+      "light": "#f8f4f1",
+      "dark": "#d9dffb"
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/ctrl/highlight-ring/stroke/stop-1",
+    "minifiedVar": "--jhy",
+    "usage": "Border/stroke color for controls/interactive elements"
+  },
+  {
+    "cssVariable": "--bing-smtc-ctrl-highlight-ring-stroke-stop-2",
+    "category": "stroke",
+    "values": {
+      "light": "#e2ddd9",
+      "dark": "#aeb5d4"
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/ctrl/highlight-ring/stroke/stop-2",
+    "minifiedVar": "--bqd",
+    "usage": "Border/stroke color for controls/interactive elements"
+  },
+  {
+    "cssVariable": "--bing-smtc-ctrl-choice-switch-stroke-neutral-rest",
+    "category": "stroke",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/ctrl/choice/switch/stroke/neutral/rest",
+    "minifiedVar": "--rnw",
+    "usage": "Border/stroke color for controls/interactive elements (neutral) \u2014 rest state"
+  },
+  {
+    "cssVariable": "--bing-smtc-stroke-ctrl-default",
+    "category": "stroke",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/stroke/ctrl/default",
+    "minifiedVar": "--vrs",
+    "usage": "Border/stroke color for controls/interactive elements"
+  },
+  {
+    "cssVariable": "--bing-smtc-stroke-ctrl-disable",
+    "category": "stroke",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/stroke/ctrl/disable",
+    "minifiedVar": "--kpf",
+    "usage": "Border/stroke color for controls/interactive elements"
+  },
+  {
+    "cssVariable": "--bing-smtc-stroke-ctrl-on-image-default",
+    "category": "stroke",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/stroke/ctrl/on-image/default",
+    "minifiedVar": "--ksf",
+    "usage": "Border/stroke color for controls/interactive elements"
+  },
+  {
+    "cssVariable": "--bing-smtc-stroke-ctrl-strong",
+    "category": "stroke",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/stroke/ctrl/strong",
+    "minifiedVar": "--wpr",
+    "usage": "Border/stroke color for controls/interactive elements (strong variant)"
+  },
+  {
+    "cssVariable": "--bing-smtc-stroke-ctrl-subtle",
+    "category": "stroke",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/stroke/ctrl/subtle",
+    "minifiedVar": "--msb",
+    "usage": "Border/stroke color for controls/interactive elements (subtle variant)"
+  },
+  {
+    "cssVariable": "--bing-smtc-stroke-divider-stop-0",
+    "category": "stroke",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/stroke/divider/stop-0",
+    "minifiedVar": "--yrp",
+    "usage": "Border/stroke color for dividers"
+  },
+  {
+    "cssVariable": "--bing-smtc-text-global-body1",
+    "category": "typography",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "minifiedVar": "--bby",
+    "usage": "Typography"
+  },
+  {
+    "cssVariable": "--bing-smtc-text-global-body1-strong",
+    "category": "typography",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "minifiedVar": "--dxf",
+    "usage": "Typography (strong variant)"
+  },
+  {
+    "cssVariable": "--bing-smtc-text-global-body2",
+    "category": "typography",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "minifiedVar": "--nqd",
+    "usage": "Typography"
+  },
+  {
+    "cssVariable": "--bing-smtc-text-global-body2-strong",
+    "category": "typography",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "minifiedVar": "--ghv",
+    "usage": "Typography (strong variant)"
+  },
+  {
+    "cssVariable": "--bing-smtc-text-global-body3",
+    "category": "typography",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "minifiedVar": "--mgb",
+    "usage": "Typography"
+  },
+  {
+    "cssVariable": "--bing-smtc-text-global-body3-strong",
+    "category": "typography",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "minifiedVar": "--fcx",
+    "usage": "Typography (strong variant)"
+  },
+  {
+    "cssVariable": "--bing-smtc-text-global-caption1",
+    "category": "typography",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "minifiedVar": "--byp",
+    "usage": "Typography"
+  },
+  {
+    "cssVariable": "--bing-smtc-text-global-caption1-strong",
+    "category": "typography",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "minifiedVar": "--lpj",
+    "usage": "Typography (strong variant)"
+  },
+  {
+    "cssVariable": "--bing-smtc-text-global-caption2",
+    "category": "typography",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "minifiedVar": "--tpr",
+    "usage": "Typography"
+  },
+  {
+    "cssVariable": "--bing-smtc-text-global-caption2-strong",
+    "category": "typography",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "minifiedVar": "--hkj",
+    "usage": "Typography (strong variant)"
+  },
+  {
+    "cssVariable": "--bing-smtc-text-global-display1",
+    "category": "typography",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "minifiedVar": "--ghx",
+    "usage": "Typography"
+  },
+  {
+    "cssVariable": "--bing-smtc-text-global-display2",
+    "category": "typography",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "minifiedVar": "--dtq",
+    "usage": "Typography"
+  },
+  {
+    "cssVariable": "--bing-smtc-text-global-subtitle1",
+    "category": "typography",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "minifiedVar": "--mgn",
+    "usage": "Typography"
+  },
+  {
+    "cssVariable": "--bing-smtc-text-global-subtitle1-strong",
+    "category": "typography",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "minifiedVar": "--hbh",
+    "usage": "Typography (strong variant)"
+  },
+  {
+    "cssVariable": "--bing-smtc-text-global-subtitle2",
+    "category": "typography",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "minifiedVar": "--nyg",
+    "usage": "Typography"
+  },
+  {
+    "cssVariable": "--bing-smtc-text-global-subtitle2-strong",
+    "category": "typography",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "minifiedVar": "--vjd",
+    "usage": "Typography (strong variant)"
+  },
+  {
+    "cssVariable": "--bing-smtc-text-global-title1",
+    "category": "typography",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "minifiedVar": "--gsx",
+    "usage": "Typography"
+  },
+  {
+    "cssVariable": "--bing-smtc-text-global-title2",
+    "category": "typography",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "minifiedVar": "--mns",
+    "usage": "Typography"
+  },
+  {
+    "cssVariable": "--bing-smtc-padding-ctrl-icon-only-text-top",
+    "category": "padding",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/padding/ctrl/icon-only/text-top",
+    "minifiedVar": "--mbj",
+    "usage": "Padding for controls/interactive elements"
+  },
+  {
+    "cssVariable": "--bing-smtc-padding-ctrl-icon-only-text-bottom",
+    "category": "padding",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/padding/ctrl/icon-only/text-bottom",
+    "minifiedVar": "--xgm",
+    "usage": "Padding for controls/interactive elements"
+  },
+  {
+    "cssVariable": "--bing-smtc-padding-ctrl-xs-horizontal",
+    "category": "padding",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/padding/ctrl-xs/horizontal",
+    "minifiedVar": "--fcs",
+    "usage": "Padding for controls/interactive elements"
+  },
+  {
+    "cssVariable": "--bing-smtc-padding-ctrl-xlg-text-top",
+    "category": "padding",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/padding/ctrl-xlg/text-top",
+    "minifiedVar": "--bdx",
+    "usage": "Padding for controls/interactive elements"
+  },
+  {
+    "cssVariable": "--bing-smtc-padding-ctrl-xlg-text-bottom",
+    "category": "padding",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/padding/ctrl-xlg/text-bottom",
+    "minifiedVar": "--mkh",
+    "usage": "Padding for controls/interactive elements"
+  },
+  {
+    "cssVariable": "--bing-smtc-padding-ctrl-xlg-horizontal-default",
+    "category": "padding",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/padding/ctrl-xlg/horizontal-default",
+    "minifiedVar": "--lxd",
+    "usage": "Padding for controls/interactive elements"
+  },
+  {
+    "cssVariable": "--bing-smtc-foreground-ctrl-on-subtle-rest",
+    "category": "foreground",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/foreground/ctrl/on-subtle/rest",
+    "minifiedVar": "--xlk",
+    "usage": "Foreground/text color for controls/interactive elements (subtle variant) \u2014 rest state"
+  },
+  {
+    "cssVariable": "--bing-smtc-foreground-ctrl-on-subtle-hover",
+    "category": "foreground",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/foreground/ctrl/on-subtle/hover",
+    "minifiedVar": "--knn",
+    "usage": "Foreground/text color for controls/interactive elements (subtle variant) \u2014 hover state"
+  },
+  {
+    "cssVariable": "--bing-smtc-background-ctrl-subtle-hover",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/background/ctrl/subtle/hover",
+    "minifiedVar": "--vys",
+    "usage": "Background color for controls/interactive elements (subtle variant) \u2014 hover state"
+  },
+  {
+    "cssVariable": "--bing-smtc-foreground-ctrl-on-subtle-pressed",
+    "category": "foreground",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/foreground/ctrl/on-subtle/pressed",
+    "minifiedVar": "--dyk",
+    "usage": "Foreground/text color for controls/interactive elements (subtle variant) \u2014 pressed state"
+  },
+  {
+    "cssVariable": "--bing-smtc-background-ctrl-subtle-pressed",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/background/ctrl/subtle/pressed",
+    "minifiedVar": "--yxp",
+    "usage": "Background color for controls/interactive elements (subtle variant) \u2014 pressed state"
+  },
+  {
+    "cssVariable": "--bing-smtc-ctrl-choice-switch-background-hover",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/ctrl/choice/switch/background/hover",
+    "minifiedVar": "--scy",
+    "usage": "Background color for controls/interactive elements \u2014 hover state"
+  },
+  {
+    "cssVariable": "--bing-smtc-ctrl-choice-switch-background-pressed",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/ctrl/choice/switch/background/pressed",
+    "minifiedVar": "--jxd",
+    "usage": "Background color for controls/interactive elements \u2014 pressed state"
+  },
+  {
+    "cssVariable": "--bing-smtc-foreground-image-placeholder-default",
+    "category": "foreground",
+    "values": {
+      "light": "#d7d7d7",
+      "dark": "#2c3459"
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/foreground/image/placeholder/default",
+    "minifiedVar": "--dtr",
+    "usage": "Foreground/text color"
+  },
+  {
+    "cssVariable": "--bing-smtc-status-danger-tint-foreground-alt",
+    "category": "foreground",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/status/danger/tint/foreground/alt",
+    "minifiedVar": "--pyj",
+    "usage": "Foreground/text color (danger/error state)"
+  },
+  {
+    "cssVariable": "--bing-smtc-status-success-tint-foreground-alt",
+    "category": "foreground",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/status/success/tint/foreground/alt",
+    "minifiedVar": "--tbs",
+    "usage": "Foreground/text color (success state)"
+  },
+  {
+    "cssVariable": "--bing-smtc-data-foreground-red-strong",
+    "category": "foreground",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/data/foreground/red/strong",
+    "minifiedVar": "--rhy",
+    "usage": "Foreground/text color (strong variant)"
+  },
+  {
+    "cssVariable": "--bing-smtc-deco-stroke-red-strong",
+    "category": "stroke",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/deco/stroke/red/strong",
+    "minifiedVar": "--dwg",
+    "usage": "Border/stroke color (strong variant)"
+  },
+  {
+    "cssVariable": "--bing-smtc-data-foreground-red-default",
+    "category": "foreground",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/data/foreground/red/default",
+    "minifiedVar": "--mxl",
+    "usage": "Foreground/text color"
+  },
+  {
+    "cssVariable": "--bing-smtc-deco-stroke-red-default",
+    "category": "stroke",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/deco/stroke/red/default",
+    "minifiedVar": "--skq",
+    "usage": "Border/stroke color"
+  },
+  {
+    "cssVariable": "--bing-smtc-data-foreground-red-subtle",
+    "category": "foreground",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/data/foreground/red/subtle",
+    "minifiedVar": "--dpf",
+    "usage": "Foreground/text color (subtle variant)"
+  },
+  {
+    "cssVariable": "--bing-smtc-deco-stroke-red-subtle",
+    "category": "stroke",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/deco/stroke/red/subtle",
+    "minifiedVar": "--jwg",
+    "usage": "Border/stroke color (subtle variant)"
+  },
+  {
+    "cssVariable": "--bing-smtc-data-foreground-amber-strong",
+    "category": "foreground",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/data/foreground/amber/strong",
+    "minifiedVar": "--hnv",
+    "usage": "Foreground/text color (strong variant)"
+  },
+  {
+    "cssVariable": "--bing-smtc-deco-stroke-amber-strong",
+    "category": "stroke",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/deco/stroke/amber/strong",
+    "minifiedVar": "--kgc",
+    "usage": "Border/stroke color (strong variant)"
+  },
+  {
+    "cssVariable": "--bing-smtc-data-foreground-amber-default",
+    "category": "foreground",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/data/foreground/amber/default",
+    "minifiedVar": "--xtj",
+    "usage": "Foreground/text color"
+  },
+  {
+    "cssVariable": "--bing-smtc-deco-stroke-amber-default",
+    "category": "stroke",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/deco/stroke/amber/default",
+    "minifiedVar": "--pch",
+    "usage": "Border/stroke color"
+  },
+  {
+    "cssVariable": "--bing-smtc-data-foreground-amber-subtle",
+    "category": "foreground",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/data/foreground/amber/subtle",
+    "minifiedVar": "--mmt",
+    "usage": "Foreground/text color (subtle variant)"
+  },
+  {
+    "cssVariable": "--bing-smtc-deco-stroke-amber-subtle",
+    "category": "stroke",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/deco/stroke/amber/subtle",
+    "minifiedVar": "--yyw",
+    "usage": "Border/stroke color (subtle variant)"
+  },
+  {
+    "cssVariable": "--bing-smtc-data-foreground-green-strong",
+    "category": "foreground",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/data/foreground/green/strong",
+    "minifiedVar": "--mpc",
+    "usage": "Foreground/text color (strong variant)"
+  },
+  {
+    "cssVariable": "--bing-smtc-deco-stroke-green-strong",
+    "category": "stroke",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/deco/stroke/green/strong",
+    "minifiedVar": "--skh",
+    "usage": "Border/stroke color (strong variant)"
+  },
+  {
+    "cssVariable": "--bing-smtc-data-foreground-green-default",
+    "category": "foreground",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/data/foreground/green/default",
+    "minifiedVar": "--bmd",
+    "usage": "Foreground/text color"
+  },
+  {
+    "cssVariable": "--bing-smtc-deco-stroke-green-default",
+    "category": "stroke",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/deco/stroke/green/default",
+    "minifiedVar": "--kcd",
+    "usage": "Border/stroke color"
+  },
+  {
+    "cssVariable": "--bing-smtc-data-foreground-green-subtle",
+    "category": "foreground",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/data/foreground/green/subtle",
+    "minifiedVar": "--krv",
+    "usage": "Foreground/text color (subtle variant)"
+  },
+  {
+    "cssVariable": "--bing-smtc-deco-stroke-green-subtle",
+    "category": "stroke",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/deco/stroke/green/subtle",
+    "minifiedVar": "--frm",
+    "usage": "Border/stroke color (subtle variant)"
+  },
+  {
+    "cssVariable": "--bing-smtc-data-foreground-blue-strong",
+    "category": "foreground",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/data/foreground/blue/strong",
+    "minifiedVar": "--xxq",
+    "usage": "Foreground/text color (strong variant)"
+  },
+  {
+    "cssVariable": "--bing-smtc-deco-stroke-blue-strong",
+    "category": "stroke",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/deco/stroke/blue/strong",
+    "minifiedVar": "--ygk",
+    "usage": "Border/stroke color (strong variant)"
+  },
+  {
+    "cssVariable": "--bing-smtc-data-foreground-blue-default",
+    "category": "foreground",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/data/foreground/blue/default",
+    "minifiedVar": "--rwv",
+    "usage": "Foreground/text color"
+  },
+  {
+    "cssVariable": "--bing-smtc-deco-stroke-blue-default",
+    "category": "stroke",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/deco/stroke/blue/default",
+    "minifiedVar": "--dhy",
+    "usage": "Border/stroke color"
+  },
+  {
+    "cssVariable": "--bing-smtc-data-foreground-blue-subtle",
+    "category": "foreground",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/data/foreground/blue/subtle",
+    "minifiedVar": "--pqv",
+    "usage": "Foreground/text color (subtle variant)"
+  },
+  {
+    "cssVariable": "--bing-smtc-deco-stroke-blue-subtle",
+    "category": "stroke",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/deco/stroke/blue/subtle",
+    "minifiedVar": "--rdv",
+    "usage": "Border/stroke color (subtle variant)"
+  },
+  {
+    "cssVariable": "--bing-smtc-data-foreground-gray-strong",
+    "category": "foreground",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/data/foreground/gray/strong",
+    "minifiedVar": "--bdv",
+    "usage": "Foreground/text color (strong variant)"
+  },
+  {
+    "cssVariable": "--bing-smtc-deco-stroke-gray-strong",
+    "category": "stroke",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/deco/stroke/gray/strong",
+    "minifiedVar": "--ytb",
+    "usage": "Border/stroke color (strong variant)"
+  },
+  {
+    "cssVariable": "--bing-smtc-data-foreground-gray-default",
+    "category": "foreground",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/data/foreground/gray/default",
+    "minifiedVar": "--qvc",
+    "usage": "Foreground/text color"
+  },
+  {
+    "cssVariable": "--bing-smtc-deco-stroke-gray-default",
+    "category": "stroke",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/deco/stroke/gray/default",
+    "minifiedVar": "--gnr",
+    "usage": "Border/stroke color"
+  },
+  {
+    "cssVariable": "--bing-smtc-data-foreground-gray-subtle",
+    "category": "foreground",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/data/foreground/gray/subtle",
+    "minifiedVar": "--wgx",
+    "usage": "Foreground/text color (subtle variant)"
+  },
+  {
+    "cssVariable": "--bing-smtc-deco-stroke-gray-subtle",
+    "category": "stroke",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/deco/stroke/gray/subtle",
+    "minifiedVar": "--gjd",
+    "usage": "Border/stroke color (subtle variant)"
+  },
+  {
+    "cssVariable": "--bing-smtc-data-foreground-yellow-strong",
+    "category": "foreground",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/data/foreground/yellow/strong",
+    "minifiedVar": "--fxh",
+    "usage": "Foreground/text color (strong variant)"
+  },
+  {
+    "cssVariable": "--bing-smtc-deco-stroke-yellow-strong",
+    "category": "stroke",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/deco/stroke/yellow/strong",
+    "minifiedVar": "--cjc",
+    "usage": "Border/stroke color (strong variant)"
+  },
+  {
+    "cssVariable": "--bing-smtc-data-foreground-yellow-default",
+    "category": "foreground",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/data/foreground/yellow/default",
+    "minifiedVar": "--ttl",
+    "usage": "Foreground/text color"
+  },
+  {
+    "cssVariable": "--bing-smtc-deco-stroke-yellow-default",
+    "category": "stroke",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/deco/stroke/yellow/default",
+    "minifiedVar": "--xlx",
+    "usage": "Border/stroke color"
+  },
+  {
+    "cssVariable": "--bing-smtc-data-foreground-yellow-subtle",
+    "category": "foreground",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/data/foreground/yellow/subtle",
+    "minifiedVar": "--rkx",
+    "usage": "Foreground/text color (subtle variant)"
+  },
+  {
+    "cssVariable": "--bing-smtc-deco-stroke-yellow-subtle",
+    "category": "stroke",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/deco/stroke/yellow/subtle",
+    "minifiedVar": "--hkg",
+    "usage": "Border/stroke color (subtle variant)"
+  },
+  {
+    "cssVariable": "--bing-smtc-data-background-red-strong",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/data/background/red/strong",
+    "minifiedVar": "--yyl",
+    "usage": "Background color (strong variant)"
+  },
+  {
+    "cssVariable": "--bing-smtc-data-background-red-default",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/data/background/red/default",
+    "minifiedVar": "--hqf",
+    "usage": "Background color"
+  },
+  {
+    "cssVariable": "--bing-smtc-data-background-red-subtle",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/data/background/red/subtle",
+    "minifiedVar": "--gcq",
+    "usage": "Background color (subtle variant)"
+  },
+  {
+    "cssVariable": "--bing-smtc-data-background-amber-strong",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/data/background/amber/strong",
+    "minifiedVar": "--xnn",
+    "usage": "Background color (strong variant)"
+  },
+  {
+    "cssVariable": "--bing-smtc-data-background-amber-default",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/data/background/amber/default",
+    "minifiedVar": "--wxx",
+    "usage": "Background color"
+  },
+  {
+    "cssVariable": "--bing-smtc-data-background-amber-subtle",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/data/background/amber/subtle",
+    "minifiedVar": "--qvg",
+    "usage": "Background color (subtle variant)"
+  },
+  {
+    "cssVariable": "--bing-smtc-data-background-green-strong",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/data/background/green/strong",
+    "minifiedVar": "--jld",
+    "usage": "Background color (strong variant)"
+  },
+  {
+    "cssVariable": "--bing-smtc-data-background-green-default",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/data/background/green/default",
+    "minifiedVar": "--prr",
+    "usage": "Background color"
+  },
+  {
+    "cssVariable": "--bing-smtc-data-background-green-subtle",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/data/background/green/subtle",
+    "minifiedVar": "--gll",
+    "usage": "Background color (subtle variant)"
+  },
+  {
+    "cssVariable": "--bing-smtc-data-background-blue-strong",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/data/background/blue/strong",
+    "minifiedVar": "--lvx",
+    "usage": "Background color (strong variant)"
+  },
+  {
+    "cssVariable": "--bing-smtc-data-background-blue-default",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/data/background/blue/default",
+    "minifiedVar": "--xfj",
+    "usage": "Background color"
+  },
+  {
+    "cssVariable": "--bing-smtc-data-background-blue-subtle",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/data/background/blue/subtle",
+    "minifiedVar": "--bjj",
+    "usage": "Background color (subtle variant)"
+  },
+  {
+    "cssVariable": "--bing-smtc-data-background-gray-strong",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/data/background/gray/strong",
+    "minifiedVar": "--ybg",
+    "usage": "Background color (strong variant)"
+  },
+  {
+    "cssVariable": "--bing-smtc-data-background-gray-default",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/data/background/gray/default",
+    "minifiedVar": "--pyr",
+    "usage": "Background color"
+  },
+  {
+    "cssVariable": "--bing-smtc-data-background-gray-subtle",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/data/background/gray/subtle",
+    "minifiedVar": "--wwq",
+    "usage": "Background color (subtle variant)"
+  },
+  {
+    "cssVariable": "--bing-smtc-data-background-yellow-strong",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/data/background/yellow/strong",
+    "minifiedVar": "--jnp",
+    "usage": "Background color (strong variant)"
+  },
+  {
+    "cssVariable": "--bing-smtc-data-background-yellow-default",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/data/background/yellow/default",
+    "minifiedVar": "--pjr",
+    "usage": "Background color"
+  },
+  {
+    "cssVariable": "--bing-smtc-data-background-yellow-subtle",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/data/background/yellow/subtle",
+    "minifiedVar": "--flg",
+    "usage": "Background color (subtle variant)"
+  },
+  {
+    "cssVariable": "--bing-smtc-background-ctrl-fade-on-primary-stop-1",
+    "category": "background",
+    "values": {
+      "light": "#f7f7f7",
+      "dark": "#1e1f24"
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/background/ctrl/fade/on-primary/stop-1",
+    "minifiedVar": "--mkf",
+    "usage": "Background color for controls/interactive elements"
+  },
+  {
+    "cssVariable": "--mai-smtc-background-ctrl-on-image-rest",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "mai/smtc/background/ctrl/on-image/rest",
+    "usage": "Background color for controls/interactive elements \u2014 rest state"
+  },
+  {
+    "cssVariable": "--mai-smtc-background-ctrl-on-image-hover",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "mai/smtc/background/ctrl/on-image/hover",
+    "usage": "Background color for controls/interactive elements \u2014 hover state"
+  },
+  {
+    "cssVariable": "--mai-smtc-ctrl-citation-background-hover",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true
+  },
+  {
+    "cssVariable": "--mai-smtc-ctrl-citation-background-pressed",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true
+  },
+  {
+    "cssVariable": "--mai-smtc-corner-ctrl-xlg-rest",
+    "category": "corner-radius",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true
+  },
+  {
+    "cssVariable": "--mai-smtc-corner-favicon",
+    "category": "corner-radius",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "mai/smtc/corner/favicon",
+    "usage": "Corner radius"
+  },
+  {
+    "cssVariable": "--mai-smtc-corner-list-card-default",
+    "category": "corner-radius",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "mai/smtc/corner/list-card/default",
+    "usage": "Corner radius for card components"
+  },
+  {
+    "cssVariable": "--mai-smtc-background-card-on-primary-alt-selected",
+    "category": "background",
+    "values": {
+      "light": "#d7d7d7",
+      "dark": "#2c3459"
+    },
+    "isShipped": true
+  },
+  {
+    "cssVariable": "--mai-smtc-choice-switch-background-selected-rest",
+    "category": "background",
+    "values": {
+      "light": "#f8f4f1",
+      "dark": "#d9dffb"
+    },
+    "isShipped": true
+  },
+  {
+    "cssVariable": "--mai-smtc-choice-switch-background-selected-hover",
+    "category": "background",
+    "values": {
+      "light": "#efeae7",
+      "dark": "#bec6e8"
+    },
+    "isShipped": true
+  },
+  {
+    "cssVariable": "--mai-smtc-choice-switch-background-selected-pressed",
+    "category": "background",
+    "values": {
+      "light": "#e2ddd9",
+      "dark": "#aeb5d4"
+    },
+    "isShipped": true
+  },
+  {
+    "cssVariable": "--mai-smtc-foreground-ctrl-on-image-rest",
+    "category": "foreground",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true
+  },
+  {
+    "cssVariable": "--mai-smtc-ctrl-choice-switch-thumb-background-rest",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "minifiedVar": "--kgq",
+    "usage": "Background color for controls/interactive elements \u2014 rest state"
+  },
+  {
+    "cssVariable": "--mai-smtc-ctrl-choice-switch-thumb-background-selected-rest",
+    "category": "background",
+    "values": {
+      "light": "#fff",
+      "dark": "#3c51b4"
+    },
+    "isShipped": true,
+    "minifiedVar": "--hjq",
+    "usage": "Background color for controls/interactive elements \u2014 rest state"
+  },
+  {
+    "cssVariable": "--mai-smtc-ctrl-choice-switch-thumb-background-hover",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "minifiedVar": "--kcp",
+    "usage": "Background color for controls/interactive elements \u2014 hover state"
+  },
+  {
+    "cssVariable": "--mai-smtc-ctrl-choice-switch-thumb-background-pressed",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "minifiedVar": "--bsg",
+    "usage": "Background color for controls/interactive elements \u2014 pressed state"
+  },
+  {
+    "cssVariable": "--mai-smtc-ctrl-citation-background-rest",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true
+  },
+  {
+    "cssVariable": "--mai-smtc-padding-card-default",
+    "category": "padding",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "mai/smtc/padding/card/default",
+    "usage": "Padding for card components"
+  },
+  {
+    "cssVariable": "--mai-smtc-padding-list-card-default",
+    "category": "padding",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "mai/smtc/padding/list-card/default",
+    "usage": "Padding for card components"
+  },
+  {
+    "cssVariable": "--mai-smtc-ctrl-choice-switch-stroke-rest",
+    "category": "stroke",
+    "values": {
+      "light": "#f8f4f1",
+      "dark": "#d9dffb"
+    },
+    "isShipped": true,
+    "figmaName": "mai/smtc/ctrl/choice/switch/stroke/rest",
+    "usage": "Border/stroke color for controls/interactive elements \u2014 rest state"
+  },
+  {
+    "cssVariable": "--mai-smtc-ctrl-choice-switch-stroke-hover",
+    "category": "stroke",
+    "values": {
+      "light": "#efeae7",
+      "dark": "#bec6e8"
+    },
+    "isShipped": true,
+    "figmaName": "mai/smtc/ctrl/choice/switch/stroke/hover",
+    "usage": "Border/stroke color for controls/interactive elements \u2014 hover state"
+  },
+  {
+    "cssVariable": "--mai-smtc-ctrl-choice-switch-stroke-pressed",
+    "category": "stroke",
+    "values": {
+      "light": "#e2ddd9",
+      "dark": "#aeb5d4"
+    },
+    "isShipped": true,
+    "figmaName": "mai/smtc/ctrl/choice/switch/stroke/pressed",
+    "usage": "Border/stroke color for controls/interactive elements \u2014 pressed state"
+  },
+  {
+    "cssVariable": "--mai-smtc-ctrl-choice-switch-background-default",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "mai/smtc/ctrl/choice/switch/background/default",
+    "usage": "Background color for controls/interactive elements"
+  },
+  {
+    "cssVariable": "--mai-smtc-padding-card-nested-default",
+    "category": "padding",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "mai/smtc/padding/card/nested/default",
+    "usage": "Padding for card components"
+  },
+  {
+    "cssVariable": "--mai-smtc-padding-card-nested-xs-default",
+    "category": "padding",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true
+  },
+  {
+    "cssVariable": "--smtc-background-card-on-primary-alt-disabled",
+    "category": "background",
+    "values": {
+      "light": "#f7f7f7",
+      "dark": "#1e1f24"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/background/card/on-primary/alt/disabled",
+    "minifiedVar": "--pqw",
+    "usage": "Background color for card components \u2014 disabled state"
+  },
+  {
+    "cssVariable": "--smtc-background-ctrl-active-brand-disabled",
+    "category": "background",
+    "values": {
+      "light": "#f8f4f1",
+      "dark": "#232738"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/background/ctrl/active/brand/disabled",
+    "minifiedVar": "--brp",
+    "usage": "Background color for controls/interactive elements (brand/accent themed) \u2014 disabled state"
+  },
+  {
+    "cssVariable": "--smtc-background-ctrl-outline-disabled",
+    "category": "background",
+    "values": {
+      "light": "#f8f4f1",
+      "dark": "#232738"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/background/ctrl/outline/disabled",
+    "minifiedVar": "--kpv",
+    "usage": "Background color for controls/interactive elements \u2014 disabled state"
+  },
+  {
+    "cssVariable": "--smtc-background-ctrl-subtle-disabled",
+    "category": "background",
+    "values": {
+      "light": "rgba(245, 245, 245, 0)",
+      "dark": "rgba(35, 39, 56, 0)"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/background/ctrl/subtle/disabled",
+    "minifiedVar": "--fjw",
+    "usage": "Background color for controls/interactive elements (subtle variant) \u2014 disabled state"
+  },
+  {
+    "cssVariable": "--smtc-background-ctrl-subtle-hover",
+    "category": "background",
+    "values": {
+      "light": "#efeae7",
+      "dark": "#272b3e"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/background/ctrl/subtle/hover",
+    "minifiedVar": "--lhm",
+    "usage": "Background color for controls/interactive elements (subtle variant) \u2014 hover state"
+  },
+  {
+    "cssVariable": "--smtc-background-ctrl-subtle-pressed",
+    "category": "background",
+    "values": {
+      "light": "#e2ddd9",
+      "dark": "#2a2f43"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/background/ctrl/subtle/pressed",
+    "minifiedVar": "--dbr",
+    "usage": "Background color for controls/interactive elements (subtle variant) \u2014 pressed state"
+  },
+  {
+    "cssVariable": "--smtc-ctrl-input-background-disabled",
+    "category": "background",
+    "values": {
+      "light": "#e2ddd9",
+      "dark": "#2a2f43"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/ctrl/input/background/disabled",
+    "minifiedVar": "--cls",
+    "usage": "Background color for controls/interactive elements \u2014 disabled state"
+  },
+  {
+    "cssVariable": "--smtc-background-card-on-flyout-default-hover",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/background/card/on-flyout/default/hover",
+    "minifiedVar": "--qsj",
+    "usage": "Background color for card components \u2014 hover state"
+  },
+  {
+    "cssVariable": "--smtc-background-card-on-flyout-default-pressed",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/background/card/on-flyout/default/pressed",
+    "minifiedVar": "--jch",
+    "usage": "Background color for card components \u2014 pressed state"
+  },
+  {
+    "cssVariable": "--smtc-background-card-on-primary-default-rest",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/background/card/on-primary/default/rest",
+    "minifiedVar": "--lpw",
+    "usage": "Background color for card components \u2014 rest state"
+  },
+  {
+    "cssVariable": "--smtc-background-card-on-primary-default-hover",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/background/card/on-primary/default/hover",
+    "minifiedVar": "--wsm",
+    "usage": "Background color for card components \u2014 hover state"
+  },
+  {
+    "cssVariable": "--smtc-background-card-on-primary-default-pressed",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/background/card/on-primary/default/pressed",
+    "minifiedVar": "--pmy",
+    "usage": "Background color for card components \u2014 pressed state"
+  },
+  {
+    "cssVariable": "--smtc-background-card-on-secondary-default-rest",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/background/card/on-secondary/default/rest",
+    "minifiedVar": "--ggw",
+    "usage": "Background color for card components \u2014 rest state"
+  },
+  {
+    "cssVariable": "--smtc-background-card-on-secondary-default-hover",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/background/card/on-secondary/default/hover",
+    "minifiedVar": "--rlp",
+    "usage": "Background color for card components \u2014 hover state"
+  },
+  {
+    "cssVariable": "--smtc-background-ctrl-brand-rest",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/background/ctrl/brand/rest",
+    "minifiedVar": "--mfd",
+    "usage": "Background color for controls/interactive elements (brand/accent themed) \u2014 rest state"
+  },
+  {
+    "cssVariable": "--smtc-background-ctrl-outline-hover",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/background/ctrl/outline/hover",
+    "minifiedVar": "--xqh",
+    "usage": "Background color for controls/interactive elements \u2014 hover state"
+  },
+  {
+    "cssVariable": "--smtc-background-ctrl-outline-pressed",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/background/ctrl/outline/pressed",
+    "minifiedVar": "--hvc",
+    "usage": "Background color for controls/interactive elements \u2014 pressed state"
+  },
+  {
+    "cssVariable": "--smtc-background-ctrl-subtle-rest",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/background/ctrl/subtle/rest",
+    "minifiedVar": "--cnc",
+    "usage": "Background color for controls/interactive elements (subtle variant) \u2014 rest state"
+  },
+  {
+    "cssVariable": "--smtc-ctrl-fab-background-rest",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/ctrl/fab/background/rest",
+    "minifiedVar": "--jcn",
+    "usage": "Background color for controls/interactive elements \u2014 rest state"
+  },
+  {
+    "cssVariable": "--smtc-ctrl-fab-background-hover",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/ctrl/fab/background/hover",
+    "minifiedVar": "--ycd",
+    "usage": "Background color for controls/interactive elements \u2014 hover state"
+  },
+  {
+    "cssVariable": "--smtc-ctrl-fab-background-pressed",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/ctrl/fab/background/pressed",
+    "minifiedVar": "--dwt",
+    "usage": "Background color for controls/interactive elements \u2014 pressed state"
+  },
+  {
+    "cssVariable": "--smtc-status-brand-background",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/status/brand/background",
+    "minifiedVar": "--tdh",
+    "usage": "Background color (brand/accent themed)"
+  },
+  {
+    "cssVariable": "--smtc-status-informative-tint-background",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/status/informative/tint/background",
+    "minifiedVar": "--kpk",
+    "usage": "Background color"
+  },
+  {
+    "cssVariable": "--mai-smtc-corner-card-default",
+    "category": "corner-radius",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "mai/smtc/corner/card/default",
+    "usage": "Corner radius for card components"
+  },
+  {
+    "cssVariable": "--smtc-corner-ctrl-sm-rest",
+    "category": "corner-radius",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/corner/ctrl/sm/rest",
+    "minifiedVar": "--nxv",
+    "usage": "Corner radius for controls/interactive elements \u2014 rest state"
+  },
+  {
+    "cssVariable": "--smtc-corner-ctrl-sm-hover",
+    "category": "corner-radius",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/corner/ctrl/sm/hover",
+    "minifiedVar": "--cgq",
+    "usage": "Corner radius for controls/interactive elements \u2014 hover state"
+  },
+  {
+    "cssVariable": "--smtc-corner-ctrl-sm-pressed",
+    "category": "corner-radius",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/corner/ctrl/sm/pressed",
+    "minifiedVar": "--mgg",
+    "usage": "Corner radius for controls/interactive elements \u2014 pressed state"
+  },
+  {
+    "cssVariable": "--smtc-corner-ctrl-rest",
+    "category": "corner-radius",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/corner/ctrl/rest",
+    "minifiedVar": "--cpl",
+    "usage": "Corner radius for controls/interactive elements \u2014 rest state"
+  },
+  {
+    "cssVariable": "--smtc-corner-ctrl-hover",
+    "category": "corner-radius",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/corner/ctrl/hover",
+    "minifiedVar": "--hxf",
+    "usage": "Corner radius for controls/interactive elements \u2014 hover state"
+  },
+  {
+    "cssVariable": "--smtc-corner-ctrl-pressed",
+    "category": "corner-radius",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/corner/ctrl/pressed",
+    "minifiedVar": "--thc",
+    "usage": "Corner radius for controls/interactive elements \u2014 pressed state"
+  },
+  {
+    "cssVariable": "--smtc-corner-ctrl-lg-rest",
+    "category": "corner-radius",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/corner/ctrl/lg/rest",
+    "minifiedVar": "--gtk",
+    "usage": "Corner radius for controls/interactive elements \u2014 rest state"
+  },
+  {
+    "cssVariable": "--smtc-corner-ctrl-lg-hover",
+    "category": "corner-radius",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/corner/ctrl/lg/hover",
+    "minifiedVar": "--tdc",
+    "usage": "Corner radius for controls/interactive elements \u2014 hover state"
+  },
+  {
+    "cssVariable": "--smtc-corner-ctrl-lg-pressed",
+    "category": "corner-radius",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/corner/ctrl/lg/pressed",
+    "minifiedVar": "--ktd",
+    "usage": "Corner radius for controls/interactive elements \u2014 pressed state"
+  },
+  {
+    "cssVariable": "--smtc-corner-flyout-rest",
+    "category": "corner-radius",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/corner/flyout/rest",
+    "minifiedVar": "--nyf",
+    "usage": "Corner radius \u2014 rest state"
+  },
+  {
+    "cssVariable": "--smtc-ctrl-badge-corner",
+    "category": "corner-radius",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/ctrl/badge/corner",
+    "minifiedVar": "--ndc",
+    "usage": "Corner radius for controls/interactive elements"
+  },
+  {
+    "cssVariable": "--smtc-ctrl-badge-sm-corner",
+    "category": "corner-radius",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/ctrl/badge/sm/corner",
+    "minifiedVar": "--whh",
+    "usage": "Corner radius for controls/interactive elements"
+  },
+  {
+    "cssVariable": "--smtc-ctrl-choice-checkbox-corner",
+    "category": "corner-radius",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/ctrl/choice/checkbox/corner",
+    "minifiedVar": "--ggk",
+    "usage": "Corner radius for controls/interactive elements"
+  },
+  {
+    "cssVariable": "--smtc-ctrl-list-corner-rest",
+    "category": "corner-radius",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/ctrl/list/corner/rest",
+    "minifiedVar": "--rgd",
+    "usage": "Corner radius for controls/interactive elements \u2014 rest state"
+  },
+  {
+    "cssVariable": "--smtc-ctrl-list-corner-hover",
+    "category": "corner-radius",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/ctrl/list/corner/hover",
+    "minifiedVar": "--wmx",
+    "usage": "Corner radius for controls/interactive elements \u2014 hover state"
+  },
+  {
+    "cssVariable": "--smtc-ctrl-list-corner-pressed",
+    "category": "corner-radius",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/ctrl/list/corner/pressed",
+    "minifiedVar": "--fvx",
+    "usage": "Corner radius for controls/interactive elements \u2014 pressed state"
+  },
+  {
+    "cssVariable": "--smtc-background-card-on-primary-alt-rest",
+    "category": "background",
+    "values": {
+      "light": "#d7d7d7",
+      "dark": "#2c3459"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/background/card/on-primary/alt/rest",
+    "minifiedVar": "--hpx",
+    "usage": "Background color for card components \u2014 rest state"
+  },
+  {
+    "cssVariable": "--smtc-background-card-on-primary-alt-hover",
+    "category": "background",
+    "values": {
+      "light": "#c1c1c1",
+      "dark": "#333c62"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/background/card/on-primary/alt/hover",
+    "minifiedVar": "--ltq",
+    "usage": "Background color for card components \u2014 hover state"
+  },
+  {
+    "cssVariable": "--smtc-background-card-on-primary-alt-pressed",
+    "category": "background",
+    "values": {
+      "light": "#ababab",
+      "dark": "#37416b"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/background/card/on-primary/alt/pressed",
+    "minifiedVar": "--rbg",
+    "usage": "Background color for card components \u2014 pressed state"
+  },
+  {
+    "cssVariable": "--smtc-background-card-on-secondary-alt-rest",
+    "category": "background",
+    "values": {
+      "light": "#d7d7d7",
+      "dark": "#2c3459"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/background/card/on-secondary/alt/rest",
+    "minifiedVar": "--cpw",
+    "usage": "Background color for card components \u2014 rest state"
+  },
+  {
+    "cssVariable": "--smtc-background-ctrl-active-brand-rest",
+    "category": "background",
+    "values": {
+      "light": "#322d29",
+      "dark": "#d9dffb"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/background/ctrl/active-brand/rest",
+    "minifiedVar": "--xqr",
+    "usage": "Background color for controls/interactive elements (brand/accent themed) \u2014 rest state"
+  },
+  {
+    "cssVariable": "--smtc-background-ctrl-active-brand-hover",
+    "category": "background",
+    "values": {
+      "light": "#272320",
+      "dark": "#bec6e8"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/background/ctrl/active-brand/hover",
+    "minifiedVar": "--lwd",
+    "usage": "Background color for controls/interactive elements (brand/accent themed) \u2014 hover state"
+  },
+  {
+    "cssVariable": "--smtc-background-ctrl-active-brand-pressed",
+    "category": "background",
+    "values": {
+      "light": "#322d29",
+      "dark": "#aeb5d4"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/background/ctrl/active-brand/pressed",
+    "minifiedVar": "--fnm",
+    "usage": "Background color for controls/interactive elements (brand/accent themed) \u2014 pressed state"
+  },
+  {
+    "cssVariable": "--smtc-background-ctrl-brand-hover",
+    "category": "background",
+    "values": {
+      "light": "#3b50b2",
+      "dark": "#bec6e8"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/background/ctrl/brand/hover",
+    "minifiedVar": "--hjw",
+    "usage": "Background color for controls/interactive elements (brand/accent themed) \u2014 hover state"
+  },
+  {
+    "cssVariable": "--smtc-background-ctrl-brand-pressed",
+    "category": "background",
+    "values": {
+      "light": "#2f408e",
+      "dark": "#aeb5d4"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/background/ctrl/brand/pressed",
+    "minifiedVar": "--lgj",
+    "usage": "Background color for controls/interactive elements (brand/accent themed) \u2014 pressed state"
+  },
+  {
+    "cssVariable": "--smtc-background-ctrl-neutral-disabled",
+    "category": "background",
+    "values": {
+      "light": "#d7d7d7",
+      "dark": "#2c3459"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/background/ctrl/neutral/disabled",
+    "minifiedVar": "--lxh",
+    "usage": "Background color for controls/interactive elements (neutral) \u2014 disabled state"
+  },
+  {
+    "cssVariable": "--smtc-background-ctrl-neutral-hover",
+    "category": "background",
+    "values": {
+      "light": "#c9cfed",
+      "dark": "#333c62"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/background/ctrl/neutral/hover",
+    "minifiedVar": "--sqf",
+    "usage": "Background color for controls/interactive elements (neutral) \u2014 hover state"
+  },
+  {
+    "cssVariable": "--smtc-background-ctrl-neutral-pressed",
+    "category": "background",
+    "values": {
+      "light": "#b8bfe1",
+      "dark": "#37416b"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/background/ctrl/neutral/pressed",
+    "minifiedVar": "--qdm",
+    "usage": "Background color for controls/interactive elements (neutral) \u2014 pressed state"
+  },
+  {
+    "cssVariable": "--smtc-ctrl-lite-filter-background-selected",
+    "category": "background",
+    "values": {
+      "light": "#f8f4f1",
+      "dark": "#232738"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/ctrl/lite-filter/background/selected",
+    "minifiedVar": "--xlq",
+    "usage": "Background color for controls/interactive elements \u2014 selected state"
+  },
+  {
+    "cssVariable": "--smtc-foreground-content-neutral-primary",
+    "category": "foreground",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/foreground/content/neutral/primary",
+    "minifiedVar": "--sjd",
+    "usage": "Foreground/text color for content areas (neutral)"
+  },
+  {
+    "cssVariable": "--smtc-foreground-ctrl-neutral-primary-rest",
+    "category": "foreground",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/foreground/ctrl/neutral/primary/rest",
+    "minifiedVar": "--wwk",
+    "usage": "Foreground/text color for controls/interactive elements (neutral) \u2014 rest state"
+  },
+  {
+    "cssVariable": "--smtc-foreground-content-neutral-secondary",
+    "category": "foreground",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/foreground/content/neutral/secondary",
+    "minifiedVar": "--tjd",
+    "usage": "Foreground/text color for content areas (neutral)"
+  },
+  {
+    "cssVariable": "--smtc-foreground-ctrl-neutral-primary-disabled",
+    "category": "foreground",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/foreground/ctrl/neutral/primary/disabled",
+    "minifiedVar": "--gpp",
+    "usage": "Foreground/text color for controls/interactive elements (neutral) \u2014 disabled state"
+  },
+  {
+    "cssVariable": "--smtc-ctrl-link-foreground-brand-hover",
+    "category": "foreground",
+    "values": {
+      "light": "#191919",
+      "dark": "#bec6e8"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/ctrl/link/foreground/brand/hover",
+    "minifiedVar": "--xlf",
+    "usage": "Foreground/text color for controls/interactive elements (brand/accent themed) \u2014 hover state"
+  },
+  {
+    "cssVariable": "--smtc-ctrl-link-foreground-brand-pressed",
+    "category": "foreground",
+    "values": {
+      "light": "#141414",
+      "dark": "#aeb5d4"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/ctrl/link/foreground/brand/pressed",
+    "minifiedVar": "--kkh",
+    "usage": "Foreground/text color for controls/interactive elements (brand/accent themed) \u2014 pressed state"
+  },
+  {
+    "cssVariable": "--smtc-ctrl-progress-background-filled",
+    "category": "background",
+    "values": {
+      "light": "#0159ba",
+      "dark": "#d9dffb"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/ctrl/progress/background/filled",
+    "minifiedVar": "--bmk",
+    "usage": "Background color for controls/interactive elements"
+  },
+  {
+    "cssVariable": "--smtc-foreground-content-brand-primary",
+    "category": "foreground",
+    "values": {
+      "light": "#0159ba",
+      "dark": "#d9dffb"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/foreground/content/brand/primary",
+    "minifiedVar": "--rrb",
+    "usage": "Foreground/text color for content areas (brand/accent themed)"
+  },
+  {
+    "cssVariable": "--smtc-foreground-ctrl-active-brand-rest",
+    "category": "foreground",
+    "values": {
+      "light": "#3c51b4",
+      "dark": "#d9dffb"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/foreground/ctrl/active-brand/rest",
+    "minifiedVar": "--dny",
+    "usage": "Foreground/text color for controls/interactive elements (brand/accent themed) \u2014 rest state"
+  },
+  {
+    "cssVariable": "--smtc-foreground-ctrl-active-brand-hover",
+    "category": "foreground",
+    "values": {
+      "light": "#191919",
+      "dark": "#bec6e8"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/foreground/ctrl/active-brand/hover",
+    "minifiedVar": "--hlm",
+    "usage": "Foreground/text color for controls/interactive elements (brand/accent themed) \u2014 hover state"
+  },
+  {
+    "cssVariable": "--smtc-foreground-ctrl-active-brand-pressed",
+    "category": "foreground",
+    "values": {
+      "light": "#141414",
+      "dark": "#aeb5d4"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/foreground/ctrl/active-brand/pressed",
+    "minifiedVar": "--tsv",
+    "usage": "Foreground/text color for controls/interactive elements (brand/accent themed) \u2014 pressed state"
+  },
+  {
+    "cssVariable": "--smtc-foreground-ctrl-icon-on-neutral-rest",
+    "category": "foreground",
+    "values": {
+      "light": "#0159ba",
+      "dark": "#d9dffb"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/foreground/ctrl/icon/on-neutral/rest",
+    "minifiedVar": "--hxv",
+    "usage": "Foreground/text color for controls/interactive elements (neutral) \u2014 rest state"
+  },
+  {
+    "cssVariable": "--smtc-foreground-ctrl-icon-on-neutral-hover",
+    "category": "foreground",
+    "values": {
+      "light": "#191919",
+      "dark": "#bec6e8"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/foreground/ctrl/icon/on-neutral/hover",
+    "minifiedVar": "--brq",
+    "usage": "Foreground/text color for controls/interactive elements (neutral) \u2014 hover state"
+  },
+  {
+    "cssVariable": "--smtc-foreground-ctrl-icon-on-neutral-pressed",
+    "category": "foreground",
+    "values": {
+      "light": "#141414",
+      "dark": "#aeb5d4"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/foreground/ctrl/icon/on-neutral/pressed",
+    "minifiedVar": "--spw",
+    "usage": "Foreground/text color for controls/interactive elements (neutral) \u2014 pressed state"
+  },
+  {
+    "cssVariable": "--smtc-foreground-ctrl-icon-on-outline-rest",
+    "category": "foreground",
+    "values": {
+      "light": "#0159ba",
+      "dark": "#d9dffb"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/foreground/ctrl/icon/on-outline/rest",
+    "minifiedVar": "--lym",
+    "usage": "Foreground/text color for controls/interactive elements \u2014 rest state"
+  },
+  {
+    "cssVariable": "--smtc-foreground-ctrl-icon-on-outline-hover",
+    "category": "foreground",
+    "values": {
+      "light": "#191919",
+      "dark": "#bec6e8"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/foreground/ctrl/icon/on-outline/hover",
+    "minifiedVar": "--gcv",
+    "usage": "Foreground/text color for controls/interactive elements \u2014 hover state"
+  },
+  {
+    "cssVariable": "--smtc-foreground-ctrl-icon-on-outline-pressed",
+    "category": "foreground",
+    "values": {
+      "light": "#141414",
+      "dark": "#aeb5d4"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/foreground/ctrl/icon/on-outline/pressed",
+    "minifiedVar": "--mkl",
+    "usage": "Foreground/text color for controls/interactive elements \u2014 pressed state"
+  },
+  {
+    "cssVariable": "--smtc-foreground-ctrl-icon-on-subtle-rest",
+    "category": "foreground",
+    "values": {
+      "light": "#0159ba",
+      "dark": "#d9dffb"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/foreground/ctrl/icon/on-subtle/rest",
+    "minifiedVar": "--hgk",
+    "usage": "Foreground/text color for controls/interactive elements (subtle variant) \u2014 rest state"
+  },
+  {
+    "cssVariable": "--smtc-foreground-ctrl-icon-on-subtle-hover",
+    "category": "foreground",
+    "values": {
+      "light": "#191919",
+      "dark": "#bec6e8"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/foreground/ctrl/icon/on-subtle/hover",
+    "minifiedVar": "--vfb",
+    "usage": "Foreground/text color for controls/interactive elements (subtle variant) \u2014 hover state"
+  },
+  {
+    "cssVariable": "--smtc-foreground-ctrl-icon-on-subtle-pressed",
+    "category": "foreground",
+    "values": {
+      "light": "#141414",
+      "dark": "#aeb5d4"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/foreground/ctrl/icon/on-subtle/pressed",
+    "minifiedVar": "--dhm",
+    "usage": "Foreground/text color for controls/interactive elements (subtle variant) \u2014 pressed state"
+  },
+  {
+    "cssVariable": "--smtc-foreground-ctrl-neutral-primary-hover",
+    "category": "foreground",
+    "values": {
+      "light": "#191919",
+      "dark": "#bec6e8"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/foreground/ctrl/neutral/primary/hover",
+    "minifiedVar": "--jcm",
+    "usage": "Foreground/text color for controls/interactive elements (neutral) \u2014 hover state"
+  },
+  {
+    "cssVariable": "--smtc-foreground-ctrl-neutral-primary-pressed",
+    "category": "foreground",
+    "values": {
+      "light": "#141414",
+      "dark": "#aeb5d4"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/foreground/ctrl/neutral/primary/pressed",
+    "minifiedVar": "--jgw",
+    "usage": "Foreground/text color for controls/interactive elements (neutral) \u2014 pressed state"
+  },
+  {
+    "cssVariable": "--smtc-foreground-ctrl-on-active-brand-rest",
+    "category": "foreground",
+    "values": {
+      "light": "#fffbf8",
+      "dark": "#3c51b4"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/foreground/ctrl/on-active-brand/rest",
+    "minifiedVar": "--jmt",
+    "usage": "Foreground/text color for controls/interactive elements (brand/accent themed) \u2014 rest state"
+  },
+  {
+    "cssVariable": "--smtc-foreground-ctrl-on-active-brand-hover",
+    "category": "foreground",
+    "values": {
+      "light": "#fffbf8",
+      "dark": "#162fa8"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/foreground/ctrl/on-active-brand/hover",
+    "minifiedVar": "--flv",
+    "usage": "Foreground/text color for controls/interactive elements (brand/accent themed) \u2014 hover state"
+  },
+  {
+    "cssVariable": "--smtc-foreground-ctrl-on-active-brand-pressed",
+    "category": "foreground",
+    "values": {
+      "light": "#fffbf8",
+      "dark": "#10247f"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/foreground/ctrl/on-active-brand/pressed",
+    "minifiedVar": "--qxx",
+    "usage": "Foreground/text color for controls/interactive elements (brand/accent themed) \u2014 pressed state"
+  },
+  {
+    "cssVariable": "--smtc-foreground-ctrl-on-brand-rest",
+    "category": "foreground",
+    "values": {
+      "light": "#fff",
+      "dark": "#3c51b4"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/foreground/ctrl/on-brand/rest",
+    "minifiedVar": "--svv",
+    "usage": "Foreground/text color for controls/interactive elements (brand/accent themed) \u2014 rest state"
+  },
+  {
+    "cssVariable": "--smtc-foreground-ctrl-on-brand-hover",
+    "category": "foreground",
+    "values": {
+      "light": "#fff",
+      "dark": "#162fa8"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/foreground/ctrl/on-brand/hover",
+    "minifiedVar": "--rtq",
+    "usage": "Foreground/text color for controls/interactive elements (brand/accent themed) \u2014 hover state"
+  },
+  {
+    "cssVariable": "--smtc-foreground-ctrl-on-brand-pressed",
+    "category": "foreground",
+    "values": {
+      "light": "#fff",
+      "dark": "#10247f"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/foreground/ctrl/on-brand/pressed",
+    "minifiedVar": "--hvj",
+    "usage": "Foreground/text color for controls/interactive elements (brand/accent themed) \u2014 pressed state"
+  },
+  {
+    "cssVariable": "--smtc-foreground-ctrl-on-outline-rest",
+    "category": "foreground",
+    "values": {
+      "light": "#3c51b4",
+      "dark": "#d9dffb"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/foreground/ctrl/on-outline/rest",
+    "minifiedVar": "--svw",
+    "usage": "Foreground/text color for controls/interactive elements \u2014 rest state"
+  },
+  {
+    "cssVariable": "--smtc-foreground-ctrl-on-outline-hover",
+    "category": "foreground",
+    "values": {
+      "light": "#191919",
+      "dark": "#bec6e8"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/foreground/ctrl/on-outline/hover",
+    "minifiedVar": "--bxt",
+    "usage": "Foreground/text color for controls/interactive elements \u2014 hover state"
+  },
+  {
+    "cssVariable": "--smtc-foreground-ctrl-on-outline-pressed",
+    "category": "foreground",
+    "values": {
+      "light": "#141414",
+      "dark": "#aeb5d4"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/foreground/ctrl/on-outline/pressed",
+    "minifiedVar": "--dnv",
+    "usage": "Foreground/text color for controls/interactive elements \u2014 pressed state"
+  },
+  {
+    "cssVariable": "--smtc-foreground-ctrl-on-subtle-rest",
+    "category": "foreground",
+    "values": {
+      "light": "#0159ba",
+      "dark": "#d9dffb"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/foreground/ctrl/on-subtle/rest",
+    "minifiedVar": "--hwg",
+    "usage": "Foreground/text color for controls/interactive elements (subtle variant) \u2014 rest state"
+  },
+  {
+    "cssVariable": "--smtc-foreground-ctrl-on-subtle-hover",
+    "category": "foreground",
+    "values": {
+      "light": "#191919",
+      "dark": "#bec6e8"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/foreground/ctrl/on-subtle/hover",
+    "minifiedVar": "--kmb",
+    "usage": "Foreground/text color for controls/interactive elements (subtle variant) \u2014 hover state"
+  },
+  {
+    "cssVariable": "--smtc-foreground-ctrl-on-subtle-pressed",
+    "category": "foreground",
+    "values": {
+      "light": "#141414",
+      "dark": "#aeb5d4"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/foreground/ctrl/on-subtle/pressed",
+    "minifiedVar": "--lnl",
+    "usage": "Foreground/text color for controls/interactive elements (subtle variant) \u2014 pressed state"
+  },
+  {
+    "cssVariable": "--smtc-foreground-ctrl-on-transparent-rest",
+    "category": "foreground",
+    "values": {
+      "light": "#0159ba",
+      "dark": "#d9dffb"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/foreground/ctrl/on-transparent/rest",
+    "minifiedVar": "--mny",
+    "usage": "Foreground/text color for controls/interactive elements \u2014 rest state"
+  },
+  {
+    "cssVariable": "--smtc-foreground-ctrl-on-transparent-hover",
+    "category": "foreground",
+    "values": {
+      "light": "#191919",
+      "dark": "#bec6e8"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/foreground/ctrl/on-transparent/hover",
+    "minifiedVar": "--tkj",
+    "usage": "Foreground/text color for controls/interactive elements \u2014 hover state"
+  },
+  {
+    "cssVariable": "--smtc-foreground-ctrl-on-transparent-pressed",
+    "category": "foreground",
+    "values": {
+      "light": "#141414",
+      "dark": "#aeb5d4"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/foreground/ctrl/on-transparent/pressed",
+    "minifiedVar": "--hhv",
+    "usage": "Foreground/text color for controls/interactive elements \u2014 pressed state"
+  },
+  {
+    "cssVariable": "--smtc-status-brand-foreground",
+    "category": "foreground",
+    "values": {
+      "light": "#fff",
+      "dark": "#3c51b4"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/status/brand/foreground",
+    "minifiedVar": "--kfx",
+    "usage": "Foreground/text color (brand/accent themed)"
+  },
+  {
+    "cssVariable": "--smtc-status-brand-tint-foreground",
+    "category": "foreground",
+    "values": {
+      "light": "#3c51b4",
+      "dark": "#d9dffb"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/status/brand/tint/foreground",
+    "minifiedVar": "--ybd",
+    "usage": "Foreground/text color (brand/accent themed)"
+  },
+  {
+    "cssVariable": "--smtc-background-ctrl-neutral-rest",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/background/ctrl/neutral/rest",
+    "minifiedVar": "--knd",
+    "usage": "Background color for controls/interactive elements (neutral) \u2014 rest state"
+  },
+  {
+    "cssVariable": "--smtc-ctrl-tooltip-background",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/ctrl/tooltip/background",
+    "minifiedVar": "--tvh",
+    "usage": "Background color for controls/interactive elements"
+  },
+  {
+    "cssVariable": "--smtc-ctrl-input-background-rest",
+    "category": "background",
+    "values": {
+      "light": "#f7f7f7",
+      "dark": "#1e1f24"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/ctrl/input/background/rest",
+    "minifiedVar": "--pnq",
+    "usage": "Background color for controls/interactive elements \u2014 rest state"
+  },
+  {
+    "cssVariable": "--smtc-ctrl-input-background-pressed",
+    "category": "background",
+    "values": {
+      "light": "rgba(255, 255, 255, 0)",
+      "dark": "rgba(255, 255, 255, 0.1)"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/ctrl/input/background/pressed",
+    "minifiedVar": "--kvw",
+    "usage": "Background color for controls/interactive elements \u2014 pressed state"
+  },
+  {
+    "cssVariable": "--smtc-ctrl-input-background-error",
+    "category": "background",
+    "values": {
+      "light": "rgba(255, 255, 255, 0)",
+      "dark": "rgba(255, 255, 255, 0.1)"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/ctrl/input/background/error",
+    "minifiedVar": "--nvp",
+    "usage": "Background color for controls/interactive elements"
+  },
+  {
+    "cssVariable": "--smtc-ctrl-badge-gap",
+    "category": "gap",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/ctrl/badge/gap",
+    "minifiedVar": "--wkm",
+    "usage": "Gap spacing for controls/interactive elements"
+  },
+  {
+    "cssVariable": "--smtc-ctrl-badge-padding",
+    "category": "padding",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/ctrl/badge/padding",
+    "minifiedVar": "--xns",
+    "usage": "Padding for controls/interactive elements"
+  },
+  {
+    "cssVariable": "--smtc-ctrl-badge-sm-text-padding-top",
+    "category": "padding",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/ctrl/badge/sm/text/padding/top",
+    "minifiedVar": "--cvf",
+    "usage": "Padding for controls/interactive elements"
+  },
+  {
+    "cssVariable": "--smtc-ctrl-badge-sm-text-padding-bottom",
+    "category": "padding",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/ctrl/badge/sm/text/padding/bottom",
+    "minifiedVar": "--ggf",
+    "usage": "Padding for controls/interactive elements"
+  },
+  {
+    "cssVariable": "--smtc-gap-between-content-xxx-small",
+    "category": "gap",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/gap/between/content/xxx-small",
+    "minifiedVar": "--mvp",
+    "usage": "Gap spacing for content areas"
+  },
+  {
+    "cssVariable": "--smtc-gap-between-content-xx-small",
+    "category": "gap",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/gap/between/content/xx-small",
+    "minifiedVar": "--rcb",
+    "usage": "Gap spacing for content areas"
+  },
+  {
+    "cssVariable": "--smtc-gap-between-content-x-small",
+    "category": "gap",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/gap/between/content/x-small",
+    "minifiedVar": "--xsr",
+    "usage": "Gap spacing for content areas"
+  },
+  {
+    "cssVariable": "--smtc-gap-between-content-small",
+    "category": "gap",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/gap/between/content/small",
+    "minifiedVar": "--qnb",
+    "usage": "Gap spacing for content areas"
+  },
+  {
+    "cssVariable": "--smtc-gap-between-content-medium",
+    "category": "gap",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/gap/between/content/medium",
+    "minifiedVar": "--hns",
+    "usage": "Gap spacing for content areas"
+  },
+  {
+    "cssVariable": "--smtc-gap-between-content-x-large",
+    "category": "gap",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/gap/between/content/x-large",
+    "minifiedVar": "--bkf",
+    "usage": "Gap spacing for content areas"
+  },
+  {
+    "cssVariable": "--smtc-gap-between-content-xx-large",
+    "category": "gap",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/gap/between/content/xx-large",
+    "minifiedVar": "--vss",
+    "usage": "Gap spacing for content areas"
+  },
+  {
+    "cssVariable": "--smtc-gap-inside-ctrl-to-secondary-icon",
+    "category": "gap",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/gap/inside/ctrl/to-secondary-icon",
+    "minifiedVar": "--fdx",
+    "usage": "Gap spacing for controls/interactive elements"
+  },
+  {
+    "cssVariable": "--smtc-padding-content-xx-large",
+    "category": "padding",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/padding/content/xx-large",
+    "minifiedVar": "--dyd",
+    "usage": "Padding for content areas"
+  },
+  {
+    "cssVariable": "--smtc-padding-content-xxx-large",
+    "category": "padding",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/padding/content/xxx-large",
+    "minifiedVar": "--dqw",
+    "usage": "Padding for content areas"
+  },
+  {
+    "cssVariable": "--smtc-padding-ctrl-horizontal-default",
+    "category": "padding",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/padding/ctrl/horizontal-default",
+    "minifiedVar": "--bvr",
+    "usage": "Padding for controls/interactive elements"
+  },
+  {
+    "cssVariable": "--smtc-padding-ctrl-lg-horizontal-default",
+    "category": "padding",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/padding/ctrl-lg/horizontal-default",
+    "minifiedVar": "--qwd",
+    "usage": "Padding for controls/interactive elements"
+  },
+  {
+    "cssVariable": "--smtc-padding-ctrl-lg-text-bottom",
+    "category": "padding",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/padding/ctrl-lg/text-bottom",
+    "minifiedVar": "--dqr",
+    "usage": "Padding for controls/interactive elements"
+  },
+  {
+    "cssVariable": "--smtc-padding-ctrl-lg-text-top",
+    "category": "padding",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/padding/ctrl-lg/text-top",
+    "minifiedVar": "--qbw",
+    "usage": "Padding for controls/interactive elements"
+  },
+  {
+    "cssVariable": "--smtc-padding-ctrl-sm-horizontal-default",
+    "category": "padding",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/padding/ctrl-sm/horizontal-default",
+    "minifiedVar": "--kcm",
+    "usage": "Padding for controls/interactive elements"
+  },
+  {
+    "cssVariable": "--smtc-padding-ctrl-sm-text-bottom",
+    "category": "padding",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/padding/ctrl-sm/text-bottom",
+    "minifiedVar": "--hjm",
+    "usage": "Padding for controls/interactive elements"
+  },
+  {
+    "cssVariable": "--smtc-padding-ctrl-sm-text-top",
+    "category": "padding",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/padding/ctrl-sm/text-top",
+    "minifiedVar": "--dyq",
+    "usage": "Padding for controls/interactive elements"
+  },
+  {
+    "cssVariable": "--smtc-padding-ctrl-text-bottom",
+    "category": "padding",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/padding/ctrl/text-bottom",
+    "minifiedVar": "--qdd",
+    "usage": "Padding for controls/interactive elements"
+  },
+  {
+    "cssVariable": "--smtc-padding-ctrl-text-side",
+    "category": "padding",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/padding/ctrl/text-side",
+    "minifiedVar": "--mrd",
+    "usage": "Padding for controls/interactive elements"
+  },
+  {
+    "cssVariable": "--smtc-padding-ctrl-text-top",
+    "category": "padding",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/padding/ctrl/text-top",
+    "minifiedVar": "--brb",
+    "usage": "Padding for controls/interactive elements"
+  },
+  {
+    "cssVariable": "--smtc-ctrl-choice-base-stroke-hover",
+    "category": "stroke",
+    "values": {
+      "light": "#efeae7",
+      "dark": "#bec6e8"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/ctrl/choice/base/stroke/hover",
+    "minifiedVar": "--ydc",
+    "usage": "Border/stroke color for controls/interactive elements \u2014 hover state"
+  },
+  {
+    "cssVariable": "--smtc-ctrl-input-stroke-hover",
+    "category": "stroke",
+    "values": {
+      "light": "#efeae7",
+      "dark": "#bec6e8"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/ctrl/input/stroke/hover",
+    "minifiedVar": "--jsr",
+    "usage": "Border/stroke color for controls/interactive elements \u2014 hover state"
+  },
+  {
+    "cssVariable": "--smtc-ctrl-input-stroke-pressed",
+    "category": "stroke",
+    "values": {
+      "light": "#e2ddd9",
+      "dark": "#aeb5d4"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/ctrl/input/stroke/pressed",
+    "minifiedVar": "--bbc",
+    "usage": "Border/stroke color for controls/interactive elements \u2014 pressed state"
+  },
+  {
+    "cssVariable": "--smtc-ctrl-input-stroke-selected",
+    "category": "stroke",
+    "values": {
+      "light": "#e2ddd9",
+      "dark": "#aeb5d4"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/ctrl/input/stroke/selected",
+    "minifiedVar": "--rnm",
+    "usage": "Border/stroke color for controls/interactive elements \u2014 selected state"
+  },
+  {
+    "cssVariable": "--smtc-stroke-ctrl-on-outline-rest",
+    "category": "stroke",
+    "values": {
+      "light": "#515151",
+      "dark": "#d9dffb"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/stroke/ctrl/on-outline/rest",
+    "minifiedVar": "--cbp",
+    "usage": "Border/stroke color for controls/interactive elements \u2014 rest state"
+  },
+  {
+    "cssVariable": "--smtc-stroke-ctrl-on-outline-hover",
+    "category": "stroke",
+    "values": {
+      "light": "#272320",
+      "dark": "#bec6e8"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/stroke/ctrl/on-outline/hover",
+    "minifiedVar": "--dhp",
+    "usage": "Border/stroke color for controls/interactive elements \u2014 hover state"
+  },
+  {
+    "cssVariable": "--smtc-stroke-ctrl-on-outline-pressed",
+    "category": "stroke",
+    "values": {
+      "light": "#313131",
+      "dark": "#aeb5d4"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/stroke/ctrl/on-outline/pressed",
+    "minifiedVar": "--pwc",
+    "usage": "Border/stroke color for controls/interactive elements \u2014 pressed state"
+  },
+  {
+    "cssVariable": "--smtc-stroke-width-ctrl-outline-rest",
+    "category": "stroke",
+    "values": {
+      "light": "#f8f4f1",
+      "dark": "#d9dffb"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/stroke-width/ctrl/outline/rest",
+    "minifiedVar": "--bcb",
+    "usage": "Border/stroke color for controls/interactive elements \u2014 rest state"
+  },
+  {
+    "cssVariable": "--smtc-stroke-width-ctrl-outline-hover",
+    "category": "stroke",
+    "values": {
+      "light": "#efeae7",
+      "dark": "#bec6e8"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/stroke-width/ctrl/outline/hover",
+    "minifiedVar": "--qmh",
+    "usage": "Border/stroke color for controls/interactive elements \u2014 hover state"
+  },
+  {
+    "cssVariable": "--smtc-ctrl-focus-inner-stroke",
+    "category": "stroke",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/ctrl/focus/inner/stroke",
+    "minifiedVar": "--qxd",
+    "usage": "Border/stroke color for controls/interactive elements \u2014 focus state"
+  },
+  {
+    "cssVariable": "--smtc-ctrl-focus-outer-stroke",
+    "category": "stroke",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/ctrl/focus/outer/stroke",
+    "minifiedVar": "--msm",
+    "usage": "Border/stroke color for controls/interactive elements \u2014 focus state"
+  },
+  {
+    "cssVariable": "--smtc-ctrl-progress-background-empty",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/ctrl/progress/background/empty",
+    "minifiedVar": "--kpq",
+    "usage": "Background color for controls/interactive elements"
+  },
+  {
+    "cssVariable": "--smtc-stroke-card-on-primary-rest",
+    "category": "stroke",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/stroke/card/on-primary/rest",
+    "minifiedVar": "--wgc",
+    "usage": "Border/stroke color for card components \u2014 rest state"
+  },
+  {
+    "cssVariable": "--smtc-stroke-ctrl-on-neutral-rest",
+    "category": "stroke",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/stroke/ctrl/on-neutral/rest",
+    "minifiedVar": "--nmc",
+    "usage": "Border/stroke color for controls/interactive elements (neutral) \u2014 rest state"
+  },
+  {
+    "cssVariable": "--smtc-stroke-divider-default",
+    "category": "stroke",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/stroke/divider/default",
+    "minifiedVar": "--nvr",
+    "usage": "Border/stroke color for dividers"
+  },
+  {
+    "cssVariable": "--smtc-background-web-page-primary",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/background/web-page/primary",
+    "minifiedVar": "--rcg",
+    "usage": "Background color for page background"
+  },
+  {
+    "cssVariable": "--smtc-corner-circular",
+    "category": "corner-radius",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/corner/circular",
+    "minifiedVar": "--dgm",
+    "usage": "Corner radius"
+  },
+  {
+    "cssVariable": "--smtc-ctrl-link-foreground-brand-rest",
+    "category": "foreground",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/ctrl/link/foreground/brand/rest",
+    "minifiedVar": "--hws",
+    "usage": "Foreground/text color for controls/interactive elements (brand/accent themed) \u2014 rest state"
+  },
+  {
+    "cssVariable": "--smtc-ctrl-rating-icon-foreground-filled",
+    "category": "foreground",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/ctrl/rating/icon/foreground/filled",
+    "minifiedVar": "--fyl",
+    "usage": "Foreground/text color for controls/interactive elements"
+  },
+  {
+    "cssVariable": "--smtc-status-danger-background",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/status/danger/background",
+    "minifiedVar": "--nfk",
+    "usage": "Background color (danger/error state)"
+  },
+  {
+    "cssVariable": "--smtc-status-danger-stroke",
+    "category": "stroke",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/status/danger/stroke",
+    "minifiedVar": "--fwt",
+    "usage": "Border/stroke color (danger/error state)"
+  },
+  {
+    "cssVariable": "--smtc-status-danger-tint-foreground",
+    "category": "foreground",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/status/danger/tint/foreground",
+    "minifiedVar": "--dbk",
+    "usage": "Foreground/text color (danger/error state)"
+  },
+  {
+    "cssVariable": "--smtc-status-success-background",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/status/success/background",
+    "minifiedVar": "--tdq",
+    "usage": "Background color (success state)"
+  },
+  {
+    "cssVariable": "--smtc-status-success-stroke",
+    "category": "stroke",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/status/success/stroke",
+    "minifiedVar": "--xmr",
+    "usage": "Border/stroke color (success state)"
+  },
+  {
+    "cssVariable": "--smtc-status-success-tint-foreground",
+    "category": "foreground",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/status/success/tint/foreground",
+    "minifiedVar": "--myb",
+    "usage": "Foreground/text color (success state)"
+  },
+  {
+    "cssVariable": "--smtc-status-warning-background",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/status/warning/background",
+    "minifiedVar": "--mnm",
+    "usage": "Background color (warning state)"
+  },
+  {
+    "cssVariable": "--smtc-status-warning-stroke",
+    "category": "stroke",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/status/warning/stroke",
+    "minifiedVar": "--vck",
+    "usage": "Border/stroke color (warning state)"
+  },
+  {
+    "cssVariable": "--smtc-status-warning-tint-foreground",
+    "category": "foreground",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/status/warning/tint/foreground",
+    "minifiedVar": "--qdy",
+    "usage": "Foreground/text color (warning state)"
+  },
+  {
+    "cssVariable": "--smtc-padding-ctrl-sm-horizontal-icon-only",
+    "category": "padding",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/padding/ctrl-sm/horizontal-icon-only",
+    "minifiedVar": "--cyy",
+    "usage": "Padding for controls/interactive elements"
+  },
+  {
+    "cssVariable": "--smtc-ctrl-list-background-selected-rest",
+    "category": "background",
+    "values": {
+      "light": "#f8f4f1",
+      "dark": "#232738"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/ctrl/list/background/selected-rest",
+    "minifiedVar": "--tcx",
+    "usage": "Background color for controls/interactive elements \u2014 rest state"
+  },
+  {
+    "cssVariable": "--smtc-ctrl-list-background-selected-hover",
+    "category": "background",
+    "values": {
+      "light": "#efeae7",
+      "dark": "#272b3e"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/ctrl/list/background/selected-hover",
+    "minifiedVar": "--wvb",
+    "usage": "Background color for controls/interactive elements \u2014 hover state"
+  },
+  {
+    "cssVariable": "--smtc-ctrl-list-background-selected-pressed",
+    "category": "background",
+    "values": {
+      "light": "#e2ddd9",
+      "dark": "#2a2f43"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/ctrl/list/background/selected-pressed",
+    "minifiedVar": "--qky",
+    "usage": "Background color for controls/interactive elements \u2014 pressed state"
+  },
+  {
+    "cssVariable": "--smtc-gap-inside-ctrl-lg-to-secondary-icon",
+    "category": "gap",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/gap/inside/ctrl/lg/to-secondary-icon",
+    "minifiedVar": "--gwg",
+    "usage": "Gap spacing for controls/interactive elements"
+  },
+  {
+    "cssVariable": "--smtc-ctrl-badge-sm-padding",
+    "category": "padding",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/ctrl/badge/sm/padding",
+    "minifiedVar": "--dfn",
+    "usage": "Padding for controls/interactive elements"
+  },
+  {
+    "cssVariable": "--smtc-ctrl-input-stroke-rest",
+    "category": "stroke",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/ctrl/input/stroke/rest",
+    "minifiedVar": "--lhj",
+    "usage": "Border/stroke color for controls/interactive elements \u2014 rest state"
+  },
+  {
+    "cssVariable": "--smtc-ctrl-choice-base-background-rest",
+    "category": "background",
+    "values": {
+      "light": "#f7f7f7",
+      "dark": "#1e1f24"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/ctrl/choice/base/background/rest",
+    "minifiedVar": "--wbw",
+    "usage": "Background color for controls/interactive elements \u2014 rest state"
+  },
+  {
+    "cssVariable": "--smtc-ctrl-choice-base-stroke-rest",
+    "category": "stroke",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/ctrl/choice/base/stroke/rest",
+    "minifiedVar": "--xpb",
+    "usage": "Border/stroke color for controls/interactive elements \u2014 rest state"
+  },
+  {
+    "cssVariable": "--smtc-ctrl-choice-base-background-hover",
+    "category": "background",
+    "values": {
+      "light": "#f7f7f7",
+      "dark": "#1e1f24"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/ctrl/choice/base/background/hover",
+    "minifiedVar": "--lsj",
+    "usage": "Background color for controls/interactive elements \u2014 hover state"
+  },
+  {
+    "cssVariable": "--smtc-background-smoke",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/background/smoke",
+    "minifiedVar": "--jxy",
+    "usage": "Background color"
+  },
+  {
+    "cssVariable": "--smtc-ctrl-tooltip-foreground",
+    "category": "foreground",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/ctrl/tooltip/foreground",
+    "minifiedVar": "--wpk",
+    "usage": "Foreground/text color for controls/interactive elements"
+  },
+  {
+    "cssVariable": "--bing-smtc-background-ctrl-subtle-rest",
+    "category": "background",
+    "values": {
+      "light": "#f8f4f1",
+      "dark": "#232738"
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/background/ctrl/subtle/rest",
+    "minifiedVar": "--nbn",
+    "usage": "Background color for controls/interactive elements (subtle variant) \u2014 rest state"
+  },
+  {
+    "cssVariable": "--bing-smtc-text-global-title2-strong",
+    "category": "typography",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "minifiedVar": "--dmw",
+    "usage": "Typography (strong variant)"
+  },
+  {
+    "cssVariable": "--smtc-duration-micro-01",
+    "category": "animation",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/duration/micro/01",
+    "minifiedVar": "--hvl",
+    "usage": "General purpose token"
+  },
+  {
+    "cssVariable": "--smtc-duration-short-01",
+    "category": "animation",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/duration/short/01",
+    "minifiedVar": "--ybt",
+    "usage": "General purpose token"
+  },
+  {
+    "cssVariable": "--smtc-duration-medium-02",
+    "category": "animation",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/duration/medium/02",
+    "minifiedVar": "--jcy",
+    "usage": "General purpose token"
+  },
+  {
+    "cssVariable": "--smtc-entrance-01",
+    "category": "other",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/entrance/01",
+    "minifiedVar": "--btq",
+    "usage": "General purpose token"
+  },
+  {
+    "cssVariable": "--smtc-duration-mega-01",
+    "category": "animation",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/duration/mega/01",
+    "minifiedVar": "--llj",
+    "usage": "General purpose token"
+  },
+  {
+    "cssVariable": "--smtc-entrance-02",
+    "category": "other",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/entrance/02",
+    "minifiedVar": "--cgx",
+    "usage": "General purpose token"
+  },
+  {
+    "cssVariable": "--smtc-exit-01",
+    "category": "other",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/exit/01",
+    "minifiedVar": "--kjm",
+    "usage": "General purpose token"
+  },
+  {
+    "cssVariable": "--smtc-persistent-01",
+    "category": "other",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/persistent/01",
+    "minifiedVar": "--bwj",
+    "usage": "General purpose token"
+  },
+  {
+    "cssVariable": "--smtc-elastic-01",
+    "category": "other",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/elastic/01",
+    "minifiedVar": "--wtj",
+    "usage": "General purpose token"
+  },
+  {
+    "cssVariable": "--smtc-linear",
+    "category": "other",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/linear",
+    "usage": "Constant speed \u2014 progress bars, spinner rotation"
+  },
+  {
+    "cssVariable": "--smtc-duration-short-02",
+    "category": "animation",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/duration/short/02",
+    "minifiedVar": "--sph",
+    "usage": "General purpose token"
+  },
+  {
+    "cssVariable": "--smtc-duration-medium-01",
+    "category": "animation",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/duration/medium/01",
+    "minifiedVar": "--vkh",
+    "usage": "General purpose token"
+  },
+  {
+    "cssVariable": "--bing-smtc-duration-long",
+    "category": "animation",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/duration/long",
+    "minifiedVar": "--yxc",
+    "usage": "General purpose token"
+  },
+  {
+    "cssVariable": "--bing-smtc-duration-longer",
+    "category": "animation",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/duration/longer",
+    "minifiedVar": "--chv",
+    "usage": "General purpose token"
+  },
+  {
+    "cssVariable": "--bing-smtc-animation-ease-default",
+    "category": "animation",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/animation/ease/default",
+    "minifiedVar": "--flr",
+    "usage": "General purpose token"
+  },
+  {
+    "cssVariable": "--bing-smtc-animation-ease-loading",
+    "category": "animation",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/animation/ease/loading",
+    "minifiedVar": "--sqn",
+    "usage": "General purpose token"
+  },
+  {
+    "cssVariable": "--smtc-shadows-avatar",
+    "category": "shadow",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/shadows/avatar",
+    "minifiedVar": "--ldk",
+    "usage": "General purpose token"
+  },
+  {
+    "cssVariable": "--smtc-shadows-switch-thumb",
+    "category": "shadow",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/shadows/switch-thumb",
+    "minifiedVar": "--qwv",
+    "usage": "General purpose token"
+  },
+  {
+    "cssVariable": "--smtc-shadows-button-neutral",
+    "category": "shadow",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/shadows/button/neutral",
+    "minifiedVar": "--jwf",
+    "usage": "(neutral)"
+  },
+  {
+    "cssVariable": "--smtc-shadows-button-brand",
+    "category": "shadow",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/shadows/button/brand",
+    "minifiedVar": "--lwq",
+    "usage": "(brand/accent themed)"
+  },
+  {
+    "cssVariable": "--bing-smtc-shadows-card",
+    "category": "shadow",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/shadows/card",
+    "minifiedVar": "--kgj",
+    "usage": "for card components"
+  },
+  {
+    "cssVariable": "--smtc-shadows-card",
+    "category": "shadow",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/shadows/card",
+    "minifiedVar": "--jmr",
+    "usage": "for card components"
+  },
+  {
+    "cssVariable": "--bing-smtc-shadows-card-hover-1",
+    "category": "shadow",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/shadows/card/hover-1",
+    "minifiedVar": "--mpm",
+    "usage": "for card components \u2014 hover state"
+  },
+  {
+    "cssVariable": "--bing-smtc-shadows-card-hover-strong-1",
+    "category": "shadow",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/shadows/card/hover/strong-1",
+    "minifiedVar": "--clv",
+    "usage": "for card components (strong variant) \u2014 hover state"
+  },
+  {
+    "cssVariable": "--bing-smtc-shadows-flyout",
+    "category": "shadow",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/shadows/flyout",
+    "minifiedVar": "--cch",
+    "usage": "General purpose token"
+  },
+  {
+    "cssVariable": "--bing-smtc-shadows-card-hover-3",
+    "category": "shadow",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/shadows/card/hover-3",
+    "minifiedVar": "--wwy",
+    "usage": "for card components \u2014 hover state"
+  },
+  {
+    "cssVariable": "--smtc-shadows-tooltip",
+    "category": "shadow",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/shadows/tooltip",
+    "minifiedVar": "--cjp",
+    "usage": "General purpose token"
+  },
+  {
+    "cssVariable": "--smtc-shadows-dialog",
+    "category": "shadow",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/shadows/dialog",
+    "minifiedVar": "--gff",
+    "usage": "General purpose token"
+  },
+  {
+    "cssVariable": "--smtc-shadows-flyout",
+    "category": "shadow",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/shadows/flyout",
+    "minifiedVar": "--ybw",
+    "usage": "General purpose token"
+  },
+  {
+    "cssVariable": "--smtc-shadows-floating-action-button-rest",
+    "category": "shadow",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/shadows/floating/action-button/rest",
+    "minifiedVar": "--tqv",
+    "usage": "\u2014 rest state"
+  },
+  {
+    "cssVariable": "--smtc-shadows-floating-action-button-hover",
+    "category": "shadow",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/shadows/floating/action-button/hover",
+    "minifiedVar": "--mnh",
+    "usage": "\u2014 hover state"
+  },
+  {
+    "cssVariable": "--smtc-shadows-floating-action-button-pressed",
+    "category": "shadow",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/shadows/floating/action-button/pressed",
+    "minifiedVar": "--vxh",
+    "usage": "\u2014 pressed state"
+  },
+  {
+    "cssVariable": "--bing-smtc-shadows-overlay",
+    "category": "shadow",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/shadows/overlay",
+    "minifiedVar": "--lsf",
+    "usage": "General purpose token"
+  },
+  {
+    "cssVariable": "--bing-smtc-foreground-content-white",
+    "category": "foreground",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/foreground/content/white",
+    "minifiedVar": "--xbq",
+    "usage": "Foreground/text color for content areas"
+  },
+  {
+    "cssVariable": "--smtc-background-ctrl-subtle-selected-rest",
+    "category": "background",
+    "values": {
+      "light": "#d7d7d7",
+      "dark": "#2c3459"
+    },
+    "isShipped": true,
+    "figmaName": "smtc/background/ctrl/subtle/selected-rest",
+    "minifiedVar": "--xnx",
+    "usage": "Background color for controls/interactive elements (subtle variant) \u2014 rest state"
+  },
+  {
+    "cssVariable": "--bing-smtc-ctrl-citation-on-card-background-pressed",
+    "category": "background",
+    "values": {
+      "light": "#ababab",
+      "dark": "#37416b"
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/ctrl/citation/on-card/background/pressed",
+    "minifiedVar": "--kky",
+    "usage": "Background color for controls/interactive elements \u2014 pressed state"
+  },
+  {
+    "cssVariable": "--bing-smtc-text-global-title-2-alt",
+    "category": "typography",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "minifiedVar": "--hdc",
+    "usage": "Typography"
+  },
+  {
+    "cssVariable": "--bing-smtc-text-global-body-2-alt-strong",
+    "category": "typography",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "minifiedVar": "--ynp",
+    "usage": "Typography (strong variant)"
+  },
+  {
+    "cssVariable": "--bing-smtc-text-style-default-regular-font-family",
+    "category": "font-family",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "text/style/default/regular/font-family",
+    "minifiedVar": "--lfd",
+    "usage": "Typography"
+  },
+  {
+    "cssVariable": "--smtc-gap-between-content-none",
+    "category": "gap",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/gap/between/content/none",
+    "minifiedVar": "--ylf",
+    "usage": "Gap spacing for content areas"
+  },
+  {
+    "cssVariable": "--smtc-gap-between-content-large",
+    "category": "gap",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/gap/between/content/large",
+    "minifiedVar": "--nwq",
+    "usage": "Gap spacing for content areas"
+  },
+  {
+    "cssVariable": "--smtc-padding-content-none",
+    "category": "padding",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/padding/content/none",
+    "minifiedVar": "--yxs",
+    "usage": "Padding for content areas"
+  },
+  {
+    "cssVariable": "--smtc-padding-content-xx-small",
+    "category": "padding",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/padding/content/xx-small",
+    "minifiedVar": "--fvj",
+    "usage": "Padding for content areas"
+  },
+  {
+    "cssVariable": "--smtc-padding-content-x-small",
+    "category": "padding",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/padding/content/x-small",
+    "minifiedVar": "--vsx",
+    "usage": "Padding for content areas"
+  },
+  {
+    "cssVariable": "--smtc-padding-content-small",
+    "category": "padding",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/padding/content/small",
+    "minifiedVar": "--wtr",
+    "usage": "Padding for content areas"
+  },
+  {
+    "cssVariable": "--smtc-padding-content-medium",
+    "category": "padding",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/padding/content/medium",
+    "minifiedVar": "--dhr",
+    "usage": "Padding for content areas"
+  },
+  {
+    "cssVariable": "--smtc-padding-content-large",
+    "category": "padding",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/padding/content/large",
+    "minifiedVar": "--ckc",
+    "usage": "Padding for content areas"
+  },
+  {
+    "cssVariable": "--smtc-padding-content-x-large",
+    "category": "padding",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/padding/content/x-large",
+    "minifiedVar": "--wmr",
+    "usage": "Padding for content areas"
+  },
+  {
+    "cssVariable": "--smtc-background-ctrl-outline-rest",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/background/ctrl/outline/rest",
+    "minifiedVar": "--nqh",
+    "usage": "Background color for controls/interactive elements \u2014 rest state"
+  },
+  {
+    "cssVariable": "--bing-smtc-shadows-search-box-rest",
+    "category": "shadow",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/shadows/search-box/rest",
+    "minifiedVar": "--qjx",
+    "usage": "\u2014 rest state"
+  },
+  {
+    "cssVariable": "--bing-smtc-shadows-search-box-hover",
+    "category": "shadow",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/shadows/search-box/hover",
+    "minifiedVar": "--fgm",
+    "usage": "\u2014 hover state"
+  },
+  {
+    "cssVariable": "--bing-smtc-shadows-search-box-active",
+    "category": "shadow",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "bing/smtc/shadows/search-box/active",
+    "minifiedVar": "--vkr",
+    "usage": "General purpose token"
+  },
+  {
+    "cssVariable": "--smtc-padding-content-xxx-small",
+    "category": "padding",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true
+  },
+  {
+    "cssVariable": "--smtc-stroke-divider-subtle",
+    "category": "stroke",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true
+  },
+  {
+    "cssVariable": "--smtc-stroke-divider-strong",
+    "category": "stroke",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true
+  },
+  {
+    "cssVariable": "--bing-smtc-background-scroll-rest",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true
+  },
+  {
+    "cssVariable": "--bing-smtc-ctrl-tab-in-card-background-hover",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true
+  },
+  {
+    "cssVariable": "--bing-smtc-ctrl-tab-in-card-background-pressed",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true
+  },
+  {
+    "cssVariable": "--bing-smtc-ctrl-tab-in-card-background-selected",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true
+  },
+  {
+    "cssVariable": "--smtc-background-card-on-flyout-default-rest",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/background/card/on-flyout/default/rest",
+    "usage": "Background color for card components \u2014 rest state"
+  },
+  {
+    "cssVariable": "--smtc-ctrl-lite-filter-foreground-selected",
+    "category": "foreground",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true,
+    "figmaName": "smtc/ctrl/lite-filter/foreground/selected",
+    "usage": "Foreground/text color for controls/interactive elements \u2014 selected state"
+  },
+  {
+    "cssVariable": "--bing-smtc-ctrl-highlight-ring-gradient-outline",
+    "category": "effects",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true
+  },
+  {
+    "cssVariable": "--bing-smtc-background-card-on-primary-alt-gradient",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true
+  },
+  {
+    "cssVariable": "--bing-smtc-background-ctrl-fade-on-primary-gradient",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true
+  },
+  {
+    "cssVariable": "--bing-smtc-background-ctrl-single-entity-image-overlay-background",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true
+  },
+  {
+    "cssVariable": "--bing-smtc-background-ctrl-fade-on-image-gradient",
+    "category": "background",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true
+  },
+  {
+    "cssVariable": "--bing-smtc-stroke-gradient-divider",
+    "category": "stroke",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true
+  },
+  {
+    "cssVariable": "--bing-static-corner-rounded-none",
+    "category": "corner-radius",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true
+  },
+  {
+    "cssVariable": "--bing-static-corner-rounded-xxx-small",
+    "category": "corner-radius",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true
+  },
+  {
+    "cssVariable": "--bing-static-corner-rounded-xx-small",
+    "category": "corner-radius",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true
+  },
+  {
+    "cssVariable": "--bing-static-corner-rounded-x-small",
+    "category": "corner-radius",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true
+  },
+  {
+    "cssVariable": "--bing-static-corner-rounded-small",
+    "category": "corner-radius",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true
+  },
+  {
+    "cssVariable": "--bing-static-corner-rounded-medium",
+    "category": "corner-radius",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true
+  },
+  {
+    "cssVariable": "--bing-static-corner-rounded-large",
+    "category": "corner-radius",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true
+  },
+  {
+    "cssVariable": "--bing-static-corner-rounded-x-large",
+    "category": "corner-radius",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true
+  },
+  {
+    "cssVariable": "--bing-static-corner-rounded-xx-large",
+    "category": "corner-radius",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true
+  },
+  {
+    "cssVariable": "--bing-smtc-text-global-body3-mono",
+    "category": "typography",
+    "values": {
+      "light": null,
+      "dark": null
+    },
+    "isShipped": true
+  }
+]

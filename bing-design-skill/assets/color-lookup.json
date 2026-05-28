@@ -1,0 +1,4696 @@
+{
+  "rgba(255, 255, 255, 1)": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--mai-smtc-ctrl-choice-switch-thumb-background-hover",
+        "figmaName": null,
+        "usage": "Background color for controls/interactive elements — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--mai-smtc-ctrl-choice-switch-thumb-background-rest",
+        "figmaName": null,
+        "usage": "Background color for controls/interactive elements — rest state",
+        "category": "background"
+      }
+    ]
+  },
+  "rgba(255, 255, 255, 0.6)": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--mai-smtc-ctrl-choice-switch-thumb-background-pressed",
+        "figmaName": null,
+        "usage": "Background color for controls/interactive elements — pressed state",
+        "category": "background"
+      }
+    ]
+  },
+  "#262626": {
+    "mode": "both",
+    "tokens": [
+      {
+        "token": "--smtc-bing-mm-smtc-background-card-on-always-dark-default",
+        "figmaName": "bing/mm/smtc/background/card/on-always-dark/default",
+        "usage": "Background color for card components",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-bing-mm-smtc-background-ctrl-on-action-bar-rest",
+        "figmaName": "bing/mm/smtc/background/ctrl/on-action-bar/rest",
+        "usage": "Background color for controls/interactive elements — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-bing-mm-smtc-background-ctrl-on-always-dark-rest",
+        "figmaName": "bing/mm/smtc/background/ctrl/on-always-dark/rest",
+        "usage": "Background color for controls/interactive elements — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-bing-mm-smtc-background-ctrl-on-always-dark-tab-rest",
+        "figmaName": "bing/mm/smtc/background/ctrl/on-always-dark/tab/rest",
+        "usage": "Background color for controls/interactive elements — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-bing-mm-smtc-background-ctrl-on-always-dark-tab-selected",
+        "figmaName": "bing/mm/smtc/background/ctrl/on-always-dark/tab/selected",
+        "usage": "Background color for controls/interactive elements — selected state",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-background-ctrl-subtle-hover",
+        "figmaName": "bing/smtc/background/ctrl/subtle/hover",
+        "usage": "Background color for controls/interactive elements (subtle variant) — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-scroll-rest",
+        "figmaName": "bing/smtc/background/scroll/rest",
+        "usage": "Background color — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-ctrl-favicon-background",
+        "figmaName": "bing/smtc/ctrl/favicon/background",
+        "usage": "Background color for controls/interactive elements",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-data-background-gray-subtle",
+        "figmaName": "bing/smtc/data/background/gray/subtle",
+        "usage": "Background color (subtle variant)",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-ctrl-citation-background-hover",
+        "figmaName": "mai/smtc/ctrl/citation/background/hover",
+        "usage": "Background color for controls/interactive elements — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-card-on-flyout-default-hover",
+        "figmaName": "smtc/background/card/on-flyout/default/hover",
+        "usage": "Background color for card components — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-card-on-primary-default-hover",
+        "figmaName": "smtc/background/card/on-primary/default/hover",
+        "usage": "Background color for card components — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-card-on-secondary-default-hover",
+        "figmaName": "smtc/background/card/on-secondary/default/hover",
+        "usage": "Background color for card components — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-ctrl-outline-hover",
+        "figmaName": "smtc/background/ctrl/outline/hover",
+        "usage": "Background color for controls/interactive elements — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-ctrl-fab-background-hover",
+        "figmaName": "smtc/ctrl/fab/background/hover",
+        "usage": "Background color for controls/interactive elements — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-status-informative-tint-background",
+        "figmaName": "smtc/status/informative/tint/background",
+        "usage": "Background color",
+        "category": "background"
+      }
+    ]
+  },
+  "#3a3a3a": {
+    "mode": "both",
+    "tokens": [
+      {
+        "token": "--smtc-bing-mm-smtc-background-ctrl-on-action-bar-hover",
+        "figmaName": "bing/mm/smtc/background/ctrl/on-action-bar/hover",
+        "usage": "Background color for controls/interactive elements — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-bing-mm-smtc-background-ctrl-on-always-dark-hover",
+        "figmaName": "bing/mm/smtc/background/ctrl/on-always-dark/hover",
+        "usage": "Background color for controls/interactive elements — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-data-foreground-gray-default",
+        "figmaName": "bing/smtc/data/foreground/gray/default",
+        "usage": "Foreground/text color",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-deco-stroke-gray-default",
+        "figmaName": "bing/smtc/deco/stroke/gray/default",
+        "usage": "Border/stroke color",
+        "category": "stroke"
+      },
+      {
+        "token": "--bing-smtc-data-background-gray-strong",
+        "figmaName": "bing/smtc/data/background/gray/strong",
+        "usage": "Background color (strong variant)",
+        "category": "background"
+      }
+    ]
+  },
+  "#b6b6b6": {
+    "mode": "both",
+    "tokens": [
+      {
+        "token": "--smtc-bing-mm-smtc-background-ctrl-on-action-bar-selected-rest",
+        "figmaName": "bing/mm/smtc/background/ctrl/on-action-bar/selected-rest",
+        "usage": "Background color for controls/interactive elements — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-bing-mm-smtc-foreground-ctrl-on-always-dark-action-bar-pressed",
+        "figmaName": "bing/mm/smtc/foreground/ctrl/on-always-dark/action-bar/pressed",
+        "usage": "Foreground/text color for controls/interactive elements — pressed state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-bing-mm-smtc-foreground-ctrl-on-always-dark-pressed",
+        "figmaName": "bing/mm/smtc/foreground/ctrl/on-always-dark/pressed",
+        "usage": "Foreground/text color for controls/interactive elements — pressed state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-bing-mm-smtc-foreground-ctrl-on-always-dark-tab-pressed",
+        "figmaName": "bing/mm/smtc/foreground/ctrl/on-always-dark/tab/pressed",
+        "usage": "Foreground/text color for controls/interactive elements — pressed state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-bing-mm-smtc-stroke-ctrl-on-always-dark-dropdown-pressed",
+        "figmaName": "bing/mm/smtc/stroke/ctrl/on-always-dark/dropdown/pressed",
+        "usage": "Border/stroke color for controls/interactive elements — pressed state",
+        "category": "stroke"
+      }
+    ]
+  },
+  "#292827": {
+    "mode": "both",
+    "tokens": [
+      {
+        "token": "--smtc-bing-mm-smtc-background-ctrl-on-always-dark-dropdown-hover",
+        "figmaName": "bing/mm/smtc/background/ctrl/on-always-dark/dropdown/hover",
+        "usage": "Background color for controls/interactive elements — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-bing-mm-smtc-background-ctrl-on-always-dark-dropdown-pressed",
+        "figmaName": "bing/mm/smtc/background/ctrl/on-always-dark/dropdown/pressed",
+        "usage": "Background color for controls/interactive elements — pressed state",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-background-container",
+        "figmaName": "bing/smtc/background/container",
+        "usage": "Background color",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-ctrl-neutral-rest",
+        "figmaName": "smtc/background/ctrl/neutral/rest",
+        "usage": "Background color for controls/interactive elements (neutral) — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-bing-ads-smtc-ad-slug-stroke",
+        "figmaName": "bing/ads/smtc/ad-slug/stroke",
+        "usage": "Border/stroke color",
+        "category": "stroke"
+      }
+    ]
+  },
+  "#1f1f1f": {
+    "mode": "both",
+    "tokens": [
+      {
+        "token": "--smtc-bing-mm-smtc-background-ctrl-on-always-dark-dropdown-rest",
+        "figmaName": "bing/mm/smtc/background/ctrl/on-always-dark/dropdown/rest",
+        "usage": "Background color for controls/interactive elements — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-background-ctrl-fade-on-primary-stop-1",
+        "figmaName": "bing/smtc/background/ctrl/fade/on-primary/stop-1",
+        "usage": "Background color for controls/interactive elements",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-card-on-primary-alt-disabled",
+        "figmaName": "smtc/background/card/on-primary/alt/disabled",
+        "usage": "Background color for card components — disabled state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-ctrl-choice-base-background-hover",
+        "figmaName": "smtc/ctrl/choice/base/background/hover",
+        "usage": "Background color for controls/interactive elements — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-ctrl-choice-base-background-rest",
+        "figmaName": "smtc/ctrl/choice/base/background/rest",
+        "usage": "Background color for controls/interactive elements — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-ctrl-input-background-rest",
+        "figmaName": "smtc/ctrl/input/background/rest",
+        "usage": "Background color for controls/interactive elements — rest state",
+        "category": "background"
+      }
+    ]
+  },
+  "#464646": {
+    "mode": "both",
+    "tokens": [
+      {
+        "token": "--smtc-bing-mm-smtc-background-ctrl-on-always-dark-pressed",
+        "figmaName": "bing/mm/smtc/background/ctrl/on-always-dark/pressed",
+        "usage": "Background color for controls/interactive elements — pressed state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-bing-mm-smtc-background-ctrl-on-container-card-pressed",
+        "figmaName": "bing/mm/smtc/background/ctrl/on-container-card/pressed",
+        "usage": "Background color for controls/interactive elements — pressed state",
+        "category": "background"
+      }
+    ]
+  },
+  "#2a2a2a": {
+    "mode": "both",
+    "tokens": [
+      {
+        "token": "--smtc-bing-mm-smtc-background-ctrl-on-always-dark-tab-hover",
+        "figmaName": "bing/mm/smtc/background/ctrl/on-always-dark/tab/hover",
+        "usage": "Background color for controls/interactive elements — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-background-ctrl-subtle-pressed",
+        "figmaName": "bing/smtc/background/ctrl/subtle/pressed",
+        "usage": "Background color for controls/interactive elements (subtle variant) — pressed state",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-ctrl-citation-background-pressed",
+        "figmaName": "mai/smtc/ctrl/citation/background/pressed",
+        "usage": "Background color for controls/interactive elements — pressed state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-card-on-flyout-default-pressed",
+        "figmaName": "smtc/background/card/on-flyout/default/pressed",
+        "usage": "Background color for card components — pressed state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-card-on-primary-default-pressed",
+        "figmaName": "smtc/background/card/on-primary/default/pressed",
+        "usage": "Background color for card components — pressed state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-ctrl-outline-pressed",
+        "figmaName": "smtc/background/ctrl/outline/pressed",
+        "usage": "Background color for controls/interactive elements — pressed state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-ctrl-fab-background-pressed",
+        "figmaName": "smtc/ctrl/fab/background/pressed",
+        "usage": "Background color for controls/interactive elements — pressed state",
+        "category": "background"
+      }
+    ]
+  },
+  "#2e2e2e": {
+    "mode": "both",
+    "tokens": [
+      {
+        "token": "--smtc-bing-mm-smtc-background-ctrl-on-always-dark-tab-pressed",
+        "figmaName": "bing/mm/smtc/background/ctrl/on-always-dark/tab/pressed",
+        "usage": "Background color for controls/interactive elements — pressed state",
+        "category": "background"
+      }
+    ]
+  },
+  "#2a2929": {
+    "mode": "both",
+    "tokens": [
+      {
+        "token": "--smtc-bing-mm-smtc-background-ctrl-on-container-card-disabled",
+        "figmaName": "bing/mm/smtc/background/ctrl/on-container-card/disabled",
+        "usage": "Background color for controls/interactive elements — disabled state",
+        "category": "background"
+      }
+    ]
+  },
+  "#3b3a39": {
+    "mode": "both",
+    "tokens": [
+      {
+        "token": "--smtc-bing-mm-smtc-background-ctrl-on-container-card-hover",
+        "figmaName": "bing/mm/smtc/background/ctrl/on-container-card/hover",
+        "usage": "Background color for controls/interactive elements — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-bing-mm-smtc-background-ctrl-search-box-default",
+        "figmaName": "bing/mm/smtc/background/ctrl/search-box/default",
+        "usage": "Background color for controls/interactive elements",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-background-container-alt",
+        "figmaName": "bing/smtc/background/container/alt",
+        "usage": "Background color",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-background-overlay",
+        "figmaName": "bing/smtc/background/overlay",
+        "usage": "Background color",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-ctrl-search-box-background-rest",
+        "figmaName": "bing/smtc/ctrl/search-box/background/rest",
+        "usage": "Background color for controls/interactive elements — rest state",
+        "category": "background"
+      }
+    ]
+  },
+  "#323130": {
+    "mode": "both",
+    "tokens": [
+      {
+        "token": "--smtc-bing-mm-smtc-background-ctrl-on-container-card-rest",
+        "figmaName": "bing/mm/smtc/background/ctrl/on-container-card/rest",
+        "usage": "Background color for controls/interactive elements — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-background-on-container-card",
+        "figmaName": "bing/smtc/background/on-container-card",
+        "usage": "Background color for card components",
+        "category": "background"
+      }
+    ]
+  },
+  "#bebbb8": {
+    "mode": "both",
+    "tokens": [
+      {
+        "token": "--smtc-bing-mm-smtc-background-rating-content-on-always-dark-default",
+        "figmaName": "bing/mm/smtc/background/rating/content/on-always-dark/default",
+        "usage": "Background color for content areas",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-status-informative-neutral-background",
+        "figmaName": "bing/smtc/status/informative/neutral/background",
+        "usage": "Background color (neutral)",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-data-foreground-gray-default",
+        "figmaName": "bing/smtc/data/foreground/gray/default",
+        "usage": "Foreground/text color",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-ctrl-rating-icon-foreground-filled",
+        "figmaName": "smtc/ctrl/rating/icon/foreground/filled",
+        "usage": "Foreground/text color for controls/interactive elements",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-ctrl-choice-switch-stroke-neutral-rest",
+        "figmaName": "bing/smtc/ctrl/choice/switch/stroke/neutral/rest",
+        "usage": "Border/stroke color for controls/interactive elements (neutral) — rest state",
+        "category": "stroke"
+      },
+      {
+        "token": "--bing-smtc-deco-stroke-gray-default",
+        "figmaName": "bing/smtc/deco/stroke/gray/default",
+        "usage": "Border/stroke color",
+        "category": "stroke"
+      }
+    ]
+  },
+  "#1b1a19": {
+    "mode": "both",
+    "tokens": [
+      {
+        "token": "--smtc-bing-mm-smtc-background-with-material-overlay",
+        "figmaName": "bing/mm/smtc/background/with-material/overlay",
+        "usage": "Background color",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-background-with-material-citation",
+        "figmaName": "bing/smtc/background/with-material/citation",
+        "usage": "Background color",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-background-with-material-overlay",
+        "figmaName": "bing/smtc/background/with-material/overlay",
+        "usage": "Background color",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-ctrl-citation-background-rest",
+        "figmaName": "mai/smtc/ctrl/citation/background/rest",
+        "usage": "Background color for controls/interactive elements — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-card-on-flyout-default-rest",
+        "figmaName": "smtc/background/card/on-flyout/default/rest",
+        "usage": "Background color for card components — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-card-on-primary-default-rest",
+        "figmaName": "smtc/background/card/on-primary/default/rest",
+        "usage": "Background color for card components — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-card-on-secondary-default-rest",
+        "figmaName": "smtc/background/card/on-secondary/default/rest",
+        "usage": "Background color for card components — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-ctrl-outline-rest",
+        "figmaName": "smtc/background/ctrl/outline/rest",
+        "usage": "Background color for controls/interactive elements — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-ctrl-subtle-rest",
+        "figmaName": "smtc/background/ctrl/subtle/rest",
+        "usage": "Background color for controls/interactive elements (subtle variant) — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-web-page-primary",
+        "figmaName": "smtc/background/web-page/primary",
+        "usage": "Background color for page background",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-ctrl-fab-background-rest",
+        "figmaName": "smtc/ctrl/fab/background/rest",
+        "usage": "Background color for controls/interactive elements — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-ctrl-focus-inner-stroke",
+        "figmaName": "smtc/ctrl/focus/inner/stroke",
+        "usage": "Border/stroke color for controls/interactive elements — focus state",
+        "category": "stroke"
+      }
+    ]
+  },
+  "#e50619": {
+    "mode": "both",
+    "tokens": [
+      {
+        "token": "--smtc-bing-places-smtc-background-red",
+        "figmaName": "bing/places/smtc/background/red",
+        "usage": "Background color",
+        "category": "background"
+      }
+    ]
+  },
+  "#ffffff": {
+    "mode": "both",
+    "tokens": [
+      {
+        "token": "--bing-smtc-background-card-on-image-default",
+        "figmaName": "bing/smtc/background/card/on-image/default",
+        "usage": "Background color for card components",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-background-container",
+        "figmaName": "bing/smtc/background/container",
+        "usage": "Background color",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-background-on-container-card",
+        "figmaName": "bing/smtc/background/on-container-card",
+        "usage": "Background color for card components",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-background-overlay",
+        "figmaName": "bing/smtc/background/overlay",
+        "usage": "Background color",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-background-with-material-citation",
+        "figmaName": "bing/smtc/background/with-material/citation",
+        "usage": "Background color",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-background-with-material-overlay",
+        "figmaName": "bing/smtc/background/with-material/overlay",
+        "usage": "Background color",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-ctrl-search-box-background-rest",
+        "figmaName": "bing/smtc/ctrl/search-box/background/rest",
+        "usage": "Background color for controls/interactive elements — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-mai-ctrl-choice-switch-thumb-background-hover",
+        "figmaName": "mai/ctrl/choice/switch/thumb/background/hover",
+        "usage": "Background color for controls/interactive elements — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-mai-ctrl-choice-switch-thumb-background-rest",
+        "figmaName": "mai/ctrl/choice/switch/thumb/background/rest",
+        "usage": "Background color for controls/interactive elements — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-ctrl-citation-background-rest",
+        "figmaName": "mai/smtc/ctrl/citation/background/rest",
+        "usage": "Background color for controls/interactive elements — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-card-on-flyout-default-rest",
+        "figmaName": "smtc/background/card/on-flyout/default/rest",
+        "usage": "Background color for card components — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-card-on-primary-default-rest",
+        "figmaName": "smtc/background/card/on-primary/default/rest",
+        "usage": "Background color for card components — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-card-on-secondary-default-rest",
+        "figmaName": "smtc/background/card/on-secondary/default/rest",
+        "usage": "Background color for card components — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-ctrl-neutral-rest",
+        "figmaName": "smtc/background/ctrl/neutral/rest",
+        "usage": "Background color for controls/interactive elements (neutral) — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-ctrl-outline-rest",
+        "figmaName": "smtc/background/ctrl/outline/rest",
+        "usage": "Background color for controls/interactive elements — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-ctrl-subtle-rest",
+        "figmaName": "smtc/background/ctrl/subtle/rest",
+        "usage": "Background color for controls/interactive elements (subtle variant) — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-web-page-primary",
+        "figmaName": "smtc/background/web-page/primary",
+        "usage": "Background color for page background",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-ctrl-fab-background-rest",
+        "figmaName": "smtc/ctrl/fab/background/rest",
+        "usage": "Background color for controls/interactive elements — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-bing-mm-smtc-foreground-content-on-always-dark-primary",
+        "figmaName": "bing/mm/smtc/foreground/content/on-always-dark/primary",
+        "usage": "Foreground/text color for content areas",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-bing-mm-smtc-foreground-ctrl-on-always-dark-action-bar-hover",
+        "figmaName": "bing/mm/smtc/foreground/ctrl/on-always-dark/action-bar/hover",
+        "usage": "Foreground/text color for controls/interactive elements — hover state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-bing-mm-smtc-foreground-ctrl-search-box-icon-hover",
+        "figmaName": "bing/mm/smtc/foreground/ctrl/search-box/icon/hover",
+        "usage": "Foreground/text color for controls/interactive elements — hover state",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-foreground-content-white",
+        "figmaName": "bing/smtc/foreground/content/white",
+        "usage": "Foreground/text color for content areas",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-foreground-ctrl-on-image-switchable-hover",
+        "figmaName": "bing/smtc/foreground/ctrl/on-image/switchable/hover",
+        "usage": "Foreground/text color for controls/interactive elements — hover state",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-foreground-ctrl-on-image-switchable-rest",
+        "figmaName": "bing/smtc/foreground/ctrl/on-image/switchable/rest",
+        "usage": "Foreground/text color for controls/interactive elements — rest state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-on-image-rest",
+        "figmaName": "mai/smtc/foreground/ctrl/on-image/rest",
+        "usage": "Foreground/text color for controls/interactive elements — rest state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-ctrl-tooltip-foreground",
+        "figmaName": "smtc/ctrl/tooltip/foreground",
+        "usage": "Foreground/text color for controls/interactive elements",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-ctrl-focus-inner-stroke",
+        "figmaName": "smtc/ctrl/focus/inner/stroke",
+        "usage": "Border/stroke color for controls/interactive elements — focus state",
+        "category": "stroke"
+      },
+      {
+        "token": "--bing-smtc-background-ctrl-on-image-switchable-rest",
+        "figmaName": "bing/smtc/background/ctrl/on-image/switchable/rest",
+        "usage": "Background color for controls/interactive elements — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-bing-ads-smtc-foreground-site-title",
+        "figmaName": "bing/ads/smtc/foreground/site-title",
+        "usage": "Foreground/text color",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-foreground-ctrl-on-subtle-rest",
+        "figmaName": "bing/smtc/foreground/ctrl/on-subtle/rest",
+        "usage": "Foreground/text color for controls/interactive elements (subtle variant) — rest state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-content-neutral-primary",
+        "figmaName": "smtc/foreground/content/neutral/primary",
+        "usage": "Foreground/text color for content areas (neutral)",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-ctrl-focus-outer-stroke",
+        "figmaName": "smtc/ctrl/focus/outer/stroke",
+        "usage": "Border/stroke color for controls/interactive elements — focus state",
+        "category": "stroke"
+      }
+    ]
+  },
+  "linear-gradient(rgba(248, 244, 241, 0) 0%, rgb(248, 244, 241) 60%)": {
+    "mode": "both",
+    "tokens": [
+      {
+        "token": "--smtc-background-card-on-primary-alt-gradient",
+        "figmaName": "bing/smtc/background/card/on-primary/alt/gradient",
+        "usage": "Background color for card components",
+        "category": "background"
+      }
+    ]
+  },
+  "#f8f4f1": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--bing-smtc-background-card-on-primary-alt-gradient-stop-1",
+        "figmaName": "bing/smtc/background/card/on-primary/alt/gradient/stop-1",
+        "usage": "Background color for card components",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-background-card-on-primary-alt-rest",
+        "figmaName": "bing/smtc/background/card/on-primary/alt/rest",
+        "usage": "Background color for card components — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-background-ctrl-active-brand-rest",
+        "figmaName": "bing/smtc/background/ctrl/active/brand/rest",
+        "usage": "Background color for controls/interactive elements (brand/accent themed) — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-background-ctrl-subtle-rest",
+        "figmaName": "bing/smtc/background/ctrl/subtle/rest",
+        "usage": "Background color for controls/interactive elements (subtle variant) — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-ctrl-citation-background-rest",
+        "figmaName": "bing/smtc/ctrl/citation/background/rest",
+        "usage": "Background color for controls/interactive elements — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-ctrl-active-brand-disabled",
+        "figmaName": "smtc/background/ctrl/active/brand/disabled",
+        "usage": "Background color for controls/interactive elements (brand/accent themed) — disabled state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-ctrl-outline-disabled",
+        "figmaName": "smtc/background/ctrl/outline/disabled",
+        "usage": "Background color for controls/interactive elements — disabled state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-ctrl-list-background-selected-rest",
+        "figmaName": "smtc/ctrl/list/background/selected-rest",
+        "usage": "Background color for controls/interactive elements — rest state",
+        "category": "background"
+      }
+    ]
+  },
+  "#efeae7": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--bing-smtc-background-card-on-primary-alt-hover",
+        "figmaName": "bing/smtc/background/card/on-primary/alt/hover",
+        "usage": "Background color for card components — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-background-ctrl-active-brand-hover",
+        "figmaName": "bing/smtc/background/ctrl/active/brand/hover",
+        "usage": "Background color for controls/interactive elements (brand/accent themed) — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-background-ctrl-neutral-rest",
+        "figmaName": "bing/smtc/background/ctrl/neutral/rest",
+        "usage": "Background color for controls/interactive elements (neutral) — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-ctrl-citation-background-hover",
+        "figmaName": "bing/smtc/ctrl/citation/background/hover",
+        "usage": "Background color for controls/interactive elements — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-ctrl-citation-on-card-background-rest",
+        "figmaName": "bing/smtc/ctrl/citation/on-card/background/rest",
+        "usage": "Background color for controls/interactive elements — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-ctrl-tab-in-card-background-selected",
+        "figmaName": "bing/smtc/ctrl/tab/in-card/background/selected",
+        "usage": "Background color for controls/interactive elements — selected state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-card-on-primary-alt-selected",
+        "figmaName": "mai/smtc/background/card/on-primary/alt/selected",
+        "usage": "Background color for card components — selected state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-card-on-primary-alt-rest",
+        "figmaName": "smtc/background/card/on-primary/alt/rest",
+        "usage": "Background color for card components — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-card-on-secondary-alt-rest",
+        "figmaName": "smtc/background/card/on-secondary/alt/rest",
+        "usage": "Background color for card components — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-ctrl-neutral-disabled",
+        "figmaName": "smtc/background/ctrl/neutral/disabled",
+        "usage": "Background color for controls/interactive elements (neutral) — disabled state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-ctrl-subtle-hover",
+        "figmaName": "smtc/background/ctrl/subtle/hover",
+        "usage": "Background color for controls/interactive elements (subtle variant) — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-ctrl-list-background-selected-hover",
+        "figmaName": "smtc/ctrl/list/background/selected-hover",
+        "usage": "Background color for controls/interactive elements — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-ctrl-lite-filter-background-selected",
+        "figmaName": "smtc/ctrl/lite-filter/background/selected",
+        "usage": "Background color for controls/interactive elements — selected state",
+        "category": "background"
+      }
+    ]
+  },
+  "#e2ddd9": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--bing-smtc-background-card-on-primary-alt-pressed",
+        "figmaName": "bing/smtc/background/card/on-primary/alt/pressed",
+        "usage": "Background color for card components — pressed state",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-background-ctrl-ghost-hover",
+        "figmaName": "bing/smtc/background/ctrl/ghost/hover",
+        "usage": "Background color for controls/interactive elements — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-background-ctrl-outline-hover",
+        "figmaName": "bing/smtc/background/ctrl/outline/hover",
+        "usage": "Background color for controls/interactive elements — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-ctrl-citation-background-pressed",
+        "figmaName": "bing/smtc/ctrl/citation/background/pressed",
+        "usage": "Background color for controls/interactive elements — pressed state",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-ctrl-citation-on-card-background-hover",
+        "figmaName": "bing/smtc/ctrl/citation/on-card/background/hover",
+        "usage": "Background color for controls/interactive elements — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-ctrl-tab-in-card-background-hover",
+        "figmaName": "bing/smtc/ctrl/tab/in-card/background/hover",
+        "usage": "Background color for controls/interactive elements — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-card-on-primary-alt-hover",
+        "figmaName": "smtc/background/card/on-primary/alt/hover",
+        "usage": "Background color for card components — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-ctrl-neutral-hover",
+        "figmaName": "smtc/background/ctrl/neutral/hover",
+        "usage": "Background color for controls/interactive elements (neutral) — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-ctrl-subtle-pressed",
+        "figmaName": "smtc/background/ctrl/subtle/pressed",
+        "usage": "Background color for controls/interactive elements (subtle variant) — pressed state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-ctrl-input-background-disabled",
+        "figmaName": "smtc/ctrl/input/background/disabled",
+        "usage": "Background color for controls/interactive elements — disabled state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-ctrl-list-background-selected-pressed",
+        "figmaName": "smtc/ctrl/list/background/selected-pressed",
+        "usage": "Background color for controls/interactive elements — pressed state",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-foreground-image-placeholder-default",
+        "figmaName": "bing/smtc/foreground/image/placeholder/default",
+        "usage": "Foreground/text color",
+        "category": "foreground"
+      }
+    ]
+  },
+  "rgba(0, 0, 0, 0.03)": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--bing-smtc-background-container-alt",
+        "figmaName": "bing/smtc/background/container/alt",
+        "usage": "Background color",
+        "category": "background"
+      }
+    ]
+  },
+  "rgba(0, 0, 0, 0.08)": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--bing-smtc-background-container-highlight",
+        "figmaName": "bing/smtc/background/container/highlight",
+        "usage": "Background color",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-stroke-ctrl-subtle",
+        "figmaName": "bing/smtc/stroke/ctrl/subtle",
+        "usage": "Border/stroke color for controls/interactive elements (subtle variant)",
+        "category": "stroke"
+      }
+    ]
+  },
+  "#4f6bed": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--bing-smtc-background-ctrl-brand-rest",
+        "figmaName": "bing/smtc/background/ctrl/brand/rest",
+        "usage": "Background color for controls/interactive elements (brand/accent themed) — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-ctrl-skeleton-background-default-layer-1-stop-1",
+        "figmaName": "bing/smtc/ctrl/skeleton/background/default/layer/1/stop-1",
+        "usage": "Background color for controls/interactive elements",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-status-brand-background",
+        "figmaName": "bing/smtc/status/brand/background",
+        "usage": "Background color (brand/accent themed)",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-choice-switch-background-selected-rest",
+        "figmaName": "mai/smtc/choice/switch/background/selected/rest",
+        "usage": "Background color — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-ctrl-active-brand-rest",
+        "figmaName": "smtc/background/ctrl/active-brand/rest",
+        "usage": "Background color for controls/interactive elements (brand/accent themed) — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-ctrl-citation-foreground-rest",
+        "figmaName": "bing/smtc/ctrl/citation/foreground/rest",
+        "usage": "Foreground/text color for controls/interactive elements — rest state",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-foreground-ctrl-on-transparent-rest",
+        "figmaName": "bing/smtc/foreground/ctrl/on-transparent/rest",
+        "usage": "Foreground/text color for controls/interactive elements — rest state",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-ctrl-highlight-ring-stroke-stop-1",
+        "figmaName": "bing/smtc/ctrl/highlight-ring/stroke/stop-1",
+        "usage": "Border/stroke color for controls/interactive elements",
+        "category": "stroke"
+      },
+      {
+        "token": "--mai-smtc-ctrl-choice-switch-stroke-rest",
+        "figmaName": "mai/smtc/ctrl/choice/switch/stroke/rest",
+        "usage": "Border/stroke color for controls/interactive elements — rest state",
+        "category": "stroke"
+      },
+      {
+        "token": "--smtc-stroke-width-ctrl-outline-rest",
+        "figmaName": "smtc/stroke-width/ctrl/outline/rest",
+        "usage": "Border/stroke color for controls/interactive elements — rest state",
+        "category": "stroke"
+      },
+      {
+        "token": "--smtc-stroke-ctrl-on-outline-rest",
+        "figmaName": "smtc/stroke/ctrl/on-outline/rest",
+        "usage": "Border/stroke color for controls/interactive elements — rest state",
+        "category": "stroke"
+      }
+    ]
+  },
+  "linear-gradient(rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 43%)": {
+    "mode": "both",
+    "tokens": [
+      {
+        "token": "--smtc-background-ctrl-fade-on-Image-gradient",
+        "figmaName": "bing/smtc/background/ctrl/fade/on-Image/gradient",
+        "usage": "Background color for controls/interactive elements",
+        "category": "background"
+      }
+    ]
+  },
+  "rgba(0, 0, 0, 0.00)": {
+    "mode": "both",
+    "tokens": [
+      {
+        "token": "--bing-smtc-background-ctrl-fade-on-image-stop-0",
+        "figmaName": "bing/smtc/background/ctrl/fade/on-image/stop-0",
+        "usage": "Background color for controls/interactive elements",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-stroke-divider-stop-0",
+        "figmaName": "bing/smtc/stroke/divider/stop-0",
+        "usage": "Border/stroke color for dividers",
+        "category": "stroke"
+      }
+    ]
+  },
+  "linear-gradient(rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 60%)": {
+    "mode": "both",
+    "tokens": [
+      {
+        "token": "--smtc-background-ctrl-fade-on-primary-gradient",
+        "figmaName": "bing/smtc/background/ctrl/fade/on-primary/gradient",
+        "usage": "Background color for controls/interactive elements",
+        "category": "background"
+      }
+    ]
+  },
+  "rgba(255, 255, 255, 0.00)": {
+    "mode": "both",
+    "tokens": [
+      {
+        "token": "--bing-smtc-background-ctrl-fade-on-primary-stop-0",
+        "figmaName": "bing/smtc/background/ctrl/fade/on-primary/stop-0",
+        "usage": "Background color for controls/interactive elements",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-ctrl-input-background-error",
+        "figmaName": "smtc/ctrl/input/background/error",
+        "usage": "Background color for controls/interactive elements",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-ctrl-input-background-pressed",
+        "figmaName": "smtc/ctrl/input/background/pressed",
+        "usage": "Background color for controls/interactive elements — pressed state",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-ctrl-carousel-alt-stop-0",
+        "figmaName": "bing/smtc/ctrl/carousel/alt/stop-0",
+        "usage": "for controls/interactive elements",
+        "category": "other"
+      },
+      {
+        "token": "--bing-smtc-ctrl-carousel-stop-0",
+        "figmaName": "bing/smtc/ctrl/carousel/stop-0",
+        "usage": "for controls/interactive elements",
+        "category": "other"
+      },
+      {
+        "token": "--bing-smtc-stroke-divider-stop-0",
+        "figmaName": "bing/smtc/stroke/divider/stop-0",
+        "usage": "Border/stroke color for dividers",
+        "category": "stroke"
+      }
+    ]
+  },
+  "#fffbf8": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--bing-smtc-background-ctrl-fade-on-primary-stop-1",
+        "figmaName": "bing/smtc/background/ctrl/fade/on-primary/stop-1",
+        "usage": "Background color for controls/interactive elements",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-mai-ctrl-choice-switch-thumb-background-selected-rest",
+        "figmaName": "mai/ctrl/choice/switch/thumb/background/selected-rest",
+        "usage": "Background color for controls/interactive elements — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-card-on-primary-alt-disabled",
+        "figmaName": "smtc/background/card/on-primary/alt/disabled",
+        "usage": "Background color for card components — disabled state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-ctrl-choice-base-background-hover",
+        "figmaName": "smtc/ctrl/choice/base/background/hover",
+        "usage": "Background color for controls/interactive elements — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-ctrl-choice-base-background-rest",
+        "figmaName": "smtc/ctrl/choice/base/background/rest",
+        "usage": "Background color for controls/interactive elements — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-ctrl-input-background-rest",
+        "figmaName": "smtc/ctrl/input/background/rest",
+        "usage": "Background color for controls/interactive elements — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-on-active-brand-hover",
+        "figmaName": "smtc/foreground/ctrl/on-active-brand/hover",
+        "usage": "Foreground/text color for controls/interactive elements (brand/accent themed) — hover state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-on-active-brand-pressed",
+        "figmaName": "smtc/foreground/ctrl/on-active-brand/pressed",
+        "usage": "Foreground/text color for controls/interactive elements (brand/accent themed) — pressed state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-on-active-brand-rest",
+        "figmaName": "smtc/foreground/ctrl/on-active-brand/rest",
+        "usage": "Foreground/text color for controls/interactive elements (brand/accent themed) — rest state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-on-brand-hover",
+        "figmaName": "smtc/foreground/ctrl/on-brand/hover",
+        "usage": "Foreground/text color for controls/interactive elements (brand/accent themed) — hover state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-on-brand-pressed",
+        "figmaName": "smtc/foreground/ctrl/on-brand/pressed",
+        "usage": "Foreground/text color for controls/interactive elements (brand/accent themed) — pressed state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-on-brand-rest",
+        "figmaName": "smtc/foreground/ctrl/on-brand/rest",
+        "usage": "Foreground/text color for controls/interactive elements (brand/accent themed) — rest state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-status-brand-foreground",
+        "figmaName": "smtc/status/brand/foreground",
+        "usage": "Foreground/text color (brand/accent themed)",
+        "category": "foreground"
+      }
+    ]
+  },
+  "#cfc9c5": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--bing-smtc-background-ctrl-ghost-pressed",
+        "figmaName": "bing/smtc/background/ctrl/ghost/pressed",
+        "usage": "Background color for controls/interactive elements — pressed state",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-background-ctrl-outline-pressed",
+        "figmaName": "bing/smtc/background/ctrl/outline/pressed",
+        "usage": "Background color for controls/interactive elements — pressed state",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-ctrl-citation-on-card-background-pressed",
+        "figmaName": "bing/smtc/ctrl/citation/on-card/background/pressed",
+        "usage": "Background color for controls/interactive elements — pressed state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-ctrl-tab-in-card-background-pressed",
+        "figmaName": "bing/smtc/ctrl/tab/in-card/background/pressed",
+        "usage": "Background color for controls/interactive elements — pressed state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-card-on-primary-alt-pressed",
+        "figmaName": "smtc/background/card/on-primary/alt/pressed",
+        "usage": "Background color for card components — pressed state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-ctrl-neutral-pressed",
+        "figmaName": "smtc/background/ctrl/neutral/pressed",
+        "usage": "Background color for controls/interactive elements (neutral) — pressed state",
+        "category": "background"
+      }
+    ]
+  },
+  "rgba(0, 0, 0, 0.10)": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--bing-smtc-background-ctrl-image-placeholder-default",
+        "figmaName": "bing/smtc/background/ctrl/image/placeholder/default",
+        "usage": "Background color for controls/interactive elements",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-ctrl-progress-background-empty",
+        "figmaName": "smtc/ctrl/progress/background/empty",
+        "usage": "Background color for controls/interactive elements",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-stroke-ctrl-default",
+        "figmaName": "bing/smtc/stroke/ctrl/default",
+        "usage": "Border/stroke color for controls/interactive elements",
+        "category": "stroke"
+      },
+      {
+        "token": "--bing-smtc-stroke-ctrl-on-image-default",
+        "figmaName": "bing/smtc/stroke/ctrl/on-image/default",
+        "usage": "Border/stroke color for controls/interactive elements",
+        "category": "stroke"
+      },
+      {
+        "token": "--smtc-ctrl-input-stroke-rest",
+        "figmaName": "smtc/ctrl/input/stroke/rest",
+        "usage": "Border/stroke color for controls/interactive elements — rest state",
+        "category": "stroke"
+      },
+      {
+        "token": "--smtc-stroke-card-on-primary-rest",
+        "figmaName": "smtc/stroke/card/on-primary/rest",
+        "usage": "Border/stroke color for card components — rest state",
+        "category": "stroke"
+      },
+      {
+        "token": "--smtc-stroke-ctrl-on-neutral-rest",
+        "figmaName": "smtc/stroke/ctrl/on-neutral/rest",
+        "usage": "Border/stroke color for controls/interactive elements (neutral) — rest state",
+        "category": "stroke"
+      },
+      {
+        "token": "--smtc-stroke-divider-default",
+        "figmaName": "smtc/stroke/divider/default",
+        "usage": "Border/stroke color for dividers",
+        "category": "stroke"
+      }
+    ]
+  },
+  "rgba(0, 0, 0, 0.80)": {
+    "mode": "both",
+    "tokens": [
+      {
+        "token": "--bing-smtc-background-ctrl-on-image-switchable-hover",
+        "figmaName": "bing/smtc/background/ctrl/on-image/switchable/hover",
+        "usage": "Background color for controls/interactive elements — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-ctrl-choice-switch-background-pressed",
+        "figmaName": "bing/smtc/ctrl/choice/switch/background/pressed",
+        "usage": "Background color for controls/interactive elements — pressed state",
+        "category": "background"
+      },
+      {
+        "token": "--mai-smtc-background-ctrl-on-image-hover",
+        "figmaName": "mai/smtc/background/ctrl/on-image/hover",
+        "usage": "Background color for controls/interactive elements — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-bing-ads-smtc-foreground-site-url",
+        "figmaName": "bing/ads/smtc/foreground/site-url",
+        "usage": "Foreground/text color",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-foreground-ctrl-on-subtle-hover",
+        "figmaName": "bing/smtc/foreground/ctrl/on-subtle/hover",
+        "usage": "Foreground/text color for controls/interactive elements (subtle variant) — hover state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-content-neutral-secondary",
+        "figmaName": "smtc/foreground/content/neutral/secondary",
+        "usage": "Foreground/text color for content areas (neutral)",
+        "category": "foreground"
+      }
+    ]
+  },
+  "rgba(0, 0, 0, 0.75)": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--bing-smtc-background-ctrl-on-image-switchable-pressed",
+        "figmaName": "bing/smtc/background/ctrl/on-image/switchable/pressed",
+        "usage": "Background color for controls/interactive elements — pressed state",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-ctrl-choice-switch-background-hover",
+        "figmaName": "bing/smtc/ctrl/choice/switch/background/hover",
+        "usage": "Background color for controls/interactive elements — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-ctrl-brand-rest",
+        "figmaName": "smtc/background/ctrl/brand/rest",
+        "usage": "Background color for controls/interactive elements (brand/accent themed) — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-ctrl-tooltip-background",
+        "figmaName": "smtc/ctrl/tooltip/background",
+        "usage": "Background color for controls/interactive elements",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-foreground-content-neutral-secondary-alt",
+        "figmaName": "bing/smtc/foreground/content/neutral/secondary/alt",
+        "usage": "Foreground/text color for content areas (neutral)",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-foreground-ctrl-on-subtle-pressed",
+        "figmaName": "bing/smtc/foreground/ctrl/on-subtle/pressed",
+        "usage": "Foreground/text color for controls/interactive elements (subtle variant) — pressed state",
+        "category": "foreground"
+      }
+    ]
+  },
+  "#000000": {
+    "mode": "both",
+    "tokens": [
+      {
+        "token": "--bing-smtc-background-ctrl-on-image-switchable-rest",
+        "figmaName": "bing/smtc/background/ctrl/on-image/switchable/rest",
+        "usage": "Background color for controls/interactive elements — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--mai-smtc-background-ctrl-on-image-rest",
+        "figmaName": "mai/smtc/background/ctrl/on-image/rest",
+        "usage": "Background color for controls/interactive elements — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-bing-ads-smtc-foreground-site-title",
+        "figmaName": "bing/ads/smtc/foreground/site-title",
+        "usage": "Foreground/text color",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-foreground-ctrl-on-subtle-rest",
+        "figmaName": "bing/smtc/foreground/ctrl/on-subtle/rest",
+        "usage": "Foreground/text color for controls/interactive elements (subtle variant) — rest state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-content-neutral-primary",
+        "figmaName": "smtc/foreground/content/neutral/primary",
+        "usage": "Foreground/text color for content areas (neutral)",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-ctrl-focus-outer-stroke",
+        "figmaName": "smtc/ctrl/focus/outer/stroke",
+        "usage": "Border/stroke color for controls/interactive elements — focus state",
+        "category": "stroke"
+      },
+      {
+        "token": "--smtc-mai-ctrl-choice-switch-thumb-background-hover",
+        "figmaName": "mai/ctrl/choice/switch/thumb/background/hover",
+        "usage": "Background color for controls/interactive elements — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-mai-ctrl-choice-switch-thumb-background-rest",
+        "figmaName": "mai/ctrl/choice/switch/thumb/background/rest",
+        "usage": "Background color for controls/interactive elements — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-foreground-ctrl-on-image-switchable-hover",
+        "figmaName": "bing/smtc/foreground/ctrl/on-image/switchable/hover",
+        "usage": "Foreground/text color for controls/interactive elements — hover state",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-foreground-ctrl-on-image-switchable-rest",
+        "figmaName": "bing/smtc/foreground/ctrl/on-image/switchable/rest",
+        "usage": "Foreground/text color for controls/interactive elements — rest state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-ctrl-tooltip-foreground",
+        "figmaName": "smtc/ctrl/tooltip/foreground",
+        "usage": "Foreground/text color for controls/interactive elements",
+        "category": "foreground"
+      }
+    ]
+  },
+  "#f5f5f5": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--bing-smtc-background-ctrl-subtle-hover",
+        "figmaName": "bing/smtc/background/ctrl/subtle/hover",
+        "usage": "Background color for controls/interactive elements (subtle variant) — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-scroll-rest",
+        "figmaName": "bing/smtc/background/scroll/rest",
+        "usage": "Background color — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-ctrl-favicon-background",
+        "figmaName": "bing/smtc/ctrl/favicon/background",
+        "usage": "Background color for controls/interactive elements",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-data-background-gray-subtle",
+        "figmaName": "bing/smtc/data/background/gray/subtle",
+        "usage": "Background color (subtle variant)",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-ctrl-citation-background-hover",
+        "figmaName": "mai/smtc/ctrl/citation/background/hover",
+        "usage": "Background color for controls/interactive elements — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-card-on-flyout-default-hover",
+        "figmaName": "smtc/background/card/on-flyout/default/hover",
+        "usage": "Background color for card components — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-card-on-primary-default-hover",
+        "figmaName": "smtc/background/card/on-primary/default/hover",
+        "usage": "Background color for card components — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-card-on-secondary-default-hover",
+        "figmaName": "smtc/background/card/on-secondary/default/hover",
+        "usage": "Background color for card components — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-ctrl-outline-hover",
+        "figmaName": "smtc/background/ctrl/outline/hover",
+        "usage": "Background color for controls/interactive elements — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-ctrl-fab-background-hover",
+        "figmaName": "smtc/ctrl/fab/background/hover",
+        "usage": "Background color for controls/interactive elements — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-status-informative-tint-background",
+        "figmaName": "smtc/status/informative/tint/background",
+        "usage": "Background color",
+        "category": "background"
+      }
+    ]
+  },
+  "#ededed": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--bing-smtc-background-ctrl-subtle-pressed",
+        "figmaName": "bing/smtc/background/ctrl/subtle/pressed",
+        "usage": "Background color for controls/interactive elements (subtle variant) — pressed state",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-ctrl-citation-background-pressed",
+        "figmaName": "mai/smtc/ctrl/citation/background/pressed",
+        "usage": "Background color for controls/interactive elements — pressed state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-card-on-flyout-default-pressed",
+        "figmaName": "smtc/background/card/on-flyout/default/pressed",
+        "usage": "Background color for card components — pressed state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-card-on-primary-default-pressed",
+        "figmaName": "smtc/background/card/on-primary/default/pressed",
+        "usage": "Background color for card components — pressed state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-ctrl-outline-pressed",
+        "figmaName": "smtc/background/ctrl/outline/pressed",
+        "usage": "Background color for controls/interactive elements — pressed state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-ctrl-fab-background-pressed",
+        "figmaName": "smtc/ctrl/fab/background/pressed",
+        "usage": "Background color for controls/interactive elements — pressed state",
+        "category": "background"
+      }
+    ]
+  },
+  "rgba(248, 244, 241, 0.00)": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--bing-smtc-ctrl-background-fade-stop-0",
+        "figmaName": "bing/smtc/ctrl/background/fade/stop-0",
+        "usage": "Background color for controls/interactive elements",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-ctrl-subtle-disabled",
+        "figmaName": "smtc/background/ctrl/subtle/disabled",
+        "usage": "Background color for controls/interactive elements (subtle variant) — disabled state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-ctrl-subtle-selected-rest",
+        "figmaName": "smtc/background/ctrl/subtle/selected-rest",
+        "usage": "Background color for controls/interactive elements (subtle variant) — rest state",
+        "category": "background"
+      }
+    ]
+  },
+  "rgba(248, 244, 241, 0.85)": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--bing-smtc-ctrl-spinner-backdrop-background",
+        "figmaName": "bing/smtc/ctrl/spinner/backdrop/background",
+        "usage": "Background color for controls/interactive elements",
+        "category": "background"
+      }
+    ]
+  },
+  "rgba(255, 255, 255, 0.85)": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--bing-smtc-ctrl-spinner-background-default",
+        "figmaName": "bing/smtc/ctrl/spinner/background/default",
+        "usage": "Background color for controls/interactive elements",
+        "category": "background"
+      }
+    ]
+  },
+  "#c1c1c1": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--bing-smtc-ctrl-tab-ghost-background-hover",
+        "figmaName": "bing/smtc/ctrl/tab/ghost/background/hover",
+        "usage": "Background color for controls/interactive elements — hover state",
+        "category": "background"
+      }
+    ]
+  },
+  "#ababab": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--bing-smtc-ctrl-tab-ghost-background-pressed",
+        "figmaName": "bing/smtc/ctrl/tab/ghost/background/pressed",
+        "usage": "Background color for controls/interactive elements — pressed state",
+        "category": "background"
+      }
+    ]
+  },
+  "#d7d7d7": {
+    "mode": "both",
+    "tokens": [
+      {
+        "token": "--bing-smtc-ctrl-tab-ghost-background-selected",
+        "figmaName": "bing/smtc/ctrl/tab/ghost/background/selected",
+        "usage": "Background color for controls/interactive elements — selected state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-bing-mm-smtc-foreground-ctrl-on-always-dark-action-bar-rest",
+        "figmaName": "bing/mm/smtc/foreground/ctrl/on-always-dark/action-bar/rest",
+        "usage": "Foreground/text color for controls/interactive elements — rest state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-bing-mm-smtc-foreground-ctrl-on-always-dark-rest",
+        "figmaName": "bing/mm/smtc/foreground/ctrl/on-always-dark/rest",
+        "usage": "Foreground/text color for controls/interactive elements — rest state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-bing-mm-smtc-foreground-ctrl-on-always-dark-tab-selected",
+        "figmaName": "bing/mm/smtc/foreground/ctrl/on-always-dark/tab/selected",
+        "usage": "Foreground/text color for controls/interactive elements — selected state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-bing-mm-smtc-foreground-ctrl-search-box-icon-rest",
+        "figmaName": "bing/mm/smtc/foreground/ctrl/search-box/icon/rest",
+        "usage": "Foreground/text color for controls/interactive elements — rest state",
+        "category": "foreground"
+      }
+    ]
+  },
+  "#c66a00": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-background-amber-default",
+        "figmaName": "bing/smtc/data/background/amber/default",
+        "usage": "Background color",
+        "category": "background"
+      }
+    ]
+  },
+  "#be5a00": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-background-amber-strong",
+        "figmaName": "bing/smtc/data/background/amber/strong",
+        "usage": "Background color (strong variant)",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-status-warning-background",
+        "figmaName": "smtc/status/warning/background",
+        "usage": "Background color (warning state)",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-data-foreground-amber-default",
+        "figmaName": "bing/smtc/data/foreground/amber/default",
+        "usage": "Foreground/text color",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-status-warning-tint-foreground",
+        "figmaName": "smtc/status/warning/tint/foreground",
+        "usage": "Foreground/text color (warning state)",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-deco-stroke-amber-default",
+        "figmaName": "bing/smtc/deco/stroke/amber/default",
+        "usage": "Border/stroke color",
+        "category": "stroke"
+      },
+      {
+        "token": "--smtc-status-warning-stroke",
+        "figmaName": "smtc/status/warning/stroke",
+        "usage": "Border/stroke color (warning state)",
+        "category": "stroke"
+      }
+    ]
+  },
+  "#fff1e9": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-background-amber-subtle",
+        "figmaName": "bing/smtc/data/background/amber/subtle",
+        "usage": "Background color (subtle variant)",
+        "category": "background"
+      }
+    ]
+  },
+  "#0072f0": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-background-blue-default",
+        "figmaName": "bing/smtc/data/background/blue/default",
+        "usage": "Background color",
+        "category": "background"
+      }
+    ]
+  },
+  "#0078d4": {
+    "mode": "both",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-background-blue-strong",
+        "figmaName": "bing/smtc/data/background/blue/strong",
+        "usage": "Background color (strong variant)",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-status-brand-background",
+        "figmaName": "smtc/status/brand/background",
+        "usage": "Background color (brand/accent themed)",
+        "category": "background"
+      }
+    ]
+  },
+  "#edf4fe": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-background-blue-subtle",
+        "figmaName": "bing/smtc/data/background/blue/subtle",
+        "usage": "Background color (subtle variant)",
+        "category": "background"
+      }
+    ]
+  },
+  "#e0e0e0": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-background-gray-default",
+        "figmaName": "bing/smtc/data/background/gray/default",
+        "usage": "Background color",
+        "category": "background"
+      }
+    ]
+  },
+  "#4a4a4a": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-background-gray-strong",
+        "figmaName": "bing/smtc/data/background/gray/strong",
+        "usage": "Background color (strong variant)",
+        "category": "background"
+      }
+    ]
+  },
+  "#008935": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-background-green-default",
+        "figmaName": "bing/smtc/data/background/green/default",
+        "usage": "Background color",
+        "category": "background"
+      }
+    ]
+  },
+  "#006d21": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-background-green-strong",
+        "figmaName": "bing/smtc/data/background/green/strong",
+        "usage": "Background color (strong variant)",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-status-success-background",
+        "figmaName": "smtc/status/success/background",
+        "usage": "Background color (success state)",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-data-foreground-green-default",
+        "figmaName": "bing/smtc/data/foreground/green/default",
+        "usage": "Foreground/text color",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-status-success-tint-foreground",
+        "figmaName": "smtc/status/success/tint/foreground",
+        "usage": "Foreground/text color (success state)",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-deco-stroke-green-default",
+        "figmaName": "bing/smtc/deco/stroke/green/default",
+        "usage": "Border/stroke color",
+        "category": "stroke"
+      },
+      {
+        "token": "--smtc-status-success-stroke",
+        "figmaName": "smtc/status/success/stroke",
+        "usage": "Border/stroke color (success state)",
+        "category": "stroke"
+      }
+    ]
+  },
+  "#edf6e8": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-background-green-subtle",
+        "figmaName": "bing/smtc/data/background/green/subtle",
+        "usage": "Background color (subtle variant)",
+        "category": "background"
+      }
+    ]
+  },
+  "#d94a4b": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-background-red-default",
+        "figmaName": "bing/smtc/data/background/red/default",
+        "usage": "Background color",
+        "category": "background"
+      }
+    ]
+  },
+  "#c80000": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-background-red-strong",
+        "figmaName": "bing/smtc/data/background/red/strong",
+        "usage": "Background color (strong variant)",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-status-danger-background",
+        "figmaName": "smtc/status/danger/background",
+        "usage": "Background color (danger/error state)",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-data-foreground-red-default",
+        "figmaName": "bing/smtc/data/foreground/red/default",
+        "usage": "Foreground/text color",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-status-danger-tint-foreground",
+        "figmaName": "smtc/status/danger/tint/foreground",
+        "usage": "Foreground/text color (danger/error state)",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-deco-stroke-red-default",
+        "figmaName": "bing/smtc/deco/stroke/red/default",
+        "usage": "Border/stroke color",
+        "category": "stroke"
+      },
+      {
+        "token": "--smtc-status-danger-stroke",
+        "figmaName": "smtc/status/danger/stroke",
+        "usage": "Border/stroke color (danger/error state)",
+        "category": "stroke"
+      }
+    ]
+  },
+  "#fff0ef": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-background-red-subtle",
+        "figmaName": "bing/smtc/data/background/red/subtle",
+        "usage": "Background color (subtle variant)",
+        "category": "background"
+      }
+    ]
+  },
+  "#f9ad01": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-background-yellow-default",
+        "figmaName": "bing/smtc/data/background/yellow/default",
+        "usage": "Background color",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-data-foreground-yellow-subtle",
+        "figmaName": "bing/smtc/data/foreground/yellow/subtle",
+        "usage": "Foreground/text color (subtle variant)",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-deco-stroke-yellow-subtle",
+        "figmaName": "bing/smtc/deco/stroke/yellow/subtle",
+        "usage": "Border/stroke color (subtle variant)",
+        "category": "stroke"
+      }
+    ]
+  },
+  "#c87c00": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-background-yellow-strong",
+        "figmaName": "bing/smtc/data/background/yellow/strong",
+        "usage": "Background color (strong variant)",
+        "category": "background"
+      }
+    ]
+  },
+  "#fdf3dd": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-background-yellow-subtle",
+        "figmaName": "bing/smtc/data/background/yellow/subtle",
+        "usage": "Background color (subtle variant)",
+        "category": "background"
+      }
+    ]
+  },
+  "#444444": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--bing-smtc-status-informative-neutral-background",
+        "figmaName": "bing/smtc/status/informative/neutral/background",
+        "usage": "Background color (neutral)",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-bing-ads-smtc-mobile-foreground-snippet-default",
+        "figmaName": "bing/ads/smtc/mobile/foreground/snippet/default",
+        "usage": "Foreground/text color",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-ctrl-rating-icon-foreground-filled",
+        "figmaName": "smtc/ctrl/rating/icon/foreground/filled",
+        "usage": "Foreground/text color for controls/interactive elements",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-ctrl-choice-switch-stroke-neutral-rest",
+        "figmaName": "bing/smtc/ctrl/choice/switch/stroke/neutral/rest",
+        "usage": "Border/stroke color for controls/interactive elements (neutral) — rest state",
+        "category": "stroke"
+      }
+    ]
+  },
+  "rgba(255, 255, 255, 0.60)": {
+    "mode": "both",
+    "tokens": [
+      {
+        "token": "--smtc-mai-ctrl-choice-switch-thumb-background-pressed",
+        "figmaName": "mai/ctrl/choice/switch/thumb/background/pressed",
+        "usage": "Background color for controls/interactive elements — pressed state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-bing-mm-smtc-foreground-content-on-always-dark-tertiary",
+        "figmaName": "bing/mm/smtc/foreground/content/on-always-dark/tertiary",
+        "usage": "Foreground/text color for content areas",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-bing-mm-smtc-foreground-ctrl-on-always-dark-dropdown-hover",
+        "figmaName": "bing/mm/smtc/foreground/ctrl/on-always-dark/dropdown/hover",
+        "usage": "Foreground/text color for controls/interactive elements — hover state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-bing-mm-smtc-foreground-ctrl-on-always-dark-dropdown-pressed",
+        "figmaName": "bing/mm/smtc/foreground/ctrl/on-always-dark/dropdown/pressed",
+        "usage": "Foreground/text color for controls/interactive elements — pressed state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-bing-mm-smtc-foreground-ctrl-on-always-dark-dropdown-rest",
+        "figmaName": "bing/mm/smtc/foreground/ctrl/on-always-dark/dropdown/rest",
+        "usage": "Foreground/text color for controls/interactive elements — rest state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-bing-mm-smtc-foreground-ctrl-on-always-dark-tab-rest",
+        "figmaName": "bing/mm/smtc/foreground/ctrl/on-always-dark/tab/rest",
+        "usage": "Foreground/text color for controls/interactive elements — rest state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-bing-mm-smtc-foreground-ctrl-search-box-default",
+        "figmaName": "bing/mm/smtc/foreground/ctrl/search-box/default",
+        "usage": "Foreground/text color for controls/interactive elements",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-foreground-ctrl-on-image-switchable-pressed",
+        "figmaName": "bing/smtc/foreground/ctrl/on-image/switchable/pressed",
+        "usage": "Foreground/text color for controls/interactive elements — pressed state",
+        "category": "foreground"
+      },
+      {
+        "token": "--mai-smtc-ctrl-choice-switch-background-default",
+        "figmaName": "mai/smtc/ctrl/choice/switch/background/default",
+        "usage": "Background color for controls/interactive elements",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-foreground-content-neutral-tertiary",
+        "figmaName": "bing/smtc/foreground/content/neutral/tertiary",
+        "usage": "Foreground/text color for content areas (neutral)",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-foreground-ctrl-neutral-primary-rest",
+        "figmaName": "bing/smtc/foreground/ctrl/neutral/primary/rest",
+        "usage": "Foreground/text color for controls/interactive elements (neutral) — rest state",
+        "category": "foreground"
+      }
+    ]
+  },
+  "#3b50b2": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--smtc-choice-switch-background-selected-hover",
+        "figmaName": "mai/smtc/choice/switch/background/selected/hover",
+        "usage": "Background color — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-ctrl-active-brand-hover",
+        "figmaName": "smtc/background/ctrl/active-brand/hover",
+        "usage": "Background color for controls/interactive elements (brand/accent themed) — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-ctrl-brand-hover",
+        "figmaName": "smtc/background/ctrl/brand/hover",
+        "usage": "Background color for controls/interactive elements (brand/accent themed) — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-ctrl-citation-foreground-hover",
+        "figmaName": "bing/smtc/ctrl/citation/foreground/hover",
+        "usage": "Foreground/text color for controls/interactive elements — hover state",
+        "category": "foreground"
+      },
+      {
+        "token": "--mai-smtc-ctrl-choice-switch-stroke-hover",
+        "figmaName": "mai/smtc/ctrl/choice/switch/stroke/hover",
+        "usage": "Border/stroke color for controls/interactive elements — hover state",
+        "category": "stroke"
+      },
+      {
+        "token": "--smtc-ctrl-choice-base-stroke-hover",
+        "figmaName": "smtc/ctrl/choice/base/stroke/hover",
+        "usage": "Border/stroke color for controls/interactive elements — hover state",
+        "category": "stroke"
+      },
+      {
+        "token": "--smtc-ctrl-input-stroke-hover",
+        "figmaName": "smtc/ctrl/input/stroke/hover",
+        "usage": "Border/stroke color for controls/interactive elements — hover state",
+        "category": "stroke"
+      },
+      {
+        "token": "--smtc-stroke-width-ctrl-outline-hover",
+        "figmaName": "smtc/stroke-width/ctrl/outline/hover",
+        "usage": "Border/stroke color for controls/interactive elements — hover state",
+        "category": "stroke"
+      },
+      {
+        "token": "--smtc-stroke-ctrl-on-outline-hover",
+        "figmaName": "smtc/stroke/ctrl/on-outline/hover",
+        "usage": "Border/stroke color for controls/interactive elements — hover state",
+        "category": "stroke"
+      }
+    ]
+  },
+  "#2f408e": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--smtc-choice-switch-background-selected-pressed",
+        "figmaName": "mai/smtc/choice/switch/background/selected/pressed",
+        "usage": "Background color — pressed state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-ctrl-active-brand-pressed",
+        "figmaName": "smtc/background/ctrl/active-brand/pressed",
+        "usage": "Background color for controls/interactive elements (brand/accent themed) — pressed state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-ctrl-brand-pressed",
+        "figmaName": "smtc/background/ctrl/brand/pressed",
+        "usage": "Background color for controls/interactive elements (brand/accent themed) — pressed state",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-ctrl-citation-foreground-pressed",
+        "figmaName": "bing/smtc/ctrl/citation/foreground/pressed",
+        "usage": "Foreground/text color for controls/interactive elements — pressed state",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-ctrl-highlight-ring-stroke-stop-2",
+        "figmaName": "bing/smtc/ctrl/highlight-ring/stroke/stop-2",
+        "usage": "Border/stroke color for controls/interactive elements",
+        "category": "stroke"
+      },
+      {
+        "token": "--mai-smtc-ctrl-choice-switch-stroke-pressed",
+        "figmaName": "mai/smtc/ctrl/choice/switch/stroke/pressed",
+        "usage": "Border/stroke color for controls/interactive elements — pressed state",
+        "category": "stroke"
+      },
+      {
+        "token": "--smtc-ctrl-input-stroke-pressed",
+        "figmaName": "smtc/ctrl/input/stroke/pressed",
+        "usage": "Border/stroke color for controls/interactive elements — pressed state",
+        "category": "stroke"
+      },
+      {
+        "token": "--smtc-ctrl-input-stroke-selected",
+        "figmaName": "smtc/ctrl/input/stroke/selected",
+        "usage": "Border/stroke color for controls/interactive elements — selected state",
+        "category": "stroke"
+      },
+      {
+        "token": "--smtc-stroke-ctrl-on-outline-pressed",
+        "figmaName": "smtc/stroke/ctrl/on-outline/pressed",
+        "usage": "Border/stroke color for controls/interactive elements — pressed state",
+        "category": "stroke"
+      }
+    ]
+  },
+  "rgba(0, 0, 0, 0.60)": {
+    "mode": "both",
+    "tokens": [
+      {
+        "token": "--mai-smtc-ctrl-choice-switch-background-default",
+        "figmaName": "mai/smtc/ctrl/choice/switch/background/default",
+        "usage": "Background color for controls/interactive elements",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-smoke",
+        "figmaName": "smtc/background/smoke",
+        "usage": "Background color",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-foreground-content-neutral-tertiary",
+        "figmaName": "bing/smtc/foreground/content/neutral/tertiary",
+        "usage": "Foreground/text color for content areas (neutral)",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-foreground-ctrl-neutral-primary-rest",
+        "figmaName": "bing/smtc/foreground/ctrl/neutral/primary/rest",
+        "usage": "Foreground/text color for controls/interactive elements (neutral) — rest state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-bing-mm-smtc-stroke-crop-on-image",
+        "figmaName": "bing/mm/smtc/stroke/crop-on-image",
+        "usage": "Border/stroke color",
+        "category": "stroke"
+      },
+      {
+        "token": "--smtc-mai-ctrl-choice-switch-thumb-background-pressed",
+        "figmaName": "mai/ctrl/choice/switch/thumb/background/pressed",
+        "usage": "Background color for controls/interactive elements — pressed state",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-foreground-ctrl-on-image-switchable-pressed",
+        "figmaName": "bing/smtc/foreground/ctrl/on-image/switchable/pressed",
+        "usage": "Foreground/text color for controls/interactive elements — pressed state",
+        "category": "foreground"
+      }
+    ]
+  },
+  "#3c51b4": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--smtc-ctrl-progress-background-filled",
+        "figmaName": "smtc/ctrl/progress/background/filled",
+        "usage": "Background color for controls/interactive elements",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-ctrl-link-foreground-brand-rest",
+        "figmaName": "bing/smtc/ctrl/link/foreground/brand/rest",
+        "usage": "Foreground/text color for controls/interactive elements (brand/accent themed) — rest state",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-foreground-content-brand-rest",
+        "figmaName": "bing/smtc/foreground/content/brand/rest",
+        "usage": "Foreground/text color for content areas (brand/accent themed) — rest state",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-foreground-ctrl-neutral-primary-alt-rest",
+        "figmaName": "bing/smtc/foreground/ctrl/neutral/primary/alt/rest",
+        "usage": "Foreground/text color for controls/interactive elements (neutral) — rest state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-ctrl-lite-filter-foreground-selected",
+        "figmaName": "smtc/ctrl/lite-filter/foreground/selected",
+        "usage": "Foreground/text color for controls/interactive elements — selected state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-content-brand-primary",
+        "figmaName": "smtc/foreground/content/brand/primary",
+        "usage": "Foreground/text color for content areas (brand/accent themed)",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-active-brand-rest",
+        "figmaName": "smtc/foreground/ctrl/active-brand/rest",
+        "usage": "Foreground/text color for controls/interactive elements (brand/accent themed) — rest state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-icon-on-neutral-rest",
+        "figmaName": "smtc/foreground/ctrl/icon/on-neutral/rest",
+        "usage": "Foreground/text color for controls/interactive elements (neutral) — rest state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-icon-on-subtle-rest",
+        "figmaName": "smtc/foreground/ctrl/icon/on-subtle/rest",
+        "usage": "Foreground/text color for controls/interactive elements (subtle variant) — rest state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-neutral-primary-rest",
+        "figmaName": "smtc/foreground/ctrl/neutral/primary/rest",
+        "usage": "Foreground/text color for controls/interactive elements (neutral) — rest state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-on-outline-rest",
+        "figmaName": "smtc/foreground/ctrl/on-outline/rest",
+        "usage": "Foreground/text color for controls/interactive elements — rest state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-on-subtle-rest",
+        "figmaName": "smtc/foreground/ctrl/on-subtle/rest",
+        "usage": "Foreground/text color for controls/interactive elements (subtle variant) — rest state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-on-transparent-rest",
+        "figmaName": "smtc/foreground/ctrl/on-transparent/rest",
+        "usage": "Foreground/text color for controls/interactive elements — rest state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-status-brand-tint-foreground",
+        "figmaName": "smtc/status/brand/tint/foreground",
+        "usage": "Foreground/text color (brand/accent themed)",
+        "category": "foreground"
+      }
+    ]
+  },
+  "#666666": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--smtc-bing-ads-smtc-desktop-foreground-ad-slug-default",
+        "figmaName": "bing/ads/smtc/desktop/foreground/ad-slug/default",
+        "usage": "Foreground/text color",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-bing-ads-smtc-mobile-foreground-ad-slug-default",
+        "figmaName": "bing/ads/smtc/mobile/foreground/ad-slug/default",
+        "usage": "Foreground/text color",
+        "category": "foreground"
+      }
+    ]
+  },
+  "#71777d": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--smtc-bing-ads-smtc-desktop-foreground-snippet-default",
+        "figmaName": "bing/ads/smtc/desktop/foreground/snippet/default",
+        "usage": "Foreground/text color",
+        "category": "foreground"
+      }
+    ]
+  },
+  "#82c7ff": {
+    "mode": "both",
+    "tokens": [
+      {
+        "token": "--smtc-bing-mm-smtc-ctrl-link-foreground-content-on-always-dark-default",
+        "figmaName": "bing/mm/smtc/ctrl/link/foreground/content/on-always-dark/default",
+        "usage": "Foreground/text color for controls/interactive elements",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-ctrl-link-foreground-brand-rest",
+        "figmaName": "smtc/ctrl/link/foreground/brand/rest",
+        "usage": "Foreground/text color for controls/interactive elements (brand/accent themed) — rest state",
+        "category": "foreground"
+      }
+    ]
+  },
+  "rgba(255, 255, 255, 0.80)": {
+    "mode": "both",
+    "tokens": [
+      {
+        "token": "--smtc-bing-mm-smtc-foreground-content-on-always-dark-secondary",
+        "figmaName": "bing/mm/smtc/foreground/content/on-always-dark/secondary",
+        "usage": "Foreground/text color for content areas",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-foreground-ctrl-on-image-alt-rest",
+        "figmaName": "bing/smtc/foreground/ctrl/on-image/alt/rest",
+        "usage": "Foreground/text color for controls/interactive elements — rest state",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-background-ctrl-on-image-switchable-hover",
+        "figmaName": "bing/smtc/background/ctrl/on-image/switchable/hover",
+        "usage": "Background color for controls/interactive elements — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-ctrl-choice-switch-background-pressed",
+        "figmaName": "bing/smtc/ctrl/choice/switch/background/pressed",
+        "usage": "Background color for controls/interactive elements — pressed state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-bing-ads-smtc-foreground-site-url",
+        "figmaName": "bing/ads/smtc/foreground/site-url",
+        "usage": "Foreground/text color",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-foreground-ctrl-on-subtle-hover",
+        "figmaName": "bing/smtc/foreground/ctrl/on-subtle/hover",
+        "usage": "Foreground/text color for controls/interactive elements (subtle variant) — hover state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-content-neutral-secondary",
+        "figmaName": "smtc/foreground/content/neutral/secondary",
+        "usage": "Foreground/text color for content areas (neutral)",
+        "category": "foreground"
+      }
+    ]
+  },
+  "#171717": {
+    "mode": "both",
+    "tokens": [
+      {
+        "token": "--smtc-bing-mm-smtc-foreground-ctrl-on-always-dark-action-bar-selected-rest",
+        "figmaName": "bing/mm/smtc/foreground/ctrl/on-always-dark/action-bar/selected-rest",
+        "usage": "Foreground/text color for controls/interactive elements — rest state",
+        "category": "foreground"
+      }
+    ]
+  },
+  "#c7c7c7": {
+    "mode": "both",
+    "tokens": [
+      {
+        "token": "--smtc-bing-mm-smtc-foreground-ctrl-on-always-dark-hover",
+        "figmaName": "bing/mm/smtc/foreground/ctrl/on-always-dark/hover",
+        "usage": "Foreground/text color for controls/interactive elements — hover state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-bing-mm-smtc-foreground-ctrl-on-always-dark-tab-hover",
+        "figmaName": "bing/mm/smtc/foreground/ctrl/on-always-dark/tab/hover",
+        "usage": "Foreground/text color for controls/interactive elements — hover state",
+        "category": "foreground"
+      }
+    ]
+  },
+  "rgba(255, 255, 255, 0.75)": {
+    "mode": "both",
+    "tokens": [
+      {
+        "token": "--smtc-bing-mm-smtc-foreground-ctrl-search-box-icon-pressed",
+        "figmaName": "bing/mm/smtc/foreground/ctrl/search-box/icon/pressed",
+        "usage": "Foreground/text color for controls/interactive elements — pressed state",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-background-ctrl-on-image-switchable-pressed",
+        "figmaName": "bing/smtc/background/ctrl/on-image/switchable/pressed",
+        "usage": "Background color for controls/interactive elements — pressed state",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-ctrl-choice-switch-background-hover",
+        "figmaName": "bing/smtc/ctrl/choice/switch/background/hover",
+        "usage": "Background color for controls/interactive elements — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-ctrl-brand-rest",
+        "figmaName": "smtc/background/ctrl/brand/rest",
+        "usage": "Background color for controls/interactive elements (brand/accent themed) — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-ctrl-tooltip-background",
+        "figmaName": "smtc/ctrl/tooltip/background",
+        "usage": "Background color for controls/interactive elements",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-foreground-content-neutral-secondary-alt",
+        "figmaName": "bing/smtc/foreground/content/neutral/secondary/alt",
+        "usage": "Foreground/text color for content areas (neutral)",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-foreground-ctrl-on-subtle-pressed",
+        "figmaName": "bing/smtc/foreground/ctrl/on-subtle/pressed",
+        "usage": "Foreground/text color for controls/interactive elements (subtle variant) — pressed state",
+        "category": "foreground"
+      }
+    ]
+  },
+  "#feb84d": {
+    "mode": "both",
+    "tokens": [
+      {
+        "token": "--smtc-bing-mm-smtc-foreground-rating-content-on-always-dark-default",
+        "figmaName": "bing/mm/smtc/foreground/rating/content/on-always-dark/default",
+        "usage": "Foreground/text color for content areas",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-data-foreground-amber-strong",
+        "figmaName": "bing/smtc/data/foreground/amber/strong",
+        "usage": "Foreground/text color (strong variant)",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-deco-stroke-amber-strong",
+        "figmaName": "bing/smtc/deco/stroke/amber/strong",
+        "usage": "Border/stroke color (strong variant)",
+        "category": "stroke"
+      }
+    ]
+  },
+  "#4007a2": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--bing-smtc-ctrl-link-foreground-brand-alt-visited",
+        "figmaName": "bing/smtc/ctrl/link/foreground/brand/alt/visited",
+        "usage": "Foreground/text color for controls/interactive elements (brand/accent themed)",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-ctrl-link-foreground-brand-rest",
+        "figmaName": "smtc/ctrl/link/foreground/brand/rest",
+        "usage": "Foreground/text color for controls/interactive elements (brand/accent themed) — rest state",
+        "category": "foreground"
+      }
+    ]
+  },
+  "#272320": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--smtc-ctrl-link-foreground-brand-hover",
+        "figmaName": "bing/smtc/ctrl/link/foreground/brand/hover",
+        "usage": "Foreground/text color for controls/interactive elements (brand/accent themed) — hover state",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-data-foreground-gray-strong",
+        "figmaName": "bing/smtc/data/foreground/gray/strong",
+        "usage": "Foreground/text color (strong variant)",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-foreground-content-brand-hover",
+        "figmaName": "bing/smtc/foreground/content/brand/hover",
+        "usage": "Foreground/text color for content areas (brand/accent themed) — hover state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-ctrl-link-foreground-brand-hover",
+        "figmaName": "smtc/ctrl/link/foreground/brand/hover",
+        "usage": "Foreground/text color for controls/interactive elements (brand/accent themed) — hover state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-active-brand-hover",
+        "figmaName": "smtc/foreground/ctrl/active-brand/hover",
+        "usage": "Foreground/text color for controls/interactive elements (brand/accent themed) — hover state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-icon-on-neutral-hover",
+        "figmaName": "smtc/foreground/ctrl/icon/on-neutral/hover",
+        "usage": "Foreground/text color for controls/interactive elements (neutral) — hover state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-icon-on-subtle-hover",
+        "figmaName": "smtc/foreground/ctrl/icon/on-subtle/hover",
+        "usage": "Foreground/text color for controls/interactive elements (subtle variant) — hover state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-neutral-primary-hover",
+        "figmaName": "smtc/foreground/ctrl/neutral/primary/hover",
+        "usage": "Foreground/text color for controls/interactive elements (neutral) — hover state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-on-outline-hover",
+        "figmaName": "smtc/foreground/ctrl/on-outline/hover",
+        "usage": "Foreground/text color for controls/interactive elements — hover state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-on-subtle-hover",
+        "figmaName": "smtc/foreground/ctrl/on-subtle/hover",
+        "usage": "Foreground/text color for controls/interactive elements (subtle variant) — hover state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-on-transparent-hover",
+        "figmaName": "smtc/foreground/ctrl/on-transparent/hover",
+        "usage": "Foreground/text color for controls/interactive elements — hover state",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-deco-stroke-gray-strong",
+        "figmaName": "bing/smtc/deco/stroke/gray/strong",
+        "usage": "Border/stroke color (strong variant)",
+        "category": "stroke"
+      }
+    ]
+  },
+  "#14110e": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--smtc-ctrl-link-foreground-brand-pressed",
+        "figmaName": "bing/smtc/ctrl/link/foreground/brand/pressed",
+        "usage": "Foreground/text color for controls/interactive elements (brand/accent themed) — pressed state",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-foreground-content-brand-pressed",
+        "figmaName": "bing/smtc/foreground/content/brand/pressed",
+        "usage": "Foreground/text color for content areas (brand/accent themed) — pressed state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-ctrl-link-foreground-brand-pressed",
+        "figmaName": "smtc/ctrl/link/foreground/brand/pressed",
+        "usage": "Foreground/text color for controls/interactive elements (brand/accent themed) — pressed state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-active-brand-pressed",
+        "figmaName": "smtc/foreground/ctrl/active-brand/pressed",
+        "usage": "Foreground/text color for controls/interactive elements (brand/accent themed) — pressed state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-icon-on-neutral-pressed",
+        "figmaName": "smtc/foreground/ctrl/icon/on-neutral/pressed",
+        "usage": "Foreground/text color for controls/interactive elements (neutral) — pressed state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-icon-on-subtle-pressed",
+        "figmaName": "smtc/foreground/ctrl/icon/on-subtle/pressed",
+        "usage": "Foreground/text color for controls/interactive elements (subtle variant) — pressed state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-neutral-primary-pressed",
+        "figmaName": "smtc/foreground/ctrl/neutral/primary/pressed",
+        "usage": "Foreground/text color for controls/interactive elements (neutral) — pressed state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-on-outline-pressed",
+        "figmaName": "smtc/foreground/ctrl/on-outline/pressed",
+        "usage": "Foreground/text color for controls/interactive elements — pressed state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-on-subtle-pressed",
+        "figmaName": "smtc/foreground/ctrl/on-subtle/pressed",
+        "usage": "Foreground/text color for controls/interactive elements (subtle variant) — pressed state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-on-transparent-pressed",
+        "figmaName": "smtc/foreground/ctrl/on-transparent/pressed",
+        "usage": "Foreground/text color for controls/interactive elements — pressed state",
+        "category": "foreground"
+      }
+    ]
+  },
+  "#a84300": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-foreground-amber-strong",
+        "figmaName": "bing/smtc/data/foreground/amber/strong",
+        "usage": "Foreground/text color (strong variant)",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-deco-stroke-amber-strong",
+        "figmaName": "bing/smtc/deco/stroke/amber/strong",
+        "usage": "Border/stroke color (strong variant)",
+        "category": "stroke"
+      }
+    ]
+  },
+  "#ac6324": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-foreground-amber-subtle",
+        "figmaName": "bing/smtc/data/foreground/amber/subtle",
+        "usage": "Foreground/text color (subtle variant)",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-deco-stroke-amber-subtle",
+        "figmaName": "bing/smtc/deco/stroke/amber/subtle",
+        "usage": "Border/stroke color (subtle variant)",
+        "category": "stroke"
+      }
+    ]
+  },
+  "#005aa1": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-foreground-blue-default",
+        "figmaName": "bing/smtc/data/foreground/blue/default",
+        "usage": "Foreground/text color",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-deco-stroke-blue-default",
+        "figmaName": "bing/smtc/deco/stroke/blue/default",
+        "usage": "Border/stroke color",
+        "category": "stroke"
+      }
+    ]
+  },
+  "#003660": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-foreground-blue-strong",
+        "figmaName": "bing/smtc/data/foreground/blue/strong",
+        "usage": "Foreground/text color (strong variant)",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-deco-stroke-blue-strong",
+        "figmaName": "bing/smtc/deco/stroke/blue/strong",
+        "usage": "Border/stroke color (strong variant)",
+        "category": "stroke"
+      }
+    ]
+  },
+  "#0d71ea": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-foreground-blue-subtle",
+        "figmaName": "bing/smtc/data/foreground/blue/subtle",
+        "usage": "Foreground/text color (subtle variant)",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-deco-stroke-blue-subtle",
+        "figmaName": "bing/smtc/deco/stroke/blue/subtle",
+        "usage": "Border/stroke color (subtle variant)",
+        "category": "stroke"
+      }
+    ]
+  },
+  "#6e6e6e": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-foreground-gray-subtle",
+        "figmaName": "bing/smtc/data/foreground/gray/subtle",
+        "usage": "Foreground/text color (subtle variant)",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-deco-stroke-gray-subtle",
+        "figmaName": "bing/smtc/deco/stroke/gray/subtle",
+        "usage": "Border/stroke color (subtle variant)",
+        "category": "stroke"
+      }
+    ]
+  },
+  "#004d1a": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-foreground-green-strong",
+        "figmaName": "bing/smtc/data/foreground/green/strong",
+        "usage": "Foreground/text color (strong variant)",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-status-success-tint-foreground-alt",
+        "figmaName": "bing/smtc/status/success/tint/foreground/alt",
+        "usage": "Foreground/text color (success state)",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-deco-stroke-green-strong",
+        "figmaName": "bing/smtc/deco/stroke/green/strong",
+        "usage": "Border/stroke color (strong variant)",
+        "category": "stroke"
+      }
+    ]
+  },
+  "#2c8543": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-foreground-green-subtle",
+        "figmaName": "bing/smtc/data/foreground/green/subtle",
+        "usage": "Foreground/text color (subtle variant)",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-deco-stroke-green-subtle",
+        "figmaName": "bing/smtc/deco/stroke/green/subtle",
+        "usage": "Border/stroke color (subtle variant)",
+        "category": "stroke"
+      }
+    ]
+  },
+  "#800000": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-foreground-red-strong",
+        "figmaName": "bing/smtc/data/foreground/red/strong",
+        "usage": "Foreground/text color (strong variant)",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-status-danger-tint-foreground-alt",
+        "figmaName": "bing/smtc/status/danger/tint/foreground/alt",
+        "usage": "Foreground/text color (danger/error state)",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-deco-stroke-red-strong",
+        "figmaName": "bing/smtc/deco/stroke/red/strong",
+        "usage": "Border/stroke color (strong variant)",
+        "category": "stroke"
+      }
+    ]
+  },
+  "#ca4c48": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-foreground-red-subtle",
+        "figmaName": "bing/smtc/data/foreground/red/subtle",
+        "usage": "Foreground/text color (subtle variant)",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-deco-stroke-red-subtle",
+        "figmaName": "bing/smtc/deco/stroke/red/subtle",
+        "usage": "Border/stroke color (subtle variant)",
+        "category": "stroke"
+      }
+    ]
+  },
+  "#d89b3a": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-foreground-yellow-default",
+        "figmaName": "bing/smtc/data/foreground/yellow/default",
+        "usage": "Foreground/text color",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-deco-stroke-yellow-default",
+        "figmaName": "bing/smtc/deco/stroke/yellow/default",
+        "usage": "Border/stroke color",
+        "category": "stroke"
+      }
+    ]
+  },
+  "#a25a02": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-foreground-yellow-strong",
+        "figmaName": "bing/smtc/data/foreground/yellow/strong",
+        "usage": "Foreground/text color (strong variant)",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-deco-stroke-yellow-strong",
+        "figmaName": "bing/smtc/deco/stroke/yellow/strong",
+        "usage": "Border/stroke color (strong variant)",
+        "category": "stroke"
+      }
+    ]
+  },
+  "#191919": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--smtc-foreground-ctrl-icon-on-outline-hover",
+        "figmaName": "smtc/foreground/ctrl/icon/on-outline/hover",
+        "usage": "Foreground/text color for controls/interactive elements — hover state",
+        "category": "foreground"
+      }
+    ]
+  },
+  "#141414": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--smtc-foreground-ctrl-icon-on-outline-pressed",
+        "figmaName": "smtc/foreground/ctrl/icon/on-outline/pressed",
+        "usage": "Foreground/text color for controls/interactive elements — pressed state",
+        "category": "foreground"
+      }
+    ]
+  },
+  "#0159ba": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--smtc-foreground-ctrl-icon-on-outline-rest",
+        "figmaName": "smtc/foreground/ctrl/icon/on-outline/rest",
+        "usage": "Foreground/text color for controls/interactive elements — rest state",
+        "category": "foreground"
+      }
+    ]
+  },
+  "rgba(0, 0, 0, 0.30)": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--smtc-foreground-ctrl-neutral-primary-disabled",
+        "figmaName": "smtc/foreground/ctrl/neutral/primary/disabled",
+        "usage": "Foreground/text color for controls/interactive elements (neutral) — disabled state",
+        "category": "foreground"
+      }
+    ]
+  },
+  "#d2d0ce": {
+    "mode": "both",
+    "tokens": [
+      {
+        "token": "--smtc-bing-mm-smtc-ad-slug-content-on-always-dark-default",
+        "figmaName": "bing/mm/smtc/ad-slug/content/on-always-dark/default",
+        "usage": "for content areas",
+        "category": "other"
+      },
+      {
+        "token": "--smtc-bing-ads-smtc-desktop-foreground-ad-slug-default",
+        "figmaName": "bing/ads/smtc/desktop/foreground/ad-slug/default",
+        "usage": "Foreground/text color",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-bing-ads-smtc-desktop-foreground-snippet-default",
+        "figmaName": "bing/ads/smtc/desktop/foreground/snippet/default",
+        "usage": "Foreground/text color",
+        "category": "foreground"
+      }
+    ]
+  },
+  "#60bd84": {
+    "mode": "both",
+    "tokens": [
+      {
+        "token": "--smtc-bing-mm-smtc-algo-url-content-on-always-dark-default",
+        "figmaName": "bing/mm/smtc/algo/url/content/on-always-dark/default",
+        "usage": "for content areas",
+        "category": "other"
+      },
+      {
+        "token": "--bing-smtc-data-foreground-green-default",
+        "figmaName": "bing/smtc/data/foreground/green/default",
+        "usage": "Foreground/text color",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-status-success-tint-foreground",
+        "figmaName": "smtc/status/success/tint/foreground",
+        "usage": "Foreground/text color (success state)",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-deco-stroke-green-default",
+        "figmaName": "bing/smtc/deco/stroke/green/default",
+        "usage": "Border/stroke color",
+        "category": "stroke"
+      },
+      {
+        "token": "--smtc-status-success-stroke",
+        "figmaName": "smtc/status/success/stroke",
+        "usage": "Border/stroke color (success state)",
+        "category": "stroke"
+      }
+    ]
+  },
+  "cubic-bezier(0.2, 1.5, 0.4, 1)": {
+    "mode": "both",
+    "tokens": [
+      {
+        "token": "--smtc-elastic-01",
+        "figmaName": "smtc/elastic/01",
+        "usage": "General purpose token",
+        "category": "other"
+      }
+    ]
+  },
+  "cubic-bezier(0, 0, 0, 1)": {
+    "mode": "both",
+    "tokens": [
+      {
+        "token": "--smtc-entrance-01",
+        "figmaName": "smtc/entrance/01",
+        "usage": "General purpose token",
+        "category": "other"
+      }
+    ]
+  },
+  "cubic-bezier(0.14, 1, 0.34, 1)": {
+    "mode": "both",
+    "tokens": [
+      {
+        "token": "--smtc-entrance-02",
+        "figmaName": "smtc/entrance/02",
+        "usage": "General purpose token",
+        "category": "other"
+      }
+    ]
+  },
+  "cubic-bezier(0.6, 0, 0.75, 0.4)": {
+    "mode": "both",
+    "tokens": [
+      {
+        "token": "--smtc-exit-01",
+        "figmaName": "smtc/exit/01",
+        "usage": "General purpose token",
+        "category": "other"
+      }
+    ]
+  },
+  "0 0 0 0 rgba(0, 0, 0, 0.05), 0 4px 12px 0 rgba(0, 0, 0, 0.14)": {
+    "mode": "both",
+    "tokens": [
+      {
+        "token": "--smtc-floating-action-button-hover",
+        "figmaName": "smtc/floating/action-button/hover",
+        "usage": "— hover state",
+        "category": "other"
+      },
+      {
+        "token": "--smtc-floating-action-button-pressed",
+        "figmaName": "smtc/floating/action-button/pressed",
+        "usage": "— pressed state",
+        "category": "other"
+      },
+      {
+        "token": "--smtc-floating-action-button-rest",
+        "figmaName": "smtc/floating/action-button/rest",
+        "usage": "— rest state",
+        "category": "other"
+      }
+    ]
+  },
+  "cubic-bezier(0.33, 0, 0, 1)": {
+    "mode": "both",
+    "tokens": [
+      {
+        "token": "--smtc-persistent-01",
+        "figmaName": "smtc/persistent/01",
+        "usage": "General purpose token",
+        "category": "other"
+      }
+    ]
+  },
+  "#f9f9f9": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--smtc-bing-ads-smtc-ad-slug-stroke",
+        "figmaName": "bing/ads/smtc/ad-slug/stroke",
+        "usage": "Border/stroke color",
+        "category": "stroke"
+      }
+    ]
+  },
+  "rgba(255, 255, 255, 0.10)": {
+    "mode": "both",
+    "tokens": [
+      {
+        "token": "--smtc-bing-mm-smtc-stroke-ctrl-on-always-dark-default",
+        "figmaName": "bing/mm/smtc/stroke/ctrl/on-always-dark/default",
+        "usage": "Border/stroke color for controls/interactive elements",
+        "category": "stroke"
+      },
+      {
+        "token": "--smtc-bing-mm-smtc-stroke-ctrl-on-always-dark-dropdown-rest",
+        "figmaName": "bing/mm/smtc/stroke/ctrl/on-always-dark/dropdown/rest",
+        "usage": "Border/stroke color for controls/interactive elements — rest state",
+        "category": "stroke"
+      },
+      {
+        "token": "--smtc-ctrl-input-background-error",
+        "figmaName": "smtc/ctrl/input/background/error",
+        "usage": "Background color for controls/interactive elements",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-ctrl-input-background-pressed",
+        "figmaName": "smtc/ctrl/input/background/pressed",
+        "usage": "Background color for controls/interactive elements — pressed state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-ctrl-progress-background-empty",
+        "figmaName": "smtc/ctrl/progress/background/empty",
+        "usage": "Background color for controls/interactive elements",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-stroke-ctrl-default",
+        "figmaName": "bing/smtc/stroke/ctrl/default",
+        "usage": "Border/stroke color for controls/interactive elements",
+        "category": "stroke"
+      },
+      {
+        "token": "--bing-smtc-stroke-ctrl-on-image-default",
+        "figmaName": "bing/smtc/stroke/ctrl/on-image/default",
+        "usage": "Border/stroke color for controls/interactive elements",
+        "category": "stroke"
+      },
+      {
+        "token": "--smtc-ctrl-input-stroke-rest",
+        "figmaName": "smtc/ctrl/input/stroke/rest",
+        "usage": "Border/stroke color for controls/interactive elements — rest state",
+        "category": "stroke"
+      },
+      {
+        "token": "--smtc-stroke-card-on-primary-rest",
+        "figmaName": "smtc/stroke/card/on-primary/rest",
+        "usage": "Border/stroke color for card components — rest state",
+        "category": "stroke"
+      },
+      {
+        "token": "--smtc-stroke-ctrl-on-neutral-rest",
+        "figmaName": "smtc/stroke/ctrl/on-neutral/rest",
+        "usage": "Border/stroke color for controls/interactive elements (neutral) — rest state",
+        "category": "stroke"
+      },
+      {
+        "token": "--smtc-stroke-divider-default",
+        "figmaName": "smtc/stroke/divider/default",
+        "usage": "Border/stroke color for dividers",
+        "category": "stroke"
+      }
+    ]
+  },
+  "rgba(255, 255, 255, 0.20)": {
+    "mode": "both",
+    "tokens": [
+      {
+        "token": "--smtc-bing-mm-smtc-stroke-ctrl-on-always-dark-dropdown-hover",
+        "figmaName": "bing/mm/smtc/stroke/ctrl/on-always-dark/dropdown/hover",
+        "usage": "Border/stroke color for controls/interactive elements — hover state",
+        "category": "stroke"
+      },
+      {
+        "token": "--bing-smtc-background-ctrl-image-placeholder-default",
+        "figmaName": "bing/smtc/background/ctrl/image/placeholder/default",
+        "usage": "Background color for controls/interactive elements",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-stroke-ctrl-strong",
+        "figmaName": "bing/smtc/stroke/ctrl/strong",
+        "usage": "Border/stroke color for controls/interactive elements (strong variant)",
+        "category": "stroke"
+      },
+      {
+        "token": "--smtc-ctrl-choice-base-stroke-rest",
+        "figmaName": "smtc/ctrl/choice/base/stroke/rest",
+        "usage": "Border/stroke color for controls/interactive elements — rest state",
+        "category": "stroke"
+      }
+    ]
+  },
+  "rgba(0, 0, 0, 0.05)": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--bing-smtc-stroke-ctrl-disable",
+        "figmaName": "bing/smtc/stroke/ctrl/disable",
+        "usage": "Border/stroke color for controls/interactive elements",
+        "category": "stroke"
+      }
+    ]
+  },
+  "rgba(0, 0, 0, 0.20)": {
+    "mode": "light",
+    "tokens": [
+      {
+        "token": "--bing-smtc-stroke-ctrl-strong",
+        "figmaName": "bing/smtc/stroke/ctrl/strong",
+        "usage": "Border/stroke color for controls/interactive elements (strong variant)",
+        "category": "stroke"
+      },
+      {
+        "token": "--smtc-ctrl-choice-base-stroke-rest",
+        "figmaName": "smtc/ctrl/choice/base/stroke/rest",
+        "usage": "Border/stroke color for controls/interactive elements — rest state",
+        "category": "stroke"
+      }
+    ]
+  },
+  "linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 7%, rgba(0, 0, 0, 0.1) 92%, rgba(0, 0, 0, 0) 100%)": {
+    "mode": "both",
+    "tokens": [
+      {
+        "token": "--smtc-stroke-gradient-divider",
+        "figmaName": "bing/smtc/stroke/gradient-divider",
+        "usage": "Border/stroke color for dividers",
+        "category": "stroke"
+      }
+    ]
+  },
+  "rgba(0, 0, 0, 1)": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--mai-smtc-ctrl-choice-switch-thumb-background-hover",
+        "figmaName": null,
+        "usage": "Background color for controls/interactive elements — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--mai-smtc-ctrl-choice-switch-thumb-background-rest",
+        "figmaName": null,
+        "usage": "Background color for controls/interactive elements — rest state",
+        "category": "background"
+      }
+    ]
+  },
+  "rgba(0, 0, 0, 0.6)": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--mai-smtc-ctrl-choice-switch-thumb-background-pressed",
+        "figmaName": null,
+        "usage": "Background color for controls/interactive elements — pressed state",
+        "category": "background"
+      }
+    ]
+  },
+  "#1f2431": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--bing-smtc-background-card-on-primary-alt-gradient-stop-1",
+        "figmaName": "bing/smtc/background/card/on-primary/alt/gradient/stop-1",
+        "usage": "Background color for card components",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-background-card-on-primary-alt-rest",
+        "figmaName": "bing/smtc/background/card/on-primary/alt/rest",
+        "usage": "Background color for card components — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-background-ctrl-active-brand-rest",
+        "figmaName": "bing/smtc/background/ctrl/active/brand/rest",
+        "usage": "Background color for controls/interactive elements (brand/accent themed) — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-background-ctrl-subtle-rest",
+        "figmaName": "bing/smtc/background/ctrl/subtle/rest",
+        "usage": "Background color for controls/interactive elements (subtle variant) — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-ctrl-citation-background-rest",
+        "figmaName": "bing/smtc/ctrl/citation/background/rest",
+        "usage": "Background color for controls/interactive elements — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-ctrl-active-brand-disabled",
+        "figmaName": "smtc/background/ctrl/active/brand/disabled",
+        "usage": "Background color for controls/interactive elements (brand/accent themed) — disabled state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-ctrl-outline-disabled",
+        "figmaName": "smtc/background/ctrl/outline/disabled",
+        "usage": "Background color for controls/interactive elements — disabled state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-ctrl-list-background-selected-rest",
+        "figmaName": "smtc/ctrl/list/background/selected-rest",
+        "usage": "Background color for controls/interactive elements — rest state",
+        "category": "background"
+      }
+    ]
+  },
+  "#282d3e": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--bing-smtc-background-card-on-primary-alt-hover",
+        "figmaName": "bing/smtc/background/card/on-primary/alt/hover",
+        "usage": "Background color for card components — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-background-ctrl-active-brand-hover",
+        "figmaName": "bing/smtc/background/ctrl/active/brand/hover",
+        "usage": "Background color for controls/interactive elements (brand/accent themed) — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-background-ctrl-neutral-rest",
+        "figmaName": "bing/smtc/background/ctrl/neutral/rest",
+        "usage": "Background color for controls/interactive elements (neutral) — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-ctrl-citation-background-hover",
+        "figmaName": "bing/smtc/ctrl/citation/background/hover",
+        "usage": "Background color for controls/interactive elements — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-ctrl-citation-on-card-background-rest",
+        "figmaName": "bing/smtc/ctrl/citation/on-card/background/rest",
+        "usage": "Background color for controls/interactive elements — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-ctrl-tab-in-card-background-selected",
+        "figmaName": "bing/smtc/ctrl/tab/in-card/background/selected",
+        "usage": "Background color for controls/interactive elements — selected state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-card-on-primary-alt-selected",
+        "figmaName": "mai/smtc/background/card/on-primary/alt/selected",
+        "usage": "Background color for card components — selected state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-card-on-primary-alt-rest",
+        "figmaName": "smtc/background/card/on-primary/alt/rest",
+        "usage": "Background color for card components — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-card-on-secondary-alt-rest",
+        "figmaName": "smtc/background/card/on-secondary/alt/rest",
+        "usage": "Background color for card components — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-ctrl-neutral-disabled",
+        "figmaName": "smtc/background/ctrl/neutral/disabled",
+        "usage": "Background color for controls/interactive elements (neutral) — disabled state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-ctrl-subtle-hover",
+        "figmaName": "smtc/background/ctrl/subtle/hover",
+        "usage": "Background color for controls/interactive elements (subtle variant) — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-ctrl-list-background-selected-hover",
+        "figmaName": "smtc/ctrl/list/background/selected-hover",
+        "usage": "Background color for controls/interactive elements — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-ctrl-lite-filter-background-selected",
+        "figmaName": "smtc/ctrl/lite-filter/background/selected",
+        "usage": "Background color for controls/interactive elements — selected state",
+        "category": "background"
+      }
+    ]
+  },
+  "#333a4e": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--bing-smtc-background-card-on-primary-alt-pressed",
+        "figmaName": "bing/smtc/background/card/on-primary/alt/pressed",
+        "usage": "Background color for card components — pressed state",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-ctrl-citation-background-pressed",
+        "figmaName": "bing/smtc/ctrl/citation/background/pressed",
+        "usage": "Background color for controls/interactive elements — pressed state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-ctrl-subtle-pressed",
+        "figmaName": "smtc/background/ctrl/subtle/pressed",
+        "usage": "Background color for controls/interactive elements (subtle variant) — pressed state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-ctrl-input-background-disabled",
+        "figmaName": "smtc/ctrl/input/background/disabled",
+        "usage": "Background color for controls/interactive elements — disabled state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-ctrl-list-background-selected-pressed",
+        "figmaName": "smtc/ctrl/list/background/selected-pressed",
+        "usage": "Background color for controls/interactive elements — pressed state",
+        "category": "background"
+      }
+    ]
+  },
+  "#484644": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--bing-smtc-background-container-highlight",
+        "figmaName": "bing/smtc/background/container/highlight",
+        "usage": "Background color",
+        "category": "background"
+      }
+    ]
+  },
+  "#d9dffb": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--bing-smtc-background-ctrl-brand-rest",
+        "figmaName": "bing/smtc/background/ctrl/brand/rest",
+        "usage": "Background color for controls/interactive elements (brand/accent themed) — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-ctrl-skeleton-background-default-layer-1-stop-1",
+        "figmaName": "bing/smtc/ctrl/skeleton/background/default/layer/1/stop-1",
+        "usage": "Background color for controls/interactive elements",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-status-brand-background",
+        "figmaName": "bing/smtc/status/brand/background",
+        "usage": "Background color (brand/accent themed)",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-choice-switch-background-selected-rest",
+        "figmaName": "mai/smtc/choice/switch/background/selected/rest",
+        "usage": "Background color — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-ctrl-active-brand-rest",
+        "figmaName": "smtc/background/ctrl/active-brand/rest",
+        "usage": "Background color for controls/interactive elements (brand/accent themed) — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-ctrl-progress-background-filled",
+        "figmaName": "smtc/ctrl/progress/background/filled",
+        "usage": "Background color for controls/interactive elements",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-ctrl-citation-foreground-rest",
+        "figmaName": "bing/smtc/ctrl/citation/foreground/rest",
+        "usage": "Foreground/text color for controls/interactive elements — rest state",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-ctrl-link-foreground-brand-rest",
+        "figmaName": "bing/smtc/ctrl/link/foreground/brand/rest",
+        "usage": "Foreground/text color for controls/interactive elements (brand/accent themed) — rest state",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-foreground-content-brand-rest",
+        "figmaName": "bing/smtc/foreground/content/brand/rest",
+        "usage": "Foreground/text color for content areas (brand/accent themed) — rest state",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-foreground-ctrl-neutral-primary-alt-rest",
+        "figmaName": "bing/smtc/foreground/ctrl/neutral/primary/alt/rest",
+        "usage": "Foreground/text color for controls/interactive elements (neutral) — rest state",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-foreground-ctrl-on-transparent-rest",
+        "figmaName": "bing/smtc/foreground/ctrl/on-transparent/rest",
+        "usage": "Foreground/text color for controls/interactive elements — rest state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-ctrl-lite-filter-foreground-selected",
+        "figmaName": "smtc/ctrl/lite-filter/foreground/selected",
+        "usage": "Foreground/text color for controls/interactive elements — selected state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-content-brand-primary",
+        "figmaName": "smtc/foreground/content/brand/primary",
+        "usage": "Foreground/text color for content areas (brand/accent themed)",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-active-brand-rest",
+        "figmaName": "smtc/foreground/ctrl/active-brand/rest",
+        "usage": "Foreground/text color for controls/interactive elements (brand/accent themed) — rest state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-icon-on-neutral-rest",
+        "figmaName": "smtc/foreground/ctrl/icon/on-neutral/rest",
+        "usage": "Foreground/text color for controls/interactive elements (neutral) — rest state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-icon-on-outline-rest",
+        "figmaName": "smtc/foreground/ctrl/icon/on-outline/rest",
+        "usage": "Foreground/text color for controls/interactive elements — rest state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-icon-on-subtle-rest",
+        "figmaName": "smtc/foreground/ctrl/icon/on-subtle/rest",
+        "usage": "Foreground/text color for controls/interactive elements (subtle variant) — rest state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-neutral-primary-rest",
+        "figmaName": "smtc/foreground/ctrl/neutral/primary/rest",
+        "usage": "Foreground/text color for controls/interactive elements (neutral) — rest state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-on-outline-rest",
+        "figmaName": "smtc/foreground/ctrl/on-outline/rest",
+        "usage": "Foreground/text color for controls/interactive elements — rest state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-on-subtle-rest",
+        "figmaName": "smtc/foreground/ctrl/on-subtle/rest",
+        "usage": "Foreground/text color for controls/interactive elements (subtle variant) — rest state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-on-transparent-rest",
+        "figmaName": "smtc/foreground/ctrl/on-transparent/rest",
+        "usage": "Foreground/text color for controls/interactive elements — rest state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-status-brand-tint-foreground",
+        "figmaName": "smtc/status/brand/tint/foreground",
+        "usage": "Foreground/text color (brand/accent themed)",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-ctrl-highlight-ring-stroke-stop-1",
+        "figmaName": "bing/smtc/ctrl/highlight-ring/stroke/stop-1",
+        "usage": "Border/stroke color for controls/interactive elements",
+        "category": "stroke"
+      },
+      {
+        "token": "--mai-smtc-ctrl-choice-switch-stroke-rest",
+        "figmaName": "mai/smtc/ctrl/choice/switch/stroke/rest",
+        "usage": "Border/stroke color for controls/interactive elements — rest state",
+        "category": "stroke"
+      },
+      {
+        "token": "--smtc-stroke-width-ctrl-outline-rest",
+        "figmaName": "smtc/stroke-width/ctrl/outline/rest",
+        "usage": "Border/stroke color for controls/interactive elements — rest state",
+        "category": "stroke"
+      },
+      {
+        "token": "--smtc-stroke-ctrl-on-outline-rest",
+        "figmaName": "smtc/stroke/ctrl/on-outline/rest",
+        "usage": "Border/stroke color for controls/interactive elements — rest state",
+        "category": "stroke"
+      }
+    ]
+  },
+  "rgba(27, 26, 25, 0.00)": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--bing-smtc-background-ctrl-fade-on-primary-stop-0",
+        "figmaName": "bing/smtc/background/ctrl/fade/on-primary/stop-0",
+        "usage": "Background color for controls/interactive elements",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-ctrl-carousel-stop-0",
+        "figmaName": "bing/smtc/ctrl/carousel/stop-0",
+        "usage": "for controls/interactive elements",
+        "category": "other"
+      }
+    ]
+  },
+  "#3e4760": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--bing-smtc-background-ctrl-ghost-hover",
+        "figmaName": "bing/smtc/background/ctrl/ghost/hover",
+        "usage": "Background color for controls/interactive elements — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-background-ctrl-outline-hover",
+        "figmaName": "bing/smtc/background/ctrl/outline/hover",
+        "usage": "Background color for controls/interactive elements — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-ctrl-citation-on-card-background-hover",
+        "figmaName": "bing/smtc/ctrl/citation/on-card/background/hover",
+        "usage": "Background color for controls/interactive elements — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-ctrl-tab-in-card-background-hover",
+        "figmaName": "bing/smtc/ctrl/tab/in-card/background/hover",
+        "usage": "Background color for controls/interactive elements — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-card-on-primary-alt-hover",
+        "figmaName": "smtc/background/card/on-primary/alt/hover",
+        "usage": "Background color for card components — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-ctrl-neutral-hover",
+        "figmaName": "smtc/background/ctrl/neutral/hover",
+        "usage": "Background color for controls/interactive elements (neutral) — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-foreground-image-placeholder-default",
+        "figmaName": "bing/smtc/foreground/image/placeholder/default",
+        "usage": "Foreground/text color",
+        "category": "foreground"
+      }
+    ]
+  },
+  "#4a5471": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--bing-smtc-background-ctrl-ghost-pressed",
+        "figmaName": "bing/smtc/background/ctrl/ghost/pressed",
+        "usage": "Background color for controls/interactive elements — pressed state",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-background-ctrl-outline-pressed",
+        "figmaName": "bing/smtc/background/ctrl/outline/pressed",
+        "usage": "Background color for controls/interactive elements — pressed state",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-ctrl-citation-on-card-background-pressed",
+        "figmaName": "bing/smtc/ctrl/citation/on-card/background/pressed",
+        "usage": "Background color for controls/interactive elements — pressed state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-ctrl-tab-in-card-background-pressed",
+        "figmaName": "bing/smtc/ctrl/tab/in-card/background/pressed",
+        "usage": "Background color for controls/interactive elements — pressed state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-card-on-primary-alt-pressed",
+        "figmaName": "smtc/background/card/on-primary/alt/pressed",
+        "usage": "Background color for card components — pressed state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-ctrl-neutral-pressed",
+        "figmaName": "smtc/background/ctrl/neutral/pressed",
+        "usage": "Background color for controls/interactive elements (neutral) — pressed state",
+        "category": "background"
+      }
+    ]
+  },
+  "rgba(31, 36, 49, 0.00)": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--bing-smtc-ctrl-background-fade-stop-0",
+        "figmaName": "bing/smtc/ctrl/background/fade/stop-0",
+        "usage": "Background color for controls/interactive elements",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-ctrl-subtle-disabled",
+        "figmaName": "smtc/background/ctrl/subtle/disabled",
+        "usage": "Background color for controls/interactive elements (subtle variant) — disabled state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-ctrl-subtle-selected-rest",
+        "figmaName": "smtc/background/ctrl/subtle/selected-rest",
+        "usage": "Background color for controls/interactive elements (subtle variant) — rest state",
+        "category": "background"
+      }
+    ]
+  },
+  "rgba(31, 36, 49, 0.85)": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--bing-smtc-ctrl-spinner-backdrop-background",
+        "figmaName": "bing/smtc/ctrl/spinner/backdrop/background",
+        "usage": "Background color for controls/interactive elements",
+        "category": "background"
+      }
+    ]
+  },
+  "rgba(27, 26, 25, 0.85)": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--bing-smtc-ctrl-spinner-background-default",
+        "figmaName": "bing/smtc/ctrl/spinner/background/default",
+        "usage": "Background color for controls/interactive elements",
+        "category": "background"
+      }
+    ]
+  },
+  "#333c62": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--bing-smtc-ctrl-tab-ghost-background-hover",
+        "figmaName": "bing/smtc/ctrl/tab/ghost/background/hover",
+        "usage": "Background color for controls/interactive elements — hover state",
+        "category": "background"
+      }
+    ]
+  },
+  "#37416b": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--bing-smtc-ctrl-tab-ghost-background-pressed",
+        "figmaName": "bing/smtc/ctrl/tab/ghost/background/pressed",
+        "usage": "Background color for controls/interactive elements — pressed state",
+        "category": "background"
+      }
+    ]
+  },
+  "#2c3459": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--bing-smtc-ctrl-tab-ghost-background-selected",
+        "figmaName": "bing/smtc/ctrl/tab/ghost/background/selected",
+        "usage": "Background color for controls/interactive elements — selected state",
+        "category": "background"
+      }
+    ]
+  },
+  "#a85800": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-background-amber-default",
+        "figmaName": "bing/smtc/data/background/amber/default",
+        "usage": "Background color",
+        "category": "background"
+      }
+    ]
+  },
+  "#7a3e00": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-background-amber-strong",
+        "figmaName": "bing/smtc/data/background/amber/strong",
+        "usage": "Background color (strong variant)",
+        "category": "background"
+      }
+    ]
+  },
+  "#3d2717": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-background-amber-subtle",
+        "figmaName": "bing/smtc/data/background/amber/subtle",
+        "usage": "Background color (subtle variant)",
+        "category": "background"
+      }
+    ]
+  },
+  "#0069dd": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-background-blue-default",
+        "figmaName": "bing/smtc/data/background/blue/default",
+        "usage": "Background color",
+        "category": "background"
+      }
+    ]
+  },
+  "#2a6fb0": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-background-blue-strong",
+        "figmaName": "bing/smtc/data/background/blue/strong",
+        "usage": "Background color (strong variant)",
+        "category": "background"
+      }
+    ]
+  },
+  "#242c3d": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-background-blue-subtle",
+        "figmaName": "bing/smtc/data/background/blue/subtle",
+        "usage": "Background color (subtle variant)",
+        "category": "background"
+      }
+    ]
+  },
+  "#5a5a5a": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-background-gray-default",
+        "figmaName": "bing/smtc/data/background/gray/default",
+        "usage": "Background color",
+        "category": "background"
+      }
+    ]
+  },
+  "#007f30": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-background-green-default",
+        "figmaName": "bing/smtc/data/background/green/default",
+        "usage": "Background color",
+        "category": "background"
+      }
+    ]
+  },
+  "#006026": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-background-green-strong",
+        "figmaName": "bing/smtc/data/background/green/strong",
+        "usage": "Background color (strong variant)",
+        "category": "background"
+      }
+    ]
+  },
+  "#203020": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-background-green-subtle",
+        "figmaName": "bing/smtc/data/background/green/subtle",
+        "usage": "Background color (subtle variant)",
+        "category": "background"
+      }
+    ]
+  },
+  "#c0413f": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-background-red-default",
+        "figmaName": "bing/smtc/data/background/red/default",
+        "usage": "Background color",
+        "category": "background"
+      }
+    ]
+  },
+  "#801818": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-background-red-strong",
+        "figmaName": "bing/smtc/data/background/red/strong",
+        "usage": "Background color (strong variant)",
+        "category": "background"
+      }
+    ]
+  },
+  "#3f2524": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-background-red-subtle",
+        "figmaName": "bing/smtc/data/background/red/subtle",
+        "usage": "Background color (subtle variant)",
+        "category": "background"
+      }
+    ]
+  },
+  "#b87c00": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-background-yellow-default",
+        "figmaName": "bing/smtc/data/background/yellow/default",
+        "usage": "Background color",
+        "category": "background"
+      }
+    ]
+  },
+  "#8c5a00": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-background-yellow-strong",
+        "figmaName": "bing/smtc/data/background/yellow/strong",
+        "usage": "Background color (strong variant)",
+        "category": "background"
+      }
+    ]
+  },
+  "#382c14": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-background-yellow-subtle",
+        "figmaName": "bing/smtc/data/background/yellow/subtle",
+        "usage": "Background color (subtle variant)",
+        "category": "background"
+      }
+    ]
+  },
+  "#0f1119": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--smtc-mai-ctrl-choice-switch-thumb-background-selected-rest",
+        "figmaName": "mai/ctrl/choice/switch/thumb/background/selected-rest",
+        "usage": "Background color for controls/interactive elements — rest state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-on-active-brand-hover",
+        "figmaName": "smtc/foreground/ctrl/on-active-brand/hover",
+        "usage": "Foreground/text color for controls/interactive elements (brand/accent themed) — hover state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-on-active-brand-pressed",
+        "figmaName": "smtc/foreground/ctrl/on-active-brand/pressed",
+        "usage": "Foreground/text color for controls/interactive elements (brand/accent themed) — pressed state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-on-active-brand-rest",
+        "figmaName": "smtc/foreground/ctrl/on-active-brand/rest",
+        "usage": "Foreground/text color for controls/interactive elements (brand/accent themed) — rest state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-on-brand-hover",
+        "figmaName": "smtc/foreground/ctrl/on-brand/hover",
+        "usage": "Foreground/text color for controls/interactive elements (brand/accent themed) — hover state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-on-brand-pressed",
+        "figmaName": "smtc/foreground/ctrl/on-brand/pressed",
+        "usage": "Foreground/text color for controls/interactive elements (brand/accent themed) — pressed state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-on-brand-rest",
+        "figmaName": "smtc/foreground/ctrl/on-brand/rest",
+        "usage": "Foreground/text color for controls/interactive elements (brand/accent themed) — rest state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-status-brand-foreground",
+        "figmaName": "smtc/status/brand/foreground",
+        "usage": "Foreground/text color (brand/accent themed)",
+        "category": "foreground"
+      }
+    ]
+  },
+  "#bec6e8": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--smtc-choice-switch-background-selected-hover",
+        "figmaName": "mai/smtc/choice/switch/background/selected/hover",
+        "usage": "Background color — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-ctrl-active-brand-hover",
+        "figmaName": "smtc/background/ctrl/active-brand/hover",
+        "usage": "Background color for controls/interactive elements (brand/accent themed) — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-ctrl-brand-hover",
+        "figmaName": "smtc/background/ctrl/brand/hover",
+        "usage": "Background color for controls/interactive elements (brand/accent themed) — hover state",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-ctrl-citation-foreground-hover",
+        "figmaName": "bing/smtc/ctrl/citation/foreground/hover",
+        "usage": "Foreground/text color for controls/interactive elements — hover state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-icon-on-outline-hover",
+        "figmaName": "smtc/foreground/ctrl/icon/on-outline/hover",
+        "usage": "Foreground/text color for controls/interactive elements — hover state",
+        "category": "foreground"
+      },
+      {
+        "token": "--mai-smtc-ctrl-choice-switch-stroke-hover",
+        "figmaName": "mai/smtc/ctrl/choice/switch/stroke/hover",
+        "usage": "Border/stroke color for controls/interactive elements — hover state",
+        "category": "stroke"
+      },
+      {
+        "token": "--smtc-ctrl-choice-base-stroke-hover",
+        "figmaName": "smtc/ctrl/choice/base/stroke/hover",
+        "usage": "Border/stroke color for controls/interactive elements — hover state",
+        "category": "stroke"
+      },
+      {
+        "token": "--smtc-ctrl-input-stroke-hover",
+        "figmaName": "smtc/ctrl/input/stroke/hover",
+        "usage": "Border/stroke color for controls/interactive elements — hover state",
+        "category": "stroke"
+      },
+      {
+        "token": "--smtc-stroke-width-ctrl-outline-hover",
+        "figmaName": "smtc/stroke-width/ctrl/outline/hover",
+        "usage": "Border/stroke color for controls/interactive elements — hover state",
+        "category": "stroke"
+      },
+      {
+        "token": "--smtc-stroke-ctrl-on-outline-hover",
+        "figmaName": "smtc/stroke/ctrl/on-outline/hover",
+        "usage": "Border/stroke color for controls/interactive elements — hover state",
+        "category": "stroke"
+      }
+    ]
+  },
+  "#aeb5d4": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--smtc-choice-switch-background-selected-pressed",
+        "figmaName": "mai/smtc/choice/switch/background/selected/pressed",
+        "usage": "Background color — pressed state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-ctrl-active-brand-pressed",
+        "figmaName": "smtc/background/ctrl/active-brand/pressed",
+        "usage": "Background color for controls/interactive elements (brand/accent themed) — pressed state",
+        "category": "background"
+      },
+      {
+        "token": "--smtc-background-ctrl-brand-pressed",
+        "figmaName": "smtc/background/ctrl/brand/pressed",
+        "usage": "Background color for controls/interactive elements (brand/accent themed) — pressed state",
+        "category": "background"
+      },
+      {
+        "token": "--bing-smtc-ctrl-citation-foreground-pressed",
+        "figmaName": "bing/smtc/ctrl/citation/foreground/pressed",
+        "usage": "Foreground/text color for controls/interactive elements — pressed state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-icon-on-outline-pressed",
+        "figmaName": "smtc/foreground/ctrl/icon/on-outline/pressed",
+        "usage": "Foreground/text color for controls/interactive elements — pressed state",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-ctrl-highlight-ring-stroke-stop-2",
+        "figmaName": "bing/smtc/ctrl/highlight-ring/stroke/stop-2",
+        "usage": "Border/stroke color for controls/interactive elements",
+        "category": "stroke"
+      },
+      {
+        "token": "--mai-smtc-ctrl-choice-switch-stroke-pressed",
+        "figmaName": "mai/smtc/ctrl/choice/switch/stroke/pressed",
+        "usage": "Border/stroke color for controls/interactive elements — pressed state",
+        "category": "stroke"
+      },
+      {
+        "token": "--smtc-ctrl-input-stroke-pressed",
+        "figmaName": "smtc/ctrl/input/stroke/pressed",
+        "usage": "Border/stroke color for controls/interactive elements — pressed state",
+        "category": "stroke"
+      },
+      {
+        "token": "--smtc-ctrl-input-stroke-selected",
+        "figmaName": "smtc/ctrl/input/stroke/selected",
+        "usage": "Border/stroke color for controls/interactive elements — selected state",
+        "category": "stroke"
+      },
+      {
+        "token": "--smtc-stroke-ctrl-on-outline-pressed",
+        "figmaName": "smtc/stroke/ctrl/on-outline/pressed",
+        "usage": "Border/stroke color for controls/interactive elements — pressed state",
+        "category": "stroke"
+      }
+    ]
+  },
+  "#d2393d": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--smtc-status-danger-background",
+        "figmaName": "smtc/status/danger/background",
+        "usage": "Background color (danger/error state)",
+        "category": "background"
+      }
+    ]
+  },
+  "#2c8147": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--smtc-status-success-background",
+        "figmaName": "smtc/status/success/background",
+        "usage": "Background color (success state)",
+        "category": "background"
+      }
+    ]
+  },
+  "#b95700": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--smtc-status-warning-background",
+        "figmaName": "smtc/status/warning/background",
+        "usage": "Background color (warning state)",
+        "category": "background"
+      }
+    ]
+  },
+  "#a19f9d": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--smtc-bing-ads-smtc-mobile-foreground-ad-slug-default",
+        "figmaName": "bing/ads/smtc/mobile/foreground/ad-slug/default",
+        "usage": "Foreground/text color",
+        "category": "foreground"
+      }
+    ]
+  },
+  "#edebe9": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--smtc-bing-ads-smtc-mobile-foreground-snippet-default",
+        "figmaName": "bing/ads/smtc/mobile/foreground/snippet/default",
+        "usage": "Foreground/text color",
+        "category": "foreground"
+      }
+    ]
+  },
+  "#9ea2ff": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--bing-smtc-ctrl-link-foreground-brand-alt-visited",
+        "figmaName": "bing/smtc/ctrl/link/foreground/brand/alt/visited",
+        "usage": "Foreground/text color for controls/interactive elements (brand/accent themed)",
+        "category": "foreground"
+      }
+    ]
+  },
+  "#e5ebfa": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--smtc-ctrl-link-foreground-brand-hover",
+        "figmaName": "bing/smtc/ctrl/link/foreground/brand/hover",
+        "usage": "Foreground/text color for controls/interactive elements (brand/accent themed) — hover state",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-foreground-content-brand-hover",
+        "figmaName": "bing/smtc/foreground/content/brand/hover",
+        "usage": "Foreground/text color for content areas (brand/accent themed) — hover state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-ctrl-link-foreground-brand-hover",
+        "figmaName": "smtc/ctrl/link/foreground/brand/hover",
+        "usage": "Foreground/text color for controls/interactive elements (brand/accent themed) — hover state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-active-brand-hover",
+        "figmaName": "smtc/foreground/ctrl/active-brand/hover",
+        "usage": "Foreground/text color for controls/interactive elements (brand/accent themed) — hover state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-icon-on-neutral-hover",
+        "figmaName": "smtc/foreground/ctrl/icon/on-neutral/hover",
+        "usage": "Foreground/text color for controls/interactive elements (neutral) — hover state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-icon-on-subtle-hover",
+        "figmaName": "smtc/foreground/ctrl/icon/on-subtle/hover",
+        "usage": "Foreground/text color for controls/interactive elements (subtle variant) — hover state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-neutral-primary-hover",
+        "figmaName": "smtc/foreground/ctrl/neutral/primary/hover",
+        "usage": "Foreground/text color for controls/interactive elements (neutral) — hover state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-on-outline-hover",
+        "figmaName": "smtc/foreground/ctrl/on-outline/hover",
+        "usage": "Foreground/text color for controls/interactive elements — hover state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-on-subtle-hover",
+        "figmaName": "smtc/foreground/ctrl/on-subtle/hover",
+        "usage": "Foreground/text color for controls/interactive elements (subtle variant) — hover state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-on-transparent-hover",
+        "figmaName": "smtc/foreground/ctrl/on-transparent/hover",
+        "usage": "Foreground/text color for controls/interactive elements — hover state",
+        "category": "foreground"
+      }
+    ]
+  },
+  "#fbfcfe": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--smtc-ctrl-link-foreground-brand-pressed",
+        "figmaName": "bing/smtc/ctrl/link/foreground/brand/pressed",
+        "usage": "Foreground/text color for controls/interactive elements (brand/accent themed) — pressed state",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-foreground-content-brand-pressed",
+        "figmaName": "bing/smtc/foreground/content/brand/pressed",
+        "usage": "Foreground/text color for content areas (brand/accent themed) — pressed state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-ctrl-link-foreground-brand-pressed",
+        "figmaName": "smtc/ctrl/link/foreground/brand/pressed",
+        "usage": "Foreground/text color for controls/interactive elements (brand/accent themed) — pressed state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-active-brand-pressed",
+        "figmaName": "smtc/foreground/ctrl/active-brand/pressed",
+        "usage": "Foreground/text color for controls/interactive elements (brand/accent themed) — pressed state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-icon-on-neutral-pressed",
+        "figmaName": "smtc/foreground/ctrl/icon/on-neutral/pressed",
+        "usage": "Foreground/text color for controls/interactive elements (neutral) — pressed state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-icon-on-subtle-pressed",
+        "figmaName": "smtc/foreground/ctrl/icon/on-subtle/pressed",
+        "usage": "Foreground/text color for controls/interactive elements (subtle variant) — pressed state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-neutral-primary-pressed",
+        "figmaName": "smtc/foreground/ctrl/neutral/primary/pressed",
+        "usage": "Foreground/text color for controls/interactive elements (neutral) — pressed state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-on-outline-pressed",
+        "figmaName": "smtc/foreground/ctrl/on-outline/pressed",
+        "usage": "Foreground/text color for controls/interactive elements — pressed state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-on-subtle-pressed",
+        "figmaName": "smtc/foreground/ctrl/on-subtle/pressed",
+        "usage": "Foreground/text color for controls/interactive elements (subtle variant) — pressed state",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-foreground-ctrl-on-transparent-pressed",
+        "figmaName": "smtc/foreground/ctrl/on-transparent/pressed",
+        "usage": "Foreground/text color for controls/interactive elements — pressed state",
+        "category": "foreground"
+      }
+    ]
+  },
+  "#ffcc80": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-foreground-amber-default",
+        "figmaName": "bing/smtc/data/foreground/amber/default",
+        "usage": "Foreground/text color",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-deco-stroke-amber-default",
+        "figmaName": "bing/smtc/deco/stroke/amber/default",
+        "usage": "Border/stroke color",
+        "category": "stroke"
+      }
+    ]
+  },
+  "#ffd699": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-foreground-amber-subtle",
+        "figmaName": "bing/smtc/data/foreground/amber/subtle",
+        "usage": "Foreground/text color (subtle variant)",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-deco-stroke-amber-subtle",
+        "figmaName": "bing/smtc/deco/stroke/amber/subtle",
+        "usage": "Border/stroke color (subtle variant)",
+        "category": "stroke"
+      }
+    ]
+  },
+  "#c5e1f7": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-foreground-blue-default",
+        "figmaName": "bing/smtc/data/foreground/blue/default",
+        "usage": "Foreground/text color",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-deco-stroke-blue-default",
+        "figmaName": "bing/smtc/deco/stroke/blue/default",
+        "usage": "Border/stroke color",
+        "category": "stroke"
+      }
+    ]
+  },
+  "#a3c6e1": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-foreground-blue-strong",
+        "figmaName": "bing/smtc/data/foreground/blue/strong",
+        "usage": "Foreground/text color (strong variant)",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-deco-stroke-blue-strong",
+        "figmaName": "bing/smtc/deco/stroke/blue/strong",
+        "usage": "Border/stroke color (strong variant)",
+        "category": "stroke"
+      }
+    ]
+  },
+  "#4193ff": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-foreground-blue-subtle",
+        "figmaName": "bing/smtc/data/foreground/blue/subtle",
+        "usage": "Foreground/text color (subtle variant)",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-deco-stroke-blue-subtle",
+        "figmaName": "bing/smtc/deco/stroke/blue/subtle",
+        "usage": "Border/stroke color (subtle variant)",
+        "category": "stroke"
+      }
+    ]
+  },
+  "#99948e": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-foreground-gray-strong",
+        "figmaName": "bing/smtc/data/foreground/gray/strong",
+        "usage": "Foreground/text color (strong variant)",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-deco-stroke-gray-strong",
+        "figmaName": "bing/smtc/deco/stroke/gray/strong",
+        "usage": "Border/stroke color (strong variant)",
+        "category": "stroke"
+      }
+    ]
+  },
+  "#a8a8a8": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-foreground-gray-subtle",
+        "figmaName": "bing/smtc/data/foreground/gray/subtle",
+        "usage": "Foreground/text color (subtle variant)",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-deco-stroke-gray-subtle",
+        "figmaName": "bing/smtc/deco/stroke/gray/subtle",
+        "usage": "Border/stroke color (subtle variant)",
+        "category": "stroke"
+      }
+    ]
+  },
+  "#329966": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-foreground-green-strong",
+        "figmaName": "bing/smtc/data/foreground/green/strong",
+        "usage": "Foreground/text color (strong variant)",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-deco-stroke-green-strong",
+        "figmaName": "bing/smtc/deco/stroke/green/strong",
+        "usage": "Border/stroke color (strong variant)",
+        "category": "stroke"
+      }
+    ]
+  },
+  "#33a84e": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-foreground-green-subtle",
+        "figmaName": "bing/smtc/data/foreground/green/subtle",
+        "usage": "Foreground/text color (subtle variant)",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-deco-stroke-green-subtle",
+        "figmaName": "bing/smtc/deco/stroke/green/subtle",
+        "usage": "Border/stroke color (subtle variant)",
+        "category": "stroke"
+      }
+    ]
+  },
+  "#ff6565": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-foreground-red-default",
+        "figmaName": "bing/smtc/data/foreground/red/default",
+        "usage": "Foreground/text color",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-deco-stroke-red-default",
+        "figmaName": "bing/smtc/deco/stroke/red/default",
+        "usage": "Border/stroke color",
+        "category": "stroke"
+      }
+    ]
+  },
+  "#f98981": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-foreground-red-strong",
+        "figmaName": "bing/smtc/data/foreground/red/strong",
+        "usage": "Foreground/text color (strong variant)",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-deco-stroke-red-strong",
+        "figmaName": "bing/smtc/deco/stroke/red/strong",
+        "usage": "Border/stroke color (strong variant)",
+        "category": "stroke"
+      }
+    ]
+  },
+  "#ee6864": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-foreground-red-subtle",
+        "figmaName": "bing/smtc/data/foreground/red/subtle",
+        "usage": "Foreground/text color (subtle variant)",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-deco-stroke-red-subtle",
+        "figmaName": "bing/smtc/deco/stroke/red/subtle",
+        "usage": "Border/stroke color (subtle variant)",
+        "category": "stroke"
+      }
+    ]
+  },
+  "#ffe6a8": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-foreground-yellow-default",
+        "figmaName": "bing/smtc/data/foreground/yellow/default",
+        "usage": "Foreground/text color",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-deco-stroke-yellow-default",
+        "figmaName": "bing/smtc/deco/stroke/yellow/default",
+        "usage": "Border/stroke color",
+        "category": "stroke"
+      }
+    ]
+  },
+  "#f3c357": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-foreground-yellow-strong",
+        "figmaName": "bing/smtc/data/foreground/yellow/strong",
+        "usage": "Foreground/text color (strong variant)",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-deco-stroke-yellow-strong",
+        "figmaName": "bing/smtc/deco/stroke/yellow/strong",
+        "usage": "Border/stroke color (strong variant)",
+        "category": "stroke"
+      }
+    ]
+  },
+  "#ffd36a": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--bing-smtc-data-foreground-yellow-subtle",
+        "figmaName": "bing/smtc/data/foreground/yellow/subtle",
+        "usage": "Foreground/text color (subtle variant)",
+        "category": "foreground"
+      },
+      {
+        "token": "--bing-smtc-deco-stroke-yellow-subtle",
+        "figmaName": "bing/smtc/deco/stroke/yellow/subtle",
+        "usage": "Border/stroke color (subtle variant)",
+        "category": "stroke"
+      }
+    ]
+  },
+  "#cc3333": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--bing-smtc-status-danger-tint-foreground-alt",
+        "figmaName": "bing/smtc/status/danger/tint/foreground/alt",
+        "usage": "Foreground/text color (danger/error state)",
+        "category": "foreground"
+      }
+    ]
+  },
+  "#339966": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--bing-smtc-status-success-tint-foreground-alt",
+        "figmaName": "bing/smtc/status/success/tint/foreground/alt",
+        "usage": "Foreground/text color (success state)",
+        "category": "foreground"
+      }
+    ]
+  },
+  "rgba(255, 255, 255, 0.30)": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--smtc-foreground-ctrl-neutral-primary-disabled",
+        "figmaName": "smtc/foreground/ctrl/neutral/primary/disabled",
+        "usage": "Foreground/text color for controls/interactive elements (neutral) — disabled state",
+        "category": "foreground"
+      }
+    ]
+  },
+  "#ff6666": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--smtc-status-danger-tint-foreground",
+        "figmaName": "smtc/status/danger/tint/foreground",
+        "usage": "Foreground/text color (danger/error state)",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-status-danger-stroke",
+        "figmaName": "smtc/status/danger/stroke",
+        "usage": "Border/stroke color (danger/error state)",
+        "category": "stroke"
+      }
+    ]
+  },
+  "#ecc26e": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--smtc-status-warning-tint-foreground",
+        "figmaName": "smtc/status/warning/tint/foreground",
+        "usage": "Foreground/text color (warning state)",
+        "category": "foreground"
+      },
+      {
+        "token": "--smtc-status-warning-stroke",
+        "figmaName": "smtc/status/warning/stroke",
+        "usage": "Border/stroke color (warning state)",
+        "category": "stroke"
+      }
+    ]
+  },
+  "rgba(41, 40, 39, 0.00)": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--bing-smtc-ctrl-carousel-alt-stop-0",
+        "figmaName": "bing/smtc/ctrl/carousel/alt/stop-0",
+        "usage": "for controls/interactive elements",
+        "category": "other"
+      }
+    ]
+  },
+  "rgba(255, 255, 255, 0.05)": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--bing-smtc-stroke-ctrl-disable",
+        "figmaName": "bing/smtc/stroke/ctrl/disable",
+        "usage": "Border/stroke color for controls/interactive elements",
+        "category": "stroke"
+      }
+    ]
+  },
+  "rgba(255, 255, 255, 0.08)": {
+    "mode": "dark",
+    "tokens": [
+      {
+        "token": "--bing-smtc-stroke-ctrl-subtle",
+        "figmaName": "bing/smtc/stroke/ctrl/subtle",
+        "usage": "Border/stroke color for controls/interactive elements (subtle variant)",
+        "category": "stroke"
+      }
+    ]
+  }
+}

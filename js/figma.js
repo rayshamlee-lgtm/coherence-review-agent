@@ -229,6 +229,11 @@ export function summarizeTree(root, maxNodes = 160) {
   let count = 0;
   function walk(n, depth) {
     if (count >= maxNodes) return;
+    // Skip hidden nodes — otherwise the LLM "sees" inactive variants
+    // (e.g. a placeholder text node still in the file but visible:false
+    // because the input has a value), and invents issues like "the
+    // search field shows both the query and the placeholder".
+    if (n.visible === false) return;
     count++;
     const pad = "  ".repeat(depth);
     const parts = [n.type, n.name];

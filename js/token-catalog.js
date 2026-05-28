@@ -1,113 +1,187 @@
-// Bing Design System token catalog — distilled from BingDesignSkill V1.2
-// (BingDesignSkill/bing-design-skill-1.2/design-tokens/*.css).
+// Bing Design System token catalog — distilled from BingDesignSkill V2
+// (bing-design-skill/assets/{token-catalog,color-lookup}.json
+//  + references/foundations/{spacing,radius,typography}.md).
+//
 // Used by the L1 rules engine to decide whether a Figma node's literal
-// values map to a legal design token.
+// values map to a legal design token. Regenerated when a new BingDesignSkill
+// release lands.
 
 export const TOKEN_CATALOG = {
   // ----- allowed corner radius values (px) -----
-  // From corner.css — sm=4 / md=8 / lg=16 / circular=9999. 0 included
-  // for non-rounded surfaces.
-  cornerRadius: new Set([0, 4, 8, 16, 9999]),
+  // From references/foundations/radius.md:
+  //   ctrl-sm 4 / ctrl 8 / mai-ctrl 12 / ctrl-lg 16 / card-default 24 / circular 9999.
+  // 0 included for non-rounded surfaces.
+  cornerRadius: new Set([0, 4, 8, 12, 16, 24, 9999]),
 
   // ----- allowed spacing values (px) -----
-  // Union of gap + padding ramps from spacing.css.
-  // 3px appears only as ctrl-sm text top/bottom; 20px is the MAI card padding.
-  spacing: new Set([0, 2, 3, 4, 8, 12, 16, 20, 24, 32]),
+  // From references/foundations/spacing.md — union of desktop and mobile
+  // values across gap-between-content tokens + card padding token:
+  //   xx-small 4/3, x-small 8/6, small 12/9, medium 16/12, x-large 24/16,
+  //   card-default padding 20.
+  // 0 and 2 retained for legitimate zero-gap and 2px micro-spacing cases.
+  spacing: new Set([0, 2, 3, 4, 6, 8, 9, 12, 16, 20, 24]),
 
-  // ----- allowed typography sizes (fontSize + lineHeight pairs) -----
-  // From typography.css. lineHeight is informational; we mostly match fontSize+weight.
+  // ----- allowed typography (fontSize / lineHeight / weight) -----
+  // From references/foundations/typography.md type-scale table.
   typography: [
-    { name: "display1",         fontSize: 54, lineHeight: 64, weight: 700 },
-    { name: "display2",         fontSize: 40, lineHeight: 48, weight: 700 },
-    { name: "title1",           fontSize: 36, lineHeight: 48, weight: 700 },
-    { name: "title2",           fontSize: 24, lineHeight: 32, weight: 400 },
-    { name: "title2-strong",    fontSize: 24, lineHeight: 32, weight: 700 },
-    { name: "subtitle1",        fontSize: 20, lineHeight: 26, weight: 400 },
-    { name: "subtitle1-strong", fontSize: 20, lineHeight: 26, weight: 700 },
-    { name: "subtitle2",        fontSize: 18, lineHeight: 22, weight: 400 },
-    { name: "subtitle2-strong", fontSize: 18, lineHeight: 22, weight: 700 },
-    { name: "body1",            fontSize: 18, lineHeight: 28, weight: 400 },
-    { name: "body1-strong",     fontSize: 18, lineHeight: 28, weight: 700 },
-    { name: "body2",            fontSize: 16, lineHeight: 26, weight: 400 },
-    { name: "body2-strong",     fontSize: 16, lineHeight: 26, weight: 700 },
-    { name: "body3",            fontSize: 14, lineHeight: 22, weight: 400 },
-    { name: "body3-strong",     fontSize: 14, lineHeight: 22, weight: 700 },
-    { name: "caption1",         fontSize: 13, lineHeight: 20, weight: 400 },
-    { name: "caption1-strong",  fontSize: 13, lineHeight: 20, weight: 700 },
-    { name: "caption2",         fontSize: 11, lineHeight: 13, weight: 400 },
-    { name: "caption2-strong",  fontSize: 11, lineHeight: 13, weight: 700 },
+    { name: "display1",     fontSize: 54, lineHeight: 64, weight: 700 },
+    { name: "title2",       fontSize: 24, lineHeight: 32, weight: 400 },
+    { name: "subtitle2",    fontSize: 18, lineHeight: 22, weight: 400 },
+    { name: "body1",        fontSize: 18, lineHeight: 28, weight: 400 },
+    { name: "body3",        fontSize: 14, lineHeight: 22, weight: 400 },
+    { name: "body3-strong", fontSize: 14, lineHeight: 22, weight: 700 },
+    { name: "caption1",     fontSize: 13, lineHeight: 20, weight: 400 },
+    { name: "caption2",     fontSize: 11, lineHeight: 13, weight: 400 },
   ],
 
+  // Primary stack is Segoe UI; Ginto Copilot Variable is reserved for
+  // Copilot / AI surfaces. System fallbacks accepted.
   fontFamilies: new Set([
-    "Roboto",
     "Segoe UI Variable",
     "Segoe UI",
-    "Cascadia Code",
-    "Courier New",
-    "Consolas",
-    "Monaco",
+    "Ginto Copilot Variable",
     "system-ui",
     "-apple-system",
     "BlinkMacSystemFont",
+    "Roboto",
   ]),
 
   fontWeights: new Set([400, 700]),
 
   // ----- allowed colors (hex, lowercase, no alpha) -----
-  // Extracted from color-neutral.css, color-accent.css, color-semantic.css,
-  // theme-stone.css, theme-stone-blue.css.
+  // Generated from BingDesignSkill V2 assets/color-lookup.json
+  // (131 distinct opaque colors across light + dark modes, all themes).
   colors: new Set([
-    // pure neutrals
-    "#000000", "#ffffff",
-    // neutrals — light ramp
-    "#fafafa", "#f5f5f5", "#f4f4f4", "#f0f0f0", "#ededed", "#ebebeb",
-    "#e8e8e8", "#e3e3e3", "#e0e0e0",
-    // neutrals — dark ramp
-    "#474747", "#3d3d3d", "#383838", "#333333", "#2d2d2d", "#2a2a2a",
-    "#262626", "#1b1a19",
-    // stone theme
-    "#f8f4f1", "#efeae7", "#322d29", "#272320", "#4c4642", "#3f3935",
-    // stone-blue accent
-    "#0022a0",
-    // accent — bing classic blues
-    "#0078d4", "#106ebe", "#005a9e", "#004578", "#002d4d",
-    // accent — extended blues
-    "#0068b8", "#0da0dd", "#2899f5", "#4cc2ff", "#4db3ff", "#82c7ff", "#e6f2ff",
-    // accent — purples + warm
-    "#6b3fa0", "#800080", "#b8a3d9",
-    // card alt baseline
-    "#ebf6ff",
-    // semantic — success
-    "#107c10", "#dff6dd", "#1e3a1e", "#6ccb5f",
-    // semantic — warning
-    "#797400", "#fff4ce", "#3d3518", "#f9e076",
-    // semantic — danger
-    "#a4262c", "#c4281c", "#fde7e9", "#3d1c1c", "#3d1e1e", "#ff6b68", "#fff5f5",
-    // misc surfaces
-    "#1d2b36",
-  ]),
-
-  // Known icon names from Bing Design Skill /icons. Truncated; checker only
-  // signals risk when icon name not in this list.
-  iconNames: new Set([
-    "Add","Airplane","AirplaneFill","AppFolder","AppStore","ArrowClockwise",
-    "ArrowExport","ArrowHookUpLeft","ArrowHookUpRight","ArrowLeft","ArrowMaximize",
-    "ArrowMinimize","ArrowRight","ArrowSort","ArrowSwap","ArrowSync","ArrowUpLeft",
-    "Attach","Backspace","Bed","Bench","BookQuestionMark","Briefcase","Building",
-    "Calendar","Camera","CaretDown","CaretRight","Cart","CartFilled","Checkmark",
-    "ChevronDown","ChevronLeft","ChevronRight","ChevronUp","CircleHalfFill","Clock",
-    "Close","Cloud","Code","Copy","Delete","Dismiss","Document","Download","Edit",
-    "Email","Filter","Flag","Folder","Globe","Heart","Home","Info","Link","List",
-    "Location","Map","MoreHorizontal","MoreVertical","Open","Person","Phone","Photo",
-    "Play","Plus","Power","Print","Question","Search","Send","Settings","Share",
-    "Shield","ShoppingBag","SlideTextPerson","Star","StarFilled","Stop","Sun","Tag",
-    "ThumbDown","ThumbUp","Translate","Trash","User","Video","Wallet","Warning",
-  ]),
-
-  // Card / component names recognized by the design system.
-  knownCardTypes: new Set([
-    "answer-card","text-card","attachment-card","image-card","video-card",
-    "map-card","product-card","result-card","list-card","carousel-card",
-    "subdivided-card","overview-card",
+    "#000000",
+    "#003660",
+    "#004d1a",
+    "#005aa1",
+    "#006026",
+    "#0069dd",
+    "#006d21",
+    "#0072f0",
+    "#0078d4",
+    "#007f30",
+    "#008935",
+    "#0159ba",
+    "#0d71ea",
+    "#0f1119",
+    "#14110e",
+    "#141414",
+    "#171717",
+    "#191919",
+    "#1b1a19",
+    "#1f1f1f",
+    "#1f2431",
+    "#203020",
+    "#242c3d",
+    "#262626",
+    "#272320",
+    "#282d3e",
+    "#292827",
+    "#2a2929",
+    "#2a2a2a",
+    "#2a6fb0",
+    "#2c3459",
+    "#2c8147",
+    "#2c8543",
+    "#2e2e2e",
+    "#2f408e",
+    "#323130",
+    "#329966",
+    "#333a4e",
+    "#333c62",
+    "#339966",
+    "#33a84e",
+    "#37416b",
+    "#382c14",
+    "#3a3a3a",
+    "#3b3a39",
+    "#3b50b2",
+    "#3c51b4",
+    "#3d2717",
+    "#3e4760",
+    "#3f2524",
+    "#4007a2",
+    "#4193ff",
+    "#444444",
+    "#464646",
+    "#484644",
+    "#4a4a4a",
+    "#4a5471",
+    "#4f6bed",
+    "#5a5a5a",
+    "#60bd84",
+    "#666666",
+    "#6e6e6e",
+    "#71777d",
+    "#7a3e00",
+    "#800000",
+    "#801818",
+    "#82c7ff",
+    "#8c5a00",
+    "#99948e",
+    "#9ea2ff",
+    "#a19f9d",
+    "#a25a02",
+    "#a3c6e1",
+    "#a84300",
+    "#a85800",
+    "#a8a8a8",
+    "#ababab",
+    "#ac6324",
+    "#aeb5d4",
+    "#b6b6b6",
+    "#b87c00",
+    "#b95700",
+    "#be5a00",
+    "#bebbb8",
+    "#bec6e8",
+    "#c0413f",
+    "#c1c1c1",
+    "#c5e1f7",
+    "#c66a00",
+    "#c7c7c7",
+    "#c80000",
+    "#c87c00",
+    "#ca4c48",
+    "#cc3333",
+    "#cfc9c5",
+    "#d2393d",
+    "#d2d0ce",
+    "#d7d7d7",
+    "#d89b3a",
+    "#d94a4b",
+    "#d9dffb",
+    "#e0e0e0",
+    "#e2ddd9",
+    "#e50619",
+    "#e5ebfa",
+    "#ecc26e",
+    "#edebe9",
+    "#ededed",
+    "#edf4fe",
+    "#edf6e8",
+    "#ee6864",
+    "#efeae7",
+    "#f3c357",
+    "#f5f5f5",
+    "#f8f4f1",
+    "#f98981",
+    "#f9ad01",
+    "#f9f9f9",
+    "#fbfcfe",
+    "#fdf3dd",
+    "#feb84d",
+    "#ff6565",
+    "#ff6666",
+    "#ffcc80",
+    "#ffd36a",
+    "#ffd699",
+    "#ffe6a8",
+    "#fff0ef",
+    "#fff1e9",
+    "#fffbf8",
+    "#ffffff",
   ]),
 };

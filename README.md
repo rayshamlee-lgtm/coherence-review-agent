@@ -64,7 +64,8 @@ demo/
   origin. Fine for a self-use demo, not safe for shared deployment — if
   you ever host this for others, move LLM + Figma calls behind a backend.
 - The token catalog (`token-catalog.js`) is distilled from BingDesignSkill
-  V1.2. When the framework team ships new tokens, refresh this file.
+  V2 (see `bing-design-skill/`). When the framework team ships new tokens,
+  refresh this file.
 - L2 / L3 prompts request strict JSON; if Azure OpenAI returns prose the
   pipeline will surface the parse error in the step list.
 - If a Figma URL has no `node-id`, the agent runs L1 on the whole file

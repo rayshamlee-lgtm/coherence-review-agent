@@ -1,0 +1,3043 @@
+{
+  "Button": {
+    "category": "Actions",
+    "tier": "\ud83d\udfe1 Base / Foundational Atom",
+    "figmaVariants": 210,
+    "props": {
+      "variant": {
+        "values": "solid, soft, outline, ghost",
+        "default": "solid"
+      },
+      "color": {
+        "values": "primary, secondary",
+        "default": "primary"
+      },
+      "size": {
+        "values": "sm, md, lg",
+        "default": "md"
+      },
+      "style": {
+        "values": "default, alwaysDark, switchable",
+        "default": "default"
+      },
+      "weight": {
+        "values": "default, bold",
+        "default": "default"
+      },
+      "state": {
+        "values": "default, hover, pressed, focus",
+        "default": "default"
+      },
+      "pill": {
+        "values": "true, false",
+        "default": "false"
+      },
+      "disabled": {
+        "values": "true, false",
+        "default": "false"
+      },
+      "iconEnd": {
+        "values": "true, false",
+        "default": "false"
+      },
+      "iconStart": {
+        "values": "true, false",
+        "default": "true"
+      },
+      "label": {
+        "values": "true, false",
+        "default": "true"
+      }
+    },
+    "do": [
+      "use `solid / primary` (ctrl-brand) for the single most important action \u2014 the one you want the user to take",
+      "pair `primary` with `subtle` or `ghost` for secondary actions \u2014 not with another `primary`",
+      "use `outline` when you need multiple side-by-side buttons with elevated prominence"
+    ],
+    "dont": [
+      "use multiple `primary` buttons side-by-side \u2014 it overwhelms users and dilutes the hierarchy",
+      "use `secondary` (ctrl-neutral) for `<a>` links that jump users out of the current journey",
+      "use `subtle` on accent/colored backgrounds \u2014 it's designed for non-accent backgrounds only"
+    ],
+    "a11y": [
+      "Buttons must be focusable and activated with `Enter` or `Space`",
+      "Focus state (`state: focus`) uses the `focus outline` dependency for visible focus ring"
+    ],
+    "interaction": [
+      "Click/tap: Triggers the assigned action on pointer up",
+      "Hover: Background shifts to hover token on pointer enter; reverts on pointer leave"
+    ],
+    "assembly": [
+      "Maintain consistent sizing within the same context (don't mix `sm` and `lg` side by side)",
+      "Primary action button should be visually prominent (use `solid` variant)"
+    ],
+    "tokens": {
+      "bg": "--smtc-background-ctrl-{brand|subtle|neutral}-{rest|hover|pressed}",
+      "fg": "--smtc-foreground-ctrl-on-{brand|subtle|outline}-{rest|hover|pressed}",
+      "stroke": "--smtc-stroke-ctrl-on-outline-{rest|hover|pressed}",
+      "corner": "--smtc-corner-ctrl-rest (8px)",
+      "padding": "--smtc-padding-ctrl-{sm|md|lg}"
+    },
+    "whenToUse": [
+      "To initiate a single action (submit, navigate, confirm, cancel)",
+      "As a call-to-action within cards, sections, or overlays",
+      "For navigation triggers (e.g., \"See all\", \"View more\")"
+    ],
+    "whenNotToUse": [
+      "For navigation to external URLs with no action \u2014 use a link instead",
+      "For toggling a state on/off \u2014 use Toggle",
+      "For selecting from a set of options \u2014 use Radio button or Check box",
+      "For filtering content \u2014 use Filter item"
+    ]
+  },
+  "Tooltip": {
+    "category": "Overlay",
+    "tier": "\ud83d\udfe1 Base / Foundational Atom",
+    "figmaVariants": 8,
+    "props": {
+      "direction": {
+        "values": "top, bottom, left, right",
+        "default": "top"
+      },
+      "state": {
+        "values": "rest, hover",
+        "default": "rest"
+      }
+    },
+    "do": [
+      "use tooltips to label icon-only controls (pair with `aria-label` on the control)",
+      "default to `Top` direction and adjust only when space requires it",
+      "keep content short and scannable"
+    ],
+    "dont": [
+      "put interactive elements (links, buttons) inside tooltips",
+      "use tooltips for essential information \u2014 it's hidden until hover and inaccessible on touch devices",
+      "show tooltips on elements that already have visible, descriptive labels"
+    ],
+    "a11y": [
+      "Tooltip must use `role=\"tooltip\"` and be associated via `aria-describedby` on the trigger",
+      "Tooltip must appear on both hover and keyboard focus (`focus` state on trigger)"
+    ],
+    "interaction": [
+      "Hover trigger: Tooltip bubble appears on pointer enter over the icon; hides on pointer leave",
+      "Focus trigger: Tooltip appears on keyboard focus; hides on blur"
+    ],
+    "assembly": [
+      "Choose direction based on available space \u2014 avoid tooltips that extend beyond the viewport",
+      "Default to `Top` direction; fall back to `bottom`, `Left`, or `Right` when space is constrained"
+    ],
+    "tokens": {
+      "bg": "--smtc-background-layer-flyout-default-rest",
+      "fg": "--smtc-foreground-content-neutral-primary",
+      "stroke": "--smtc-stroke-layer-flyout-rest",
+      "corner": "--smtc-corner-ctrl-rest (8px)",
+      "padding": "--smtc-padding-ctrl-text-{top|bottom|start|end} (8px)"
+    },
+    "whenToUse": [
+      "To provide additional context for icon-only buttons or controls",
+      "To explain truncated text on hover",
+      "To display supplementary information that doesn't warrant permanent screen space"
+    ],
+    "whenNotToUse": [
+      "For critical information the user must see \u2014 display it inline instead",
+      "For interactive content (links, buttons) \u2014 use a Popover or Flyout",
+      "For form validation messages \u2014 use inline error states",
+      "For long-form content \u2014 use a Flyout or expandable section"
+    ]
+  },
+  "Drawer": {
+    "category": "Overlay",
+    "tier": "\ud83d\udfe3 Page",
+    "figmaVariants": 2,
+    "props": {
+      "CTA": {
+        "values": "true, false",
+        "default": "true"
+      },
+      "backdrop": {
+        "values": "true, false",
+        "default": "true"
+      },
+      "is Desktop?": {
+        "values": "true, false",
+        "default": "true"
+      },
+      "scrollbar": {
+        "values": "true, false",
+        "default": "true"
+      }
+    },
+    "do": [
+      "always include a visible close button in the Header",
+      "trap focus within the Drawer when it is open",
+      "return focus to the triggering element when the Drawer closes"
+    ],
+    "dont": [
+      "open a Drawer from within another Drawer or Overlay",
+      "use Drawer for critical workflow steps that require full attention \u2014 use Overlay",
+      "assume side-by-side viewing is always available \u2014 full-screen on mobile"
+    ],
+    "a11y": [
+      "Focus is trapped within the Drawer (Tab cycles through internal elements only)",
+      "`Escape` key dismisses the Drawer"
+    ],
+    "interaction": [
+      "Trigger action opens the Drawer with a slide-in animation from the right edge",
+      "Click the Backdrop or press Escape to dismiss the Drawer"
+    ],
+    "assembly": [
+      "Drawer slides in from the right edge of the viewport",
+      "The 424px width is fixed across all desktop/tablet breakpoints \u2014 it does not scale"
+    ],
+    "tokens": {
+      "bg": "--smtc-background-layer-flyout-default-rest",
+      "fg": "--smtc-foreground-content-neutral-primary",
+      "shadow": "--smtc-shadow-flyout-*",
+      "overlay": "--smtc-background-overlay-default"
+    },
+    "whenToUse": [
+      "For detail views that should coexist with the main page (e.g., clicking a card to expand)",
+      "For settings panels and configuration UI",
+      "For progressive disclosure of additional content",
+      "When users need to reference both the main page and supplementary content"
+    ],
+    "whenNotToUse": [
+      "For focused, interruptive tasks \u2014 use Overlay instead",
+      "For lightweight tooltips or popups \u2014 use Flyout",
+      "For inline content expansion \u2014 use Section Footer \"Expansion\" action"
+    ]
+  },
+  "Overlay": {
+    "category": "Overlay",
+    "tier": "\ud83d\udfe3 Page",
+    "figmaVariants": 2,
+    "props": {
+      "CTA": {
+        "values": "true, false",
+        "default": "true"
+      },
+      "backdrop": {
+        "values": "true, false",
+        "default": "false"
+      },
+      "is desktop?": {
+        "values": "true, false",
+        "default": "true"
+      },
+      "scrollbar": {
+        "values": "true, false",
+        "default": "true"
+      }
+    },
+    "do": [
+      "always include a visible close button in the Header",
+      "trap focus within the Overlay when it is open",
+      "return focus to the triggering element when the Overlay closes"
+    ],
+    "dont": [
+      "open an Overlay from within another Overlay (no stacking)",
+      "use Overlay for content that should persist alongside the page \u2014 use Drawer",
+      "auto-open Overlays without user action"
+    ],
+    "a11y": [
+      "Focus is trapped within the Overlay (Tab cycles through internal elements only)",
+      "`Escape` key dismisses the Overlay"
+    ],
+    "interaction": [
+      "Trigger action opens the Overlay with a fade-in/scale-up animation centered on screen",
+      "Click the Backdrop or press Escape to dismiss the Overlay"
+    ],
+    "assembly": [
+      "Overlay is centered horizontally and vertically on desktop/tablet",
+      "Backdrop covers the full viewport behind the modal"
+    ],
+    "tokens": {
+      "bg": "--smtc-background-layer-flyout-default-rest",
+      "fg": "--smtc-foreground-content-neutral-primary",
+      "shadow": "--smtc-shadow-flyout-*",
+      "overlay": "--smtc-background-overlay-default",
+      "corner": "--mai-smtc-corner-card-default (24px)"
+    },
+    "whenToUse": [
+      "For focused, interruptive tasks that require user attention (confirmations, detail views)",
+      "When content needs to be presented over the current page without navigating away",
+      "For expanded card views, image galleries, or video players"
+    ],
+    "whenNotToUse": [
+      "For side-panel content \u2014 use Drawer instead",
+      "For inline content expansion \u2014 use Section Footer \"Expansion\" action",
+      "For lightweight tooltips or popups \u2014 use Flyout instead"
+    ]
+  },
+  "Section / footer": {
+    "category": "Layout",
+    "tier": "\ud83d\udd35 Section",
+    "figmaVariants": 27,
+    "props": {
+      "Feedback": {
+        "values": "True, False",
+        "default": "False"
+      },
+      "Footnote": {
+        "values": "True, False",
+        "default": "False"
+      },
+      "block?": {
+        "values": "True, False",
+        "default": "False"
+      },
+      "Footnote link": {
+        "values": "True, False",
+        "default": "True"
+      },
+      "click action": {
+        "values": "No action, Expansion: See less, Expansion: See more, Redirect",
+        "default": "Redirect"
+      },
+      "show Gradient": {
+        "values": "True, False",
+        "default": "False"
+      }
+    },
+    "do": [
+      "use Section Footer to close every section \u2014 even if only using `No action` with Feedback",
+      "pair \"Expansion: See more\" and \"Expansion: See less\" as toggle states",
+      "use `No action` + `Feedback=true` for standalone feedback within a section"
+    ],
+    "dont": [
+      "place the Feedback module anywhere other than inside Section Footer",
+      "use multiple click actions simultaneously \u2014 only one CTA per footer",
+      "use \"Expansion: See less\" without a corresponding \"See more\" state"
+    ],
+    "a11y": [
+      "CTA button (Redirect/Expansion) must be focusable and activated with `Enter` or `Space`",
+      "Feedback thumbs must be individually focusable"
+    ],
+    "interaction": [
+      "Expansion: See more \\u2014 Expands the section body beyond the default 424px height; body height becomes dynamic (hug content), pushing content below downward; button label and chevron toggle to \\u2018See less\\u2019 (\\u2191)",
+      "Expansion: See less \\u2014 Collapses section body back to 424px; button label and chevron toggle back to \\u2018See more\\u2019 (\\u2193); the two Expansion states always appear as a paired toggle"
+    ],
+    "assembly": [
+      "Section Footer always appears as the last child in a Section, after the body type",
+      "When `block?=true`, the footer renders as a full-width block element"
+    ],
+    "tokens": {
+      "bg": "transparent (inherits section)",
+      "fg": "--smtc-foreground-content-neutral-secondary",
+      "stroke": "--smtc-stroke-divider-default (divider line)"
+    },
+    "whenToUse": [
+      "As the last child of any Section component (after Section Title + body type)",
+      "When a section needs a CTA (\"See more\", redirect link)",
+      "When user feedback (thumbs up/down) should be collected for a section",
+      "When source attribution or footnotes are required"
+    ],
+    "whenNotToUse": [
+      "As a standalone footer outside a Section \u2014 use Page footer instead",
+      "For card-level actions \u2014 use card footer patterns",
+      "For standalone feedback \u2014 feedback only appears within Section Footer"
+    ]
+  },
+  "Badge": {
+    "category": "Display",
+    "tier": "\ud83d\udfe1 Base / SDL Atom",
+    "figmaVariants": 132,
+    "props": {
+      "startProps": {
+        "values": "icon, favicon, none",
+        "default": "icon"
+      },
+      "variant": {
+        "values": "soft, solid",
+        "default": "soft"
+      },
+      "size": {
+        "values": "md, sm",
+        "default": "md"
+      },
+      "color": {
+        "values": "info, discovery, success, danger, warning",
+        "default": "info"
+      },
+      "fontWeight": {
+        "values": "default, bold",
+        "default": "default"
+      },
+      "overlay": {
+        "values": "false, true",
+        "default": "false"
+      },
+      "showLabel": {
+        "values": "True, False",
+        "default": "True"
+      }
+    },
+    "do": [
+      "use `soft` variant as the default \u2014 it integrates smoothly with surrounding content without drawing excessive attention",
+      "use consistent semantic colors across the product so users learn to associate color with meaning (e.g., green = success everywhere)",
+      "pair icons or favicons with labels for accessibility \u2014 the label provides context that icons alone cannot"
+    ],
+    "dont": [
+      "overuse badges \u2014 more than 2\u20133 per card creates visual noise and diminishes their impact",
+      "use `danger` color for non-critical information \u2014 reserve it for errors, expired states, or genuinely urgent alerts",
+      "use `solid` variant for every badge \u2014 overuse of high-emphasis badges defeats the purpose of visual hierarchy"
+    ],
+    "a11y": [
+      "Badge text should be announced as part of the surrounding content flow",
+      "When `showLabel` is `false`, ensure the badge's meaning is conveyed through adjacent content or a visually hidden `aria-label`"
+    ],
+    "interaction": [
+      "Non-interactive display element \\u2014 no pointer events by default",
+      "When placed inside an interactive container, inherits parent interaction"
+    ],
+    "assembly": [
+      "Maintain consistent badge sizing within the same context (don't mix `sm` and `md` side by side)",
+      "Limit badges per card \u2014 1\u20132 badges per item keeps the interface clean; 3+ creates visual clutter"
+    ],
+    "tokens": {
+      "bg": "--smtc-background-ctrl-{info|success|danger|warning|discovery}-{rest}",
+      "fg": "--smtc-foreground-ctrl-on-{info|success|danger|warning|discovery}-{rest}",
+      "corner": "--smtc-corner-circular (9999px, pill shape)"
+    },
+    "whenToUse": [
+      "To indicate status or severity (e.g., \"Critical\", \"New\", \"Updated\")",
+      "To categorize or tag content within cards and list results",
+      "To highlight a key attribute (source type, content freshness, risk level)",
+      "On top of images or media to label overlaid content"
+    ],
+    "whenNotToUse": [
+      "For interactive actions \u2014 use Button instead",
+      "For toggling a state on/off \u2014 use Toggle",
+      "For navigation or links \u2014 use Button or link",
+      "For long-form descriptions \u2014 badges should be concise (1\u20133 words)"
+    ]
+  },
+  "Icon": {
+    "category": "Display",
+    "tier": "\ud83d\udfe1 Base / Foundational Atom",
+    "figmaVariants": 5,
+    "props": {
+      "iconSize": {
+        "values": "xl, l, m, s, xs",
+        "default": "xl"
+      }
+    },
+    "do": [
+      "always use the **line style** (outline) as the default \u2014 never fill/solid style unless specifically required",
+      "source all icons from the **FluentUI icon library** \u2014 do not use icons from other libraries",
+      "ensure the icon glyph is **registered in Bing SNR** before using it in production designs"
+    ],
+    "dont": [
+      "use fill/solid style icons \u2014 line style is the ACF standard",
+      "use icons from non-FluentUI sources \u2014 all glyphs must come from the FluentUI icon set",
+      "use an icon that has not been registered in Bing SNR \u2014 unregistered icons will not render correctly in production"
+    ],
+    "a11y": [
+      "Icons inside interactive components inherit accessibility from the parent",
+      "Standalone decorative icons should be marked as aria-hidden=\"true\""
+    ],
+    "interaction": [
+      "Icons are non-interactive \u2014 interaction is handled by the parent component",
+      "Hover, pressed, and focus states are inherited from the wrapping element"
+    ],
+    "assembly": [
+      "Always match iconSize to the parent component's size context",
+      "The icon page in Figma contains the full glyph library under the iconStyle frame"
+    ],
+    "tokens": {
+      "fg": "--smtc-foreground-content-neutral-{primary|secondary|tertiary}",
+      "sizes": "xs=12px, s=16px, m=20px, l=24px, xl=32px"
+    },
+    "whenToUse": [
+      "Inside interactive components (Button, Tab, Accordion chevron) as a visual affordance",
+      "As standalone decorative or informational indicators",
+      "To reinforce meaning alongside text labels"
+    ],
+    "whenNotToUse": [
+      "As the sole means of conveying critical information \u2014 always pair with a text label or `ariaLabel`",
+      "For complex illustrations or imagery \u2014 use Image or Thumbnail instead",
+      "As clickable elements on their own \u2014 wrap in a Button (icon-only variant) or Ads menu icon"
+    ]
+  },
+  "Image": {
+    "category": "Display",
+    "tier": "\ud83d\udfe1 Base / Foundational Atom",
+    "figmaVariants": 2,
+    "props": {
+      "fuzzy Mark": {
+        "values": "false, true",
+        "default": "false"
+      }
+    },
+    "do": [
+      "use fuzzy Mark for content flagged as sensitive by the content pipeline",
+      "ensure images have appropriate alt text in the consuming component",
+      "maintain aspect ratios consistent with the parent card type"
+    ],
+    "dont": [
+      "use Image standalone for decorative purposes \u2014 use frame fills instead",
+      "rely solely on fuzzy mark for content moderation \u2014 it's a visual indicator, not a blocker"
+    ],
+    "a11y": [
+      "Images must have descriptive alt text provided by the consuming component",
+      "Fuzzy-marked images should indicate their obscured state to assistive technology"
+    ],
+    "interaction": [
+      "Image is non-interactive \u2014 interaction is handled by the parent card or container",
+      "Fuzzy mark may be toggled programmatically based on content classification"
+    ],
+    "assembly": [
+      "Image is typically consumed inside higher-level card components \u2014 rarely placed standalone",
+      "**Fully occupied:** When used as a card hero or standalone visual, set the image to fill the entire container frame \u2014 no padding or gap"
+    ],
+    "tokens": {
+      "corner": "--smtc-corner-ctrl-rest (8px)",
+      "bg": "--smtc-background-content-neutral-tertiary (placeholder)"
+    },
+    "whenToUse": [
+      "As the base image element inside card components (image card, video card, multi-image carousel)",
+      "When displaying user-generated or editorial imagery that may need fuzzy marking",
+      "Inside Thumbnail as the underlying image renderer"
+    ],
+    "whenNotToUse": [
+      "For icons or glyphs \u2014 use Icon instead",
+      "For avatar/profile pictures \u2014 use Avatar",
+      "For decorative backgrounds \u2014 apply fills directly to frames"
+    ]
+  },
+  "Truncation": {
+    "category": "Display",
+    "tier": "\ud83d\udd17 Dependency",
+    "figmaVariants": 4,
+    "props": {
+      "state": {
+        "values": "rest, hover, pressed, focus",
+        "default": "rest"
+      }
+    },
+    "do": [
+      "truncate at a maximum line count that preserves meaning (typically 2\u20133 lines)",
+      "make truncation feel deliberate \u2014 the ellipsis should suggest \"more content available\"",
+      "ensure expanded text is re-collapsible (if expand/collapse pattern is used)"
+    ],
+    "dont": [
+      "truncate titles \u2014 titles should generally be fully visible (or use a different strategy)",
+      "truncate text mid-word \u2014 cut at word boundaries",
+      "hide critical information behind truncation with no expand option"
+    ],
+    "a11y": [
+      "Navigation link must be focusable via Tab",
+      "Activated via Enter \u2014 opens source page in a new tab"
+    ],
+    "interaction": [
+      "Click/tap: Opens the source detail page in a new browser tab \u2014 this is a navigation link, not an inline expand",
+      "Hover: Text link shows hover state styling"
+    ],
+    "assembly": [
+      "Place Truncation at the end of the card body text, after the ellipsis ('\u2026') that clips the content",
+      "The trigger ('Continue reading \u2192') is a navigation link that opens the full source page in a new tab \u2014 it does NOT expand text inline"
+    ],
+    "tokens": {
+      "fg": "--smtc-foreground-content-neutral-primary (text)",
+      "trigger": "--smtc-foreground-ctrl-link-brand-rest (\"Show more\" link)"
+    },
+    "whenToUse": [
+      "When text content may exceed available space (card descriptions, answer text)",
+      "When users should be able to expand truncated content inline",
+      "For consistent truncation behavior across cards and sections"
+    ],
+    "whenNotToUse": [
+      "When text should always be fully visible \u2014 don't truncate",
+      "For section-level expand/collapse \u2014 use Section Footer \"Expansion\" action",
+      "For content that fits within its container \u2014 no truncation needed"
+    ]
+  },
+  "Skeleton": {
+    "category": "Feedback",
+    "tier": "\ud83d\udd17 Special / Utility",
+    "figmaVariants": 2,
+    "props": {
+      "keyframe": {
+        "values": "1, 2",
+        "default": "1"
+      }
+    },
+    "do": [
+      "show skeletons immediately when content begins loading",
+      "match skeleton shapes to the approximate layout of real content",
+      "transition smoothly from skeleton to loaded content (no jarring replacement)"
+    ],
+    "dont": [
+      "show skeletons for content that loads nearly instantly",
+      "use generic rectangles that don't hint at content structure",
+      "combine skeleton and loaded content in the same section simultaneously (all or nothing)"
+    ],
+    "a11y": [
+      "Skeleton placeholders should not be focusable \u2014 they are non-interactive",
+      "When content loads, focus should not jump unexpectedly"
+    ],
+    "interaction": [
+      "Non-interactive: Skeleton is a loading placeholder; no user action available",
+      "Animation: Shimmer animation plays continuously until replaced by real content"
+    ],
+    "assembly": [
+      "Skeletons should occupy the same space as the content they replace to prevent layout shift",
+      "Maintain consistent spacing between skeleton elements matching the loaded layout"
+    ],
+    "tokens": {
+      "bg": "--smtc-background-content-neutral-tertiary (shimmer base)",
+      "corner": "inherits from target component"
+    },
+    "whenToUse": [
+      "As a placeholder while content is loading (cards, sections, text blocks)",
+      "To maintain layout stability during asynchronous content loading",
+      "When the approximate shape of incoming content is known"
+    ],
+    "whenNotToUse": [
+      "For error states \u2014 use error messaging patterns instead",
+      "For empty states \u2014 use empty state patterns",
+      "When load time is imperceptible (<200ms) \u2014 showing a skeleton adds visual noise"
+    ]
+  },
+  "Accordion": {
+    "category": "Navigation",
+    "tier": "\ud83d\udfe2 Available",
+    "figmaVariants": 2,
+    "props": {
+      "expanded?": {
+        "values": "true, false",
+        "default": "false"
+      }
+    },
+    "do": [
+      "use descriptive header text so users can scan and decide what to expand",
+      "default to collapsed (`expanded?=false`) to save vertical space",
+      "allow multiple accordions to be expanded simultaneously unless space is critical"
+    ],
+    "dont": [
+      "nest accordions inside accordions \u2014 it creates confusing navigation depth",
+      "hide critical information that users must see \u2014 put it outside the accordion",
+      "use accordion for very short content that doesn't benefit from collapsing"
+    ],
+    "a11y": [
+      "Accordion header should use `role=\"button\"` with `aria-expanded=\"true/false\"`",
+      "Body content should be in a region with `aria-labelledby` pointing to the header"
+    ],
+    "interaction": [
+      "Expand/collapse: Click or tap the header row to toggle the body content visibility",
+      "Chevron rotation: The chevron icon animates between down (collapsed) and up (expanded) states"
+    ],
+    "assembly": [
+      "Accordion items stack vertically with consistent spacing",
+      "The body slot uses the Basic component \u2014 configure its direction (row/col) as needed"
+    ],
+    "tokens": {
+      "bg": "--smtc-background-card-on-primary-default-rest (header)",
+      "fg": "--smtc-foreground-content-neutral-primary",
+      "stroke": "--smtc-stroke-divider-default (separator)"
+    },
+    "whenToUse": [
+      "Currently used primarily for **PAA (People Also Ask)** scenarios on Bing SERP",
+      "To organize related content into collapsible sections (e.g., FAQ, specifications)",
+      "To reduce vertical space by hiding secondary content behind expandable headers",
+      "To let users selectively reveal details without navigating away",
+      "For progressive disclosure in dense information layouts (answer cards, knowledge panels)"
+    ],
+    "whenNotToUse": [
+      "For primary navigation \u2014 use Tab instead",
+      "For single expand/collapse \u2014 use Expansion card instead",
+      "For toggling a boolean state \u2014 use Toggle",
+      "When all content should be visible at once \u2014 use a flat list or sections"
+    ]
+  },
+  "Tablist": {
+    "category": "Navigation",
+    "tier": "\ud83d\udfe2 Composite / Assembly",
+    "figmaVariants": 3,
+    "props": {
+      "active tab": {
+        "values": "1, 2, 3",
+        "default": "1"
+      },
+      "Tab: state": {
+        "values": "rest, hover, pressed, focus",
+        "default": "rest"
+      },
+      "Tab: Style": {
+        "values": "ghost, solid",
+        "default": "ghost"
+      },
+      "Tab: selected?": {
+        "values": "false, true",
+        "default": "false"
+      },
+      "Tab: start icon": {
+        "values": "True, False",
+        "default": "False"
+      }
+    },
+    "do": [
+      "keep tab labels concise and parallel in structure (\"Images\" / \"Videos\" / \"News\")",
+      "ensure the body content panel matches the selected tab's context",
+      "use left icons consistently \u2014 either all tabs have them, or none do"
+    ],
+    "dont": [
+      "nest Tablists within Tablists \u2014 use a different navigation pattern for sub-levels",
+      "use more than 6-8 tabs without ensuring the Horizontal Scroller handles overflow gracefully",
+      "mix Tab styles (Ghost and Solid) within the same Tablist"
+    ],
+    "a11y": [
+      "The outer container must have `role=\"tablist\"`",
+      "Each Tab item must have `role=\"tab\"` with `aria-selected` reflecting its state"
+    ],
+    "interaction": [
+      "Click or tap a Tab to switch the visible body panel",
+      "Arrow keys move between Tab items within the Horizontal Scroller"
+    ],
+    "assembly": [
+      "Tablist wires together Tab + Horizontal Scroller + Basic \u2014 use it instead of assembling manually",
+      "The body panel is a slot \u2014 drag your content design into it and remove placeholder text"
+    ],
+    "tokens": {
+      "fg-active": "--smtc-foreground-ctrl-brand-rest (selected tab)",
+      "fg-inactive": "--smtc-foreground-content-neutral-secondary",
+      "indicator": "--smtc-stroke-ctrl-brand-rest (underline)"
+    },
+    "whenToUse": [
+      "To provide tabbed navigation with associated content panels",
+      "When content categories are mutually exclusive and parallel in hierarchy",
+      "For top-level navigation within a section or module (e.g., Wholepage tabs)"
+    ],
+    "whenNotToUse": [
+      "For primary site navigation \u2014 use a navigation bar or header links",
+      "For filtering content within a single view \u2014 use Filter item",
+      "For triggering actions \u2014 use Button",
+      "For toggling a binary state \u2014 use Toggle",
+      "When only a single Tab item is needed with no panel switching \u2014 use Tab directly"
+    ]
+  },
+  "Horizontal Scroller": {
+    "category": "Navigation",
+    "tier": "\ud83d\udd17 Special / Utility",
+    "figmaVariants": 13,
+    "props": {
+      "tall": {
+        "values": "standard, short",
+        "default": "standard"
+      },
+      "overflow": {
+        "values": "true, false",
+        "default": "true"
+      },
+      "themed?": {
+        "values": "false, true",
+        "default": "false"
+      },
+      "slide": {
+        "values": "start, middle, end",
+        "default": "start"
+      },
+      "gradient fade": {
+        "values": "True",
+        "default": "True"
+      },
+      "scenario": {
+        "values": "non-card body, card body",
+        "default": "non-card body"
+      }
+    },
+    "do": [
+      "set `Overflow=Yes` when items exceed container width \u2014 this enables scroll arrows",
+      "use `gradient fade` to visually indicate more content is available off-screen",
+      "ensure the first visible item is fully rendered at rest (not partially clipped)"
+    ],
+    "dont": [
+      "use a scroller with only 1\u20132 items \u2014 there's nothing to scroll",
+      "hide critical content at the end of a long scroll \u2014 users may not reach it",
+      "disable gradient fade without good reason \u2014 it's a key affordance"
+    ],
+    "a11y": [
+      "Arrow buttons must be focusable and operable via `Enter`/`Space`",
+      "Left/Right arrow keys should scroll content when the scroller has focus"
+    ],
+    "interaction": [
+      "Scroll buttons: Click left/right arrows to scroll the content by one page width",
+      "Touch/drag: On touch devices, swipe horizontally to scroll content"
+    ],
+    "assembly": [
+      "Scroller occupies the full width of its parent container",
+      "Internal items use consistent horizontal gap"
+    ],
+    "tokens": {
+      "bg": "transparent",
+      "button": "--smtc-background-ctrl-subtle-{rest|hover} (nav arrows)",
+      "gap": "--smtc-gap-between-content-medium (16px)"
+    },
+    "whenToUse": [
+      "For horizontally-arranged repeating items that exceed container width (card carousels, thumbnail strips)",
+      "Inside card body areas or section body areas",
+      "When content should be browsable via left/right scroll rather than pagination"
+    ],
+    "whenNotToUse": [
+      "For vertical lists \u2014 use standard stacking layout",
+      "When all items fit within the container width (no overflow) \u2014 render flat",
+      "For single-item content \u2014 no scrolling needed"
+    ]
+  },
+  "Section / title": {
+    "category": "Layout",
+    "tier": "\ud83d\udd35 Section",
+    "figmaVariants": "1 (no variant properties)",
+    "props": {
+      "style": {
+        "values": "Clickable title, Text title, Copilot Branding",
+        "default": "Clickable title"
+      },
+      "show sub title?": {
+        "values": "True, False",
+        "default": "True"
+      },
+      "endProps?": {
+        "values": "True, False",
+        "default": "True"
+      },
+      "Props (title End Props)": {
+        "values": "Sponsor, AI buttons, See more, Tabs, WP Tabs",
+        "default": "Sponsor"
+      }
+    },
+    "do": [
+      "use Section Title for every section \u2014 it provides scannability and accessible landmarks",
+      "keep heading text short and descriptive",
+      "use the action slot sparingly \u2014 only when a clear navigation target exists"
+    ],
+    "dont": [
+      "use Section Title without a parent Section container",
+      "place multiple Section Titles within a single Section",
+      "use the subtitle slot for long descriptions \u2014 keep it to a few words"
+    ],
+    "a11y": [
+      "If the action slot contains an interactive link, it must be focusable via Tab",
+      "Focus ring uses the standard `focus outline` dependency"
+    ],
+    "interaction": [
+      "Structural container \\u2014 interaction is delegated to child components",
+      "Layout responds to viewport changes via responsive breakpoints"
+    ],
+    "assembly": [
+      "Always position as the first element inside a Section, above the body type",
+      "Section Title spans the full width of the section container"
+    ],
+    "tokens": {
+      "fg": "--smtc-foreground-content-neutral-primary",
+      "typography": "--bing-smtc-text-global-title3 / title3-strong"
+    },
+    "whenToUse": [
+      "As the first child of any Section component",
+      "To label a content group (e.g., \"Top stories\", \"People also ask\", \"Related\")",
+      "When a section needs a subtitle or inline action (e.g., \"See all\")"
+    ],
+    "whenNotToUse": [
+      "As a standalone heading outside of a Section \u2014 use standard typography instead",
+      "For card-level titles \u2014 use card title patterns",
+      "For page-level headings \u2014 use the Page header",
+      "> **endProps slot:** Optionally shows tab-like pills (Wholepage tabs) that requery the page according to topics related to the answer."
+    ]
+  },
+  "Divider": {
+    "category": "Display",
+    "tier": "\ud83d\udfe1 Base / SDL Atom",
+    "figmaVariants": 30,
+    "props": {
+      "spacing": {
+        "values": "0, 1, 2, 3, 4, 5, 6, 7, 8, 9",
+        "default": "0"
+      },
+      "color": {
+        "values": "default, subtle, strong",
+        "default": "default"
+      }
+    },
+    "do": [
+      "use `subtle` for within-card separation to maintain a clean, lightweight interior",
+      "use `strong` only for major section breaks where a clear, prominent boundary is needed",
+      "let whitespace do the work first \u2014 add a divider only when spacing alone is insufficient to convey separation"
+    ],
+    "dont": [
+      "overuse dividers \u2014 whitespace alone often suffices (per VQ whitespace guidance)",
+      "use dividers inside dense lists where they add visual clutter instead of clarity",
+      "use `strong` dividers between every item \u2014 it creates visual heaviness and breaks scanning flow"
+    ],
+    "a11y": [
+      "Dividers are non-interactive and do not receive keyboard focus",
+      "They should not appear in the tab order"
+    ],
+    "interaction": [
+      "Non-interactive display element \\u2014 no pointer events by default",
+      "When placed inside an interactive container, inherits parent interaction"
+    ],
+    "assembly": [
+      "The `spacing` prop controls vertical padding above and below the divider line \u2014 use it to manage visual proximity between surrounding content groups",
+      "Low spacing (0\u20132): tight proximity \u2014 content is closely related (e.g., within a card section)"
+    ],
+    "tokens": {
+      "stroke": "--smtc-stroke-divider-default",
+      "sizes": "1px default"
+    },
+    "whenToUse": [
+      "To separate logical content groups within a card or section",
+      "To create visual breaks between list items or stacked modules",
+      "To reinforce content hierarchy in dense layouts"
+    ],
+    "whenNotToUse": [
+      "When whitespace alone provides sufficient separation \u2014 avoid redundant dividers",
+      "Inside dense, tightly-packed lists where dividers add visual noise",
+      "As a decorative element \u2014 dividers should serve a structural purpose",
+      "Between full-width page sections \u2014 use spacing tokens and background changes instead"
+    ]
+  },
+  "Toggle": {
+    "category": "Actions",
+    "tier": "\ud83d\udfe1 Base / Foundational Atom",
+    "figmaVariants": 10,
+    "props": {
+      "state": {
+        "values": "rest, hover, pressed, disabled, focus",
+        "default": "rest"
+      },
+      "checked": {
+        "values": "True, False",
+        "default": "False"
+      },
+      "label": {
+        "values": "True, False",
+        "default": "True"
+      }
+    },
+    "do": [
+      "use Toggle for settings that take immediate effect \u2014 no \"Save\" button needed",
+      "label toggles with positive phrasing (\"Show previews\", not \"Hide previews\")",
+      "retain the checked/unchecked visual in disabled state so users understand current value"
+    ],
+    "dont": [
+      "use Toggle for multi-option selection \u2014 use Checkbox for \"select all that apply\" patterns",
+      "use Toggle within a form that has a \"Submit\" / \"Save\" action \u2014 use Checkbox instead",
+      "use negative label phrasing \u2014 \"Disable X\" toggles are confusing when the switch is \"on\""
+    ],
+    "a11y": [
+      "Toggle must be focusable via `Tab` key",
+      "`Space` key toggles the checked state"
+    ],
+    "interaction": [
+      "Click/tap: Toggles between on and off states; thumb slides and track color changes",
+      "Keyboard: `Space` toggles the state when focused"
+    ],
+    "assembly": [
+      "Place toggles consistently (right-aligned in settings rows, or left-aligned with label following)",
+      "Use `small` spacing between the toggle switch and its label"
+    ],
+    "tokens": {
+      "bg-off": "--smtc-background-ctrl-neutral-rest",
+      "bg-on": "--smtc-background-ctrl-brand-rest",
+      "fg": "--smtc-foreground-ctrl-on-brand-rest (thumb)"
+    },
+    "whenToUse": [
+      "To enable/disable a setting or feature with immediate effect",
+      "For binary preferences (on/off, show/hide, enable/disable)",
+      "When the action does not require confirmation before taking effect"
+    ],
+    "whenNotToUse": [
+      "For selecting one option from a group \u2014 use Radio button",
+      "For multi-option selection \u2014 use Checkbox",
+      "For triggering a one-time action \u2014 use Button",
+      "When the change requires a separate \"Save\" step \u2014 use Checkbox within a form"
+    ]
+  },
+  "Filter item": {
+    "category": "Actions",
+    "tier": "\ud83d\udfe1 Base / Foundational Atom",
+    "figmaVariants": 40,
+    "props": {},
+    "do": [
+      "use `Default` style for standard filter bars \u2014 it provides clear interactivity without excess visual weight",
+      "use `Selected` style to clearly indicate which filters are currently applied",
+      "use `Dropdown?: True` when a filter category has sub-options (e.g., \"Date\" \u2192 Last week / Last month / Custom)"
+    ],
+    "dont": [
+      "use a single dropdown filter if that is the only filter for the given content \u2014 unless space constraints warrant this",
+      "use `Selected` style as a default/rest state \u2014 it should only indicate an active filter",
+      "mix filter item styles arbitrarily within the same filter bar \u2014 use consistent styling per group"
+    ],
+    "a11y": [
+      "Filter items must be focusable via `Tab` key",
+      "`Enter` or `Space` activates the filter (or opens the dropdown if `Dropdown?: True`)"
+    ],
+    "interaction": [
+      "Click/tap (non-dropdown): Toggles the filter on/off; switches between Default and Selected style",
+      "Click/tap (dropdown): Opens a sub-menu flyout with additional filter options"
+    ],
+    "assembly": [
+      "Arrange filter items horizontally in a filter bar, with horizontal scroll for overflow",
+      "Use `xx-small` spacing between filter items"
+    ],
+    "tokens": {
+      "bg": "--smtc-background-ctrl-subtle-{rest|hover|pressed}",
+      "fg": "--smtc-foreground-content-neutral-primary",
+      "bg-selected": "--smtc-background-ctrl-brand-rest",
+      "corner": "--smtc-corner-circular (pill)"
+    },
+    "whenToUse": [
+      "To filter or refine search results by category, attribute, or facet",
+      "In horizontal filter bars above content grids",
+      "For faceted navigation in sidebar or inline filter groups",
+      "When a filter can expand into a sub-menu (use `Dropdown?: True`)"
+    ],
+    "whenNotToUse": [
+      "For triggering one-time actions \u2014 use Button",
+      "For navigation between content panels \u2014 use Tab",
+      "For binary on/off settings \u2014 use Toggle",
+      "For form field selection \u2014 use Dropdown or Radio button"
+    ]
+  },
+  "Query suggestion": {
+    "category": "Actions",
+    "tier": "\ud83d\udfe1 Base / Foundational Atom",
+    "figmaVariants": 8,
+    "props": {
+      "thumbnail": {
+        "values": "True, False",
+        "default": "False"
+      },
+      "state": {
+        "values": "rest, hover, pressed, focus",
+        "default": "rest"
+      }
+    },
+    "do": [
+      "show thumbnails only when images provide meaningful additional context (entities, products)",
+      "highlight the matching portion of the suggestion text to show relevance",
+      "limit the visible suggestion count (5-8 items) to avoid overwhelming the user"
+    ],
+    "dont": [
+      "show thumbnails for generic text queries \u2014 reserve for entity/rich suggestions",
+      "display stale or irrelevant suggestions \u2014 freshness and relevance are critical",
+      "block the search input when the suggestion list is open"
+    ],
+    "a11y": [
+      "Suggestion list must use `role=\"listbox\"` with individual items as `role=\"option\"`",
+      "`\u2191` `\u2193` arrow keys navigate between suggestions; `Enter` selects"
+    ],
+    "interaction": [
+      "Hover: Background shifts to hover state on pointer enter",
+      "Click/tap: Executes the suggested search query"
+    ],
+    "assembly": [
+      "Place Query suggestion items horizontally between the Section title and ML body content",
+      "Arrange items in a horizontal row with consistent gap between chips"
+    ],
+    "tokens": {
+      "bg": "--smtc-background-ctrl-subtle-{rest|hover}",
+      "fg": "--smtc-foreground-content-neutral-primary",
+      "corner": "--smtc-corner-circular (pill)"
+    },
+    "whenToUse": [
+      "As autocomplete items in a search box dropdown",
+      "For search query predictions and recent searches",
+      "When rich suggestions with thumbnails add meaningful context"
+    ],
+    "whenNotToUse": [
+      "For suggested actions or follow-ups \u2014 use Suggestion chip",
+      "For related searches at the bottom of results \u2014 use Related search pill",
+      "For filtering content \u2014 use Filter item"
+    ]
+  },
+  "Menu": {
+    "category": "Navigation",
+    "tier": "\ud83d\udd17 Special / Utility",
+    "figmaVariants": 2,
+    "props": {
+      "Expanded": {
+        "values": "False, True",
+        "default": "False"
+      },
+      "alignment": {
+        "values": "right, left",
+        "default": "right"
+      }
+    },
+    "do": [
+      "close the menu when an item is selected or the user clicks outside",
+      "indicate the currently selected option (if applicable) with a check mark or highlight",
+      "use keyboard navigation (arrow keys) to move between items"
+    ],
+    "dont": [
+      "open a menu from within another menu (no nested menus) unless absolutely necessary",
+      "use the menu for content display \u2014 it is for actions and navigation",
+      "put complex interactive elements (forms, sliders) inside menu items"
+    ],
+    "a11y": [
+      "Trigger element opens the menu on `Enter` or `Space`",
+      "Arrow keys (`Up`/`Down`) navigate between menu items"
+    ],
+    "interaction": [
+      "Open: Click/tap the trigger button to expand the menu flyout",
+      "Select: Click/tap a menu item to execute its action and close the menu"
+    ],
+    "assembly": [
+      "Menu floats below or adjacent to its trigger element",
+      "Menu width should accommodate the longest item label without truncation"
+    ],
+    "tokens": {
+      "bg": "--smtc-background-layer-flyout-default-rest",
+      "fg": "--smtc-foreground-content-neutral-primary",
+      "bg-hover": "--smtc-background-ctrl-subtle-hover (item hover)",
+      "shadow": "--smtc-shadow-flyout-*"
+    },
+    "whenToUse": [
+      "For dropdown selection menus triggered by a button or control",
+      "For action menus (share, save, report, more options \"\u22ef\")",
+      "For navigation submenus"
+    ],
+    "whenNotToUse": [
+      "For contextual tooltips or previews \u2014 use Flyout",
+      "For modal content \u2014 use Overlay",
+      "For form field dropdowns with autocomplete \u2014 use a combobox pattern",
+      "For filters \u2014 use Filter item components"
+    ]
+  },
+  "Label": {
+    "category": "Display",
+    "tier": "\ud83d\udfe1 Base / SDL Atom",
+    "figmaVariants": 180,
+    "props": {
+      "color": {
+        "values": "prose, primary, secondary, success, warning, danger",
+        "default": "prose"
+      },
+      "weight": {
+        "values": "normal, medium",
+        "default": "normal"
+      },
+      "size": {
+        "values": "xl, lg, md, sm, xs",
+        "default": "xs"
+      },
+      "textAlign": {
+        "values": "start, center, end",
+        "default": "start"
+      },
+      "Required": {
+        "values": "True, False",
+        "default": "True"
+      }
+    },
+    "do": [
+      "maintain clear typographic hierarchy \u2014 use one `xl` for hero content, a few `lg`/`md` for titles, and `sm`/`xs` for body and metadata",
+      "use `medium` weight for titles and headings, `normal` weight for body text \u2014 this maps to the `-strong` / regular token pattern",
+      "use `prose` as the default color for general content \u2014 it provides optimal readability on standard backgrounds"
+    ],
+    "dont": [
+      "use `danger` color for non-error text \u2014 it implies a critical issue and misleads users",
+      "mix sizes inconsistently within the same context (e.g., `xl` title next to `xs` title at the same hierarchy level)",
+      "use `medium` weight for all text \u2014 overusing bold dilutes hierarchy and adds visual noise, especially in dense layouts"
+    ],
+    "a11y": [
+      "All 6 color variants (`prose`, `primary`, `secondary`, `success`, `warning`, `danger`) meet contrast requirements in both light and dark themes",
+      "`secondary` (muted) color must maintain a minimum 4.5:1 contrast ratio against card and page backgrounds"
+    ],
+    "interaction": [
+      "Non-interactive display element \\u2014 no pointer events by default",
+      "When placed inside an interactive container, inherits parent interaction"
+    ],
+    "assembly": [
+      "Use `start` alignment for most content (LTR/RTL aware by default)",
+      "Match label sizes within the same context \u2014 don't mix `xl` and `xs` at the same hierarchy level"
+    ],
+    "tokens": {
+      "fg": "--smtc-foreground-content-neutral-{primary|secondary|tertiary}",
+      "typography": "--bing-smtc-text-global-{body3|caption1|caption2}"
+    },
+    "whenToUse": [
+      "To display structured text that follows a defined typographic hierarchy (titles, descriptions, metadata)",
+      "As a form field label with optional required indicator",
+      "For semantic status text (success confirmations, warning notices, error messages)",
+      "To render body copy, attribution lines, or fine print with consistent styling"
+    ],
+    "whenNotToUse": [
+      "For interactive text that triggers navigation \u2014 use a link or Button instead",
+      "For status indicators that need background emphasis \u2014 use Badge",
+      "For long-form paragraph content with no structural role \u2014 use raw text elements",
+      "For section-level headings that carry semantic HTML weight \u2014 use heading elements directly"
+    ]
+  },
+  "Spinner": {
+    "category": "Feedback",
+    "tier": "\ud83d\udfe1 Base / Foundational Atom",
+    "figmaVariants": 9,
+    "props": {
+      "Background Dim": {
+        "values": "Null, Accent, Neutral",
+        "default": "Null"
+      },
+      "show label?": {
+        "values": "True, False",
+        "default": "True"
+      },
+      "keyframe": {
+        "values": "1, 2, 3",
+        "default": "1"
+      }
+    },
+    "do": [
+      "use `Neutral` Background Dim for standard content overlay loading",
+      "show a label when the user may not understand what is loading",
+      "use all 3 keyframes in implementation to create smooth animation"
+    ],
+    "dont": [
+      "show a spinner for operations under 300ms \u2014 it creates unnecessary visual noise",
+      "use `Accent` dim on neutral backgrounds \u2014 match the dim to the content area's style",
+      "leave a spinner running indefinitely \u2014 pair with timeout and error handling"
+    ],
+    "a11y": [
+      "Spinner region must use `role=\"status\"` and `aria-live=\"polite\"` to announce loading state",
+      "When `show label?: True`, the label text serves as the accessible description"
+    ],
+    "interaction": [
+      "Non-interactive: Spinner indicates loading in progress; no user action available",
+      "Animation: Circular rotation plays continuously until the loading operation completes"
+    ],
+    "assembly": [
+      "Center the spinner within its loading container",
+      "When using Background Dim, the overlay should cover the entire content area being loaded"
+    ],
+    "tokens": {
+      "fg": "--smtc-foreground-ctrl-brand-rest (spinner track)",
+      "bg": "--smtc-foreground-content-neutral-tertiary (background track)"
+    },
+    "whenToUse": [
+      "To indicate content is loading or processing",
+      "As an overlay on existing content during refresh or update",
+      "When load time is indeterminate (no progress percentage available)"
+    ],
+    "whenNotToUse": [
+      "For determinate progress \u2014 use a progress bar",
+      "For skeleton/placeholder layouts \u2014 use skeleton screens",
+      "For brief operations (<300ms) \u2014 avoid showing any loading indicator"
+    ]
+  },
+  "Progress Bar": {
+    "category": "Feedback",
+    "tier": "\ud83d\udfe2 Available",
+    "figmaVariants": 8,
+    "props": {
+      "bar thickness": {
+        "values": "sm, md, lg, xl",
+        "default": "sm"
+      },
+      "gap": {
+        "values": "default, compact",
+        "default": "default"
+      }
+    },
+    "do": [
+      "use the configuration (MD thickness, default gap) as the standard starting point for most contexts",
+      "match the progress bar width to its parent container for a clean, aligned appearance",
+      "include helper text to clarify what the progress represents \u2014 a bare bar without context is ambiguous"
+    ],
+    "dont": [
+      "use Progress Bar for indeterminate/unknown-duration loading \u2014 use or instead",
+      "use thickness for every bar \u2014 overuse of thick bars creates visual heaviness and reduces hierarchy",
+      "mix different thickness or gap variants within the same data group \u2014 consistency aids scanability"
+    ],
+    "a11y": [
+      "The progress bar should be implemented with `role=\"progressbar\"` with `aria-valuenow`, `aria-valuemin`, and `aria-valuemax` attributes",
+      "Helper text should be programmatically associated with the bar via `aria-describedby` or equivalent"
+    ],
+    "interaction": [
+      "Non-interactive: Progress Bar is display-only; value is set by the system, not user input",
+      "Dynamic updates: Bar fill width animates proportionally when the current value changes"
+    ],
+    "assembly": [
+      "Progress bars should stretch to fill their container width (`layoutSizingHorizontal: FILL`)",
+      "Place inside cards or panels where the bar contextualizes content already present"
+    ],
+    "tokens": {
+      "fg": "--smtc-foreground-ctrl-brand-rest (fill)",
+      "bg": "--smtc-background-content-neutral-tertiary (track)",
+      "corner": "--smtc-corner-ctrl-rest (4px)"
+    },
+    "whenToUse": [
+      "To show progress toward a goal (e.g., \"75% complete\")",
+      "To visualize a metric within a known range (e.g., rating score, capacity)",
+      "To communicate data density or fill level inside cards",
+      "When the user needs a quick visual read of a numerical proportion"
+    ],
+    "whenNotToUse": [
+      "For indeterminate loading states \u2014 use **Spinner** instead",
+      "For content loading placeholders \u2014 use **Skeleton** instead",
+      "For step-based progress (e.g., multi-step wizard) \u2014 use a stepper or segmented indicator",
+      "For interactive value selection \u2014 use a slider or range input",
+      "When the value has no meaningful min/max boundary"
+    ]
+  },
+  "Toast": {
+    "category": "Feedback",
+    "tier": "\ud83d\udfe1 Base / Foundational Atom",
+    "figmaVariants": 12,
+    "props": {
+      "show icon?": {
+        "values": "True, False",
+        "default": "True"
+      },
+      "allow Undo?": {
+        "values": "True, False",
+        "default": "True"
+      },
+      "fill": {
+        "values": "Priority, Tint",
+        "default": "Tint"
+      },
+      "style": {
+        "values": "loading, neutral, accent, error, success, warning",
+        "default": "loading"
+      }
+    },
+    "do": [
+      "use `Priority` fill for errors and warnings \u2014 high-contrast background demands attention",
+      "use `Tint` fill for success and neutral messages \u2014 subtle appearance avoids disruption",
+      "show undo (`allow Undo?: True`) for any destructive action (delete, archive, remove)"
+    ],
+    "dont": [
+      "use toasts for critical errors that block the user \u2014 use a dialog or inline alert instead",
+      "stack more than 3 toasts simultaneously \u2014 it overwhelms and reduces readability",
+      "use `success` style for neutral/informational messages \u2014 use `Neutral` instead"
+    ],
+    "a11y": [
+      "Toast must be reachable via keyboard when it contains interactive elements (undo button)",
+      "Undo button must be focusable and activatable with `Enter` or `Space`"
+    ],
+    "interaction": [
+      "Auto-dismiss: Toast appears and automatically dismisses after a timed duration",
+      "Action link: Optional undo/action text is clickable before the toast dismisses"
+    ],
+    "assembly": [
+      "Position toasts at the bottom-center or top-center of the viewport, consistently",
+      "Stack multiple toasts vertically with `small` spacing between them"
+    ],
+    "tokens": {
+      "bg": "--smtc-background-layer-flyout-default-rest",
+      "fg": "--smtc-foreground-content-neutral-primary",
+      "shadow": "--smtc-shadow-flyout-*",
+      "corner": "--smtc-corner-ctrl-rest (8px)"
+    },
+    "whenToUse": [
+      "To confirm a completed action (\"Saved\", \"Copied to clipboard\")",
+      "To communicate errors or warnings that don't block interaction",
+      "To show transient loading status at the page level",
+      "When the user may want to undo an action immediately"
+    ],
+    "whenNotToUse": [
+      "For persistent or critical errors that require user action \u2014 use an inline error or dialog",
+      "For in-context loading \u2014 use Spinner within the loading container",
+      "For form validation \u2014 use inline field-level error messages",
+      "For promotional or marketing messages \u2014 use a banner component"
+    ]
+  },
+  "Flyout": {
+    "category": "Overlay",
+    "tier": "\ud83d\udd17 Special / Utility",
+    "figmaVariants": 5,
+    "props": {
+      "show Beak?": {
+        "values": "True",
+        "default": "True"
+      },
+      "is Desktop?": {
+        "values": "true, false",
+        "default": "true"
+      },
+      "pointing Direction": {
+        "values": "up, down, left, right, none",
+        "default": "down"
+      },
+      "scrollbar": {
+        "values": "true, false",
+        "default": "false"
+      },
+      "beak Alignment": {
+        "values": "start, centre, end",
+        "default": "centre"
+      }
+    },
+    "do": [
+      "use the beak to visually connect the Flyout to its trigger element",
+      "flip the pointing direction when the Flyout would overflow the viewport",
+      "dismiss the Flyout on outside click/tap and `Escape` key",
+      "on mobile, choose between lightweight (no backdrop) or overlay-like (backdrop + scroll lock) based on content importance",
+      "implement `aria-modal=true`, scroll lock, and focus trap when using overlay-like mobile approach"
+    ],
+    "dont": [
+      "nest Flyouts inside other Flyouts",
+      "place complex forms or multi-step flows inside a Flyout",
+      "use the overlay-like mobile approach without also implementing scroll lock and `aria-modal=true`"
+    ],
+    "a11y": [
+      "Flyout should open via keyboard interaction with the trigger (Enter, Space, or arrow keys)",
+      "`Escape` key dismisses the Flyout"
+    ],
+    "interaction": [
+      "Trigger action (click, hover, or keyboard) opens the Flyout near the trigger element",
+      "Click outside or press Escape dismisses the Flyout",
+      "Mobile overlay-like: tapping the backdrop dismisses the Flyout and page is non-scrollable",
+      "Mobile lightweight: tapping outside the Flyout dismisses it and page remains scrollable"
+    ],
+    "assembly": [
+      "Flyout should not overflow the viewport \u2014 reposition or flip direction if necessary",
+      "Beak should visually align with the center of the trigger element"
+    ],
+    "tokens": {
+      "bg": "--smtc-background-layer-flyout-default-rest",
+      "fg": "--smtc-foreground-content-neutral-primary",
+      "shadow": "--smtc-shadow-flyout-*",
+      "corner": "--smtc-corner-ctrl-rest (8px)"
+    },
+    "whenToUse": [
+      "For contextual information that appears on hover or click near a trigger element",
+      "For lightweight non-modal popups (tooltips, mini-previews, context menus)",
+      "When content should float over the page without dimming the background",
+      "On mobile with overlay-like approach: for important disclosures (e.g. AI disclaimers) that need user attention"
+    ],
+    "whenNotToUse": [
+      "For full modal dialogs with complex content \u2014 use Overlay",
+      "For side-panel detail views \u2014 use Drawer",
+      "For dropdown selection lists \u2014 use Menu",
+      "For full-screen or focus-trapping experiences"
+    ]
+  },
+  "Table": {
+    "category": "Display",
+    "tier": "\ud83d\udfe2 Composite / Assembly",
+    "figmaVariants": 2,
+    "props": {
+      "compact": {
+        "values": "false, true",
+        "default": "false"
+      }
+    },
+    "do": [
+      "use consistent column widths across all rows",
+      "use compact for dense data displays within constrained card bodies",
+      "include a header row with distinct styling"
+    ],
+    "dont": [
+      "use tables for layout \u2014 use auto-layout frames instead",
+      "nest tables within tables",
+      "mix compact and standard rows within the same table"
+    ],
+    "a11y": [
+      "Tables must use proper table/thead/tbody/tr/th/td semantics in code",
+      "Header cells must use th with scope=\"col\" or scope=\"row\""
+    ],
+    "interaction": [
+      "Table itself is a container \u2014 interaction states are on individual Table rows",
+      "Clickable rows highlight on hover and show pressed state on click"
+    ],
+    "assembly": [
+      "Table is composed of Table row sub-components \u2014 add/remove rows as needed",
+      "Use compact mode in data-dense contexts (e.g., specification tables inside cards)"
+    ],
+    "tokens": {
+      "bg": "transparent (inherits card)",
+      "fg": "--smtc-foreground-content-neutral-primary",
+      "stroke": "--smtc-stroke-divider-default (row borders)",
+      "bg-header": "--smtc-background-content-neutral-tertiary"
+    },
+    "whenToUse": [
+      "To display structured data in rows and columns within cards or answer panels",
+      "For comparison tables, specification lists, or key-value data",
+      "When data has a consistent columnar structure"
+    ],
+    "whenNotToUse": [
+      "For simple key-value pairs \u2014 use Label or list patterns instead",
+      "For navigation or interactive lists \u2014 use List View",
+      "For layout purposes \u2014 use frames with auto-layout"
+    ]
+  },
+  "Checkbox": {
+    "category": "Data Entry",
+    "tier": "\ud83d\udfe1 Base / SDL Atom",
+    "figmaVariants": 10,
+    "props": {
+      "state": {
+        "values": "Default, Hover, Checked, Mixed, Focus",
+        "default": "Default"
+      },
+      "isDisabled": {
+        "values": "true, false",
+        "default": "false"
+      }
+    },
+    "do": [
+      "use Checkbox for independent binary choices where users can select zero or more options",
+      "group related checkboxes vertically with a shared label to clarify the group's purpose",
+      "use the `Mixed` state on a parent checkbox when only some child options are selected"
+    ],
+    "dont": [
+      "use a checkbox for mutually exclusive choices \u2014 use Radio button instead",
+      "rely solely on color to indicate the checked state \u2014 always include the check icon",
+      "place checkboxes inline horizontally when there are more than three options"
+    ],
+    "a11y": [
+      "Checkbox must have `role=\"checkbox\"` with `aria-checked` reflecting `true`, `false`, or `mixed`",
+      "Toggle with `Space`; focus ring uses the standard `focus outline` dependency"
+    ],
+    "interaction": [
+      "Click/tap: Toggles between unchecked, checked (and mixed when applicable)",
+      "Hover: Background shifts to `--smtc-background-ctrl-subtle-hover`; reverts on pointer leave"
+    ],
+    "assembly": [
+      "Align checkboxes to the start of text labels; maintain consistent spacing between items",
+      "Use `Mixed` state only in a parent\u2013children hierarchy to reflect partial selection"
+    ],
+    "tokens": {
+      "bg": "--smtc-background-ctrl-{brand|subtle}-{rest|hover|pressed}",
+      "stroke": "--smtc-stroke-ctrl-{rest|hover|pressed}",
+      "corner": "--smtc-ctrl-choice-checkbox-corner",
+      "motion": "--smtc-duration-short-01"
+    },
+    "whenToUse": [
+      "To select one or more options from a list",
+      "For \"select all\" with partial selection (mixed state)",
+      "For agreement confirmations (e.g., terms and conditions)"
+    ],
+    "whenNotToUse": [
+      "For binary on/off settings \u2014 use Toggle instead",
+      "For mutually exclusive choices \u2014 use Radio button",
+      "For triggering immediate actions \u2014 use Button",
+      "For filtering content \u2014 use Filter item"
+    ]
+  },
+  "Radio button": {
+    "category": "Data Entry",
+    "tier": "\ud83d\udfe1 Base / Foundational Atom",
+    "figmaVariants": 8,
+    "props": {
+      "state": {
+        "values": "rest, hover, pressed, focus",
+        "default": "rest"
+      },
+      "disabled": {
+        "values": "true, false",
+        "default": "false"
+      },
+      "checked": {
+        "values": "true, false",
+        "default": "false"
+      }
+    },
+    "do": [
+      "use Radio button when exactly one option must be selected from a group of mutually exclusive choices",
+      "always pre-select a sensible default so the group is never empty",
+      "stack radio buttons vertically for readability when there are more than two options"
+    ],
+    "dont": [
+      "use radio buttons for multi-select scenarios \u2014 use Checkbox instead",
+      "present a single radio button in isolation; there should always be at least two options",
+      "change the circular indicator shape \u2014 it is the universal signifier for single-select"
+    ],
+    "a11y": [
+      "Wrap the group in a `<fieldset>` with a `<legend>` describing the question or context",
+      "Arrow keys move focus and selection within the group; `Tab` moves focus out of the group"
+    ],
+    "interaction": [
+      "Click/tap: Selects the targeted option and deselects the previously selected one",
+      "Hover: Background shifts to `--smtc-background-ctrl-subtle-hover`; reverts on pointer leave"
+    ],
+    "assembly": [
+      "Ensure all options in a group share the same `name` attribute for correct form behavior",
+      "Use consistent label alignment and spacing across all radio items in the group"
+    ],
+    "tokens": {
+      "corner": "--smtc-corner-circular",
+      "bg": "--smtc-background-ctrl-{brand|subtle}-{rest|hover|pressed}",
+      "stroke": "--smtc-stroke-ctrl-{rest|hover|pressed}",
+      "motion": "--smtc-duration-short-01"
+    },
+    "whenToUse": [
+      "To select one option from a set of 2+ mutually exclusive choices",
+      "In forms or settings where only one value is valid",
+      "When all options should be visible simultaneously"
+    ],
+    "whenNotToUse": [
+      "For binary on/off \u2014 use Toggle",
+      "For multi-select \u2014 use Checkbox",
+      "For selecting from a long list (5+) \u2014 consider Dropdown",
+      "For triggering actions \u2014 use Button"
+    ]
+  },
+  "Field": {
+    "category": "Data Entry",
+    "tier": "\ud83d\udd17 Special / Utility",
+    "figmaVariants": "1 (single component with boolean/text properties)",
+    "props": {
+      "label": {
+        "values": "true, false",
+        "default": "true"
+      },
+      "statusText": {
+        "values": "string",
+        "default": ""
+      },
+      "helperText": {
+        "values": "string",
+        "default": ""
+      },
+      "infoSign": {
+        "values": "true, false",
+        "default": "false"
+      },
+      "state": {
+        "values": "rest, hover, pressed, disabled, error, focus, read-only",
+        "default": "rest"
+      },
+      "size": {
+        "values": "Default, Large",
+        "default": "Default"
+      },
+      "style": {
+        "values": "Default, Borderless",
+        "default": "Default"
+      }
+    },
+    "do": [
+      "always pair a Field with a visible label so users know what information to provide",
+      "use `helperText` to give additional context or formatting hints below the input",
+      "show `statusText` in the `error` state to explain what went wrong and how to fix it"
+    ],
+    "dont": [
+      "use placeholder text as a substitute for a label \u2014 it disappears on focus and hurts accessibility",
+      "stack error messages far from the field \u2014 keep `statusText` visually adjacent to the input",
+      "use `Borderless` style inside a form with other bordered fields \u2014 be consistent within a form"
+    ],
+    "a11y": [
+      "Associate the label with the input via `for`/`id` or by nesting; use `aria-describedby` for helper/status text",
+      "Error state must set `aria-invalid=\"true\"` and link the error message with `aria-errormessage`"
+    ],
+    "interaction": [
+      "Click/tap on the field or label: Places cursor in the input and transitions to `focus` state",
+      "Hover: Border shifts to `--smtc-stroke-ctrl-hover`; reverts on pointer leave"
+    ],
+    "assembly": [
+      "Place label above the field; helper text below; status text below helper text when both are present",
+      "In forms, align all Field components to a consistent width for visual order"
+    ],
+    "tokens": {
+      "corner": "--smtc-corner-ctrl-{rest}",
+      "padding": "--smtc-padding-ctrl-{horizontal|vertical}",
+      "stroke": "--smtc-stroke-ctrl-{rest|hover|pressed|error|focus}",
+      "motion": "--smtc-duration-short-02"
+    },
+    "whenToUse": [
+      "For any text input field within a form or control panel",
+      "When a field needs label, helper text, or validation status feedback",
+      "Inside composed form components (Date picker, search, filters)"
+    ],
+    "whenNotToUse": [
+      "For buttons or toggle controls \u2014 use Button or Toggle",
+      "For dropdown selection \u2014 use Menu or combobox patterns",
+      "For search queries in the Page header \u2014 the header has its own search bar component"
+    ]
+  },
+  "Form": {
+    "category": "Data Entry",
+    "tier": "\ud83d\udfe1 Base / SDL Atom (structural container)",
+    "figmaVariants": "1 (single component)",
+    "props": {
+      "body": {
+        "values": "SLOT",
+        "default": ""
+      }
+    },
+    "do": [
+      "group related fields together inside a single Form to provide clear submission context",
+      "use a primary Button at the end of the form for the submit action",
+      "validate all fields before submission and surface errors inline next to their respective Fields"
+    ],
+    "dont": [
+      "nest forms inside other forms \u2014 this is invalid HTML and leads to unpredictable behavior",
+      "hide the submit button until all fields are filled \u2014 keep it visible but disabled if needed",
+      "use a Form wrapper for a single standalone field that doesn't require submission"
+    ],
+    "a11y": [
+      "Use a `<form>` element with a descriptive `aria-label` or a visible heading to identify the form's purpose",
+      "Ensure pressing `Enter` in a text field submits the form when a submit button is present"
+    ],
+    "interaction": [
+      "Submit: Triggered by clicking the submit button or pressing `Enter` in a focused field",
+      "Validation: Inline errors appear on blur or on submit for each invalid Field"
+    ],
+    "assembly": [
+      "Stack Fields vertically with consistent gap using `--smtc-gap-between-content-medium`",
+      "Place action buttons (submit / cancel) at the bottom of the form, aligned to the end"
+    ],
+    "tokens": {
+      "gap": "--smtc-gap-between-content-medium",
+      "padding": "--smtc-padding-content-large",
+      "bg": "--smtc-background-card-on-primary-default-rest"
+    },
+    "whenToUse": [
+      "To group related form controls (login forms, search filters, settings panels)",
+      "When form elements need consistent vertical spacing and alignment",
+      "As the semantic `<form>` wrapper in SDL output"
+    ],
+    "whenNotToUse": [
+      "For general content layout \u2014 use Basic or Section",
+      "For a single standalone input with no surrounding form context",
+      "For non-interactive content grouping"
+    ]
+  },
+  "Date picker": {
+    "category": "Data Entry",
+    "tier": "\ud83d\udd17 Special / Dependency",
+    "figmaVariants": 4,
+    "props": {
+      "expanded": {
+        "values": "true, false",
+        "default": "false"
+      },
+      "selectionType": {
+        "values": "Single, Range",
+        "default": "Single"
+      }
+    },
+    "do": [
+      "use `Single` selection for one-off dates (e.g., birthdate) and `Range` for start/end intervals",
+      "pre-populate the field with a sensible default date when context allows (e.g., today's date)",
+      "display the calendar flyout below or above the field depending on available viewport space"
+    ],
+    "dont": [
+      "force users to pick dates only from the calendar \u2014 allow manual text entry as well",
+      "use Date picker for time-only selection; combine with a separate time input when both are needed",
+      "open the calendar on page load \u2014 let the user explicitly trigger it"
+    ],
+    "a11y": [
+      "The trigger field must be keyboard accessible; `Enter`/`Space` opens the calendar flyout",
+      "Arrow keys navigate days within the calendar grid; `Escape` closes the flyout and returns focus to the trigger"
+    ],
+    "interaction": [
+      "Click/tap on the field or calendar icon: Expands the calendar flyout",
+      "Date selection: Clicking a day in `Single` mode selects it and closes the flyout; in `Range` mode the first click sets the start and the second click sets the end"
+    ],
+    "assembly": [
+      "Pair with a Field component for label, helper text, and error handling",
+      "Calendar flyout should be positioned using `--smtc-shadows-flyout` for elevation"
+    ],
+    "tokens": {
+      "bg": "--smtc-background-ctrl-{subtle|brand}-{rest|hover|pressed}",
+      "corner-field": "--smtc-corner-ctrl-rest",
+      "corner-flyout": "--smtc-corner-flyout-rest",
+      "shadow": "--smtc-shadows-flyout",
+      "motion": "--smtc-duration-short-02",
+      "entrance": "--smtc-entrance-01"
+    },
+    "whenToUse": [
+      "For date selection in forms, filters, or settings panels",
+      "When users need to select a specific date or date range",
+      "Inside Drawer or Overlay panels for date-based filtering"
+    ],
+    "whenNotToUse": [
+      "For time-only selection \u2014 use a time picker pattern",
+      "For simple text input of dates \u2014 use Field with date formatting",
+      "For date display (non-interactive) \u2014 use plain text"
+    ]
+  },
+  "Dropdown": {
+    "category": "Data Entry",
+    "tier": "\ud83d\udfe1 Base / Foundational Atom",
+    "figmaVariants": 2,
+    "props": {
+      "expanded": {
+        "values": "true, false",
+        "default": "false"
+      }
+    },
+    "do": [
+      "use Dropdown when the list of options is too long for inline radio buttons or checkboxes (roughly 5+ items)",
+      "display a meaningful placeholder or default selection so users understand the expected input",
+      "keep option labels concise \u2014 one line each \u2014 to avoid overflow in the flyout"
+    ],
+    "dont": [
+      "use a Dropdown for fewer than three options \u2014 inline radios or a toggle are more efficient",
+      "auto-submit on selection change \u2014 let users review their choice before taking action",
+      "nest Dropdowns inside other Dropdowns \u2014 flatten the hierarchy instead"
+    ],
+    "a11y": [
+      "The trigger must have `role=\"combobox\"` with `aria-expanded` and `aria-haspopup=\"listbox\"`",
+      "Arrow keys navigate options; `Enter` selects; `Escape` closes the listbox and restores focus to the trigger"
+    ],
+    "interaction": [
+      "Click/tap on the trigger: Expands the option listbox flyout below or above the trigger",
+      "Option selection: Clicking an option selects it, updates the trigger label, and collapses the flyout"
+    ],
+    "assembly": [
+      "Pair with a Field component for consistent label, helper text, and error state support",
+      "Position the flyout using `--smtc-shadows-flyout` for proper elevation"
+    ],
+    "tokens": {
+      "bg-trigger": "--smtc-background-ctrl-{subtle|neutral}-{rest|hover|pressed}",
+      "bg-flyout": "--smtc-background-card-on-flyout-default-rest",
+      "corner-trigger": "--smtc-corner-ctrl-rest",
+      "corner-flyout": "--smtc-corner-flyout-rest",
+      "shadow": "--smtc-shadows-flyout",
+      "motion": "--smtc-duration-short-02",
+      "entrance": "--smtc-entrance-01"
+    },
+    "whenToUse": [
+      "To select one option from a moderate-to-large set (5+ items)",
+      "When screen space doesn't permit showing all options simultaneously",
+      "For form fields requiring a single selection from a predefined list"
+    ],
+    "whenNotToUse": [
+      "For 2-4 options that can all be visible \u2014 use Radio button",
+      "For multi-select \u2014 use Checkbox group",
+      "For navigation between views \u2014 use Tab",
+      "For filtering content \u2014 use Filter item with `Dropdown?: True`"
+    ]
+  },
+  "Avatar": {
+    "category": "Display",
+    "tier": "\ud83d\udfe1 Base / Foundational Atom",
+    "figmaVariants": 2,
+    "props": {
+      "src": {
+        "values": "string (image URL)",
+        "default": ""
+      },
+      "fallbackInitial": {
+        "values": "string (single character)",
+        "default": ""
+      },
+      "supportingText": {
+        "values": "string",
+        "default": ""
+      },
+      "size": {
+        "values": "sm, md, lg",
+        "default": "md"
+      }
+    },
+    "do": [
+      "use Avatar to represent a person or entity with a photo, initials, or generic icon",
+      "provide `fallbackInitial` so a meaningful letter is shown when the image fails to load",
+      "use `supportingText` for the person's name or role when displayed alongside the avatar"
+    ],
+    "dont": [
+      "use Avatar for decorative thumbnails or product images \u2014 use Image or Thumbnail instead",
+      "display more than one initial character \u2014 keep it to a single letter for legibility at small sizes",
+      "override the circular shape for person avatars \u2014 circles are the convention for people"
+    ],
+    "a11y": [
+      "If the avatar is informative, provide `alt` text describing the person; if decorative, use `alt=\"\"`",
+      "When used as a link or button, ensure the interactive wrapper has a descriptive accessible name"
+    ],
+    "interaction": [
+      "Static by default \u2014 no hover or click behavior unless wrapped in an interactive element",
+      "When linked: focus ring appears on the wrapper; click navigates to the profile or detail page"
+    ],
+    "assembly": [
+      "Pair avatar with `supportingText` using `--smtc-gap-between-content-xx-small` for consistent spacing",
+      "Maintain uniform sizes within a list of avatars for visual alignment"
+    ],
+    "tokens": {
+      "corner": "--smtc-corner-circular",
+      "shadow": "--smtc-shadows-avatar",
+      "gap": "--smtc-gap-between-content-xx-small"
+    },
+    "whenToUse": [
+      "To display a user or entity profile image in article bylines or content cards",
+      "For author bylines in articles and content cards",
+      "For entity identification in comment threads and social contexts"
+    ],
+    "whenNotToUse": [
+      "For general image previews \u2014 use Thumbnail",
+      "For brand logos or icons \u2014 use a dedicated icon or logo component",
+      "For decorative imagery \u2014 use an image container"
+    ]
+  },
+  "Citation": {
+    "category": "Display",
+    "tier": "\ud83d\udfe2 Consumer-facing",
+    "figmaVariants": 4,
+    "props": {
+      "sources": {
+        "values": "array of source objects",
+        "default": "[]"
+      },
+      "variant": {
+        "values": "inline, in-card",
+        "default": "inline"
+      },
+      "count": {
+        "values": "number",
+        "default": "1"
+      }
+    },
+    "do": [
+      "use `inline` variant for citations embedded within flowing text (e.g., superscript numbers)",
+      "use `in-card` variant when citations are displayed as a standalone reference list on a card",
+      "show the source title and domain so users can assess credibility before clicking"
+    ],
+    "dont": [
+      "hide citation sources behind a hover-only interaction \u2014 they should be discoverable on tap/click too",
+      "display an excessive number of inline citations in one sentence \u2014 group or summarize instead",
+      "use Citation for general links or navigation \u2014 it is specifically for source attribution"
+    ],
+    "a11y": [
+      "Each citation link must have descriptive text (source title) accessible to screen readers",
+      "The flyout that reveals source details should be dismissible with `Escape` and manage focus correctly"
+    ],
+    "interaction": [
+      "Click/tap on an inline citation number: Opens a flyout or tooltip with the source title, URL, and snippet",
+      "Hover on `in-card` citation: Subtle background highlight on the citation row"
+    ],
+    "assembly": [
+      "Position inline citations as superscript numbers immediately after the referenced claim",
+      "In the `in-card` variant, stack sources vertically with consistent spacing"
+    ],
+    "tokens": {
+      "bg": "--smtc-background-card-on-primary-alt-rest",
+      "corner": "--smtc-corner-ctrl-sm-rest",
+      "shadow": "--smtc-shadows-flyout",
+      "motion": "--smtc-duration-short-02",
+      "entrance": "--smtc-entrance-01"
+    },
+    "whenToUse": [
+      "**Inline** \u2014 Attribute individual claims within AI/Copilot-generated text. Place immediately after the referenced statement.",
+      "**In Card** \u2014 Show aggregated sources for an entire card's content. Place in the card footer or attribution area."
+    ],
+    "whenNotToUse": [
+      "Do not use for general navigation links \u2014 use standard text links instead.",
+      "Do not use Citation for ad attribution \u2014 use Sponsored Slug + Ads menu icon."
+    ]
+  },
+  "Code Block": {
+    "category": "Display",
+    "tier": "Base / Content Atom",
+    "figmaVariants": 2,
+    "props": {
+      "code": {
+        "values": "string",
+        "default": ""
+      },
+      "language": {
+        "values": "string (e.g., javascript, python, html)",
+        "default": ""
+      },
+      "variant": {
+        "values": "inline, standalone",
+        "default": "standalone"
+      },
+      "showCopyButton": {
+        "values": "true, false",
+        "default": "true"
+      }
+    },
+    "do": [
+      "use `inline` for short code references within a sentence (e.g., variable names or commands)",
+      "use `standalone` for multi-line code samples with syntax highlighting and a copy button",
+      "specify the `language` prop so syntax highlighting is applied correctly"
+    ],
+    "dont": [
+      "use Code Block for non-code content like logs or plain text \u2014 use a monospace text style instead",
+      "hide the copy button on standalone blocks \u2014 users expect to copy code samples easily",
+      "force horizontal scrolling for long lines when the container can wrap or expand"
+    ],
+    "a11y": [
+      "Wrap standalone code in a `<pre><code>` structure with `aria-label` describing the snippet purpose",
+      "The copy button must be keyboard accessible and announce 'Copied' status to screen readers"
+    ],
+    "interaction": [
+      "Copy button click: Copies the code content to the clipboard and shows a brief 'Copied' confirmation",
+      "Hover on standalone block: Reveals the copy button if it auto-hides on idle"
+    ],
+    "assembly": [
+      "Use `--mai-smtc-corner-card-default` for the outer container rounding of standalone blocks",
+      "Apply `--bing-smtc-text-global-body3-mono` for the monospace font inside the code area"
+    ],
+    "tokens": {
+      "bg": "--smtc-background-card-on-primary-alt-rest",
+      "typography": "--bing-smtc-text-global-body3-mono",
+      "corner-inline": "--smtc-corner-ctrl-sm-rest",
+      "corner-standalone": "--mai-smtc-corner-card-default"
+    },
+    "whenToUse": [
+      "To display formatted code snippets in AI/Copilot answers or documentation content",
+      "**Inline** \u2014 inside an accented card container for short, quick code examples within running text",
+      "**Standalone** \u2014 as an individual answer block between body text for multi-line code"
+    ],
+    "whenNotToUse": [
+      "For general preformatted text that is not code \u2014 use Markdown instead",
+      "For single inline code tokens within a sentence \u2014 use a styled `<code>` text run, not the full component",
+      "For editable code input \u2014 this is display-only"
+    ]
+  },
+  "Markdown": {
+    "category": "Display",
+    "tier": "\ud83d\udfe1 Base / SDL Atom",
+    "figmaVariants": 2,
+    "props": {
+      "children": {
+        "values": "SLOT (body)",
+        "default": ""
+      }
+    },
+    "do": [
+      "use Markdown to render structured AI-generated or user-authored content with headings, lists, and links",
+      "apply the standard typography scale (title1/2, subtitle1/2, body1/2/3) for consistent hierarchy",
+      "separate content sections with `--smtc-stroke-divider-default` for visual clarity"
+    ],
+    "dont": [
+      "override the built-in typography tokens with custom font sizes \u2014 stick to the design system scale",
+      "inject raw HTML inside Markdown content without sanitizing it first",
+      "use Markdown for single-line labels or short strings \u2014 use a Label or text atom instead"
+    ],
+    "a11y": [
+      "Rendered headings must follow a logical order (h1 \u2192 h2 \u2192 h3) for screen-reader navigation",
+      "Links within Markdown must have descriptive text \u2014 avoid bare URLs or 'click here'"
+    ],
+    "interaction": [
+      "Static content \u2014 no direct interaction on the Markdown container itself",
+      "Embedded links and buttons within the slot follow their own interaction patterns"
+    ],
+    "assembly": [
+      "Use `--smtc-gap-between-content-x-small` between paragraphs and list items for readability",
+      "Apply `--smtc-stroke-divider-default` between major content sections (e.g., before h2 headings)"
+    ],
+    "tokens": {
+      "fg": "--smtc-foreground-on-primary-default",
+      "gap": "--smtc-gap-between-content-x-small",
+      "divider": "--smtc-stroke-divider-default",
+      "typography": "title1, title2, subtitle1, subtitle2, body1, body2, body3"
+    },
+    "whenToUse": [
+      "To render AI/Copilot-generated markdown content (headings, lists, code blocks, links, emphasis)",
+      "To display content that streams in progressively during generation",
+      "For rich text answers in conversational or chat-based SERP experiences"
+    ],
+    "whenNotToUse": [
+      "For plain, unformatted text \u2014 use Label instead",
+      "For user-authored content that doesn't use markdown formatting",
+      "For static HTML content that doesn't originate from a generation pipeline",
+      "For short single-line text \u2014 use Label or body typography directly"
+    ]
+  },
+  "Thumbnail": {
+    "category": "Display",
+    "tier": "\ud83d\udfe1 Base / Foundational Atom",
+    "figmaVariants": 6,
+    "props": {
+      "src": {
+        "values": "string (image URL)",
+        "default": ""
+      },
+      "size": {
+        "values": "number (px)",
+        "default": "88"
+      },
+      "shape": {
+        "values": "square, rounded",
+        "default": "rounded"
+      }
+    },
+    "do": [
+      "use Thumbnail for small preview images of content such as articles, videos, or products",
+      "use `rounded` shape for general content thumbnails; use `square` for grid-aligned layouts",
+      "ensure the image is appropriately cropped to fill the container without distortion"
+    ],
+    "dont": [
+      "use Thumbnail for person avatars \u2014 use Avatar instead for circular people imagery",
+      "scale thumbnails beyond their intended size \u2014 they are optimized for small previews",
+      "display thumbnails without a fallback state \u2014 provide a placeholder for broken images"
+    ],
+    "a11y": [
+      "Provide descriptive `alt` text if the thumbnail conveys information; use `alt=\"\"` if purely decorative",
+      "When the thumbnail is a link, ensure the wrapping anchor has an accessible name"
+    ],
+    "interaction": [
+      "Static by default \u2014 no hover or click behavior unless wrapped in a link or button",
+      "When linked: focus ring appears on the wrapper; click navigates to the detail page"
+    ],
+    "assembly": [
+      "Align thumbnails consistently within card layouts \u2014 use the same `size` across a list",
+      "Place thumbnails at the leading edge of a horizontal card or at the top of a vertical card"
+    ],
+    "tokens": {
+      "corner": "--smtc-corner-ctrl-sm-rest",
+      "shadow": "--smtc-shadows-avatar"
+    },
+    "whenToUse": [
+      "To display image previews in search result cards",
+      "For user avatars or entity images within grid layouts",
+      "To show video previews with a play indicator",
+      "For favicon-size icons alongside source attribution"
+    ],
+    "whenNotToUse": [
+      "For decorative backgrounds \u2014 use a background image container",
+      "For user identity \u2014 use Avatar (which adds placeholder and label support)",
+      "For full-width hero images \u2014 use an image card or media block"
+    ]
+  },
+  "Sponsored Slug": {
+    "category": "Display",
+    "tier": "\ud83d\udfe1 Base / Foundational Atom",
+    "figmaVariants": 2,
+    "props": {
+      "placement": {
+        "values": "image, title-row",
+        "default": "title-row"
+      },
+      "showAdsMenu": {
+        "values": "true, false",
+        "default": "false"
+      }
+    },
+    "do": [
+      "always display the Sponsored Slug on paid-placement cards to clearly distinguish ads from organic results",
+      "use `image` placement when the slug overlays a card image; use `title-row` when it sits next to the title",
+      "enable `showAdsMenu` to give users access to ad feedback options (e.g., 'Why this ad?')"
+    ],
+    "dont": [
+      "hide or obscure the sponsored label \u2014 transparency is required for compliance and trust",
+      "style the slug to look like organic content \u2014 it must be visually distinct",
+      "place multiple Sponsored Slugs on the same card"
+    ],
+    "a11y": [
+      "The slug text ('Ad' or 'Sponsored') must be readable by screen readers",
+      "The ads menu trigger must be keyboard accessible and announce its expanded/collapsed state"
+    ],
+    "interaction": [
+      "Ads menu click: Opens a contextual menu with options like 'Why this ad?' and 'Report ad'",
+      "Static label: The 'Sponsored' / 'Ad' text has no direct interaction"
+    ],
+    "assembly": [
+      "In `image` placement, position the slug at the bottom-left of the image with a semi-transparent background",
+      "In `title-row` placement, position the slug inline before or after the card title"
+    ],
+    "tokens": {
+      "bg-image": "--smtc-background-card-on-image-default",
+      "fg": "--smtc-foreground-on-primary-secondary",
+      "typography": "caption2"
+    },
+    "whenToUse": [
+      "To label any paid or sponsored content on the SERP",
+      "As a required advertising disclosure element",
+      "When users need to distinguish organic from paid results"
+    ],
+    "whenNotToUse": [
+      "For AI content disclosure \u2014 use Ai disclaimer",
+      "For ad menu access \u2014 use Ads menu icon (pair both together)",
+      "For general status badges or tags \u2014 use a badge component"
+    ]
+  },
+  "AI disclaimer": {
+    "category": "Feedback",
+    "tier": "\ud83d\udfe1 Base / Foundational Atom",
+    "figmaVariants": 2,
+    "props": {
+      "text": {
+        "values": "string",
+        "default": "AI-generated content may be incorrect"
+      },
+      "placement": {
+        "values": "top-right, inline",
+        "default": "inline"
+      },
+      "variant": {
+        "values": "default, alternative",
+        "default": "default"
+      }
+    },
+    "do": [
+      "always show an AI disclaimer alongside AI-generated content so users know it may contain errors",
+      "use `top-right` placement for card-level disclaimers; use `inline` when the disclaimer follows a text block",
+      "pair the disclaimer with the InfoSparkle icon to reinforce the AI-generated nature of the content"
+    ],
+    "dont": [
+      "hide the AI disclaimer behind a hover or click \u2014 it must be persistently visible",
+      "use the disclaimer on human-authored content \u2014 it is strictly for AI-generated material",
+      "override the secondary foreground color \u2014 the muted style is intentional to avoid alarm"
+    ],
+    "a11y": [
+      "The disclaimer text must be readable by screen readers as part of the content flow",
+      "Do not rely on the icon alone to convey meaning \u2014 the text must be sufficient on its own"
+    ],
+    "interaction": [
+      "Static \u2014 no direct interaction; the disclaimer is informational only",
+      "InfoSparkle icon is decorative and does not respond to click or hover"
+    ],
+    "assembly": [
+      "Place the disclaimer at the top-right of a card or inline below AI-generated text",
+      "Use `--smtc-gap-between-content-x-small` between the icon and the disclaimer text"
+    ],
+    "tokens": {
+      "fg": "--smtc-foreground-on-primary-secondary",
+      "typography": "caption2",
+      "gap": "--smtc-gap-between-content-x-small",
+      "icon": "InfoSparkle"
+    },
+    "whenToUse": [
+      "Below or alongside any AI-generated content (summaries, answers, suggestions)",
+      "In Copilot response areas to set user expectations about content reliability",
+      "Where regulatory or policy requirements mandate AI content disclosure"
+    ],
+    "whenNotToUse": [
+      "For general informational notices \u2014 use Toast (Neutral) or inline text",
+      "For error or warning messages \u2014 use Toast with the appropriate semantic style",
+      "For sponsored content labeling \u2014 use Sponsored Slug"
+    ]
+  },
+  "Related search pill": {
+    "category": "Actions",
+    "tier": "\ud83d\udfe1 Base / Foundational Atom",
+    "figmaVariants": 2,
+    "props": {
+      "query": {
+        "values": "string",
+        "default": ""
+      },
+      "showSearchIcon": {
+        "values": "true, false",
+        "default": "true"
+      }
+    },
+    "do": [
+      "use Related search pill to suggest alternative or follow-up search queries to the user",
+      "show the search icon to reinforce that tapping the pill triggers a new search",
+      "keep query text concise \u2014 truncate with ellipsis if it exceeds the available width"
+    ],
+    "dont": [
+      "use Related search pill for navigation links that are not search queries",
+      "display more than 8\u201310 pills in a single row \u2014 use Horizontal Scroller for overflow",
+      "style pills to look like primary action buttons \u2014 they are low-emphasis suggestions"
+    ],
+    "a11y": [
+      "Each pill must be a focusable element (link or button) with the query text as its accessible name",
+      "Ensure the pill row is scrollable via keyboard when overflow occurs"
+    ],
+    "interaction": [
+      "Click/tap: Executes the search query and navigates to the results page",
+      "Hover: Background transitions to `--smtc-background-ctrl-subtle-hover`"
+    ],
+    "assembly": [
+      "Arrange pills in a horizontal row with consistent spacing; wrap or scroll on overflow",
+      "Place related search pills below the main results or at the end of an answer section"
+    ],
+    "tokens": {
+      "bg": "--smtc-background-ctrl-{subtle}-{rest|hover|pressed}",
+      "corner": "--smtc-corner-ctrl-lg-rest",
+      "padding": "--smtc-padding-ctrl-horizontal-default",
+      "motion": "--smtc-duration-micro-01"
+    },
+    "whenToUse": [
+      "To display related search suggestions at the bottom of SERP results",
+      "In grid layouts for browse-and-discover patterns",
+      "For topic exploration adjacent to current search results"
+    ],
+    "whenNotToUse": [
+      "For inline suggestions within the search box \u2014 use Query suggestion",
+      "For quick-reply or action suggestions \u2014 use Suggestion chip",
+      "For filtering results \u2014 use Filter item"
+    ]
+  },
+  "Suggestion chip": {
+    "category": "Actions",
+    "tier": "\ud83d\udd17 Dependency",
+    "figmaVariants": 4,
+    "props": {
+      "label": {
+        "values": "string",
+        "default": ""
+      },
+      "state": {
+        "values": "default, hover, pressed, focus",
+        "default": "default"
+      }
+    },
+    "do": [
+      "use Suggestion chip to offer contextual follow-up actions or prompts the user can take",
+      "keep labels short and action-oriented so users can scan quickly",
+      "group related suggestion chips together in a horizontal row for easy comparison"
+    ],
+    "dont": [
+      "use Suggestion chip for permanent navigation \u2014 it is for ephemeral, context-aware suggestions",
+      "mix suggestion chips with primary buttons in the same row \u2014 they serve different purposes",
+      "disable suggestion chips without explanation \u2014 remove them if they are not applicable"
+    ],
+    "a11y": [
+      "Each chip must be a focusable button with the label as its accessible name",
+      "Focus state uses the standard `focus outline` dependency for a visible focus ring"
+    ],
+    "interaction": [
+      "Click/tap: Triggers the suggested action (e.g., sends a follow-up prompt or applies a filter)",
+      "Hover: Background transitions to `--smtc-background-ctrl-subtle-hover`; border shifts to `--smtc-stroke-ctrl-hover`"
+    ],
+    "assembly": [
+      "Arrange chips in a horizontal row; allow wrapping on narrow viewports",
+      "Place suggestion chips below AI-generated answers or in conversational UI contexts"
+    ],
+    "tokens": {
+      "bg": "--smtc-background-ctrl-{subtle}-{rest|hover|pressed|focus}",
+      "corner": "--smtc-corner-ctrl-rest",
+      "stroke": "--smtc-stroke-ctrl-{rest|hover|pressed|focus}",
+      "motion": "--smtc-duration-micro-01"
+    },
+    "whenToUse": [
+      "To present suggested queries or follow-up actions",
+      "In suggestion chip lists for search refinement",
+      "For conversational UI quick-reply options"
+    ],
+    "whenNotToUse": [
+      "For filtering content \u2014 use Filter item",
+      "For navigation between views \u2014 use Tab",
+      "For primary actions \u2014 use Button",
+      "For displaying related search terms in a grid \u2014 use Related search pill"
+    ]
+  },
+  "Answer Card": {
+    "category": "Cards",
+    "tier": "\ud83d\udfe2 Core / Card",
+    "figmaVariants": 36,
+    "whenToUse": [
+      "As the primary container for answer-type SERP results (knowledge panels, quick answers, rich snippets)",
+      "When content needs an accented surface to stand out from the page background",
+      "For full-bleed content layouts (padding=none) such as embedded maps or media",
+      "When answer content length is unpredictable (height=flexible)"
+    ],
+    "whenNotToUse": [
+      "For image-dominated content \u2014 use Image Card",
+      "For video-specific playback experiences \u2014 use Video Card",
+      "For file/link attachments \u2014 use Attachment Card",
+      "As a nested card inside another card \u2014 use a secondary surface (`background-card-on-secondary-default-`)"
+    ],
+    "overview": "The Answer Card is the primary card container for SERP answer experiences. It wraps rich answer content \u2014 text blocks, lists, tables, media, and interactive elements \u2014 within a consistent card surface. Two background styles (accented and neutral) allow designers to create visual hierarchy on the pag",
+    "props": {
+      "style": {
+        "values": "accented, nonAccent",
+        "default": "accented"
+      },
+      "padding": {
+        "values": "default, none, block",
+        "default": "default"
+      },
+      "height": {
+        "values": "standard, flexible",
+        "default": "standard"
+      },
+      "showCardTitle": {
+        "values": "true, false",
+        "default": "true"
+      },
+      "title": {
+        "values": "string",
+        "default": ""
+      },
+      "endProps": {
+        "values": "ReactNode (header end actions)",
+        "default": "null"
+      }
+    }
+  },
+  "Attachment Card": {
+    "category": "Cards",
+    "tier": "\ud83d\udfe2 Core / Card",
+    "figmaVariants": 5,
+    "whenToUse": [
+      "For file attachment results (PDFs, documents, spreadsheets, presentations)",
+      "For supplementary content links associated with a primary answer",
+      "When users need to select/toggle one or more items from a list of attachments",
+      "For downloadable resource cards"
+    ],
+    "whenNotToUse": [
+      "For primary image or video content \u2014 use Image Card or Video Card",
+      "For full answer experiences \u2014 use Answer Card",
+      "For navigation links \u2014 use Button (ghost or outline variant)",
+      "For filter/tag selection \u2014 use Filter Item or Toggle"
+    ],
+    "overview": "The Attachment Card presents file attachments or supplementary linked content as a compact, interactive card. It is unique among card components in supporting a `selected` state (toggle selection) and a dedicated `focus` state for keyboard accessibility. Five states cover the full interaction lifecy",
+    "props": {
+      "feature": {
+        "values": "default, linked",
+        "default": "default"
+      },
+      "fileType": {
+        "values": "pdf, doc, xls, ppt, generic",
+        "default": "generic"
+      },
+      "fileName": {
+        "values": "string",
+        "default": ""
+      },
+      "fileSize": {
+        "values": "string",
+        "default": ""
+      },
+      "selected": {
+        "values": "true, false",
+        "default": "false"
+      }
+    }
+  },
+  "Card body / nested Card": {
+    "category": "Card body",
+    "tier": "\ud83d\udfe2 Card / Body Template",
+    "figmaVariants": 16,
+    "whenToUse": [
+      "Embedding interactive sub-cards inside parent cards (e.g., restaurant listings, product items)",
+      "Any card-in-card pattern requiring hover/press/select states",
+      "Reusable card module across different answer experiences"
+    ],
+    "whenNotToUse": [],
+    "overview": "Card body / nested Card is a reusable card-within-card component for embedding interactive content inside parent cards. It supports theme variants (accent/nonAccent), a selection state, and 4 interaction states (rest, hover, pressed, focused). Used as a shared module across different card scenarios."
+  },
+  "Card body / page by page carousel": {
+    "category": "Card body",
+    "tier": "\ud83d\udfe2 Card / Body Template",
+    "figmaVariants": 24,
+    "whenToUse": [
+      "Multi-page content within a card (e.g., image galleries, step-by-step guides)",
+      "Paginated results that don't fit in a single view",
+      "Card-level carousels distinct from section-level Horizontal Scroller"
+    ],
+    "whenNotToUse": [],
+    "overview": "Card body / page by page carousel is a paginated carousel component for displaying content across multiple slides within a card. It supports standard (padded) and full-bleed (edge-to-edge) styles with 4 responsive width breakpoints. Each slide is a configurable slot for custom content."
+  },
+  "Expansion Card / Default": {
+    "category": "Cards",
+    "tier": "\ud83d\udfe2 Sub-component / Card Atom",
+    "figmaVariants": 4,
+    "whenToUse": [
+      "To progressively reveal supplementary content (answers, details, metadata)",
+      "Inside horizontal scrollers or stacked accordion layouts",
+      "For \"see more\" patterns where content should stay in context"
+    ],
+    "whenNotToUse": [
+      "For primary navigation \u2014 use Tab or Navigation Link",
+      "For toggling a boolean state \u2014 use Toggle",
+      "For content that should always be visible \u2014 use a standard Card",
+      "For media-heavy expandable content \u2014 use Expansion Card / Image or Horizontal/Vertical attachment variants"
+    ],
+    "overview": "The default Expansion Card is a compact interactive surface that reveals additional content on click or tap. It serves as the base building block for accordion-like patterns and progressive-disclosure flows \u2014 users interact to expand or collapse a content area."
+  },
+  "Expansion Card / Horizontal Attachment": {
+    "category": "Cards",
+    "tier": "\ud83d\udfe2 Sub-component / Card Atom",
+    "figmaVariants": 10,
+    "whenToUse": [
+      "When expandable content benefits from a visual preview alongside text (e.g., product thumbnails, video stills, entity images)",
+      "For horizontal layouts inside scrollers where media context aids scanning",
+      "When a persistent `selected` state is needed to indicate the user's choice"
+    ],
+    "whenNotToUse": [
+      "For text-only expandable content \u2014 use Expansion Card / Default",
+      "When the media should appear above/below the text \u2014 use Expansion Card / Vertical Attachment",
+      "When the image IS the primary content \u2014 use Expansion Card / Image"
+    ],
+    "overview": "The Horizontal Attachment variant of the Expansion Card pairs a side-mounted media element (thumbnail, image, or icon) with text content. The media sits to the left or right of the card body, making it ideal for content where a visual preview accompanies expandable detail. A `scale` property control"
+  },
+  "Expansion Card / Image": {
+    "category": "Cards",
+    "tier": "\ud83d\udfe2 Sub-component / Card Atom",
+    "figmaVariants": 5,
+    "whenToUse": [
+      "When the image IS the content \u2014 photo galleries, visual search results, image previews",
+      "For visual-first layouts where text is secondary to the imagery",
+      "When a persistent `selected` state is needed to mark user choice in a visual grid"
+    ],
+    "whenNotToUse": [
+      "When text content is equally or more important than the image \u2014 use Vertical or Horizontal Attachment variants",
+      "For text-only expandable content \u2014 use Expansion Card / Default",
+      "For layouts where a fixed media ratio with structured text is needed \u2014 use Expansion Card / Horizontal Attachment"
+    ],
+    "overview": "The Image variant of the Expansion Card is dominated by image content \u2014 the visual is the primary element, with minimal or overlay text. It is designed for image-rich expandable experiences where the photo, illustration, or graphic is the main hook. Interaction reveals additional detail, metadata, o"
+  },
+  "Expansion Card / Vertical Attachment": {
+    "category": "Cards",
+    "tier": "\ud83d\udfe2 Sub-component / Card Atom",
+    "figmaVariants": 5,
+    "whenToUse": [
+      "When a stacked image-over-text (or text-over-image) layout best represents the content",
+      "For visual-first cards where the media preview needs vertical prominence",
+      "When an explicit chevron indicator is needed to signal expandability"
+    ],
+    "whenNotToUse": [
+      "When the media should sit beside the text \u2014 use Expansion Card / Horizontal Attachment",
+      "When the image IS the primary content with minimal text \u2014 use Expansion Card / Image",
+      "For text-only expandable content \u2014 use Expansion Card / Default"
+    ],
+    "overview": "The Vertical Attachment variant of the Expansion Card places a media element (image, thumbnail, or graphic) above or below the text content in a stacked layout. An optional chevron button provides an explicit expand/collapse affordance. This variant is suited for content where the visual should be v"
+  },
+  "Hero-image Card": {
+    "category": "Cards",
+    "tier": "\ud83d\udfe2 Core / Card",
+    "figmaVariants": "1 (single component)",
+    "whenToUse": [
+      "For side-by-side image comparison (before/after, option A vs. option B)",
+      "When two related images must be viewed together for context",
+      "For dual-image visual answers where both images have equal weight",
+      "For paired search results (e.g., two product images, two location photos)"
+    ],
+    "whenNotToUse": [
+      "For more than 2 images \u2014 use Multi Images Carousel Card or Image Card with `feature=slider`",
+      "For a single image \u2014 use Image Card",
+      "For images with extensive metadata \u2014 use Image Card (`default` or `single Source` feature)",
+      "For images of different importance levels \u2014 use Image Card for the primary, separate component for secondary"
+    ],
+    "overview": "The Hero-image card is a specialized card layout that presents exactly two images side by side within a single card container. It has no variant properties \u2014 a single, fixed-layout component optimized for dual-image presentation. Use it for comparison, before/after, or paired-image contexts where se"
+  },
+  "Image Card": {
+    "category": "Cards",
+    "tier": "\ud83d\udfe2 Core / Card",
+    "figmaVariants": 21,
+    "whenToUse": [
+      "When the primary content is an image or photo",
+      "For image search results, gallery grids, or visual stories",
+      "When metadata needs to overlay the image (e.g., attribution on photos)",
+      "For carousel/slider experiences within a single card"
+    ],
+    "whenNotToUse": [
+      "For video content \u2014 use Video Card",
+      "For answer/text-dominant content \u2014 use Answer Card",
+      "For multi-image galleries with slide navigation \u2014 use Multi Images Carousel Card",
+      "For side-by-side image comparison \u2014 use Hero-image card"
+    ],
+    "overview": "The Image Card is a visually-driven card component where imagery is the dominant content element. Six feature variants cover a range of image presentation patterns \u2014 from standard thumbnail cards to overlay-style metadata, and in-card sliders. It supports optional secondary action buttons, autoplay ",
+    "props": {
+      "feature": {
+        "values": "default, action-button, center-icon, overlay-meta-data, single-source, slider",
+        "default": "default"
+      },
+      "showBadge": {
+        "values": "true, false",
+        "default": "false"
+      },
+      "show2ndButton": {
+        "values": "true, false",
+        "default": "false"
+      },
+      "autoplay": {
+        "values": "true, false",
+        "default": "false"
+      },
+      "fuzzyMark": {
+        "values": "true, false",
+        "default": "false"
+      },
+      "title": {
+        "values": "string",
+        "default": ""
+      },
+      "sourceName": {
+        "values": "string",
+        "default": ""
+      },
+      "sourceUrl": {
+        "values": "string",
+        "default": ""
+      }
+    }
+  },
+  "Map Card": {
+    "category": "Cards",
+    "tier": "\ud83d\udfe2 Core / Card",
+    "figmaVariants": 4,
+    "whenToUse": [
+      "For local search results that include geographic context",
+      "For direction/navigation results between locations",
+      "When a zoomed/enlarged map view is needed to highlight a specific area (`scale up`)",
+      "In answer modules where geographic context enhances the response"
+    ],
+    "whenNotToUse": [
+      "For static map images without interactivity \u2014 use Image Card with a map screenshot",
+      "For address-only content without visual map \u2014 use a text-based Answer Card",
+      "For satellite/aerial imagery \u2014 use Image Card with appropriate imagery treatment"
+    ],
+    "overview": "The Map Card embeds geographic/map content within a card container. Two property axes control the card: the map presentation type (direction vs. scale up) and the theme mode (light/dark). The `Light mode?` property mirrors the Button `switchable` style pattern \u2014 maps respond to the page's light/dark"
+  },
+  "Multi Images Carousel Card": {
+    "category": "Cards",
+    "tier": "\ud83d\udfe2 Core / Card",
+    "figmaVariants": 3,
+    "whenToUse": [
+      "For image galleries or photo collections within a single card",
+      "When multiple images relate to the same topic and should be browsed sequentially",
+      "For visual answer experiences requiring slide-by-slide exploration",
+      "When horizontal space is limited and a carousel is preferable to a grid"
+    ],
+    "whenNotToUse": [
+      "For a single image \u2014 use Image Card",
+      "For exactly 2 images side-by-side \u2014 use Hero-image card",
+      "For video content \u2014 use Video Card",
+      "For in-card image sliders within a different card type \u2014 use Image Card with `feature=slider`"
+    ],
+    "overview": "The Multi Images Carousel Card presents a navigable series of images within a single card container. Three slide variants represent the navigation state: first slide, middle slides (2+), and last slide. Navigation controls and indicators adapt based on the current position \u2014 first slide hides the \\"
+  },
+  "Splits card": {
+    "category": "Cards",
+    "tier": "\ud83d\udfe2 Core / Card",
+    "figmaVariants": 6,
+    "whenToUse": [
+      "Quick fact answer panels displaying entity attributes (e.g., university info)",
+      "Structured key-value data in a grid format",
+      "Comparison tables within answer cards"
+    ],
+    "whenNotToUse": [],
+    "overview": "Splits Card is a grid-based card layout that splits content into a matrix of cells \u2014 from a single row or column (1\u00d72, 2\u00d71) up to a 4\u00d74 grid. Used for structured data presentation like quick facts, entity attributes, or comparison tables. Supports accent and nonAccent styles with configurable paddin"
+  },
+  "Tok Video": {
+    "category": "Cards",
+    "tier": "\ud83d\udd17 Special / Content",
+    "figmaVariants": "2 (rest, hover)",
+    "whenToUse": [
+      "As a card type inside ML body / Short video answer sections",
+      "For displaying short-form vertical video content (TikTok-style) in SERP results",
+      "When video content needs hover-to-preview behavior with source attribution"
+    ],
+    "whenNotToUse": [
+      "For standard horizontal video embeds \u2014 use standard video card patterns",
+      "For image content \u2014 use image card patterns",
+      "For live/streaming content \u2014 different UI treatment needed"
+    ],
+    "overview": "Tok Video is a card type used inside the **ML body / Short video answer** section. It displays vertical portrait video thumbnails with optional time overlay and play button, and is typically arranged in a horizontally scrollable row."
+  },
+  "Video Card": {
+    "category": "Cards",
+    "tier": "\ud83d\udfe2 Core / Card",
+    "figmaVariants": 6,
+    "whenToUse": [
+      "For video search results and video answer modules",
+      "When a video thumbnail with play affordance is the primary content",
+      "For split-layout video + text content (`divided area`)",
+      "When video metadata needs to overlay the thumbnail (`overlay Meta Data`)"
+    ],
+    "whenNotToUse": [
+      "For static image content \u2014 use Image Card",
+      "For audio-only content \u2014 use a custom content card",
+      "For video playlists or multi-video carousels \u2014 consider Multi Images Carousel Card or a scroller pattern",
+      "For live-streaming indicators \u2014 extend with badge overlays from Image Card patterns"
+    ],
+    "overview": "The Video Card presents video content with a thumbnail preview and associated metadata. Three feature variants handle different layout relationships between the video thumbnail and text content \u2014 from standard layouts to overlay metadata and split-area designs. It is the primary card type for video ",
+    "props": {
+      "feature": {
+        "values": "default, overlay-meta-data, divided-area",
+        "default": "default"
+      },
+      "duration": {
+        "values": "string (e.g. '3:45')",
+        "default": ""
+      },
+      "title": {
+        "values": "string",
+        "default": ""
+      },
+      "sourceName": {
+        "values": "string",
+        "default": ""
+      },
+      "sourceUrl": {
+        "values": "string",
+        "default": ""
+      }
+    }
+  },
+  "Basic": {
+    "category": "Layout",
+    "tier": "\ud83d\udfe1 Base / SDL Atom (structural container)",
+    "figmaVariants": 3,
+    "whenToUse": [
+      "As the inner layout primitive inside a larger component",
+      "When you need a simple two-slot flex container (horizontal or vertical)",
+      "To compose custom card or section internals"
+    ],
+    "whenNotToUse": [
+      "Directly in page-level layouts \u2014 use Section or Card containers instead",
+      "For form-specific grouping \u2014 use Form",
+      "For list-based repeated layouts \u2014 use List View"
+    ],
+    "overview": "Basic is a foundational layout container that arranges child content in either a horizontal row or vertical column. It exposes two body slots for composing content side-by-side or stacked. This is a **low-level building block** \u2014 it is not typically used directly by consumers but serves as the struc"
+  },
+  "List View": {
+    "category": "Layout",
+    "tier": "\ud83d\udfe1 Base / SDL Atom",
+    "figmaVariants": 3,
+    "whenToUse": [
+      "As the repeating list container for vertically stacked content (search result rows, dropdown items, settings lists)",
+      "When consistent inter-item spacing is required across a list",
+      "Inside cards, containers, or dropdown flyouts to hold a group of ListViewItems"
+    ],
+    "whenNotToUse": [
+      "For a single standalone card or content block \u2014 use Card or Basic",
+      "For horizontal item arrangements \u2014 use Basic with `direction=row`",
+      "For form field grouping \u2014 use Form"
+    ],
+    "overview": "List View is a vertical list container that controls the spacing (gap) between repeated child items via its `gap` variant. It exposes a body SLOT for ListViewItem instances or custom content. The gap creates visual proximity between items \u2014 dividers are NOT used inside ListView; they separate groups"
+  },
+  "List view elements / Menu item": {
+    "category": "Layout",
+    "tier": "\ud83d\udd35 Section (ML Body module)",
+    "figmaVariants": "1 (no variant properties)",
+    "whenToUse": [
+      "As a row item inside List View for action menus (kebab/more menus, context menus)",
+      "Inside the Menu component for all action row items",
+      "When menu rows need an optional L2 (sub-menu) level"
+    ],
+    "whenNotToUse": [
+      "As a standalone component outside of a List View",
+      "For selection lists \u2014 use List view elements / Option instead",
+      "When rows need custom layout beyond label + icon + L2 chevron"
+    ],
+    "overview": "PAA (People Also Ask) Answer is the most complex ML Body module. It renders an expandable Q&A list inline within the algo mainline, combining a Section / title (heading), a List View body (expandable question rows), and a Section / footer (expand/collapse controls). Users can expand individual quest"
+  },
+  "ML Body / Basic Algo": {
+    "category": "Layout",
+    "tier": "\ud83d\udd35 Section (ML Body module)",
+    "figmaVariants": 2,
+    "whenToUse": [
+      "For every standard search result in the algo mainline (organic and sponsored)",
+      "`type=general`: Organic algorithm-ranked results (blue links)",
+      "`type=sponsor`: Sponsored/ad results within the mainline",
+      "Toggle `end image` when the result has a relevant thumbnail",
+      "Toggle `attachment` when the result has expandable supplementary content (sitelinks, rich snippets)"
+    ],
+    "whenNotToUse": [
+      "For enriched result modules (video groups, PAA, mini magazines) \u2014 use the dedicated ML Body modules",
+      "As a standalone card outside the algo section \u2014 use Card components instead",
+      "For right rail content \u2014 this is a Zone A (Mainline) component only"
+    ],
+    "overview": "Basic Algo is the fundamental building block of the algo mainline. It represents a single algorithm result item \u2014 either an organic result (`type=general`) or a sponsored/ad result (`type=sponsor`). Optional properties add an end image (thumbnail on the right side) and an attachment (expandable cont"
+  },
+  "ML Body / Images Answer": {
+    "category": "Layout",
+    "tier": "\ud83d\udd35 Section (ML Body module)",
+    "figmaVariants": "1 (no variant properties)",
+    "whenToUse": [
+      "To present image results inline within the algo mainline when the query has image intent",
+      "When users may want to browse and refine image results without leaving the SERP",
+      "When image content is algorithmically relevant and benefits from a grid preview"
+    ],
+    "whenNotToUse": [
+      "As a standalone image gallery section \u2014 build a full Section (title + body type + footer) instead",
+      "For a single hero image \u2014 use Hero Image Card or Image Card directly",
+      "Outside of Zone A in the algo section \u2014 ML Body modules only slot into the mainline",
+      "When the query has no visual/image intent"
+    ],
+    "overview": "Images Answer is an ML Body module that presents image results inline within the algo mainline. It combines a Section / title (with navigation chevron), a row of Query suggestion pills for refining the image search, and a two-row image grid displayed inside a Horizontal Scroller. A \\"
+  },
+  "ML Body / Mini Magazine": {
+    "category": "Layout",
+    "tier": "\ud83d\udd35 Section (ML Body module)",
+    "figmaVariants": "1 (no variant properties)",
+    "whenToUse": [
+      "To insert a small curated card grid between standard algo results (Section / title \u2192 Body \u2192 Section / footer)",
+      "As an attachment inside a basic algo result (below the algo body)",
+      "When a compact magazine-style layout is needed inline within the mainline"
+    ],
+    "whenNotToUse": [
+      "As a full section body \u2014 use Section body / magazine instead",
+      "Outside of Zone A in the algo section \u2014 ML Body modules only slot into the mainline",
+      "For a single card or standalone card layout \u2014 use a Card component directly"
+    ],
+    "overview": "Mini Magazine is an ML Body module that renders a miniature magazine-style card grid inline within the algo mainline. It appears between standard algorithm results in Zone A, providing a compact curated-content break within the search results stream. The component contains a single row instance that"
+  },
+  "ML Body / News Answer": {
+    "category": "Layout",
+    "tier": "\ud83d\udd35 Section (ML Body module)",
+    "figmaVariants": "1 (no variant properties)",
+    "whenToUse": [
+      "To present news results inline within the algo mainline when the query has news/current-events intent",
+      "When a featured (hero) news article deserves prominent visual treatment",
+      "When multiple news sources are relevant and benefit from a grid preview"
+    ],
+    "whenNotToUse": [
+      "As a standalone news section \u2014 build a full Section (title + body type + footer) instead",
+      "For a single news link mixed into text results \u2014 use a standard algo result with news metadata",
+      "Outside of Zone A in the algo section \u2014 ML Body modules only slot into the mainline",
+      "When the query has no news/current-events intent"
+    ],
+    "overview": "News Answer is an ML Body module that presents news results inline within the algo mainline. It features a hero layout: a large featured news article (with image + source + headline + snippet) at the top, followed by a 2\u00d72 grid of secondary news cards inside a Horizontal Scroller. A \\"
+  },
+  "ML Body / Shorts Video Answer": {
+    "category": "Layout",
+    "tier": "Section ML Body module",
+    "figmaVariants": "1 (single component)",
+    "whenToUse": [
+      "To present short-form vertical video results in a horizontally scrollable carousel within the algo mainline",
+      "When the search query has strong short video intent (trending, viral, social content)",
+      "When Tok video cards need a grouped section with a heading and swipeable navigation"
+    ],
+    "whenNotToUse": [
+      "For standard landscape video results \u2014 use ML body / video answer instead",
+      "As a standalone section outside the algo mainline \u2014 build a full Section (title + body type + footer)",
+      "For a single Tok video card mixed into text results \u2014 use a standard algo result"
+    ],
+    "overview": "The Shorts Video Answer module is an ML Body unit that presents short-form vertical video results (TikTok-style) in a horizontally scrollable carousel within the algo mainline. It consists of a Section / title heading followed by a Horizontal Scroller containing Tok video cards."
+  },
+  "ML Body / Video Answer": {
+    "category": "Layout",
+    "tier": "\ud83d\udd35 Section (ML Body module)",
+    "figmaVariants": "1 (no variant properties)",
+    "whenToUse": [
+      "To present a group of video results inline within the algo mainline",
+      "When video content is algorithmically relevant to the search query",
+      "When video results need a labeled group heading to distinguish them from standard text results"
+    ],
+    "whenNotToUse": [
+      "As a standalone video section \u2014 build a full Section (title + body type + footer) instead",
+      "For a single video card mixed into text results \u2014 use a standard algo result with video metadata",
+      "Outside of Zone A in the algo section \u2014 ML Body modules only slot into the mainline"
+    ],
+    "overview": "Video Answer is an ML Body module that presents video results inline within the algo mainline. It combines a Section / title (for labeling the video group) with a List View-based body (for laying out video cards). This module appears between standard algorithm results in Zone A, giving video content"
+  },
+  "ML Body / Q&A Answer": {
+    "category": "Layout",
+    "tier": "\ud83d\udd35 Section (ML Body module)",
+    "figmaVariants": "1 (no variant properties)",
+    "overview": "Q&A Answer is an ML Body module that renders an AI-generated answer with a Copilot-styled section title, expandable answer body (424px collapsed with gradient fade), and a horizontal source card carousel. The answer body features title/2-strong headings, subtitle/2-strong subheadings, and body/2 par"
+  },
+  "Section / Title": {
+    "category": "Layout",
+    "tier": "\ud83d\udd35 Section",
+    "figmaVariants": "1 (no variant properties)",
+    "whenToUse": [
+      "As the first child of any Section component",
+      "To label a content group (e.g., \"Top stories\", \"People also ask\", \"Related\")",
+      "When a section needs a subtitle or inline action (e.g., \"See all\")"
+    ],
+    "whenNotToUse": [
+      "As a standalone heading outside of a Section \u2014 use standard typography instead",
+      "For card-level titles \u2014 use card title patterns",
+      "For page-level headings \u2014 use the Page header",
+      "> **endProps slot:** Optionally shows tab-like pills (Wholepage tabs) that requery the page according to topics related to the answer."
+    ],
+    "overview": "Section Title is the heading bar that sits at the top of every Section. It provides the section's label and optional subtitle or action link. Every section in the SERP begins with a Section Title, establishing content hierarchy and giving users a clear landmark for scanning."
+  },
+  "Section / Footer": {
+    "category": "Layout",
+    "tier": "\ud83d\udd35 Section",
+    "figmaVariants": 27,
+    "whenToUse": [
+      "As the last child of any Section component (after Section Title + body type)",
+      "When a section needs a CTA (\"See more\", redirect link)",
+      "When user feedback (thumbs up/down) should be collected for a section",
+      "When source attribution or footnotes are required"
+    ],
+    "whenNotToUse": [
+      "As a standalone footer outside a Section \u2014 use Page footer instead",
+      "For card-level actions \u2014 use card footer patterns",
+      "For standalone feedback \u2014 feedback only appears within Section Footer"
+    ],
+    "overview": "Section Footer is the closing bar for sections, providing navigation actions, user feedback, and attribution. It is highly configurable through 4 independent properties that combine to produce 27 variants. The footer is the **only** sanctioned location for the Feedback module (thumbs up/down) \u2014 feed"
+  },
+  "Section / Body Type / Carousel": {
+    "category": "Layout",
+    "tier": "\ud83d\udd35 Section",
+    "figmaVariants": 12,
+    "whenToUse": [
+      "For browsable card collections that benefit from horizontal scrolling (e.g., \"People also search for\", \"Related topics\")",
+      "When the content set is long and homogeneous \u2014 many cards of similar shape and priority",
+      "When preserving horizontal density is more important than zone-based hierarchy"
+    ],
+    "whenNotToUse": [
+      "For curated, editorially-ranked content \u2014 use Section body / magazine",
+      "For algorithm-driven search results with sidebar \u2014 use Section body / algo",
+      "For Q&A or Copilot answer layouts \u2014 use Section body / Q&A",
+      "When the section has fewer than ~4 cards (no scroll needed)"
+    ],
+    "overview": "The Carousel body type is a horizontally scrollable card container for section content. Unlike Magazine (zone-based reflow), Carousel maintains a single horizontal scroll track across all breakpoints. Cards are arranged in up to 4 rows via slot props and navigated with Start/End scroller buttons. Th"
+  },
+  "Section / Body Type / Q&A": {
+    "category": "Layout",
+    "tier": "\ud83d\udd35 Section",
+    "figmaVariants": 4,
+    "whenToUse": [
+      "For Copilot/AI answer sections",
+      "For featured snippets or Q&A experiences",
+      "When the primary content (answer) should dominate the section with minimal sidebar distraction",
+      "When sidebar content is supplementary and can be safely hidden on mobile"
+    ],
+    "whenNotToUse": [
+      "For standard algorithm results \u2014 use Section body / algo",
+      "For curated multi-card layouts \u2014 use Section body / magazine",
+      "When sidebar content is critical and must be visible at all breakpoints"
+    ],
+    "overview": "The Q&A body type is a 2-zone layout optimized for answer-first experiences \u2014 Copilot answers, featured snippets, and Q&A content. Zone A holds the primary answer content with generous width, while Zone C provides a narrow sidebar. At narrow breakpoints (column=4, column=2), Zone C is **hidden entir"
+  },
+  "Section / Body Type / Algo": {
+    "category": "Layout",
+    "tier": "\ud83d\udd35 Section",
+    "figmaVariants": 4,
+    "whenToUse": [
+      "For standard search result pages with mainline + right rail layout",
+      "When the section contains algorithm-ranked results (blue links, enriched results)",
+      "When a right rail sidebar is needed for knowledge panels, entity cards, or ads"
+    ],
+    "whenNotToUse": [
+      "For curated/editorial content \u2014 use Section body / magazine",
+      "For Q&A or Copilot answer experiences \u2014 use Section body / Q&A",
+      "When no right rail is needed and content is purely magazine-style"
+    ],
+    "overview": "The Algo body type is a 2-zone layout for algorithm-driven search result sections. Zone A serves as the ML (Mainline) \u2014 the primary results column \u2014 while Zone C is the RR (Right Rail) for sidebar content like knowledge panels or contextual information. ML Body components can be slotted into Zone A "
+  },
+  "Section / Body Type / Magazine": {
+    "category": "Layout",
+    "tier": "\ud83d\udd35 Section",
+    "figmaVariants": 4,
+    "whenToUse": [
+      "For curated, editorially-arranged content sections (e.g., \"Top stories\", \"Trending now\")",
+      "When you need a primary Anchor card with supporting Accessory cards",
+      "When the section requires a 3-zone layout with distinct visual hierarchy"
+    ],
+    "whenNotToUse": [
+      "For algorithm-driven search results \u2014 use Section body / algo",
+      "For Q&A or Copilot answer layouts \u2014 use Section body / Q&A",
+      "When content is a single flat list with no zone hierarchy"
+    ],
+    "overview": "The Magazine body type is a 3-zone grid layout for rich, curated content sections. It arranges cards into zones A (Anchor), B (Accessory), and C (Accessory), providing a visually engaging magazine-style layout. The 4 column variants map 1:1 to the Page breakpoints, enabling fully responsive section "
+  },
+  "Page": {
+    "category": "Layout",
+    "tier": "\ud83d\udfe3 Page",
+    "figmaVariants": "5 (width) \u00d7 padding \u00d7 column count \u00d7 drawer \u00d7 overlay",
+    "whenToUse": [
+      "As the root container for any Bing SERP page",
+      "To establish the responsive grid and breakpoint system"
+    ],
+    "whenNotToUse": [
+      "For sub-page layouts \u2014 use Section body types instead",
+      "For standalone widgets \u2014 they should be Section- or Card-tier components"
+    ],
+    "overview": "Page is the **top-level component** in the ACF design system. It defines the overall SERP structure, responsive breakpoints, and column grid that all child components inherit. Every Bing SERP experience is composed from a Page component containing Sections, which in turn contain Cards."
+  },
+  "Ads Menu Icon": {
+    "whenToUse": [
+      "On any sponsored or paid content to indicate advertising status",
+      "To provide access to ad transparency controls (why this ad, report, preferences)",
+      "As a required regulatory disclosure element for paid placements"
+    ],
+    "whenNotToUse": [
+      "For general content menus \u2014 use a standard menu/overflow icon",
+      "For labeling sponsored content text \u2014 use Sponsored Slug",
+      "For non-advertising interactive icons \u2014 use Button (icon-only variant)"
+    ]
+  },
+  "List View Elements Number Input": {
+    "whenToUse": [
+      "As a row item inside List View when users need to adjust a numeric quantity",
+      "When a stepper UI is needed within a list (e.g., \"Adults: 2\", \"Children: 1\")",
+      "For bounded, discrete numeric selections within a defined min/max range"
+    ],
+    "whenNotToUse": [
+      "As a standalone component outside of a List View",
+      "For free-form numeric text entry \u2014 use the Field component instead",
+      "When the number range is large (e.g., 0\u20131000) \u2014 steppers are for small bounded ranges"
+    ]
+  },
+  "List View Elements Option": {
+    "whenToUse": [
+      "As a row item inside List View for single or multi-select lists",
+      "Inside Dropdown for option selection",
+      "When a visual checkmark is needed to confirm selection"
+    ],
+    "whenNotToUse": [
+      "As a standalone component outside of a List View",
+      "For action rows \u2014 use List view elements / Menu item instead",
+      "For form-level checkboxes \u2014 use the Checkbox component directly",
+      "When rows need completely custom layout"
+    ]
+  },
+  "List View Elements": {
+    "whenToUse": [
+      "As ready-made row content inside List View for Dropdown or Menu",
+      "Option: for single/multi-select lists with optional checkmark and icon",
+      "Menu item: for action menus with optional icon and sub-level indicator",
+      "Number input: for numeric stepper controls (e.g., passenger count, quantity)"
+    ],
+    "whenNotToUse": [
+      "As standalone components outside of a list context \u2014 always wrap in List View",
+      "When the row needs custom layout \u2014 build a tailor-made design in the List View body slot instead",
+      "For form-level inputs \u2014 use Field for text inputs, Checkbox for standalone checkboxes"
+    ]
+  },
+  "Ml Body Paa Answer": {
+    "whenToUse": [
+      "To present \"People Also Ask\" expandable questions inline within the algo mainline",
+      "When the search query triggers related questions that benefit from expandable answers",
+      "When the algo stream needs an interactive Q&A break between standard results"
+    ],
+    "whenNotToUse": [
+      "As a standalone Q&A section \u2014 use Section body / Q&A instead",
+      "For static FAQ content that doesn't need expand/collapse \u2014 use a simpler list layout",
+      "Outside of Zone A in the algo section \u2014 ML Body modules only slot into the mainline"
+    ]
+  },
+  "Suggestion Chips List": {
+    "whenToUse": [
+      "In the Page body for related search suggestions",
+      "When displaying a horizontal row of clickable search query suggestions",
+      "After the main content sections, before pagination"
+    ],
+    "whenNotToUse": [
+      "For filter controls \u2014 use Filter item components",
+      "For navigation tabs \u2014 use Tab or Whole Page Tab",
+      "For tag/label display (non-interactive) \u2014 use badge or label patterns"
+    ]
+  },
+  "Tab": {
+    "whenToUse": [
+      "To switch between related content panels within the same page context",
+      "For top-level navigation within a section or module",
+      "When content categories are mutually exclusive and parallel in hierarchy"
+    ],
+    "whenNotToUse": [
+      "For primary site navigation \u2014 use a navigation bar or header links",
+      "For filtering content within a single view \u2014 use Filter item",
+      "For triggering actions \u2014 use Button",
+      "For toggling a binary state \u2014 use Toggle"
+    ]
+  },
+  "Table Row": {
+    "whenToUse": [
+      "As a child of the Table component \u2014 do not use standalone",
+      "When building custom table layouts that need row-level interaction states"
+    ],
+    "whenNotToUse": [
+      "Standalone outside of a Table \u2014 use List View for standalone interactive rows",
+      "For non-tabular list items \u2014 use List View or Label"
+    ]
+  },
+  "Title End Props": {
+    "whenToUse": [
+      "When configuring the trailing slot of a Section / title",
+      "To add sponsor attribution to a section header (Sponsor variant)",
+      "To add tab navigation within a section header (WP Tab or Tabs variant)",
+      "To add AI action buttons (e.g., Copilot actions) to a section header",
+      "To add a \"See more\" expansion control to a section header"
+    ],
+    "whenNotToUse": [
+      "Not for standalone use \u2014 always consumed via Section / title's end slot",
+      "Not for card-level actions \u2014 use Button or Filter item instead",
+      "Not for building custom title layouts outside of the Section / title component"
+    ]
+  },
+  "Transition": {
+    "whenToUse": [
+      "To animate content entering or leaving the viewport (e.g., expanding a section, revealing an answer)",
+      "For content-switching transitions (tab panels, accordion content, carousel slides)",
+      "To smooth streaming/loading states (progressive content reveal)"
+    ],
+    "whenNotToUse": [
+      "For static content that never changes visibility \u2014 adds unnecessary wrapper overhead",
+      "For hover/pressed micro-interactions on controls \u2014 those are handled by the control's own state tokens",
+      "As a layout container \u2014 use Basic or Section for structure"
+    ]
+  }
+}
