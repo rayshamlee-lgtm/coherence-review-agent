@@ -23,7 +23,16 @@ export async function chatCompletion(cfg, messages, { maxTokens = 1500, temperat
     response_format: { type: "json_object" },
   };
   if (newSchema) {
-    body.max_completion_tokens = maxTokens;
+    // GPT-5 / o-series count reasoning tokens against
+    // max_completion_tokens. The caller-specified budget (~1500) is
+    // enough for the JSON answer alone, but the model can burn that
+    // entire budget on reasoning and emit a truncated answer (= invalid
+    // JSON). Two mitigations:
+    //  1) reasoning_effort: "low" trims internal reasoning sharply.
+    //  2) Floor the budget at 6000 so even with some reasoning there's
+    //     room for the full JSON.
+    body.max_completion_tokens = Math.max(maxTokens, 6000);
+    body.reasoning_effort = "low";
     // temperature must stay at default (1) for these models — omit it.
   } else {
     body.max_tokens = maxTokens;
@@ -44,14 +53,30 @@ export async function chatCompletion(cfg, messages, { maxTokens = 1500, temperat
     throw new Error(`Azure OpenAI ${res.status}: ${text.slice(0, 300)}`);
   }
   const data = await res.json();
-  const content = data.choices?.[0]?.message?.content;
-  if (!content) throw new Error("Azure OpenAI returned no content.");
+  const choice = data.choices?.[0];
+  const content = choice?.message?.content;
+  if (!content) {
+    // Reasoning models can return finish_reason="length" with empty
+    // content when the budget runs out mid-reasoning. Surface that.
+    const reason = choice?.finish_reason || "unknown";
+    throw new Error(`Azure OpenAI returned no content (finish_reason=${reason}). Try a larger token budget or a non-reasoning model.`);
+  }
+  if (choice?.finish_reason === "length") {
+    // Output was cut off — JSON is almost certainly invalid.
+    throw new Error("Model output truncated by token limit. Raise maxTokens, lower reasoning_effort, or pick a smaller schema.");
+  }
   try {
     return JSON.parse(content);
   } catch {
-    const m = content.match(/\{[\s\S]*\}$/);
-    if (m) return JSON.parse(m[0]);
-    throw new Error("Model output was not valid JSON: " + content.slice(0, 200));
+    // Strip ```json fences if any.
+    const stripped = content.replace(/^```(?:json)?\s*/i, "").replace(/```\s*$/i, "").trim();
+    try { return JSON.parse(stripped); } catch {}
+    // Last resort: grab the outermost {...} block.
+    const m = stripped.match(/\{[\s\S]*\}/);
+    if (m) {
+      try { return JSON.parse(m[0]); } catch {}
+    }
+    throw new Error("Model output was not valid JSON: " + content.slice(0, 300));
   }
 }
 

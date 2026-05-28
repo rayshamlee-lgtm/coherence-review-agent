@@ -50,6 +50,34 @@ function postButton(label, message, nodeId) {
   return `<button class="btn-post" data-message="${safeMsg}"${id}>${label}</button>`;
 }
 
+// Compute an overlay rectangle (percent-relative to the preview image) for
+// a finding's node, given the preview's coordinate frame (the rendered
+// root's absoluteBoundingBox). Returns null if we can't pin the node.
+function overlayRect(r, nodeId) {
+  if (!nodeId || !r?.nodeIndex) return null;
+  const node = r.nodeIndex.byId.get(nodeId);
+  const nb = node?.absoluteBoundingBox;
+  // Coordinate frame for the rendered preview image. Prefer the actual
+  // reviewed root (matches what renderImage() asked Figma to render).
+  // If that node has no bbox (e.g. SECTION), fall back to the anchor
+  // frame we picked for comment pinning.
+  const rb = r?.root?.absoluteBoundingBox || r?.anchor?.absoluteBoundingBox;
+  if (!nb || !rb || !rb.width || !rb.height) return null;
+  const left   = ((nb.x - rb.x) / rb.width)  * 100;
+  const top    = ((nb.y - rb.y) / rb.height) * 100;
+  const width  = (nb.width  / rb.width)  * 100;
+  const height = (nb.height / rb.height) * 100;
+  // Clamp so we don't draw boxes way outside the image (e.g. nodes that
+  // extend beyond the reviewed frame).
+  if (left > 100 || top > 100 || left + width < 0 || top + height < 0) return null;
+  return { left, top, width, height };
+}
+function overlayBoxHtml(rect, key, severity) {
+  if (!rect) return "";
+  const sev = severity || "warn";
+  return `<div class="ov-box ov-${sev}" data-key="${key}" style="left:${rect.left}%;top:${rect.top}%;width:${rect.width}%;height:${rect.height}%"></div>`;
+}
+
 function dismissButton(key) {
   return `<button class="btn-dismiss" data-dismiss-key="${key}" title="Dismiss — exclude this from the score">×</button>`;
 }
@@ -264,7 +292,7 @@ function renderResult(r, { preserveDismissed = false } = {}) {
       </summary>
       <ul>
         ${items.slice(0, 30).map(f => `
-          <li class="finding">
+          <li class="finding" data-key="${f._key}">
             <span class="finding-text"><b>${esc(f.nodeName)}</b>
             <span class="muted">(${f.nodeType})</span> — ${esc(JSON.stringify(f.evidence))}</span>
             <span class="row-actions">
@@ -321,7 +349,7 @@ function renderResult(r, { preserveDismissed = false } = {}) {
       || null;
     const msg = `[Coherence Review · L2 — ${t.severity}] ${t.title}\n${t.why || ""}${t.where ? `\n(where: ${t.where})` : ""}`;
     return `
-      <li class="issue">
+      <li class="issue" data-key="${t._key}">
         <div class="issue-head">
           <span class="sev sev-${t.severity}">${t.severity}</span>
           <b>${esc(t.title)}</b>
@@ -344,7 +372,7 @@ function renderResult(r, { preserveDismissed = false } = {}) {
       || r.nodeId
       || null;
     return `
-      <li class="flag">
+      <li class="flag" data-key="${f._key}">
         <div class="flag-title">
           <b>${esc(f.title)}</b>
           <span class="muted">confidence: ${esc(f.confidence || "?")}</span>
@@ -381,7 +409,61 @@ function renderResult(r, { preserveDismissed = false } = {}) {
       </div>
     </header>
 
-    ${r.imageUrl ? `<img class="preview" src="${r.imageUrl}" alt="Figma preview" />` : ""}
+    ${r.imageUrl ? (() => {
+      // Group findings by nodeId so multiple issues on the same node share
+      // a single overlay box. Severity ranks: error > warn > info — the
+      // shared box adopts the worst severity. Each finding's _key gets
+      // mapped to its box key so hover-linkage from the right rail still
+      // points at the correct box.
+      const SEV_RANK = { error: 3, warn: 2, info: 1 };
+      const byNode = new Map(); // nodeId -> { rect, severity, keys: Set }
+      const keyToBox = {};      // _key -> nodeId (used as box key)
+      const addFinding = (key, nodeId, severity) => {
+        const rect = overlayRect(r, nodeId);
+        if (!rect) return;
+        const cur = byNode.get(nodeId);
+        if (cur) {
+          if ((SEV_RANK[severity] || 0) > (SEV_RANK[cur.severity] || 0)) cur.severity = severity;
+          cur.keys.add(key);
+        } else {
+          byNode.set(nodeId, { rect, severity, keys: new Set([key]) });
+        }
+        keyToBox[key] = nodeId;
+      };
+      for (const f of (l1.findings || [])) addFinding(f._key, f.nodeId, f.severity);
+      for (const t of (l2?.issues || l2?.topIssues || [])) {
+        const nid = (t.nodeId && r.nodeIndex.byId.has(t.nodeId) ? t.nodeId : null)
+          || matchNodeId(r.nodeIndex, t.where);
+        addFinding(t._key, nid, t.severity);
+      }
+      for (const f of (l3?.flags || [])) {
+        const nid = (f.nodeId && r.nodeIndex.byId.has(f.nodeId) ? f.nodeId : null)
+          || matchNodeId(r.nodeIndex, f.title);
+        addFinding(f._key, nid, "info");
+      }
+      const overlays = [];
+      for (const [nid, info] of byNode) {
+        overlays.push(overlayBoxHtml(info.rect, nid, info.severity));
+      }
+      r._keyToBox = keyToBox;
+      // Picture-in-picture floating preview. Starts minimized in the
+      // bottom-right corner; click ⤢ to expand to the right half of the
+      // viewport (the main column shifts left to make room via the
+      // .pip-open class on <body>).
+      return `
+        <div id="pip" class="pip-min">
+          <div class="pip-head">
+            <span class="pip-title">Preview</span>
+            <button class="pip-toggle" title="Expand / collapse">⤢</button>
+          </div>
+          <div class="pip-body">
+            <div class="preview-wrap">
+              <img class="preview" src="${r.imageUrl}" alt="Figma preview" />
+              <div class="preview-overlay">${overlays.join("")}</div>
+            </div>
+          </div>
+        </div>`;
+    })() : ""}
 
     <section class="lvl">
       <header><h3>Level 1 · Spec compliance</h3>${scoreBadge(l1.score)}</header>
@@ -411,6 +493,65 @@ function renderResult(r, { preserveDismissed = false } = {}) {
   // Attach handlers to every Post + Dismiss button.
   out.querySelectorAll(".btn-post").forEach(b => b.addEventListener("click", handlePostClick));
   out.querySelectorAll(".btn-dismiss").forEach(b => b.addEventListener("click", handleDismissClick));
+
+  // Hover-link between finding rows and overlay boxes on the preview.
+  // Each finding row's data-key is its `_key`; each box's data-key is the
+  // nodeId. `r._keyToBox` maps row key → box key.
+  const keyToBox = r._keyToBox || {};
+  // Reverse: nodeId (box) → list of all finding rows sharing it.
+  const boxToRows = {};
+  for (const [k, nid] of Object.entries(keyToBox)) {
+    (boxToRows[nid] ||= []).push(k);
+  }
+  const rowEl = (k) => out.querySelector(`.finding[data-key="${CSS.escape(k)}"], .issue[data-key="${CSS.escape(k)}"], .flag[data-key="${CSS.escape(k)}"]`);
+  const boxEl = (nid) => out.querySelector(`.ov-box[data-key="${CSS.escape(nid)}"]`);
+  out.querySelectorAll(".finding, .issue, .flag").forEach(row => {
+    const key = row.dataset.key;
+    const nid = keyToBox[key];
+    if (!nid) return;
+    row.addEventListener("mouseenter", () => boxEl(nid)?.classList.add("active"));
+    row.addEventListener("mouseleave", () => boxEl(nid)?.classList.remove("active"));
+    row.addEventListener("click", () => {
+      const box = boxEl(nid);
+      if (box) box.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+  });
+  out.querySelectorAll(".ov-box").forEach(box => {
+    const nid = box.dataset.key;
+    const keys = boxToRows[nid] || [];
+    box.addEventListener("mouseenter", () => {
+      box.classList.add("active");
+      keys.forEach(k => rowEl(k)?.classList.add("active"));
+    });
+    box.addEventListener("mouseleave", () => {
+      box.classList.remove("active");
+      keys.forEach(k => rowEl(k)?.classList.remove("active"));
+    });
+    box.addEventListener("click", () => {
+      const first = keys.map(rowEl).find(Boolean);
+      if (!first) return;
+      let p = first.parentElement;
+      while (p && p !== out) {
+        if (p.tagName === "DETAILS") p.open = true;
+        p = p.parentElement;
+      }
+      first.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+  });
+
+  // PiP expand/collapse. When expanded, body.pip-open shifts the main
+  // column left to make room on the right half of the viewport.
+  const pip = out.querySelector("#pip");
+  if (pip) {
+    pip.querySelector(".pip-toggle").addEventListener("click", () => {
+      const expand = pip.classList.contains("pip-min");
+      pip.classList.toggle("pip-min", !expand);
+      pip.classList.toggle("pip-max", expand);
+      document.body.classList.toggle("pip-open", expand);
+    });
+  } else {
+    document.body.classList.remove("pip-open");
+  }
 }
 
 // ---------- main wiring ----------
@@ -437,6 +578,7 @@ window.addEventListener("DOMContentLoaded", () => {
     if (!s.figmaToken) { alert("Figma Personal Access Token required (settings)."); return; }
 
     $("#result").classList.add("hidden");
+    document.body.classList.remove("pip-open");
     renderSteps();
     $("#runBtn").disabled = true;
     $("#errorBox").classList.add("hidden");

@@ -59,7 +59,11 @@ export async function renderImage(fileKey, nodeId, token, scale = 2) {
 }
 
 // Flatten a Figma node tree into an array of nodes for L1 inspection.
+// Skips nodes whose `visible` is explicitly false (designer toggled the eye
+// off) and all their descendants — we shouldn't flag tokens on layers the
+// designer hid.
 export function flatten(root, parent = null, depth = 0, acc = []) {
+  if (root.visible === false) return acc;
   acc.push({ node: root, parent, depth });
   if (root.children) {
     for (const child of root.children) flatten(child, root, depth + 1, acc);
