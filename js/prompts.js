@@ -6,7 +6,19 @@ const COMMON_FRAMING = `You are a senior design reviewer on the Bing Search Desi
 You evaluate designs against the Bing Design System (ACF / SMTC tokens, Stone /
 Stone-blue / Bing Classic themes) and the Search-team Coherence Review rubric.
 Be concrete, terse, and reference the visible element by name when possible.
-Always reply as strict JSON matching the requested schema.`;
+Always reply as strict JSON matching the requested schema.
+
+OUT OF SCOPE — do NOT raise any issue against the following parts of the
+screenshot, even if you can see them. They are standard page chrome or
+placeholder content that the design owner has not authored:
+  • The site header (Bing logo, search box, sign-in, profile, vertical-page
+    tabs such as All / Images / Videos / Maps / News / Shopping / More).
+  • The algo (algorithmic) search results below the designed module —
+    standard Wikipedia / link / news cards used as visual filler.
+  • The "Related searches" rail.
+  • The page footer.
+Treat the design under review as the module(s) between the header and the
+algo results. The Figma tree summary already excludes these regions.`;
 
 function scopeBlock(reviewScope) {
   if (!reviewScope || !reviewScope.trim()) return "";
@@ -42,7 +54,15 @@ ${projectContext.trim()}
 `;
 }
 
-export function l2Messages({ imageUrl, treeSummary, l1Summary, projectContext, reviewScope }) {
+// Render a structural-scope block when the reviewer drew a sub-rectangle
+// on the preview. It pairs naturally with the existing `reviewScope` text
+// (free-form intent) — both can be present and reinforce each other.
+function structuralScopeBlock(scopeBlurb) {
+  if (!scopeBlurb) return "";
+  return `${scopeBlurb}\n\n`;
+}
+
+export function l2Messages({ imageUrl, treeSummary, l1Summary, projectContext, reviewScope, scopeBlurb }) {
   const system = `${COMMON_FRAMING}
 
 You are running LEVEL 2 — Application Quality. Don't relitigate Level 1
@@ -154,7 +174,7 @@ the field entirely (rare).`;
         { type: "text", text:
 `Here is the rendered design and a structural summary of the Figma tree.
 
-${scopeBlock(reviewScope)}${contextBlock(projectContext)}L1 quick stats (informational only — do NOT repeat L1 issues here):
+${structuralScopeBlock(scopeBlurb)}${scopeBlock(reviewScope)}${contextBlock(projectContext)}L1 quick stats (informational only — do NOT repeat L1 issues here):
 ${l1Summary}
 
 Figma tree summary:
@@ -168,7 +188,7 @@ ${schema}` },
   ];
 }
 
-export function l3Messages({ imageUrl, treeSummary, projectContext, reviewScope }) {
+export function l3Messages({ imageUrl, treeSummary, projectContext, reviewScope, scopeBlurb }) {
   const system = `${COMMON_FRAMING}
 
 You are running LEVEL 3 — Cross-Segment / Cross-Team Coherence.
@@ -212,7 +232,7 @@ to the root frame or an outer wrapper.`;
 `Rendered design + Figma tree summary below. Surface cross-team coherence
 flags only.
 
-${scopeBlock(reviewScope)}${contextBlock(projectContext)}Figma tree summary:
+${structuralScopeBlock(scopeBlurb)}${scopeBlock(reviewScope)}${contextBlock(projectContext)}Figma tree summary:
 ${treeSummary}
 
 Respond as JSON matching:

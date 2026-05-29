@@ -1,4 +1,4 @@
-import { runReview } from "./pipeline.js";
+import { prepareReview, runReview } from "./pipeline.js";
 import { postComment, matchNodeId, pinForNode } from "./figma.js";
 
 let lastResult = null; // cached for comment-post handlers
@@ -195,8 +195,9 @@ function readSettingsForm() {
 const STEPS = [
   { id: "parse",  label: "Parse Figma URL" },
   { id: "fetch",  label: "Fetch Figma nodes" },
-  { id: "l1",     label: "L1 — Token compliance" },
   { id: "render", label: "Render preview" },
+  { id: "scope",  label: "Mark in-scope region" },
+  { id: "l1",     label: "L1 — Token compliance" },
   { id: "l2",     label: "L2 — Application quality" },
   { id: "l3",     label: "L3 — Cross-team coherence" },
 ];
@@ -251,6 +252,150 @@ function riskBadge(risk) {
   if (r === "medium") return `<span class="badge warn">Medium risk</span>`;
   if (r === "low")    return `<span class="badge good">Low risk</span>`;
   return `<span class="badge muted">—</span>`;
+}
+
+// ---------- scope picker (phase 2) ----------
+// Renders the rendered Figma preview inside the "Mark in-scope region"
+// step row of the Pipeline card. The reviewer drags a rectangle to mark
+// what's in-scope; the row collapses on confirm. `onConfirm(scope|null)`
+// receives the rectangle in Figma canvas absolute coordinates (so the
+// pipeline can filter node bboxes directly), or null for "whole frame".
+function renderScopePicker(prep, onConfirm) {
+  const stepLi = $("#step-scope");
+  if (!stepLi) return;
+  // Clear any previous picker body left over from a re-run.
+  stepLi.querySelector(".step-body")?.remove();
+  const body = document.createElement("div");
+  body.className = "step-body scope-picker";
+  body.innerHTML = `
+    <p class="scope-hint muted">Drag on the preview to mark the in-scope region. Drag a corner to resize, drag inside to move. Or skip and review the whole frame.</p>
+    <div class="scope-stage" id="scopeStage">
+      <img class="scope-preview" src="${prep.imageUrl}" alt="Figma preview" draggable="false" />
+      <div class="scope-box hidden" id="scopeBox">
+        <div class="scope-handle nw" data-dir="nw"></div>
+        <div class="scope-handle ne" data-dir="ne"></div>
+        <div class="scope-handle sw" data-dir="sw"></div>
+        <div class="scope-handle se" data-dir="se"></div>
+      </div>
+    </div>
+    <div class="scope-actions">
+      <button id="scopeRunSelection" class="btn-primary" disabled>Review selection</button>
+      <button id="scopeRunFull" class="btn-secondary">Review entire frame</button>
+    </div>
+  `;
+  stepLi.appendChild(body);
+
+  const stage = $("#scopeStage");
+  const boxEl = $("#scopeBox");
+  const runSelBtn = $("#scopeRunSelection");
+  const runFullBtn = $("#scopeRunFull");
+
+  // Box state in stage-relative pixel coordinates.
+  let box = null; // { x, y, w, h } or null
+  const MIN = 10;
+  const stageRect = () => stage.getBoundingClientRect();
+  const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
+  const evtPos = (ev) => {
+    const r = stageRect();
+    return { x: clamp(ev.clientX - r.left, 0, r.width),
+             y: clamp(ev.clientY - r.top,  0, r.height) };
+  };
+  const drawBox = () => {
+    if (!box) { boxEl.classList.add("hidden"); runSelBtn.disabled = true; return; }
+    boxEl.classList.remove("hidden");
+    boxEl.style.left   = `${box.x}px`;
+    boxEl.style.top    = `${box.y}px`;
+    boxEl.style.width  = `${box.w}px`;
+    boxEl.style.height = `${box.h}px`;
+    runSelBtn.disabled = !(box.w >= MIN && box.h >= MIN);
+  };
+
+  // Interaction modes: "draw" (start fresh), "move" (translate box),
+  // "resize" (drag one of four corners). Decided on mousedown by what
+  // element the user landed on.
+  let mode = null;
+  let startPt = null;
+  let startBox = null;
+  let resizeDir = null;
+
+  stage.addEventListener("mousedown", (ev) => {
+    if (ev.button !== 0) return;
+    ev.preventDefault();
+    const target = ev.target;
+    const p = evtPos(ev);
+    if (target.classList && target.classList.contains("scope-handle")) {
+      mode = "resize"; resizeDir = target.dataset.dir;
+      startBox = { ...box };
+      startPt = p;
+    } else if (box && target === boxEl) {
+      mode = "move";
+      startBox = { ...box };
+      startPt = p;
+    } else {
+      mode = "draw";
+      box = { x: p.x, y: p.y, w: 0, h: 0 };
+      startPt = p;
+      drawBox();
+    }
+  });
+  window.addEventListener("mousemove", (ev) => {
+    if (!mode) return;
+    const p = evtPos(ev);
+    const r = stageRect();
+    if (mode === "draw") {
+      const x = Math.min(p.x, startPt.x);
+      const y = Math.min(p.y, startPt.y);
+      box = { x, y, w: Math.abs(p.x - startPt.x), h: Math.abs(p.y - startPt.y) };
+    } else if (mode === "move") {
+      const dx = p.x - startPt.x;
+      const dy = p.y - startPt.y;
+      box = {
+        x: clamp(startBox.x + dx, 0, r.width  - startBox.w),
+        y: clamp(startBox.y + dy, 0, r.height - startBox.h),
+        w: startBox.w, h: startBox.h,
+      };
+    } else if (mode === "resize") {
+      const dx = p.x - startPt.x;
+      const dy = p.y - startPt.y;
+      let { x, y, w, h } = startBox;
+      if (resizeDir.includes("e")) w = startBox.w + dx;
+      if (resizeDir.includes("s")) h = startBox.h + dy;
+      if (resizeDir.includes("w")) { x = startBox.x + dx; w = startBox.w - dx; }
+      if (resizeDir.includes("n")) { y = startBox.y + dy; h = startBox.h - dy; }
+      // Handle negative drag past origin by flipping.
+      if (w < 0) { x += w; w = -w; }
+      if (h < 0) { y += h; h = -h; }
+      // Clamp to stage.
+      x = clamp(x, 0, r.width  - 1);
+      y = clamp(y, 0, r.height - 1);
+      w = clamp(w, 1, r.width  - x);
+      h = clamp(h, 1, r.height - y);
+      box = { x, y, w, h };
+    }
+    drawBox();
+  });
+  window.addEventListener("mouseup", () => { mode = null; startPt = null; startBox = null; resizeDir = null; });
+
+  const collapse = () => body.remove();
+
+  // Convert the picked stage-pixel rect to Figma canvas absolute coords
+  // using the rendered root's bbox as the reference frame, then run the
+  // review with that scope.
+  runSelBtn.addEventListener("click", () => {
+    if (!box || box.w < MIN || box.h < MIN) return;
+    const r = stageRect();
+    const rb = prep.root?.absoluteBoundingBox;
+    collapse();
+    if (!rb || !r.width || !r.height) { onConfirm(null); return; }
+    const scope = {
+      x:      rb.x + (box.x / r.width)  * rb.width,
+      y:      rb.y + (box.y / r.height) * rb.height,
+      width:  (box.w / r.width)  * rb.width,
+      height: (box.h / r.height) * rb.height,
+    };
+    onConfirm(scope);
+  });
+  runFullBtn.addEventListener("click", () => { collapse(); onConfirm(null); });
 }
 
 function renderResult(r, { preserveDismissed = false } = {}) {
@@ -584,27 +729,41 @@ window.addEventListener("DOMContentLoaded", () => {
     $("#errorBox").classList.add("hidden");
 
     try {
-      const r = await runReview(
-        {
-          figmaUrl,
-          projectContext,
-          reviewScope,
-          figmaToken: s.figmaToken,
-          azure: {
-            endpoint: s.azEndpoint,
-            deployment: s.azDeployment,
-            apiVersion: s.azApiVersion,
-            apiKey: s.azApiKey,
-          },
-        },
+      // Phase 1: parse + fetch + render preview.
+      const prep = await prepareReview(
+        { figmaUrl, figmaToken: s.figmaToken },
         updateStep,
       );
-      renderResult(r);
+
+      // Phase 2: ask the reviewer to mark an in-scope region (or skip).
+      const azure = {
+        endpoint: s.azEndpoint,
+        deployment: s.azDeployment,
+        apiVersion: s.azApiVersion,
+        apiKey: s.azApiKey,
+      };
+      const runWithScope = async (scope) => {
+        updateStep({ id: "scope", status: "done",
+          detail: scope ? "User-marked region" : "Whole frame" });
+        const r = await runReview(
+          { prep, scope, projectContext, reviewScope, azure },
+          updateStep,
+        );
+        renderResult(r);
+        $("#runBtn").disabled = false;
+      };
+      if (prep.imageUrl) {
+        updateStep({ id: "scope", status: "running", detail: "Awaiting reviewer input" });
+        renderScopePicker(prep, runWithScope);
+        // runBtn stays disabled until the user picks a scope and review finishes.
+      } else {
+        // No image to draw on — skip selection, review whole frame.
+        await runWithScope(null);
+      }
     } catch (e) {
       console.error(e);
       $("#errorBox").textContent = e.message;
       $("#errorBox").classList.remove("hidden");
-    } finally {
       $("#runBtn").disabled = false;
     }
   });

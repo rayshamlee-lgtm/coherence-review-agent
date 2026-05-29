@@ -184,9 +184,9 @@ function checkSpacing(node, parent, findings) {
   }
 }
 
-export function runL1(root) {
+export function runL1(root, opts = {}) {
   const findings = [];
-  const flat = flatten(root);
+  const flat = flatten(root, null, 0, [], opts);
   for (const { node, parent } of flat) {
     checkFills(node, parent, findings);
     checkStrokes(node, parent, findings);

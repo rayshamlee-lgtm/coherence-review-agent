@@ -58,15 +58,68 @@ export async function renderImage(fileKey, nodeId, token, scale = 2) {
   return url;
 }
 
+// Names of top-level SERP sections that aren't the designer's work — the
+// standard chrome (header / search / verticals) and the placeholder content
+// pinned below the reviewed module (algo results / related searches /
+// footer). Matched on direct children of the review root only, so a node
+// named "Header" *inside* a card (a card's own header, legitimate work)
+// is still inspected.
+const PAGE_CHROME = [
+  /^header\b/i,                        // "Header", "Header Top", "Header Container"
+  /^top.?bar$/i,                       // "Topbar"
+  /^nav(igation)?(bar)?$/i,            // "Nav", "Navigation", "Navbar"
+  /^search.?(box|bar|field|input)$/i,
+  /^vertical.?(tabs|pages|nav)?s?$/i,  // "Verticals", "Vertical Tabs"
+  /^sign.?in$/i,
+  /^user.?(profile|menu|avatar)$/i,
+  /^algo.?(results?|cards?|stack)?$/i, // "Algo", "Algo Results", "Algo Stack"
+  /^mainline.?algo/i,
+  /^algo.?mainline/i,
+  /^related.?searche?s?$/i,
+  /^paa\b/i,                           // People Also Ask
+  /^footer\b/i,
+];
+export function isPageChrome(name) {
+  if (!name) return false;
+  const n = name.trim();
+  return PAGE_CHROME.some(p => p.test(n));
+}
+
+// True if axis-aligned rects intersect (treating zero overlap as miss).
+function rectsIntersect(a, b) {
+  if (!a || !b) return false;
+  return !(a.x + a.width  <= b.x ||
+           b.x + b.width  <= a.x ||
+           a.y + a.height <= b.y ||
+           b.y + b.height <= a.y);
+}
+// True if a node's center point falls inside the scope rect. Used to
+// decide whether a finding belongs to the user-marked region.
+export function isNodeCenterInScope(node, scope) {
+  if (!scope) return true;
+  const b = node?.absoluteBoundingBox;
+  if (!b) return true; // can't decide — include rather than silently drop
+  const cx = b.x + b.width  / 2;
+  const cy = b.y + b.height / 2;
+  return cx >= scope.x && cx <= scope.x + scope.width
+      && cy >= scope.y && cy <= scope.y + scope.height;
+}
+
 // Flatten a Figma node tree into an array of nodes for L1 inspection.
-// Skips nodes whose `visible` is explicitly false (designer toggled the eye
-// off) and all their descendants — we shouldn't flag tokens on layers the
-// designer hid.
-export function flatten(root, parent = null, depth = 0, acc = []) {
+// Skips:
+//  - nodes whose `visible` is explicitly false (designer toggled the eye
+//    off) and all their descendants
+//  - direct children of the review root whose name matches PAGE_CHROME
+//    (standard SERP header / verticals / algo / related searches / footer)
+//  - any subtree whose bbox does not intersect opts.scope, if one is set
+//    (user-drawn in-scope region in canvas coordinates)
+export function flatten(root, parent = null, depth = 0, acc = [], opts = {}) {
   if (root.visible === false) return acc;
+  if (depth === 1 && isPageChrome(root.name)) return acc;
+  if (opts.scope && root.absoluteBoundingBox && !rectsIntersect(root.absoluteBoundingBox, opts.scope)) return acc;
   acc.push({ node: root, parent, depth });
   if (root.children) {
-    for (const child of root.children) flatten(child, root, depth + 1, acc);
+    for (const child of root.children) flatten(child, root, depth + 1, acc, opts);
   }
   return acc;
 }
@@ -228,7 +281,7 @@ export function matchNodeId(index, whereText) {
 // Each line carries the node's Figma id in `[id=…]` so the LLM can refer
 // back to specific nodes when emitting issues/flags — that's what lets us
 // pin comments precisely instead of fuzzy-matching by name.
-export function summarizeTree(root, maxNodes = 160) {
+export function summarizeTree(root, maxNodes = 160, opts = {}) {
   const lines = [];
   let count = 0;
   function walk(n, depth) {
@@ -238,6 +291,11 @@ export function summarizeTree(root, maxNodes = 160) {
     // because the input has a value), and invents issues like "the
     // search field shows both the query and the placeholder".
     if (n.visible === false) return;
+    // Skip standard page-chrome subtrees at depth 1 (see PAGE_CHROME).
+    // Keeps L2/L3 attention on the designed module under review.
+    if (depth === 1 && isPageChrome(n.name)) return;
+    // Skip subtrees fully outside the user-drawn scope rectangle, if any.
+    if (opts.scope && n.absoluteBoundingBox && !rectsIntersect(n.absoluteBoundingBox, opts.scope)) return;
     count++;
     const pad = "  ".repeat(depth);
     const parts = [n.type, n.name];

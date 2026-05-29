@@ -202,13 +202,18 @@ body.pip-open .container {
 /* ---------- progress steps ---------- */
 .steps { list-style: none; margin: 0; padding: 0; }
 .step {
-  display: grid; grid-template-columns: 16px 1fr auto;
-  gap: 14px; align-items: center;
+  display: grid;
+  grid-template-columns: 16px 1fr auto;
+  grid-auto-rows: auto;
+  column-gap: 14px;
+  row-gap: 0;
+  align-items: center;
   padding: 12px 0;
   border-bottom: 1px solid var(--line-soft);
 }
 .step:last-child { border-bottom: none; }
 .step .dot {
+  grid-row: 1; grid-column: 1;
   width: 10px; height: 10px; border-radius: 9999px;
   background: var(--line);
 }
@@ -216,10 +221,18 @@ body.pip-open .container {
 .step.done    .dot { background: var(--good); }
 .step.warn    .dot { background: var(--warn); }
 .step.error   .dot { background: var(--bad); }
-.step .label  { font-weight: 500; white-space: nowrap; }
+.step .label  { grid-row: 1; grid-column: 2; font-weight: 500; white-space: nowrap; }
 .step .detail {
+  grid-row: 1; grid-column: 3;
   color: var(--ink-2); font-size: 13px; text-align: right;
   min-width: 0;
+}
+/* Optional in-row body — used by the "Mark in-scope region" step to host
+   the scope picker. Spans all columns under the label row. */
+.step .step-body {
+  grid-row: 2;
+  grid-column: 1 / -1;
+  margin: 12px 0 4px;
 }
 @keyframes pulse {
   0%   { box-shadow: 0 0 0 0 rgba(0,113,227,0.35); }
@@ -259,6 +272,71 @@ body.pip-open .container {
   display: inline-block;
   max-width: 100%;
 }
+
+/* ---------- scope picker (phase 2: reviewer marks in-scope region) ---------- */
+.scope-picker { padding: 0; }
+.scope-tip, .scope-hint {
+  margin: 0 0 12px;
+  font-size: 13px;
+}
+.scope-stage {
+  position: relative;
+  display: block;
+  max-width: 720px;
+  margin: 0 auto;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line-soft);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  user-select: none;
+  cursor: crosshair;
+}
+.scope-preview { display: block; width: 100%; pointer-events: none; }
+.scope-box {
+  position: absolute;
+  border: 2px solid #2563eb;
+  background: rgba(37, 99, 235, 0.08);
+  box-shadow: 0 0 0 2000px rgba(0,0,0,0.35);
+  cursor: move;
+}
+.scope-box.hidden { display: none; }
+.scope-handle {
+  position: absolute;
+  width: 12px; height: 12px;
+  background: #fff;
+  border: 2px solid #2563eb;
+  border-radius: 2px;
+}
+.scope-handle.nw { left: -7px;  top: -7px;    cursor: nwse-resize; }
+.scope-handle.ne { right: -7px; top: -7px;    cursor: nesw-resize; }
+.scope-handle.sw { left: -7px;  bottom: -7px; cursor: nesw-resize; }
+.scope-handle.se { right: -7px; bottom: -7px; cursor: nwse-resize; }
+.scope-actions {
+  display: flex; gap: 12px; justify-content: center;
+  margin-top: 18px;
+}
+.scope-actions button {
+  font: inherit;
+  font-size: 14px; font-weight: 600;
+  padding: 10px 22px;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: background .15s ease, border-color .15s ease, color .15s ease, opacity .15s ease;
+}
+.scope-actions .btn-primary {
+  background: var(--ink); color: var(--surface);
+  border: 1px solid var(--ink);
+}
+.scope-actions .btn-primary:disabled {
+  background: var(--surface-2); color: var(--ink-3);
+  border-color: var(--line); cursor: not-allowed;
+}
+.scope-actions .btn-primary:not(:disabled):hover { opacity: .9; }
+.scope-actions .btn-secondary {
+  background: var(--surface); color: var(--ink);
+  border: 1px solid var(--line);
+}
+.scope-actions .btn-secondary:hover { background: var(--surface-2); }
 
 /* Picture-in-picture floating preview. Minimized by default in the
    bottom-right corner; click ⤢ to expand to a tall panel on the right
