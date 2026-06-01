@@ -93,6 +93,45 @@ function rectsIntersect(a, b) {
            a.y + a.height <= b.y ||
            b.y + b.height <= a.y);
 }
+// Crop a rendered Figma image (PNG URL) to a sub-region using a canvas,
+// returning a data: URL. Used to physically restrict what the L2/L3
+// vision model can see when the reviewer drew an in-scope rectangle —
+// prompt-level "focus here" doesn't stop the model from also nitpicking
+// content outside the box.
+//
+// `cropPct` is the crop rectangle in 0–1 image-relative coords:
+//   { x, y, width, height }  (each in [0, 1])
+//
+// Returns null on any failure (e.g. CORS), so callers can fall back to
+// the original full image rather than break L2/L3 entirely.
+export async function cropImageToDataUrl(imageUrl, cropPct) {
+  return new Promise((resolve) => {
+    if (!imageUrl || !cropPct) { resolve(null); return; }
+    const img = new Image();
+    img.crossOrigin = "anonymous";
+    img.onload = () => {
+      try {
+        const sx = Math.max(0, Math.floor(cropPct.x * img.naturalWidth));
+        const sy = Math.max(0, Math.floor(cropPct.y * img.naturalHeight));
+        const sw = Math.max(1, Math.floor(cropPct.width  * img.naturalWidth));
+        const sh = Math.max(1, Math.floor(cropPct.height * img.naturalHeight));
+        const canvas = document.createElement("canvas");
+        canvas.width  = sw;
+        canvas.height = sh;
+        const ctx = canvas.getContext("2d");
+        ctx.drawImage(img, sx, sy, sw, sh, 0, 0, sw, sh);
+        resolve(canvas.toDataURL("image/png"));
+      } catch (e) {
+        // Most likely a tainted canvas (CORS) — fall back to full image.
+        console.warn("cropImageToDataUrl failed:", e?.message || e);
+        resolve(null);
+      }
+    };
+    img.onerror = () => resolve(null);
+    img.src = imageUrl;
+  });
+}
+
 // True if a node's center point falls inside the scope rect. Used to
 // decide whether a finding belongs to the user-marked region.
 export function isNodeCenterInScope(node, scope) {

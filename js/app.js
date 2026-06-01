@@ -384,7 +384,11 @@ function renderScopePicker(prep, onConfirm) {
   runSelBtn.addEventListener("click", () => {
     if (!box || box.w < MIN || box.h < MIN) return;
     const r = stageRect();
-    const rb = prep.root?.absoluteBoundingBox;
+    // Coordinate frame for the rendered preview. Prefer the reviewed
+    // root's bbox; fall back to the anchor frame, since CANVAS and
+    // SECTION node types don't expose absoluteBoundingBox via the
+    // Figma REST API but their first child FRAME does.
+    const rb = prep.root?.absoluteBoundingBox || prep.anchor?.absoluteBoundingBox;
     collapse();
     if (!rb || !r.width || !r.height) { onConfirm(null); return; }
     const scope = {
