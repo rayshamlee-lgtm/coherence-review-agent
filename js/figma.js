@@ -85,6 +85,43 @@ export function isPageChrome(name) {
   return PAGE_CHROME.some(p => p.test(n));
 }
 
+// Structural detector for the standard Bing search header — a frame
+// named "Header*" that contains a descendant frame named "Search
+// Container*". This is the canonical top chrome (search box + signin +
+// vertical tabs) shipped from the SERP framework, not the answer
+// module's design. Naming alone is unreliable (cards have "Header"
+// labels too), but the parent+child combo is specific enough to be a
+// safe skip signal. Searches up to `maxDepth` deep so a wrapper layer
+// between Header and Search Container is still caught.
+function hasDescendantNamed(node, regex, maxDepth = 4) {
+  if (!node?.children) return false;
+  const queue = node.children.map(c => ({ n: c, d: 1 }));
+  while (queue.length) {
+    const { n, d } = queue.shift();
+    if (n?.name && regex.test(n.name)) return true;
+    if (d < maxDepth && n?.children) {
+      for (const c of n.children) queue.push({ n: c, d: d + 1 });
+    }
+  }
+  return false;
+}
+function isSearchHeaderFrame(node) {
+  if (!node?.name || !/^header\b/i.test(node.name)) return false;
+  return hasDescendantNamed(node, /^search.?container\b/i);
+}
+
+// Standard SERP-framework chrome that can appear at any depth (the
+// designer may have wrapped it in 1+ layout containers). Each entry
+// here must be specific enough that a card with a similar name won't
+// accidentally collide. Unlike PAGE_CHROME (which is depth=1 only),
+// these match anywhere in the tree.
+function isAnyDepthChrome(node) {
+  if (isSearchHeaderFrame(node)) return true;
+  const name = node?.name?.trim() || "";
+  if (/^magazine.?footer\b/i.test(name)) return true;
+  return false;
+}
+
 // True if axis-aligned rects intersect (treating zero overlap as miss).
 function rectsIntersect(a, b) {
   if (!a || !b) return false;
@@ -155,6 +192,7 @@ export function isNodeCenterInScope(node, scope) {
 export function flatten(root, parent = null, depth = 0, acc = [], opts = {}) {
   if (root.visible === false) return acc;
   if (depth === 1 && isPageChrome(root.name)) return acc;
+  if (isAnyDepthChrome(root)) return acc;
   if (opts.scope && root.absoluteBoundingBox && !rectsIntersect(root.absoluteBoundingBox, opts.scope)) return acc;
   acc.push({ node: root, parent, depth });
   if (root.children) {
@@ -333,6 +371,9 @@ export function summarizeTree(root, maxNodes = 160, opts = {}) {
     // Skip standard page-chrome subtrees at depth 1 (see PAGE_CHROME).
     // Keeps L2/L3 attention on the designed module under review.
     if (depth === 1 && isPageChrome(n.name)) return;
+    // Skip standard SERP-framework chrome (search header, magazine
+    // footer, etc.) wherever it appears in the tree.
+    if (isAnyDepthChrome(n)) return;
     // Skip subtrees fully outside the user-drawn scope rectangle, if any.
     if (opts.scope && n.absoluteBoundingBox && !rectsIntersect(n.absoluteBoundingBox, opts.scope)) return;
     count++;

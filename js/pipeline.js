@@ -50,7 +50,13 @@ export async function runReview({ prep, scope, projectContext, reviewScope, azur
   const { fileKey, nodeId, fileName, imageUrl, root, nodeIndex, anchor } = prep;
 
   step("l1", "running", "Running L1 token compliance checks");
-  const l1 = runL1(root, { scope });
+  // The anchor frame is the outermost FRAME inside the reviewed root —
+  // a "page wrapper" / canvas. Its own padding / itemSpacing / corner
+  // radius / fill are decorative scaffolding (e.g. 160px page-left
+  // padding, 32–60px screenshot corner), not the answer module's
+  // design. Skip L1 token checks on that one node; descendants are
+  // still inspected normally.
+  const l1 = runL1(root, { scope, pageWrapperId: anchor?.id });
   step("l1", "done",
     `${l1.nodeCount} nodes scanned · ${l1.counts.error || 0} errors · ${l1.counts.warn || 0} warns`);
 

@@ -2,6 +2,10 @@ import { prepareReview, runReview } from "./pipeline.js";
 import { postComment, matchNodeId, pinForNode } from "./figma.js";
 
 let lastResult = null; // cached for comment-post handlers
+// Persist PiP expand/collapse across renderResult re-runs (dismissals
+// recompute scores and replace #result innerHTML, which would otherwise
+// reset the floating preview back to its minimized default).
+let pipExpanded = false;
 
 function toast(msg, kind = "info") {
   const t = document.createElement("div");
@@ -692,11 +696,21 @@ function renderResult(r, { preserveDismissed = false } = {}) {
   // column left to make room on the right half of the viewport.
   const pip = out.querySelector("#pip");
   if (pip) {
+    // Restore the previous expand/collapse state so a re-render (e.g.
+    // after the user dismissed a finding) doesn't snap back to min.
+    if (pipExpanded) {
+      pip.classList.remove("pip-min");
+      pip.classList.add("pip-max");
+      document.body.classList.add("pip-open");
+    } else {
+      document.body.classList.remove("pip-open");
+    }
     pip.querySelector(".pip-toggle").addEventListener("click", () => {
       const expand = pip.classList.contains("pip-min");
       pip.classList.toggle("pip-min", !expand);
       pip.classList.toggle("pip-max", expand);
       document.body.classList.toggle("pip-open", expand);
+      pipExpanded = expand;
     });
   } else {
     document.body.classList.remove("pip-open");
@@ -728,6 +742,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     $("#result").classList.add("hidden");
     document.body.classList.remove("pip-open");
+    pipExpanded = false;
     renderSteps();
     $("#runBtn").disabled = true;
     $("#errorBox").classList.add("hidden");

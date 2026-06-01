@@ -56,6 +56,11 @@ function severityFromMatch(inCatalog) {
   return "warn";
 }
 
+// Pure black and pure white are universal canvas / decoration colors;
+// designers use them loosely and binding them to a token adds no real
+// signal. Skip findings on these specific hex values.
+const COLOR_SILENT = new Set(["#ffffff", "#000000"]);
+
 function checkFills(node, parent, findings) {
   if (!Array.isArray(node.fills)) return;
   if (node.styles && node.styles.fill) return;
@@ -64,6 +69,7 @@ function checkFills(node, parent, findings) {
     if (f.visible === false) continue;
     if (f.type === "SOLID" && f.color) {
       const hex = rgbaToHex(f.color);
+      if (COLOR_SILENT.has(hex)) continue;
       const inCatalog = TOKEN_CATALOG.colors.has(hex);
       const sev = severityFromMatch(inCatalog);
       const msg = inCatalog
@@ -82,6 +88,7 @@ function checkStrokes(node, parent, findings) {
     if (s.visible === false) continue;
     if (s.type === "SOLID" && s.color) {
       const hex = rgbaToHex(s.color);
+      if (COLOR_SILENT.has(hex)) continue;
       const inCatalog = TOKEN_CATALOG.colors.has(hex);
       const sev = severityFromMatch(inCatalog);
       const msg = inCatalog
@@ -145,15 +152,21 @@ function checkCornerRadius(node, parent, findings) {
     : (typeof node.cornerRadius === "number" ? [node.cornerRadius] : []);
   if (!radii.length) return;
 
+  // Collect distinct off-ramp values across all corners, then emit
+  // one finding per unique value. A square with the same wrong radius
+  // on all four corners counts as one issue, not four.
+  const offending = new Set();
   for (const r of radii) {
     const rounded = Math.round(r);
-    if (rounded === 0) continue; // 0 is always fine and uninteresting
-    const inCatalog = TOKEN_CATALOG.cornerRadius.has(rounded);
-    if (inCatalog) continue;     // matches a token — no finding needed
+    if (rounded === 0) continue;                            // 0 is always fine
+    if (TOKEN_CATALOG.cornerRadius.has(rounded)) continue;  // matches a token
+    offending.add(rounded);
+  }
+  for (const value of offending) {
     findings.push(findingFor(
       node, parent, "L1.cornerRadius", "error",
-      `Corner radius ${rounded}px is not a Bing corner token (allowed: 0, 4, 8, 12, 16, 24, 9999).`,
-      { value: rounded },
+      `Corner radius ${value}px is not a Bing corner token (allowed: 0, 4, 8, 12, 16, 24, 9999).`,
+      { value },
     ));
   }
 }
@@ -178,7 +191,7 @@ function checkSpacing(node, parent, findings) {
     if (TOKEN_CATALOG.spacing.has(v)) continue;
     findings.push(findingFor(
       node, parent, "L1.spacing", "error",
-      `${key} ${v}px is not a Bing spacing token (allowed: 2, 3, 4, 6, 8, 9, 12, 16, 20, 24).`,
+      `${key} ${v}px is not a Bing spacing token (allowed: 2, 3, 4, 6, 8, 9, 12, 16, 20, 24, 72, 160).`,
       { property: key, value: v },
     ));
   }
@@ -188,6 +201,10 @@ export function runL1(root, opts = {}) {
   const findings = [];
   const flat = flatten(root, null, 0, [], opts);
   for (const { node, parent } of flat) {
+    // Skip the page-wrapper node itself — its padding / spacing /
+    // corner / fill are scaffolding, not the designed answer module.
+    // Descendants of the wrapper are still inspected.
+    if (opts.pageWrapperId && node.id === opts.pageWrapperId) continue;
     checkFills(node, parent, findings);
     checkStrokes(node, parent, findings);
     checkTypography(node, parent, findings);

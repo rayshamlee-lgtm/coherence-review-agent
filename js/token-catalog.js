@@ -19,7 +19,10 @@ export const TOKEN_CATALOG = {
   //   xx-small 4/3, x-small 8/6, small 12/9, medium 16/12, x-large 24/16,
   //   card-default padding 20.
   // 0 and 2 retained for legitimate zero-gap and 2px micro-spacing cases.
-  spacing: new Set([0, 2, 3, 4, 6, 8, 9, 12, 16, 20, 24]),
+  // 72 and 160 retained as canonical SERP page-level paddings used
+  // outside the answer module's own design (page-left / page-right
+  // edge offsets).
+  spacing: new Set([0, 2, 3, 4, 6, 8, 9, 12, 16, 20, 24, 72, 160]),
 
   // ----- allowed typography (fontSize / lineHeight / weight) -----
   // From references/foundations/typography.md type-scale table.
