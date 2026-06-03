@@ -1,5 +1,20 @@
 import { prepareReview, runReview } from "./pipeline.js";
 import { postComment, matchNodeId, pinForNode } from "./figma.js";
+import { startDeviceFlow, pollDeviceFlow, fetchCopilotModels } from "./copilot-auth.js";
+
+// Refresh should always land the user at the top — auto-scroll after a
+// run makes the saved scroll position meaningless and confusing on
+// reload. Tell the browser not to restore, then enforce it once the
+// page is fully laid out.
+// bfcache restores (back/forward, and some refresh paths in Safari)
+// don't fire `load`, so `load` alone isn't enough — also handle
+// `pageshow`, and scroll immediately in case layout is already done.
+if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+const scrollTop = () => window.scrollTo(0, 0);
+scrollTop();
+window.addEventListener("DOMContentLoaded", scrollTop);
+window.addEventListener("load", scrollTop);
+window.addEventListener("pageshow", scrollTop);
 
 let lastResult = null; // cached for comment-post handlers
 // Persist PiP expand/collapse across renderResult re-runs (dismissals
@@ -184,15 +199,147 @@ function hydrateSettingsForm() {
   $("#azDeployment").value = s.azDeployment || "";
   $("#azApiVersion").value = s.azApiVersion || "2024-08-01-preview";
   $("#azApiKey").value = s.azApiKey || "";
+  const provider = s.provider === "copilot" ? "copilot" : "azure";
+  $(`#prov${provider === "copilot" ? "Copilot" : "Azure"}`).checked = true;
+  $("#copilotModel").value = s.copilotModel || "gpt-4o";
+  applyProviderVisibility(provider);
+  applyCopilotAuthState();
 }
 function readSettingsForm() {
+  const provider = document.querySelector('input[name="provider"]:checked')?.value || "azure";
   return {
     figmaToken: $("#figmaToken").value.trim(),
+    provider,
     azEndpoint: $("#azEndpoint").value.trim(),
     azDeployment: $("#azDeployment").value.trim(),
     azApiVersion: $("#azApiVersion").value.trim(),
     azApiKey: $("#azApiKey").value.trim(),
+    copilotModel: $("#copilotModel").value.trim() || "gpt-4o",
+    copilotToken: loadCopilotToken(),  // managed by sign-in flow, not the form
   };
+}
+function applyProviderVisibility(provider) {
+  $("#providerAzure").classList.toggle("hidden", provider !== "azure");
+  $("#providerCopilot").classList.toggle("hidden", provider !== "copilot");
+}
+
+// ---------- Copilot device-flow auth ----------
+const COPILOT_TOKEN_KEY = "coherence-copilot-token";
+function loadCopilotToken() {
+  return localStorage.getItem(COPILOT_TOKEN_KEY) || "";
+}
+function saveCopilotToken(token) {
+  if (token) localStorage.setItem(COPILOT_TOKEN_KEY, token);
+  else localStorage.removeItem(COPILOT_TOKEN_KEY);
+}
+function applyCopilotAuthState() {
+  const signedIn = !!loadCopilotToken();
+  $("#copilotAuthOut").classList.toggle("hidden", signedIn);
+  $("#copilotAuthIn").classList.toggle("hidden", !signedIn);
+  $("#copilotAuthPending").classList.add("hidden");
+  if (signedIn) refreshCopilotModelList();
+}
+
+// Refresh the model dropdown using whatever /copilot/models returns
+// for this user's subscription. Cached for the session in
+// `_copilotModelCache` so the panel reopens instantly.
+let _copilotModelCache = null;
+async function refreshCopilotModelList(force = false) {
+  const select = $("#copilotModel");
+  if (!select) return;
+  const token = loadCopilotToken();
+  if (!token) return;
+  if (!force && _copilotModelCache) {
+    populateCopilotModelSelect(_copilotModelCache);
+    return;
+  }
+  try {
+    const models = await fetchCopilotModels(token);
+    _copilotModelCache = models;
+    populateCopilotModelSelect(models);
+  } catch (e) {
+    console.warn("Failed to fetch Copilot model list:", e?.message || e);
+    // Fall back to the static dropdown options already in the HTML.
+  }
+}
+// Models we never want to surface even if Copilot says they're
+// available — known to be broken or unsupported by this demo's
+// pipeline (e.g. gpt-5 rejects the chat-completions shape we send).
+const COPILOT_MODEL_BLOCKLIST = new Set(["gpt-5"]);
+
+function populateCopilotModelSelect(models) {
+  const select = $("#copilotModel");
+  if (!select) return;
+  // Keep only chat-enabled, non-blocklisted models and prefer
+  // vision-capable ones (we send images to L2/L3). Non-vision models
+  // are still shown but grouped at the bottom so the user is warned.
+  const chat = models.filter(m => m.chatEnabled && !COPILOT_MODEL_BLOCKLIST.has(m.id));
+  const groups = new Map();
+  for (const m of chat) {
+    const key = m.vision ? m.vendor : `${m.vendor} (no vision)`;
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(m);
+  }
+  const saved = readSettingsForm().copilotModel;
+  select.innerHTML = "";
+  // Preserve render order: vision-first per vendor.
+  const ordered = [...groups.entries()].sort((a, b) => {
+    const av = a[0].includes("(no vision)") ? 1 : 0;
+    const bv = b[0].includes("(no vision)") ? 1 : 0;
+    return av - bv || a[0].localeCompare(b[0]);
+  });
+  for (const [label, items] of ordered) {
+    const og = document.createElement("optgroup");
+    og.label = label;
+    for (const m of items.sort((a, b) => a.id.localeCompare(b.id))) {
+      const opt = document.createElement("option");
+      opt.value = m.id;
+      opt.textContent = m.maxOutputTokens
+        ? `${m.id} · ${m.maxOutputTokens.toLocaleString()} max out`
+        : m.id;
+      og.appendChild(opt);
+    }
+    select.appendChild(og);
+  }
+  // Reselect the previously-saved model if it still exists.
+  if (saved && [...select.options].some(o => o.value === saved)) {
+    select.value = saved;
+  }
+}
+
+let _copilotSignInAbort = null;
+async function runCopilotSignIn() {
+  // Reset UI state.
+  $("#copilotAuthOut").classList.add("hidden");
+  $("#copilotAuthIn").classList.add("hidden");
+  $("#copilotAuthPending").classList.remove("hidden");
+  $("#copilotAuthStatus").textContent = "Requesting device code…";
+  $("#copilotUserCode").textContent = "—";
+  $("#copilotAuthUrl").href = "#";
+
+  _copilotSignInAbort = new AbortController();
+  try {
+    const info = await startDeviceFlow();
+    $("#copilotUserCode").textContent = info.user_code;
+    $("#copilotAuthUrl").href = info.verification_uri;
+    $("#copilotAuthStatus").textContent = "Waiting for authorization…";
+    const token = await pollDeviceFlow(info, {
+      onUpdate: () => { $("#copilotAuthStatus").textContent = "Waiting for authorization…"; },
+      signal: _copilotSignInAbort.signal,
+    });
+    saveCopilotToken(token);
+    applyCopilotAuthState();
+  } catch (e) {
+    $("#copilotAuthStatus").textContent = `Failed: ${e.message}`;
+    // Leave pending view up so user can read the error; offer Cancel
+    // to dismiss. Don't clobber existing token if any.
+  } finally {
+    _copilotSignInAbort = null;
+  }
+}
+function cancelCopilotSignIn() {
+  _copilotSignInAbort?.abort();
+  applyCopilotAuthState();
 }
 
 // ---------- progress list ----------
@@ -722,13 +869,50 @@ window.addEventListener("DOMContentLoaded", () => {
   hydrateSettingsForm();
   renderSteps();
 
-  $("#settingsToggle").addEventListener("click", () => {
-    $("#settingsPanel").classList.toggle("open");
+  const settingsPanel = $("#settingsPanel");
+  const openSettings  = () => settingsPanel.classList.add("open");
+  const closeSettings = () => settingsPanel.classList.remove("open");
+  $("#settingsToggle").addEventListener("click", (e) => {
+    e.stopPropagation();
+    settingsPanel.classList.toggle("open");
+  });
+  $("#settingsClose")?.addEventListener("click", closeSettings);
+  // Click-outside to dismiss.
+  document.addEventListener("click", (e) => {
+    if (!settingsPanel.classList.contains("open")) return;
+    if (settingsPanel.contains(e.target)) return;
+    if ($("#settingsToggle").contains(e.target)) return;
+    closeSettings();
+  });
+  // Esc to dismiss.
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && settingsPanel.classList.contains("open")) closeSettings();
   });
 
   $("#saveSettings").addEventListener("click", () => {
     saveSettings(readSettingsForm());
-    $("#settingsPanel").classList.remove("open");
+    closeSettings();
+  });
+
+  // Toggle Azure / Copilot field groups live as the radio changes.
+  document.querySelectorAll('input[name="provider"]').forEach(el => {
+    el.addEventListener("change", () => applyProviderVisibility(el.value));
+  });
+
+  // Copilot device-flow auth wiring.
+  $("#copilotSignIn")?.addEventListener("click", runCopilotSignIn);
+  $("#copilotCancelSignIn")?.addEventListener("click", cancelCopilotSignIn);
+  $("#copilotSignOut")?.addEventListener("click", () => {
+    saveCopilotToken("");
+    applyCopilotAuthState();
+  });
+  $("#copilotCopyCode")?.addEventListener("click", async (e) => {
+    const code = $("#copilotUserCode").textContent.trim();
+    if (!code || code === "—") return;
+    try { await navigator.clipboard.writeText(code); } catch {}
+    const btn = e.currentTarget;
+    btn.classList.add("copied");
+    setTimeout(() => btn.classList.remove("copied"), 1400);
   });
 
   $("#runBtn").addEventListener("click", async () => {
@@ -739,6 +923,10 @@ window.addEventListener("DOMContentLoaded", () => {
     const s = readSettingsForm();
     saveSettings(s);
     if (!s.figmaToken) { alert("Figma Personal Access Token required (settings)."); return; }
+    if (s.provider === "copilot" && !s.copilotToken) {
+      alert("Sign in to GitHub Copilot via Settings before running a review.");
+      return;
+    }
 
     $("#result").classList.add("hidden");
     document.body.classList.remove("pip-open");
@@ -746,6 +934,9 @@ window.addEventListener("DOMContentLoaded", () => {
     renderSteps();
     $("#runBtn").disabled = true;
     $("#errorBox").classList.add("hidden");
+    // Bring the Pipeline panel into view so the reviewer immediately
+    // sees progress instead of staring at the same hero card.
+    document.querySelector(".panel.progress")?.scrollIntoView({ behavior: "smooth", block: "start" });
 
     try {
       // Phase 1: parse + fetch + render preview.
@@ -755,12 +946,21 @@ window.addEventListener("DOMContentLoaded", () => {
       );
 
       // Phase 2: ask the reviewer to mark an in-scope region (or skip).
-      const azure = {
-        endpoint: s.azEndpoint,
-        deployment: s.azDeployment,
-        apiVersion: s.azApiVersion,
-        apiKey: s.azApiKey,
-      };
+      const azure = s.provider === "copilot"
+        ? {
+            provider: "copilot",
+            model: s.copilotModel || "gpt-4o",
+            copilotToken: s.copilotToken || "",
+            // Surface as "configured" to pipeline.js's truthy check below.
+            apiKey: "copilot-proxy", endpoint: "copilot-proxy", deployment: s.copilotModel || "gpt-4o",
+          }
+        : {
+            provider: "azure",
+            endpoint: s.azEndpoint,
+            deployment: s.azDeployment,
+            apiVersion: s.azApiVersion,
+            apiKey: s.azApiKey,
+          };
       const runWithScope = async (scope) => {
         updateStep({ id: "scope", status: "done",
           detail: scope ? "User-marked region" : "Whole frame" });
@@ -769,11 +969,30 @@ window.addEventListener("DOMContentLoaded", () => {
           updateStep,
         );
         renderResult(r);
+        // Surface the result panel so the reviewer doesn't have to
+        // scroll past the pipeline + picker to find their findings.
+        requestAnimationFrame(() => {
+          $("#result")?.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
         $("#runBtn").disabled = false;
       };
       if (prep.imageUrl) {
         updateStep({ id: "scope", status: "running", detail: "Awaiting reviewer input" });
         renderScopePicker(prep, runWithScope);
+        // Scroll the picker into view so the user can see the preview
+        // and the action buttons without hunting. Re-scroll once the
+        // preview image finishes loading (it changes the picker's
+        // height) so the Review-selection / Review-entire-frame row
+        // ends up visible at the bottom of the viewport.
+        const scrollPickerIntoView = () => {
+          document.querySelector("#step-scope .scope-actions")
+            ?.scrollIntoView({ behavior: "smooth", block: "end" });
+        };
+        requestAnimationFrame(scrollPickerIntoView);
+        const previewImg = document.querySelector("#scopeStage .scope-preview");
+        if (previewImg && !previewImg.complete) {
+          previewImg.addEventListener("load", scrollPickerIntoView, { once: true });
+        }
         // runBtn stays disabled until the user picks a scope and review finishes.
       } else {
         // No image to draw on — skip selection, review whole frame.

@@ -94,6 +94,23 @@ export async function runReview({ prep, scope, projectContext, reviewScope, azur
     }
   }
 
+  // GitHub Copilot's chat-completions proxy refuses external image
+  // URLs ("validating image item: external image URLs are not
+  // supported") — it only accepts inline data URLs. If we ended up
+  // with a remote URL above (no scope, or scope crop failed), have
+  // serve.py fetch and base64-encode it once before the vision calls.
+  if (azure?.provider === "copilot" && visionImageUrl && !visionImageUrl.startsWith("data:")) {
+    try {
+      const r = await fetch(`/image-to-data?url=${encodeURIComponent(visionImageUrl)}`);
+      if (r.ok) {
+        const j = await r.json();
+        if (j.dataUrl) visionImageUrl = j.dataUrl;
+      }
+    } catch (e) {
+      console.warn("image-to-data fetch failed:", e?.message || e);
+    }
+  }
+
   let l2 = null;
   let l3 = null;
   if (azure && azure.apiKey && azure.endpoint && azure.deployment) {

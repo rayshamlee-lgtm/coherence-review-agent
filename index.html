@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Coherence Review Agent · Demo</title>
+  <title>Coherence Review Buddy</title>
   <link rel="stylesheet" href="design-tokens/index.css" />
   <link rel="stylesheet" href="styles/main.css" />
 </head>
@@ -11,59 +11,142 @@
   <header class="topbar">
     <div class="brand">
       <span class="brand-mark">CR</span>
-      <span class="brand-name">Coherence Review Agent</span>
-      <span class="brand-sub">Demo · L1 + L2 + L3</span>
+      <span class="brand-name">Coherence Review Buddy</span>
     </div>
     <button id="settingsToggle" class="btn ghost" type="button">⚙ Settings</button>
   </header>
 
   <main class="container">
 
-    <section id="settingsPanel" class="panel settings">
-      <h2>Settings</h2>
-      <p class="muted">Stored only in your browser's localStorage. Required to call Figma + Azure OpenAI from this page.</p>
-      <div class="grid">
-        <label>
-          <span>Figma Personal Access Token</span>
+    <section id="settingsPanel" class="settings-popover" aria-hidden="true">
+      <header class="popover-head">
+        <h2>Settings</h2>
+        <button id="settingsClose" class="popover-close" type="button" aria-label="Close">×</button>
+      </header>
+
+      <div class="popover-body">
+      <div class="settings-section">
+        <h3 class="settings-section-title">Figma</h3>
+        <label class="field">
+          <span class="field-label-row">
+            Personal access token
+            <span class="help-icon" tabindex="0">
+              ?
+              <span class="help-tip">
+                Figma → Home Page → Profile Image → Security → Generate New Token → Check:
+                <code>current_user:read</code>, <code>file_comment:read</code>, <code>file_comment:write</code>,
+                <code>file_content:read</code>, <code>file_metadata:read</code>, <code>file_variables:read</code>.
+              </span>
+            </span>
+          </span>
           <input id="figmaToken" type="password" placeholder="figd_..." autocomplete="off" />
-          <small class="muted">Figma → Settings → Personal access tokens. Needs <code>file_content:read</code>.</small>
-        </label>
-        <label>
-          <span>Azure OpenAI endpoint</span>
-          <input id="azEndpoint" type="text" placeholder="https://my-aoai.openai.azure.com" />
-        </label>
-        <label>
-          <span>Deployment name</span>
-          <input id="azDeployment" type="text" placeholder="gpt-4o" />
-          <small class="muted">Must be a vision-capable model (gpt-4o / gpt-4.1 / gpt-5).</small>
-        </label>
-        <label>
-          <span>API version</span>
-          <input id="azApiVersion" type="text" value="2024-08-01-preview" />
-        </label>
-        <label class="full">
-          <span>Azure OpenAI API key</span>
-          <input id="azApiKey" type="password" placeholder="••••" autocomplete="off" />
-          <small class="muted">CORS must be enabled on the Azure resource for this origin.</small>
         </label>
       </div>
-      <div class="actions">
+
+      <div class="settings-section">
+        <h3 class="settings-section-title">LLM provider</h3>
+        <div class="seg-control" role="tablist">
+          <label class="seg-option">
+            <input type="radio" name="provider" value="copilot" id="provCopilot" />
+            <span>GitHub Copilot</span>
+          </label>
+          <label class="seg-option">
+            <input type="radio" name="provider" value="azure" id="provAzure" checked />
+            <span>Azure OpenAI</span>
+          </label>
+        </div>
+
+        <div id="providerCopilot" class="provider-fields hidden">
+          <label class="field">
+            <span>Model</span>
+            <select id="copilotModel">
+              <optgroup label="OpenAI">
+                <option value="gpt-4o">gpt-4o</option>
+                <option value="gpt-4o-mini">gpt-4o-mini</option>
+                <option value="gpt-4.1">gpt-4.1</option>
+                <option value="gpt-5-mini">gpt-5-mini</option>
+                <option value="o1">o1</option>
+                <option value="o1-mini">o1-mini</option>
+                <option value="o3-mini">o3-mini</option>
+              </optgroup>
+              <optgroup label="Anthropic">
+                <option value="claude-3.5-sonnet">claude-3.5-sonnet</option>
+                <option value="claude-3.7-sonnet">claude-3.7-sonnet</option>
+                <option value="claude-sonnet-4">claude-sonnet-4</option>
+                <option value="claude-sonnet-4.5">claude-sonnet-4.5</option>
+                <option value="claude-opus-4">claude-opus-4</option>
+                <option value="claude-opus-4.1">claude-opus-4.1</option>
+              </optgroup>
+              <optgroup label="Google">
+                <option value="gemini-2.0-flash">gemini-2.0-flash</option>
+                <option value="gemini-2.5-pro">gemini-2.5-pro</option>
+              </optgroup>
+            </select>
+          </label>
+
+          <div class="field" id="copilotAuth">
+            <span class="field-label">GitHub authorization</span>
+            <div id="copilotAuthOut">
+              <button id="copilotSignIn" type="button" class="btn brand btn-block">Sign in with GitHub</button>
+            </div>
+            <div id="copilotAuthPending" class="copilot-auth-pending hidden">
+              <p class="small">Open the GitHub page and enter this one-time code:</p>
+              <div class="copilot-code-row">
+                <code id="copilotUserCode" class="copilot-code">—</code>
+                <button id="copilotCopyCode" type="button" class="btn-icon" aria-label="Copy code" title="Copy code">
+                  <svg class="icon-clipboard" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="9" y="9" width="12" height="12" rx="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  <svg class="icon-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </button>
+              </div>
+              <a id="copilotAuthUrl" href="#" target="_blank" rel="noopener" class="btn brand btn-block">Authorize on GitHub ↗</a>
+              <p class="muted small" id="copilotAuthStatus">Waiting for authorization…</p>
+              <button id="copilotCancelSignIn" type="button" class="btn ghost small-btn">Cancel</button>
+            </div>
+            <div id="copilotAuthIn" class="copilot-auth-in hidden">
+              <span class="copilot-signed-in">✓ Signed in to GitHub Copilot</span>
+              <button id="copilotSignOut" type="button" class="btn ghost small-btn">Sign out</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="providerAzure" class="provider-fields">
+          <label class="field">
+            <span>Endpoint</span>
+            <input id="azEndpoint" type="text" placeholder="https://my-aoai.openai.azure.com" />
+          </label>
+          <label class="field">
+            <span>Deployment name</span>
+            <input id="azDeployment" type="text" placeholder="gpt-4o" />
+          </label>
+          <label class="field">
+            <span>API version</span>
+            <input id="azApiVersion" type="text" value="2024-08-01-preview" />
+          </label>
+          <label class="field">
+            <span>API key</span>
+            <input id="azApiKey" type="password" placeholder="••••" autocomplete="off" />
+          </label>
+        </div>
+      </div>
+
+      <div class="settings-actions">
         <button id="saveSettings" class="btn brand" type="button">Save</button>
       </div>
+      </div><!-- /popover-body -->
     </section>
 
     <section class="panel hero">
       <h1>Paste a Figma link, get a coherence review.</h1>
-      <p class="muted">
-        Level 1 checks tokens against the Bing Design System catalog · Level 2 asks
-        a vision LLM for application-quality judgment · Level 3 raises
-        cross-team coherence flags (warnings only).
-      </p>
+      <p class="muted">Tip: select a specific Figma frame and share its frame URL, so the agent can render and judge that exact view.</p>
       <div class="run-row">
         <input id="figmaUrl" type="text" placeholder="https://www.figma.com/design/.../?node-id=12-345" />
         <button id="runBtn" class="btn brand" type="button">Review</button>
       </div>
-      <p class="muted small">Tip: include a frame's <code>node-id</code> in the URL so the agent can render and judge a specific view.</p>
       <details class="context-box">
         <summary>Add project context <span class="muted small">(optional — helps the agent review better)</span></summary>
 
@@ -73,11 +156,6 @@
           <textarea id="projectContext" rows="8" placeholder="Background context — where does this design live, who is it for, what triggered the work?&#10;&#10;Problem — what user / business problem are you trying to solve?&#10;&#10;Goal — what does success look like for this design?&#10;&#10;Approach & solution — what did you decide to build, and why this direction over alternatives?"></textarea>
         </div>
 
-        <div class="context-field">
-          <label for="reviewScope"><b>What should be reviewed?</b> <span class="muted small">— scope the agent to your design, not the surrounding page</span></label>
-          <p class="muted small">If your frame includes elements outside your design (e.g. related searches, surrounding SERP modules, navigation chrome), call out what is <b>in scope</b> and what to <b>ignore</b>. Otherwise the agent may review the whole frame.</p>
-          <textarea id="reviewScope" rows="3" placeholder="e.g. Please review only the Harvard application answer (magazine answer) at the top. Ignore the related searches, ads, and the left-rail navigation — those are not part of this design."></textarea>
-        </div>
       </details>
     </section>
 
@@ -92,7 +170,7 @@
   </main>
 
   <footer class="footer muted">
-    Built against BingDesignSkill V2 + the Coherence Review PRD. Demo only.
+    Built against <a href="https://toddzhaoxy.github.io/bing-design-skill-homepage/" target="_blank" rel="noopener noreferrer">Bing Design Skill</a>
   </footer>
 
   <script type="module" src="js/app.js"></script>
