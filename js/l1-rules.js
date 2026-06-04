@@ -188,6 +188,9 @@ function checkSpacing(node, parent, findings) {
     if (hasBoundVariable(node, key)) continue;
     const v = Math.round(raw);
     if (v === 0) continue;
+    // itemSpacing can legitimately be negative for overlap layouts;
+    // -4 is an accepted Bing pattern (e.g. stacked avatars).
+    if (key === "itemSpacing" && v === -4) continue;
     if (TOKEN_CATALOG.spacing.has(v)) continue;
     findings.push(findingFor(
       node, parent, "L1.spacing", "error",
