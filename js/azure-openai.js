@@ -22,10 +22,14 @@ export async function chatCompletion(cfg, messages, opts = {}) {
   return _callAzure(cfg, messages, opts);
 }
 
+// Detect VibeHub host so we can route through its API Connections
+// proxy instead of serve.py (which doesn't run on VibeHub).
+const IS_VIBEHUB = typeof location !== "undefined"
+  && location.hostname.endsWith("vibehub.microsoft.com");
+
 // ---------- Azure OpenAI ----------
 async function _callAzure(cfg, messages, { maxTokens = 1500, temperature = 0.2 } = {}) {
   const apiVersion = cfg.apiVersion || "2024-08-01-preview";
-  const url = `/azure/chat/completions?api-version=${encodeURIComponent(apiVersion)}`;
   const reasoning = isReasoningModel(cfg.deployment);
   const body = { messages, response_format: { type: "json_object" } };
   if (reasoning) {
@@ -35,16 +39,22 @@ async function _callAzure(cfg, messages, { maxTokens = 1500, temperature = 0.2 }
     body.max_tokens = maxTokens;
     body.temperature = temperature;
   }
-  const res = await fetch(url, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "X-Azure-Endpoint": cfg.endpoint,
-      "X-Azure-Deployment": cfg.deployment,
-      "X-Azure-Key": cfg.apiKey,
-    },
-    body: JSON.stringify(body),
-  });
+  // On VibeHub, the endpoint and api-key live in the project's
+  // `azure-openai` API Connection — base URL = the user's Azure
+  // endpoint, credential = the api-key sent as Custom Header `api-key`.
+  // We only forward the deployment name from settings.
+  const url = IS_VIBEHUB
+    ? `/api/proxy/azure-openai/openai/deployments/${encodeURIComponent(cfg.deployment)}/chat/completions?api-version=${encodeURIComponent(apiVersion)}`
+    : `/azure/chat/completions?api-version=${encodeURIComponent(apiVersion)}`;
+  const headers = IS_VIBEHUB
+    ? { "Content-Type": "application/json" }
+    : {
+        "Content-Type": "application/json",
+        "X-Azure-Endpoint": cfg.endpoint,
+        "X-Azure-Deployment": cfg.deployment,
+        "X-Azure-Key": cfg.apiKey,
+      };
+  const res = await fetch(url, { method: "POST", headers, body: JSON.stringify(body) });
   if (!res.ok) {
     const text = await res.text();
     throw new Error(`Azure OpenAI ${res.status}: ${text.slice(0, 300)}`);
@@ -54,6 +64,9 @@ async function _callAzure(cfg, messages, { maxTokens = 1500, temperature = 0.2 }
 
 // ---------- GitHub Copilot proxy ----------
 async function _callCopilot(cfg, messages, { maxTokens = 1500, temperature = 0.2 } = {}) {
+  if (IS_VIBEHUB) {
+    throw new Error("Copilot provider is not available on VibeHub (requires serve.py for device-flow auth). Switch to Azure OpenAI in Settings.");
+  }
   const model = (cfg.model || "gpt-4o").trim();
   const reasoning = isReasoningModel(model);
   const body = { model, messages, response_format: { type: "json_object" } };
