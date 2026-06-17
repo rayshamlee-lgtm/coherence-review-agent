@@ -1,11 +1,12 @@
 // Review orchestration. Two phases:
 //   prepareReview:  parse → fetch → render preview
-//   runReview:      (with the prep + optional scope) L1 → L2 → L3 → score
+//   runReview:      (with the prep + optional scope) L1 → L4 → L2 → L3 → score
 // The split lets the UI show the rendered preview first and let the user
 // drag an in-scope rectangle on it before the heavy review work runs.
 
 import { parseFigmaUrl, fetchNodes, renderImage, summarizeTree, buildNodeIndex, pickAnchorFrame, cropImageToDataUrl, isNodeCenterInScope } from "./figma.js";
 import { runL1 } from "./l1-rules.js";
+import { runL4 } from "./l4-a11y.js";
 import { chatCompletion } from "./azure-openai.js";
 import { l2Messages, l3Messages } from "./prompts.js";
 
@@ -49,7 +50,7 @@ export async function runReview({ prep, scope, projectContext, reviewScope, azur
   const step = (id, status, detail) => onProgress({ id, status, detail });
   const { fileKey, nodeId, fileName, imageUrl, root, nodeIndex, anchor } = prep;
 
-  step("l1", "running", "Running L1 token compliance checks");
+  step("l1", "running", "Checking token compliance");
   // The anchor frame is the outermost FRAME inside the reviewed root —
   // a "page wrapper" / canvas. Its own padding / itemSpacing / corner
   // radius / fill are decorative scaffolding (e.g. 160px page-left
@@ -59,6 +60,14 @@ export async function runReview({ prep, scope, projectContext, reviewScope, azur
   const l1 = runL1(root, { scope, pageWrapperId: anchor?.id });
   step("l1", "done",
     `${l1.nodeCount} nodes scanned · ${l1.counts.error || 0} errors · ${l1.counts.warn || 0} warns`);
+
+  // L4 — deterministic WCAG AA contrast. Runs on the same scope. Unlike L1
+  // there is no page-wrapper skip: a wrapper's text (if any) still needs to
+  // be readable.
+  step("l4", "running", "Checking accessibility — WCAG AA contrast");
+  const l4 = runL4(root, { scope });
+  step("l4", "done",
+    `${l4.textCount} text nodes · ${l4.counts.error || 0} fail · ${l4.counts.warn || 0} manual-check`);
 
   const treeSummary = summarizeTree(root, 160, { scope });
   const l1Summary = `${l1.nodeCount} nodes · errors=${l1.counts.error || 0} · warns=${l1.counts.warn || 0} · info=${l1.counts.info || 0}`;
@@ -115,7 +124,7 @@ export async function runReview({ prep, scope, projectContext, reviewScope, azur
   let l3 = null;
   if (azure && azure.apiKey && azure.endpoint && azure.deployment) {
     step("l2", "running",
-      cropped ? "Running L2 — application quality (cropped to scope)" : "Running L2 — application quality judgment");
+      cropped ? "Checking design quality (cropped to scope)" : "Checking design quality");
     try {
       l2 = await chatCompletion(
         azure,
@@ -128,7 +137,7 @@ export async function runReview({ prep, scope, projectContext, reviewScope, azur
     }
 
     step("l3", "running",
-      cropped ? "Running L3 — cross-team coherence (cropped to scope)" : "Running L3 — cross-team coherence warnings");
+      cropped ? "Checking cross-team cohesion (cropped to scope)" : "Checking cross-team cohesion");
     try {
       l3 = await chatCompletion(
         azure,
@@ -158,7 +167,7 @@ export async function runReview({ prep, scope, projectContext, reviewScope, azur
   // Composite score per PRD weights: L1 35%, L2 45%, L3 20% (warning-only).
   const l2Score = (() => {
     if (!l2?.coverage) return null;
-    const weights = { intent: 1.2, hierarchy: 1, content: 1, usability: 1, scalability: 1 };
+    const weights = { intent: 1.2, hierarchy: 1, content: 1, usability: 1, scalability: 1, imagery: 1 };
     const issuesById = new Map((l2.issues || []).map(i => [i.id, i]));
     let num = 0, den = 0;
     for (const [dim, w] of Object.entries(weights)) {
@@ -169,7 +178,7 @@ export async function runReview({ prep, scope, projectContext, reviewScope, azur
         const sevs = (cov.issueIds || [])
           .map(id => issuesById.get(id)?.severity)
           .filter(Boolean);
-        s = sevs.includes("error") ? 4 : sevs.includes("warn") ? 6.5 : 7;
+        s = sevs.includes("error") ? 4 : sevs.includes("warn") ? 6.5 : 9;
       }
       num += s * w;
       den += w;
@@ -179,16 +188,21 @@ export async function runReview({ prep, scope, projectContext, reviewScope, azur
   const l3Score = l3
     ? (l3.risk === "high" ? 4 : l3.risk === "medium" ? 7 : 9)
     : null;
+  // Composite weights: L1 spec 30%, L2 quality 40%, L4 accessibility 15%,
+  // L3 cross-team 15%. L4 was carved in by trimming L1/L3 — accessibility is
+  // a first-class gate, not a tiebreaker. Levels that didn't run fall back to
+  // the L1 score so the composite stays on a 0–10 scale.
   const composite =
-    (l1.score * 0.35) +
-    ((l2Score ?? l1.score) * 0.45) +
-    ((l3Score ?? l1.score) * 0.20);
+    (l1.score * 0.30) +
+    ((l2Score ?? l1.score) * 0.40) +
+    ((l4.score ?? l1.score) * 0.15) +
+    ((l3Score ?? l1.score) * 0.15);
 
   return {
     fileKey, nodeId, fileName, imageUrl,
     root, nodeIndex, anchor,
     scope: scope || null,
-    l1, l2, l3,
+    l1, l2, l3, l4,
     l2Score: l2Score != null ? Number(l2Score.toFixed(2)) : null,
     l3Score,
     composite: Number(composite.toFixed(2)),

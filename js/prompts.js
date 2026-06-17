@@ -2,12 +2,69 @@
 // coherence warnings). Both target Azure OpenAI vision-capable deployments.
 // Output is strict JSON for predictable rendering.
 
+// ─────────────────────────────────────────────────────────────────────────
+// Design Quality Guide (ACF) toggle.
+// When true, injects additions sourced from the Microsoft ACF Quality Guide
+// (operating principles + the Imagery dimension). When false, the prompt
+// reverts to the original 5-dimension rubric. Used for A/B comparing review
+// output with vs without the guide-derived criteria.
+const DESIGN_QUALITY_GUIDE_ENABLED = false;
+// ─────────────────────────────────────────────────────────────────────────
+
+// — From ACF Design Quality Guide —
+const DQG_PRINCIPLES = `
+Operating principles — apply these as tie-breakers whenever an issue is borderline:
+  • Clarity > beauty. If primary-vs-secondary information is unclear or the
+    reading path is jumbled, the design does not pass — regardless of how
+    polished it looks.
+  • Restraint > expressiveness. Emphasis is allowed, but decorative or
+    expressive elements must not pull attention from the primary content.
+  • Observable evidence only. Every issue must point to something visible
+    in the screenshot or tree. Do NOT use phrases like "feels off",
+    "I think", "could be better" — name the specific element and the
+    concrete visual cue that triggered the call. If you cannot point at
+    pixels or a node, do not raise the issue.
+`;
+
+// — From ACF Design Quality Guide —
+const DQG_IMAGERY_DIMENSION = `
+  • Imagery — "is each image the right image?"
+      Judge every image / illustration / thumbnail on three lenses:
+        — Entity match: does the image depict the actual entity named in
+          the title, or a coincidentally-named different thing? Flag
+          referent drift (e.g. "Visit Rainier" card paired with a can of
+          Rainier beer instead of the mountain).
+        — Mood / emotional register: does the image's tone (cheerful /
+          contemplative / dramatic / clinical) match the query's
+          emotional weight? Flag cheerful/cartoonish art on somber
+          queries (e.g. a date-of-death card with a smiling publicity
+          still), sensationalized art on neutral news, or overly cold
+          stock imagery where warmth is expected.
+        — Brand register: even when semantically correct, does the image
+          carry the right emotional register for the entity? (E.g. a
+          server-rack photo for Microsoft is on-topic but cold; a
+          colorful office-life photo better fits the brand voice.)
+      ⚠️ Do NOT comment on resolution / pixelation / aspect ratio — those
+         are mechanical and belong elsewhere. Judge only the SEMANTIC
+         and EMOTIONAL fit of the image choice.
+      ⚠️ If there are no images in the design, emit a "not_applicable"
+         verdict — do not invent an issue.
+`;
+
+const DIM_COUNT_WORD = DESIGN_QUALITY_GUIDE_ENABLED ? "six" : "five";
+const DIM_ENUM_FRAGMENT = DESIGN_QUALITY_GUIDE_ENABLED
+  ? `"intent" | "hierarchy" | "content" | "usability" | "scalability" | "imagery"`
+  : `"intent" | "hierarchy" | "content" | "usability" | "scalability"`;
+const COVERAGE_IMAGERY_LINE = DESIGN_QUALITY_GUIDE_ENABLED
+  ? `,\n    "imagery":     { "verdict": "ok | issues_found | not_applicable", "note": "...", "issueIds": [] }`
+  : ``;
+
 const COMMON_FRAMING = `You are a senior design reviewer on the Bing Search Design Council.
 You evaluate designs against the Bing Design System (ACF / SMTC tokens, Stone /
 Stone-blue / Bing Classic themes) and the Search-team Coherence Review rubric.
 Be concrete, terse, and reference the visible element by name when possible.
 Always reply as strict JSON matching the requested schema.
-
+${DESIGN_QUALITY_GUIDE_ENABLED ? DQG_PRINCIPLES : ""}
 OUT OF SCOPE — do NOT raise any issue against the following parts of the
 screenshot, even if you can see them. They are standard page chrome or
 placeholder content that the design owner has not authored:
@@ -76,17 +133,45 @@ WORK IN THREE PASSES — do not skip any:
     If the design is genuinely strong, return an empty issues array —
     do NOT invent problems to fill quota.
 
+    Then severity-tag EVERY observation against the ladder below.
+
+    SEVERITY LADDER — apply per-issue, regardless of dimension:
+      • P0 (severity: "error") — Ship blocker. Without this fix, a
+        meaningful portion of users will misunderstand, fail to use, or
+        be misled by the design. Examples across dimensions: primary
+        action genuinely undiscoverable; image semantically wrong for
+        the entity (Rainier mountain vs. Rainier beer); RTL layout
+        completely broken; contrast unreadable; primary information
+        buried below filler.
+      • P1 (severity: "warn") — Quality miss. Not catastrophic, but
+        any competent designer would agree it lowers the experience and
+        should be fixed before next stage. Examples: hierarchy is
+        weaker than it should be (you can still figure it out); image
+        is on-topic but emotionally off; density a bit cramped in one
+        region; truncation cuts useful (not critical) info.
+      • P2 (severity: "info") — Polish / nit / personal preference.
+        Examples: "spacing could be slightly more generous"; "I'd
+        consider a different icon family"; "the title could be
+        snappier"; "this feels a touch empty". If your justification
+        starts with "could be", "feels", "I'd prefer", "slightly", or
+        "a bit more" — it is P2. Emit it so the designer can see it,
+        but it will NOT count toward the score.
+
+    P2 items are displayed but not scored, so include them only when
+    they're genuinely actionable polish notes — not filler. If you
+    cannot point at the specific element, drop the observation entirely.
+
   Pass 2 (Categorize). For each issue from Pass 1, tag it with one or
-    more of the five dimensions below (\`dimensions\` field). Dimensions
+    more of the ${DIM_COUNT_WORD} dimensions below (\`dimensions\` field). Dimensions
     are LABELS here, not analysis prompts.
 
-  Pass 3 (Coverage check). For every one of the five dimensions, emit
+  Pass 3 (Coverage check). For every one of the ${DIM_COUNT_WORD} dimensions, emit
     a one-line verdict — "ok", "issues_found", or "not_applicable" —
     so the reviewer knows you actually considered it. Only
     "issues_found" needs to reference issue ids; "ok" and
     "not_applicable" need at most a short note.
 
-The five dimensions (each has a STRICT scope — never tag one issue
+The ${DIM_COUNT_WORD} dimensions (each has a STRICT scope — never tag one issue
 under two overlapping dimensions; pick the most specific):
 
   • Intent Alignment — "should this exist / is it serving the job?"
@@ -131,7 +216,7 @@ under two overlapping dimensions; pick the most specific):
       Actively stress-test: very short / very long text, multi-language
       including RTL, missing/tall/wide imagery, empty / loading / error
       / permission-denied states, dark mode, narrow & wide viewports.
-
+${DESIGN_QUALITY_GUIDE_ENABLED ? DQG_IMAGERY_DIMENSION : ""}
 For every entry in issues you MUST include a "nodeId" taken verbatim
 from the [id=…] tag in the tree summary. Pick the SMALLEST / MOST
 SPECIFIC node that the issue is actually about:
@@ -149,11 +234,11 @@ the field entirely (rare).`;
     {
       "id": "i1",                              // stable id; referenced from coverage
       "title": "short label",
-      "severity": "warn | error",
+      "severity": "error | warn | info",              // error = P0 ship blocker; warn = P1 quality miss; info = P2 polish (shown but not scored).
       "where": "human-readable area (e.g. 'Customer Service card')",
       "nodeId": "the [id=...] from the tree summary — most specific node, NOT the root frame. Omit only if no node matches.",
       "why": "...",
-      "dimensions": ["intent" | "hierarchy" | "content" | "usability" | "scalability", "..."],   // 1+ labels
+      "dimensions": [${DIM_ENUM_FRAGMENT}, "..."],   // 1+ labels
       "recommendation": "one-sentence direction, not a concrete solution"
     }
   ],
@@ -162,7 +247,7 @@ the field entirely (rare).`;
     "hierarchy":   { "verdict": "...", "note": "...", "issueIds": [] },
     "content":     { "verdict": "...", "note": "...", "issueIds": [] },
     "usability":   { "verdict": "...", "scenario": "look | use | mixed | n/a", "note": "...", "issueIds": [] },
-    "scalability": { "verdict": "...", "note": "...", "issueIds": [] }
+    "scalability": { "verdict": "...", "note": "...", "issueIds": [] }${COVERAGE_IMAGERY_LINE}
   }
 }`;
 

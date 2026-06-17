@@ -127,6 +127,22 @@ function recomputeScores(r) {
   const l1ByCode = {};
   for (const f of l1Findings) (l1ByCode[f.code] ||= []).push(f);
 
+  // ---- L4 (deterministic, deduction-based like L1) ----
+  let l4 = null, l4Score = null;
+  if (r._l4Original) {
+    const l4FindingsAll = r._l4Original.findings || [];
+    const l4Findings = l4FindingsAll.filter(f => !dismissed.has(f._key));
+    let ded4 = 0;
+    for (const f of l4Findings) ded4 += w1[f.severity] || 0;
+    const s4 = Math.max(0, Math.min(10, 10 - ded4));
+    const l4Counts = { error: 0, warn: 0, info: 0 };
+    for (const f of l4Findings) l4Counts[f.severity] = (l4Counts[f.severity] || 0) + 1;
+    const l4ByCode = {};
+    for (const f of l4Findings) (l4ByCode[f.code] ||= []).push(f);
+    l4 = { ...r._l4Original, findings: l4Findings, counts: l4Counts, byCode: l4ByCode, score: Number(s4.toFixed(2)) };
+    l4Score = l4.score;
+  }
+
   // ---- L2 ----
   let l2 = null, l2Score = null;
   if (r._l2Original) {
@@ -141,7 +157,7 @@ function recomputeScores(r) {
     }
     l2 = { ...r._l2Original, issues, coverage };
 
-    const w2 = { intent: 1.2, hierarchy: 1, content: 1, usability: 1, scalability: 1 };
+    const w2 = { intent: 1.2, hierarchy: 1, content: 1, usability: 1, scalability: 1, imagery: 1 };
     const issueById = new Map(issues.map(i => [i.id, i]));
     let num = 0, den = 0;
     for (const [dim, w] of Object.entries(w2)) {
@@ -150,7 +166,7 @@ function recomputeScores(r) {
       let s = 9;
       if (c.verdict === "issues_found") {
         const sevs = (c.issueIds || []).map(id => issueById.get(id)?.severity).filter(Boolean);
-        s = sevs.includes("error") ? 4 : sevs.includes("warn") ? 6.5 : 7;
+        s = sevs.includes("error") ? 4 : sevs.includes("warn") ? 6.5 : 9;
       }
       num += s * w; den += w;
     }
@@ -168,14 +184,16 @@ function recomputeScores(r) {
   }
 
   const composite =
-    (l1Score * 0.35) +
-    ((l2Score ?? l1Score) * 0.45) +
-    ((l3Score ?? l1Score) * 0.20);
+    (l1Score * 0.30) +
+    ((l2Score ?? l1Score) * 0.40) +
+    ((l4Score ?? l1Score) * 0.15) +
+    ((l3Score ?? l1Score) * 0.15);
 
   return {
     l1: { ...r.l1, findings: l1Findings, counts: l1Counts, byCode: l1ByCode, score: Number(l1Score.toFixed(2)) },
     l2, l2Score,
     l3, l3Score,
+    l4, l4Score,
     composite: Number(composite.toFixed(2)),
   };
 }
@@ -348,9 +366,10 @@ const STEPS = [
   { id: "fetch",  label: "Fetch Figma nodes" },
   { id: "render", label: "Render preview" },
   { id: "scope",  label: "Mark in-scope region" },
-  { id: "l1",     label: "L1 — Token compliance" },
-  { id: "l2",     label: "L2 — Application quality" },
-  { id: "l3",     label: "L3 — Cross-team coherence" },
+  { id: "l1",     label: "Check token compliance" },
+  { id: "l4",     label: "Check accessibility" },
+  { id: "l2",     label: "Check design quality" },
+  { id: "l3",     label: "Check cross-team cohesion" },
 ];
 function renderSteps() {
   const ol = $("#steps");
@@ -562,9 +581,11 @@ function renderResult(r, { preserveDismissed = false } = {}) {
   // dismissals can re-derive scores from the unmodified data.
   if (!r._keysReady) {
     (r.l1?.findings || []).forEach((f, i) => f._key = `l1:${i}`);
+    (r.l4?.findings || []).forEach((f, i) => f._key = `l4:${i}`);
     (r.l2?.issues   || []).forEach((i)    => i._key = `l2:${i.id}`);
     (r.l3?.flags    || []).forEach((f, i) => f._key = `l3:${i}`);
     r._l1Original = r.l1;
+    r._l4Original = r.l4;
     r._l2Original = r.l2;
     r._l3Original = r.l3;
     r._keysReady = true;
@@ -576,123 +597,200 @@ function renderResult(r, { preserveDismissed = false } = {}) {
   const l1 = derived.l1;
   const l2 = derived.l2;
   const l3 = derived.l3;
+  const l4 = derived.l4;
   r.composite = derived.composite;
   r.l2Score = derived.l2Score;
   r.l3Score = derived.l3Score;
+  r.l4Score = derived.l4Score;
 
   const esc = (s) => String(s ?? "").replace(/[<&>]/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;'}[c]));
 
-  const l1Findings = Object.entries(l1.byCode).map(([code, items]) => `
-    <details class="rule">
-      <summary>
-        <span class="code">${code}</span>
-        <span class="count">${items.length}</span>
-        <span class="sev sev-${items[0].severity}">${items[0].severity}</span>
-        <span class="msg">${esc(items[0].message)}</span>
+  // One feedback-card shape, shared by every level so the output reads the
+  // same regardless of which check produced it: a head row (status chip +
+  // title + location + hover actions) with optional meta and body.
+  const fcard = ({ cls, key, chip, title, where, meta, body, actions }) => `
+    <div class="fcard ${cls}"${key ? ` data-key="${key}"` : ""}>
+      <div class="fcard-head">
+        ${chip || ""}
+        <span class="fcard-title">${title}</span>
+        ${where ? `<span class="fcard-where">${where}</span>` : ""}
+        ${actions ? `<span class="row-actions">${actions}</span>` : ""}
+      </div>
+      ${meta ? `<div class="fcard-meta">${meta}</div>` : ""}
+      ${body ? `<div class="fcard-body">${body}</div>` : ""}
+    </div>`;
+  const sevChip = (sev) => `<span class="sev sev-${sev}">${sev}</span>`;
+
+  // Worst severity in a list (error > warn > info) — drives a group's head chip.
+  const SEV_ORDER = { error: 3, warn: 2, info: 1 };
+  const worstSev = (items) => items.reduce((w, f) =>
+    (SEV_ORDER[f.severity] || 0) > (SEV_ORDER[w] || 0) ? f.severity : w, "info");
+
+  // Collapsible group wrapper. Same head layout everywhere: caret + title +
+  // status chip + count. Collapsed by default to keep the panel short; the
+  // chip and count say what's inside before you expand.
+  const fgroup = ({ title, chip, count, body }) => `
+    <details class="fgroup">
+      <summary class="fgroup-head">
+        <span class="fgroup-caret"></span>
+        <span class="fgroup-title">${title}</span>
+        ${chip || ""}
+        <span class="fgroup-count">${count}</span>
       </summary>
-      <ul>
-        ${items.slice(0, 30).map(f => `
-          <li class="finding" data-key="${f._key}">
-            <span class="finding-text"><b>${esc(f.nodeName)}</b>
-            <span class="muted">(${f.nodeType})</span> — ${esc(JSON.stringify(f.evidence))}</span>
-            <span class="row-actions">
-              ${postButton("💬 Post", `[Coherence Review · L1] ${f.message} (${code})`, f.nodeId)}
-              ${dismissButton(f._key)}
-            </span>
-          </li>`).join("")}
-        ${items.length > 30 ? `<li class="muted">… ${items.length - 30} more</li>` : ""}
-      </ul>
-    </details>
-  `).join("");
+      <div class="fgroup-body">${body}</div>
+    </details>`;
 
-  const verdictChip = (v) => {
-    if (v === "ok") return `<span class="badge good">ok</span>`;
-    if (v === "issues_found") return `<span class="badge warn">issues</span>`;
-    if (v === "not_applicable") return `<span class="badge muted">n/a</span>`;
-    return `<span class="badge muted">—</span>`;
+  // A non-collapsible "all clear" row — same head shape, no caret/body. Used
+  // for design-quality dimensions that came back clean.
+  const fgroupClear = ({ title, chip, note }) => `
+    <div class="fgroup fgroup-clear">
+      <div class="fgroup-head">
+        <span class="fgroup-caret" style="visibility:hidden"></span>
+        <span class="fgroup-title">${title}</span>
+        ${chip || ""}
+        <span class="fgroup-note">${note}</span>
+      </div>
+    </div>`;
+
+  // Token compliance + accessibility findings, grouped by category (Color,
+  // Typography, Corner radius, Spacing, Contrast …) derived from the rule code.
+  const prettyCat = (code) => {
+    const key = code.split(".")[1] || code;
+    const spaced = key.replace(/([a-z])([A-Z])/g, "$1 $2");
+    return spaced.charAt(0).toUpperCase() + spaced.slice(1);
   };
-  const issuesById = new Map((l2?.issues || []).map(i => [i.id, i]));
-  const l2Dims = l2?.coverage ? Object.entries(l2.coverage).map(([k, v]) => {
-    const scenario = v.scenario && v.scenario !== "n/a" ? ` <span class="muted">(${esc(v.scenario)})</span>` : "";
-    const linkedIssues = (v.issueIds || []).map(id => issuesById.get(id)).filter(Boolean);
-    let body = "";
-    if (v.verdict === "issues_found" && linkedIssues.length) {
-      body = `<ul class="dim-issues">${linkedIssues.map(i => `
-        <li>
-          <div><b>${esc(i.title || "(untitled)")}</b>${i.where ? ` <span class="muted">— ${esc(i.where)}</span>` : ""}</div>
-          ${i.why ? `<div class="muted">${esc(i.why)}</div>` : ""}
-        </li>`).join("")}</ul>`;
-    } else if (v.note) {
-      body = `<div class="muted">${esc(v.note)}</div>`;
-    } else {
-      body = `<div class="muted">No findings.</div>`;
+  const detGroups = (data, prefix) => {
+    const items = data?.findings || [];
+    if (!items.length) return "";
+    const groups = new Map(); // label -> findings[]
+    for (const f of items) {
+      const label = prettyCat(f.code);
+      if (!groups.has(label)) groups.set(label, []);
+      groups.get(label).push(f);
     }
-    return `
-      <details class="dim">
-        <summary class="dim-head">
-          <span class="dim-name">${k}${scenario}</span>
-          ${verdictChip(v.verdict)}
-        </summary>
-        <div class="dim-body">${body}</div>
-      </details>`;
-  }).join("") : `<p class="muted">L2 not run.</p>`;
+    // Errors first, then larger groups.
+    const ordered = [...groups.entries()].sort((a, b) =>
+      (SEV_ORDER[worstSev(b[1])] - SEV_ORDER[worstSev(a[1])]) || (b[1].length - a[1].length));
+    return ordered.map(([label, fs]) => {
+      const cards = fs.map(f => fcard({
+        cls: "finding",
+        key: f._key,
+        chip: sevChip(f.severity),
+        title: esc(f.message),
+        where: `${esc(f.nodeName)} <span class="muted">· ${esc(f.nodeType)}</span>`,
+        meta: `<span class="code">${esc(f.code)}</span>`,
+        actions: `${postButton("💬 Post", `[Coherence Review · ${prefix}] ${f.message} (${f.code})`, f.nodeId)}${dismissButton(f._key)}`,
+      })).join("");
+      return fgroup({ title: esc(label), chip: sevChip(worstSev(fs)), count: fs.length, body: cards });
+    }).join("");
+  };
+  const l1Findings = detGroups(l1, "Token compliance");
+  const l4Findings = l4 ? detGroups(l4, "Accessibility") : "";
 
-  const l2Issues = (l2?.issues || l2?.topIssues || []).map(t => {
-    // Prefer the explicit nodeId the model returned (instructed to copy
-    // it from the [id=…] tag in the tree summary). Fall back to fuzzy
-    // matching the "where" string against node names, then to the
-    // reviewed root.
+  const l2Counts = { error: 0, warn: 0, info: 0 };
+  for (const t of (l2?.issues || [])) l2Counts[t.severity] = (l2Counts[t.severity] || 0) + 1;
+
+  // One design-quality issue → card.
+  const l2Issue = (t) => {
     const nodeId =
       (t.nodeId && r.nodeIndex.byId.has(t.nodeId) ? t.nodeId : null)
       || matchNodeId(r.nodeIndex, t.where)
       || r.nodeId
       || null;
-    const msg = `[Coherence Review · L2 — ${t.severity}] ${t.title}\n${t.why || ""}${t.where ? `\n(where: ${t.where})` : ""}`;
-    return `
-      <li class="issue" data-key="${t._key}">
-        <div class="issue-head">
-          <span class="sev sev-${t.severity}">${t.severity}</span>
-          <b>${esc(t.title)}</b>
-          <span class="muted">${esc(t.where || "")}</span>
-          <span class="row-actions">
-            ${postButton("💬 Post", msg, nodeId)}
-            ${dismissButton(t._key)}
-          </span>
-        </div>
-        <div>${esc(t.why || "")}</div>
-      </li>`;
-  }).join("");
+    const msg = `[Coherence Review · Design quality — ${t.severity}] ${t.title}\n${t.why || ""}${t.where ? `\n(where: ${t.where})` : ""}`;
+    return fcard({
+      cls: "issue",
+      key: t._key,
+      chip: sevChip(t.severity),
+      title: esc(t.title),
+      where: t.where ? esc(t.where) : "",
+      body: esc(t.why || ""),
+      actions: `${postButton("💬 Post", msg, nodeId)}${dismissButton(t._key)}`,
+    });
+  };
 
+  // Design quality grouped by the five rubric dimensions. Each issue is placed
+  // under one primary dimension; clean dimensions still show an "ok" row so the
+  // reviewer can see all five were considered.
+  const l2Groups = (() => {
+    if (!l2?.coverage) return "";
+    const issues = l2.issues || [];
+    const byId = new Map(issues.map(i => [i.id, i]));
+    const dims = Object.keys(l2.coverage);
+    const assigned = new Map(dims.map(d => [d, []]));
+    const seen = new Set();
+    // Primary bucket = first coverage group (in rubric order) that lists the id.
+    for (const dim of dims) {
+      for (const id of (l2.coverage[dim].issueIds || [])) {
+        if (seen.has(id)) continue;
+        const iss = byId.get(id);
+        if (!iss) continue;
+        assigned.get(dim).push(iss);
+        seen.add(id);
+      }
+    }
+    // Any issue not referenced by coverage → bucket by its own first dimension.
+    for (const iss of issues) {
+      if (seen.has(iss.id)) continue;
+      const d = (iss.dimensions || []).find(x => assigned.has(x)) || dims[0];
+      if (!d) continue;
+      assigned.get(d).push(iss);
+      seen.add(iss.id);
+    }
+    return dims.map(dim => {
+      const list = assigned.get(dim) || [];
+      const v = l2.coverage[dim] || {};
+      const scen = v.scenario && v.scenario !== "n/a" ? ` <span class="muted">(${esc(v.scenario)})</span>` : "";
+      if (!list.length) {
+        const na = v.verdict === "not_applicable";
+        return fgroupClear({
+          title: `${esc(dim)}${scen}`,
+          chip: `<span class="badge ${na ? "muted" : "good"}">${na ? "n/a" : "ok"}</span>`,
+          note: esc(v.note || (na ? "not applicable" : "no issues")),
+        });
+      }
+      return fgroup({
+        title: `${esc(dim)}${scen}`,
+        chip: sevChip(worstSev(list)),
+        count: list.length,
+        body: list.map(l2Issue).join(""),
+      });
+    }).join("");
+  })();
+
+  // L3 flags → cards. Warnings only, so a neutral "flag" chip in the status
+  // slot (no severity), keeping the head layout identical to the others.
   const l3Flags = (l3?.flags || []).map(f => {
     const partners = (f.suggestedPartners || []).join(", ");
-    const msg = `[Coherence Review · L3 — cross-team flag] ${f.title}\nObservation: ${f.observation}\nMay conflict with: ${f.potentialConflict}\nSuggested partners: ${partners || "—"}\n(Confidence: ${f.confidence || "?"})`;
+    const msg = `[Coherence Review · Cross-team cohesion flag] ${f.title}\nObservation: ${f.observation}\nMay conflict with: ${f.potentialConflict}\nSuggested partners: ${partners || "—"}\n(Confidence: ${f.confidence || "?"})`;
     const nodeId =
       (f.nodeId && r.nodeIndex.byId.has(f.nodeId) ? f.nodeId : null)
       || matchNodeId(r.nodeIndex, f.title)
       || r.nodeId
       || null;
-    return `
-      <li class="flag" data-key="${f._key}">
-        <div class="flag-title">
-          <b>${esc(f.title)}</b>
-          <span class="muted">confidence: ${esc(f.confidence || "?")}</span>
-          <span class="row-actions">
-            ${postButton("💬 Post", msg, nodeId)}
-            ${dismissButton(f._key)}
-          </span>
-        </div>
-        <div><b>Saw.</b> ${esc(f.observation)}</div>
-        <div><b>May conflict with.</b> ${esc(f.potentialConflict)}</div>
-        <div><b>Loop in.</b> ${esc(partners || "—")}</div>
-      </li>`;
+    const body = `
+      <div><b>Saw.</b> ${esc(f.observation)}</div>
+      <div><b>May conflict with.</b> ${esc(f.potentialConflict)}</div>
+      <div><b>Loop in.</b> ${esc(partners || "—")}</div>`;
+    return fcard({
+      cls: "flag",
+      key: f._key,
+      chip: `<span class="sev sev-flag">flag</span>`,
+      title: esc(f.title),
+      where: `<span class="muted">confidence: ${esc(f.confidence || "?")}</span>`,
+      body,
+      actions: `${postButton("💬 Post", msg, nodeId)}${dismissButton(f._key)}`,
+    });
   }).join("");
+  const l3RiskTier = !l3 ? "muted" : l3.risk === "high" ? "bad" : l3.risk === "medium" ? "warn" : "good";
 
   const summaryMsg = [
     `[Coherence Review · Summary]`,
     `Overall coherence risk: ${compositeRiskText(r.composite)}`,
-    `L1 (spec): ${r.l1.score}/10 — ${r.l1.counts.error || 0} err / ${r.l1.counts.warn || 0} warn`,
-    r.l2Score != null ? `L2 (quality): ${r.l2Score}/10 — ${r.l2?.summary || ""}` : null,
-    r.l3 ? `L3 (cross-team): ${r.l3.risk || "?"} risk, ${(r.l3.flags || []).length} flags` : null,
+    `Token compliance: ${r.l1.score}/10 — ${r.l1.counts.error || 0} err / ${r.l1.counts.warn || 0} warn`,
+    r.l4Score != null ? `Accessibility: ${r.l4Score}/10 — ${r.l4?.counts.error || 0} fail / ${r.l4?.counts.warn || 0} manual` : null,
+    r.l2Score != null ? `Design quality: ${r.l2Score}/10 — ${r.l2?.summary || ""}` : null,
+    r.l3 ? `Cross-team cohesion: ${r.l3.risk || "?"} risk, ${(r.l3.flags || []).length} flags` : null,
   ].filter(Boolean).join("\n");
   const summaryBtn = postButton("💬 Post summary to Figma", summaryMsg, r.nodeId || null);
 
@@ -731,6 +829,7 @@ function renderResult(r, { preserveDismissed = false } = {}) {
         keyToBox[key] = nodeId;
       };
       for (const f of (l1.findings || [])) addFinding(f._key, f.nodeId, f.severity);
+      for (const f of (l4?.findings || [])) addFinding(f._key, f.nodeId, f.severity);
       for (const t of (l2?.issues || l2?.topIssues || [])) {
         const nid = (t.nodeId && r.nodeIndex.byId.has(t.nodeId) ? t.nodeId : null)
           || matchNodeId(r.nodeIndex, t.where);
@@ -766,27 +865,51 @@ function renderResult(r, { preserveDismissed = false } = {}) {
     })() : ""}
 
     <section class="lvl">
-      <header><h3>Level 1 · Spec compliance</h3>${scoreBadge(l1.score)}</header>
+      <header><h3>Token compliance</h3>${scoreBadge(l1.score)}</header>
       <div class="counts">
         <span class="badge bad">${l1.counts.error || 0} error</span>
         <span class="badge warn">${l1.counts.warn || 0} warn</span>
         <span class="badge muted">${l1.counts.info || 0} info</span>
         <span class="muted">${l1.nodeCount} nodes scanned</span>
       </div>
-      ${l1Findings || `<p class="muted">No findings — looks clean against the token catalog.</p>`}
+      <div class="fcards">${l1Findings || `<p class="muted">No findings — looks clean against the token catalog.</p>`}</div>
     </section>
 
     <section class="lvl">
-      <header><h3>Level 2 · Application quality</h3>${scoreBadge(r.l2Score)}</header>
-      ${l2?.summary ? `<p>${l2.summary}</p>` : ""}
-      <div class="dims">${l2Dims}</div>
-      ${l2Issues ? `<h4>Top issues</h4><ul class="issues">${l2Issues}</ul>` : ""}
+      <header><h3>Accessibility <span class="muted">— WCAG AA contrast</span></h3>${scoreBadge(r.l4Score)}</header>
+      ${l4 ? `
+      <div class="counts">
+        <span class="badge bad">${l4.counts.error || 0} fail</span>
+        <span class="badge warn">${l4.counts.warn || 0} manual-check</span>
+        <span class="muted">${l4.textCount} text nodes evaluated</span>
+      </div>
+      <div class="fcards">${l4Findings || `<p class="muted">No contrast failures — all evaluated text meets WCAG AA.</p>`}</div>
+      ` : `<p class="muted">Not run.</p>`}
     </section>
 
     <section class="lvl">
-      <header><h3>Level 3 · Cross-team coherence (warnings only)</h3>${scoreBadge(r.l3Score)}</header>
-      ${l3?.summary ? `<p>${esc(l3.summary)}</p>` : ""}
-      ${l3Flags ? `<ul class="flags">${l3Flags}</ul>` : `<p class="muted">No flags raised.</p>`}
+      <header><h3>Design quality</h3>${scoreBadge(r.l2Score)}</header>
+      ${l2 ? `
+      <div class="counts">
+        <span class="badge bad">${l2Counts.error || 0} error</span>
+        <span class="badge warn">${l2Counts.warn || 0} warn</span>
+        <span class="badge muted">${l2Counts.info || 0} info</span>
+      </div>
+      ${l2.summary ? `<p class="lvl-summary">${esc(l2.summary)}</p>` : ""}
+      <div class="fcards">${l2Groups || `<p class="muted">No issues raised.</p>`}</div>
+      ` : `<p class="muted">Not run.</p>`}
+    </section>
+
+    <section class="lvl">
+      <header><h3>Cross-team cohesion <span class="muted">— warnings only</span></h3>${scoreBadge(r.l3Score)}</header>
+      ${l3 ? `
+      <div class="counts">
+        <span class="badge ${l3RiskTier}">${esc(l3.risk || "low")} risk</span>
+        <span class="muted">${(l3.flags || []).length} flag${(l3.flags || []).length === 1 ? "" : "s"}</span>
+      </div>
+      ${l3.summary ? `<p class="lvl-summary">${esc(l3.summary)}</p>` : ""}
+      <div class="fcards">${l3Flags || `<p class="muted">No flags raised.</p>`}</div>
+      ` : `<p class="muted">Not run.</p>`}
     </section>
   `;
 

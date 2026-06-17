@@ -679,31 +679,70 @@ body.pip-open .container {
 .badge.bad   { background: var(--bad-bg);  color: var(--bad);  }
 .badge.muted { background: transparent;    color: var(--ink-3); }
 
-.rule {
+/* ---------- unified feedback cards (shared by all four levels) ---------- */
+.fcards { display: flex; flex-direction: column; gap: 8px; margin-top: 4px; }
+.fcard {
   background: var(--surface);
   border: 1px solid var(--line-soft);
   border-radius: var(--radius-sm);
-  padding: 12px 16px;
-  margin-bottom: 8px;
+  padding: 12px 14px;
   transition: box-shadow .15s ease;
 }
-.rule:hover { box-shadow: var(--shadow-sm); }
-.rule summary {
-  cursor: pointer;
-  display: grid;
-  grid-template-columns: auto auto auto 1fr;
-  gap: 12px;
-  align-items: center;
-  list-style: none;
+.fcard:hover { box-shadow: var(--shadow-sm); }
+.fcard-head {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
 }
-.rule summary::-webkit-details-marker { display: none; }
-.rule .code { font-family: "SF Mono", ui-monospace, monospace; font-size: 12px; color: var(--ink-2); }
-.rule .count {
+.fcard-title { font-weight: 600; font-size: 14px; color: var(--ink); }
+.fcard-where { font-size: 13px; color: var(--ink-2); }
+.fcard-meta { margin-top: 7px; display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+.fcard-body { margin-top: 7px; font-size: 13.5px; color: var(--ink-2); line-height: 1.5; }
+.fcard-body b { color: var(--ink); font-weight: 600; }
+.fcard-body > div + div { margin-top: 3px; }
+.fcard .code { font-family: "SF Mono", ui-monospace, monospace; font-size: 11.5px; color: var(--ink-3); }
+.tag {
+  font-size: 11px; padding: 1px 8px; border-radius: 9999px;
+  background: var(--surface-2); color: var(--ink-2);
+}
+
+/* ---------- collapsible groups (token / accessibility / design quality) ---------- */
+.fgroup {
+  background: var(--surface);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+.fgroup-head {
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 14px;
+  cursor: pointer; user-select: none; list-style: none;
+}
+.fgroup-head::-webkit-details-marker { display: none; }
+.fgroup-clear .fgroup-head { cursor: default; }
+.fgroup-caret {
+  flex: none; width: 0; height: 0;
+  border-left: 5px solid var(--ink-3);
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  transition: transform .15s ease;
+}
+details.fgroup[open] .fgroup-caret { transform: rotate(90deg); }
+.fgroup-title { font-weight: 600; font-size: 14px; text-transform: capitalize; }
+.fgroup-count {
+  margin-left: auto;
   background: var(--surface-2); color: var(--ink-2);
   padding: 1px 9px; border-radius: 9999px; font-size: 12px; font-weight: 600;
 }
-.rule ul { margin: 12px 0 0; padding-left: 22px; font-size: 13.5px; color: var(--ink-2); }
-.rule ul li { padding: 3px 0; }
+.fgroup-note { margin-left: auto; font-size: 13px; color: var(--ink-3); }
+.fgroup-body {
+  padding: 2px 10px 10px;
+  display: flex; flex-direction: column; gap: 6px;
+}
+/* Cards nested in a group are lighter — the group provides the container. */
+.fgroup-body .fcard {
+  border-color: transparent;
+  background: var(--surface-2);
+}
+.fgroup-body .fcard:hover { box-shadow: none; }
 
 .sev {
   font-size: 10.5px; padding: 2px 8px; border-radius: 9999px;
@@ -712,42 +751,9 @@ body.pip-open .container {
 .sev-error { background: var(--bad-bg);  color: var(--bad); }
 .sev-warn  { background: var(--warn-bg); color: var(--warn); }
 .sev-info  { background: var(--info-bg); color: var(--info); }
+.sev-flag  { background: var(--surface-2); color: var(--ink-2); }
 
-/* ---------- dimensions (L2 application quality) ---------- */
-.dims {
-  display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 14px;
-}
-.dim {
-  background: var(--surface);
-  border: 1px solid var(--line-soft);
-  border-radius: var(--radius-sm);
-  padding: 14px 16px;
-  transition: box-shadow .15s ease, border-color .15s ease;
-}
-.dim:hover { box-shadow: var(--shadow-sm); }
-details.dim > summary.dim-head {
-  list-style: none; cursor: pointer; user-select: none;
-}
-details.dim > summary.dim-head::-webkit-details-marker { display: none; }
-.dim-head {
-  display: flex; justify-content: space-between; align-items: center;
-  gap: 10px; margin-bottom: 0;
-}
-.dim-name { font-weight: 500; text-transform: capitalize; font-size: 15px; }
-.dim-name::before {
-  content: "›"; display: inline-block;
-  margin-right: 8px; color: var(--ink-3);
-  transition: transform .2s ease;
-}
-details.dim[open] .dim-name::before { transform: rotate(90deg); }
-.dim-body { font-size: 14px; color: var(--ink-2); margin-top: 14px; }
-.dim-body b { color: var(--ink); font-weight: 600; }
-.dim-issues { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
-.dim-issues > li {
-  padding: 10px 12px;
-  background: var(--surface-2);
-  border-radius: var(--radius-sm);
-}
+.lvl-summary { font-size: 14px; color: var(--ink-2); margin: 0 0 14px; line-height: 1.55; }
 
 /* ---------- context box (project background + scope) ---------- */
 .context-box {
@@ -782,22 +788,6 @@ details.dim[open] .dim-name::before { transform: rotate(90deg); }
 }
 #reviewScope { min-height: 84px; }
 
-/* ---------- issues + flags ---------- */
-.issues, .flags {
-  list-style: none; padding: 0; margin: 14px 0 0;
-  display: flex; flex-direction: column; gap: 10px;
-}
-.issue, .flag {
-  background: var(--surface);
-  border: 1px solid var(--line-soft);
-  border-radius: var(--radius-sm);
-  padding: 14px 16px;
-  font-size: 14px;
-  transition: box-shadow .15s ease;
-}
-.issue:hover, .flag:hover { box-shadow: var(--shadow-sm); }
-.flag-title { margin-bottom: 6px; font-weight: 600; }
-
 /* ---------- row-level action buttons (post + dismiss) ---------- */
 .row-actions {
   display: inline-flex; align-items: center; gap: 6px;
@@ -805,12 +795,8 @@ details.dim[open] .dim-name::before { transform: rotate(90deg); }
   opacity: 0;
   transition: opacity .15s ease;
 }
-.finding:hover .row-actions,
-.issue:hover .row-actions,
-.flag:hover .row-actions,
-.finding:focus-within .row-actions,
-.issue:focus-within .row-actions,
-.flag:focus-within .row-actions { opacity: 1; }
+.fcard:hover .row-actions,
+.fcard:focus-within .row-actions { opacity: 1; }
 
 .btn-post,
 .btn-dismiss {
@@ -850,20 +836,8 @@ details.dim[open] .dim-name::before { transform: rotate(90deg); }
   border-color: transparent;
 }
 
-/* L1 finding row layout so the actions sit on the right edge */
-.rule li.finding {
-  display: flex; align-items: baseline; gap: 8px;
-  padding: 4px 0;
-}
-.rule li.finding .finding-text { flex: 1; min-width: 0; }
-
 /* Summary post button (in composite header) is always visible */
 .composite-action .btn-post { opacity: 1; }
-
-.issue-head {
-  display: flex; align-items: center; gap: 10px;
-  flex-wrap: wrap; margin-bottom: 6px;
-}
 .composite-action { margin-top: 8px; }
 
 /* ---------- toast ---------- */
@@ -900,7 +874,6 @@ details.dim[open] .dim-name::before { transform: rotate(90deg); }
   .panel h1 { font-size: 30px; }
   .hero .run-row { flex-direction: column; }
   .settings .grid { grid-template-columns: 1fr; }
-  .dims { grid-template-columns: 1fr; }
   .result-head { flex-direction: column; }
   .composite { text-align: left; }
 }
