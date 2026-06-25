@@ -185,16 +185,30 @@ export function isNodeCenterInScope(node, scope) {
 // Skips:
 //  - nodes whose `visible` is explicitly false (designer toggled the eye
 //    off) and all their descendants
+//  - mask layers (`isMask`) — a mask is an invisible alpha guide, not
+//    painted content; its fill/stroke never reaches the screen
+//  - nodes that render nothing (`absoluteRenderBounds === null`) — fully
+//    clipped, masked out, or otherwise zero-coverage; and their subtree
 //  - direct children of the review root whose name matches PAGE_CHROME
 //    (standard SERP header / verticals / algo / related searches / footer)
 //  - any subtree whose bbox does not intersect opts.scope, if one is set
 //    (user-drawn in-scope region in canvas coordinates)
+//
+// Component INSTANCE internals are intentionally NOT skipped: a placed
+// component's baked-in radius / color / spacing still ships in the
+// designer's module, so off-token values inside it are real violations.
 export function flatten(root, parent = null, depth = 0, acc = [], opts = {}) {
   if (root.visible === false) return acc;
+  if (root.isMask === true) return acc;
   if (depth === 1 && isPageChrome(root.name)) return acc;
   if (isAnyDepthChrome(root)) return acc;
   if (opts.scope && root.absoluteBoundingBox && !rectsIntersect(root.absoluteBoundingBox, opts.scope)) return acc;
-  acc.push({ node: root, parent, depth });
+  // A node whose absoluteRenderBounds is null paints no pixels (fully
+  // clipped, masked out, or zero-coverage) — token-checking it is a false
+  // positive. Skip the node itself but keep descending: a clipping
+  // container can report null while still holding visible children.
+  const rendersNothing = "absoluteRenderBounds" in root && root.absoluteRenderBounds === null;
+  if (!rendersNothing) acc.push({ node: root, parent, depth });
   if (root.children) {
     for (const child of root.children) flatten(child, root, depth + 1, acc, opts);
   }

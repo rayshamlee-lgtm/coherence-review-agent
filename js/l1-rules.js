@@ -152,6 +152,17 @@ function checkCornerRadius(node, parent, findings) {
     : (typeof node.cornerRadius === "number" ? [node.cornerRadius] : []);
   if (!radii.length) return;
 
+  // The design system has exactly one "fully rounded" token: 9999. A pill
+  // or circle MUST be expressed with that sentinel — not with whatever
+  // large magic number happens to round the shape (999, 100, 71.43…).
+  // Those magic numbers are real off-token values: they round correctly at
+  // the current size but break the moment the element resizes, and they
+  // bypass the design system. So we flag them. We only tailor the message
+  // when the value visually fully rounds the element, to point the designer
+  // at the 9999 circular token instead of the small-radius ramp.
+  const bb = node.absoluteBoundingBox;
+  const fullRoundThreshold = bb ? Math.min(bb.width, bb.height) / 2 : Infinity;
+
   // Collect distinct off-ramp values across all corners, then emit
   // one finding per unique value. A square with the same wrong radius
   // on all four corners counts as one issue, not four.
@@ -163,10 +174,13 @@ function checkCornerRadius(node, parent, findings) {
     offending.add(rounded);
   }
   for (const value of offending) {
+    const fullyRounds = value >= fullRoundThreshold;
+    const message = fullyRounds
+      ? `Corner radius ${value}px fully rounds this element but isn't the circular token — use 9999 for pill / circular shapes (allowed: 0, 4, 8, 12, 16, 24, 9999).`
+      : `Corner radius ${value}px is not a Bing corner token (allowed: 0, 4, 8, 12, 16, 24, 9999).`;
     findings.push(findingFor(
-      node, parent, "L1.cornerRadius", "error",
-      `Corner radius ${value}px is not a Bing corner token (allowed: 0, 4, 8, 12, 16, 24, 9999).`,
-      { value },
+      node, parent, "L1.cornerRadius", "error", message,
+      { value, fullyRounds },
     ));
   }
 }
@@ -174,6 +188,19 @@ function checkCornerRadius(node, parent, findings) {
 function checkSpacing(node, parent, findings) {
   // Only auto-layout frames carry padding / itemSpacing reliably.
   if (node.layoutMode !== "HORIZONTAL" && node.layoutMode !== "VERTICAL") return;
+
+  // itemSpacing only paints a gap *between* siblings, so it has zero visual
+  // effect unless at least two children participate in the auto-layout flow.
+  // A child only participates when it's visible and not absolutely
+  // positioned (ABSOLUTE children are lifted out of the flow). Frames that
+  // wrap a single child but carry a leftover gap value are a common
+  // file-organization artifact — checking their itemSpacing is noise.
+  const laidOutChildCount = Array.isArray(node.children)
+    ? node.children.filter(
+        (c) => c.visible !== false && c.layoutPositioning !== "ABSOLUTE",
+      ).length
+    : 0;
+  const itemSpacingHasEffect = laidOutChildCount >= 2;
 
   const checks = [
     ["paddingLeft",   node.paddingLeft],
@@ -186,6 +213,9 @@ function checkSpacing(node, parent, findings) {
   for (const [key, raw] of checks) {
     if (raw == null) continue;
     if (hasBoundVariable(node, key)) continue;
+    // Skip itemSpacing that can never render a gap (fewer than two laid-out
+    // children). Padding still applies to a single child, so it's untouched.
+    if (key === "itemSpacing" && !itemSpacingHasEffect) continue;
     const v = Math.round(raw);
     if (v === 0) continue;
     // itemSpacing can legitimately be negative for overlap layouts;
@@ -202,6 +232,12 @@ function checkSpacing(node, parent, findings) {
 
 export function runL1(root, opts = {}) {
   const findings = [];
+  // Grade the full tree, including the internals of placed library
+  // components. A component's baked-in radius / color / spacing still ships
+  // as part of the designer's module, so off-token values inside an instance
+  // (e.g. a play-button radius of 999 instead of the 9999 circular token)
+  // are real violations the reviewer should surface — even if the fix is to
+  // swap the component or escalate to its owner rather than edit it locally.
   const flat = flatten(root, null, 0, [], opts);
   for (const { node, parent } of flat) {
     // Skip the page-wrapper node itself — its padding / spacing /

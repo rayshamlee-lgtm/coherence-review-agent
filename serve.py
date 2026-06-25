@@ -106,6 +106,16 @@ class Handler(http.server.SimpleHTTPRequestHandler):
     def __init__(self, *args, **kw):
         super().__init__(*args, directory=str(ROOT), **kw)
 
+    def end_headers(self):
+        # Dev server: never let the browser cache HTML / CSS / ES modules.
+        # Without this, editing js/*.js and reloading can still run the old
+        # cached module (ES modules cache aggressively), which shows up as
+        # levels mysteriously "not running" or fixes not taking effect.
+        # no-store forces a fresh fetch on every reload — no hard-refresh
+        # needed. Harmless on the JSON proxy responses.
+        self.send_header("Cache-Control", "no-store, max-age=0")
+        super().end_headers()
+
     # ---- CORS preflight for proxy ----
     def do_OPTIONS(self):
         self.send_response(204)

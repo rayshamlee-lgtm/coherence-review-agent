@@ -11,6 +11,37 @@
 const DESIGN_QUALITY_GUIDE_ENABLED = false;
 // ─────────────────────────────────────────────────────────────────────────
 
+// ─────────────────────────────────────────────────────────────────────────
+// Placeholder-content toggle.
+// When true, tells L2/L3 that the text / numbers / names / thumbnails are
+// PLACEHOLDER data, so the model stops raising content-consistency issues
+// that only make sense against real copy (mismatched title/description,
+// duplicated card titles, badge counts that don't match item counts, "this
+// headline is weak", etc.). Structural text checks (truncation, missing copy
+// slots, empty/error states) are kept. Flip to false when reviewing a design
+// that ships with final, real content.
+const PLACEHOLDER_CONTENT_MODE = true;
+// ─────────────────────────────────────────────────────────────────────────
+
+const PLACEHOLDER_CONTENT_CLAUSE = `
+PLACEHOLDER CONTENT — the text, numbers, names, and thumbnails in this design
+are PLACEHOLDER / dummy data, not the real shipped content. The designer is
+iterating on layout and the design system, not on the literal copy. Therefore:
+  • Do NOT raise content-consistency issues that depend on the literal
+    strings being real — e.g. "the title says X but the description says Y",
+    "the same entity is named differently in two places", "the badge count (5)
+    doesn't match the 3 items shown", "every card repeats the same title", or
+    "this copy is factually wrong / off-topic for the query".
+  • Do NOT critique the wording quality of individual placeholder strings
+    ("this headline is weak / redundant / could be punchier") — the real copy
+    will differ.
+  • DO still evaluate text STRUCTURE & BEHAVIOR, which holds regardless of the
+    final words: truncation / overflow that loses information, a missing copy
+    slot where the pattern clearly needs one, empty / error / loading states
+    with no actionable affordance, and legibility driven by layout.
+Treat repeated, mismatched, or lorem-style placeholder text as a data
+artifact, NOT a design defect.`;
+
 // — From ACF Design Quality Guide —
 const DQG_PRINCIPLES = `
 Operating principles — apply these as tie-breakers whenever an issue is borderline:
@@ -75,7 +106,8 @@ placeholder content that the design owner has not authored:
   • The "Related searches" rail.
   • The page footer.
 Treat the design under review as the module(s) between the header and the
-algo results. The Figma tree summary already excludes these regions.`;
+algo results. The Figma tree summary already excludes these regions.
+${PLACEHOLDER_CONTENT_MODE ? PLACEHOLDER_CONTENT_CLAUSE : ""}`;
 
 function scopeBlock(reviewScope) {
   if (!reviewScope || !reviewScope.trim()) return "";
@@ -190,10 +222,17 @@ under two overlapping dimensions; pick the most specific):
 
   • Content & Microcopy Quality — "is the text itself effective?"
       (Distinct from L1's hard rules like sentence case / glossary.)
-      Look at: scannability of labels/titles, filler/redundant phrasing,
+      Look at: ${PLACEHOLDER_CONTENT_MODE
+        ? `truncation strategy (does the cut-off lose key info?), empty /
+      error / loading copy that lacks an actionable next step, and whether a
+      needed copy slot is missing. Because the copy is PLACEHOLDER (see the
+      placeholder-content rule above), do NOT judge wording quality, filler/
+      redundancy, or same-thing-named-differently / front-back consistency of
+      the literal strings — judge only the text's structure and behavior.`
+        : `scannability of labels/titles, filler/redundant phrasing,
       truncation strategy (does the cut-off lose key info?), empty /
       error / loading copy that lacks an actionable next step,
-      same-thing-named-differently inconsistencies.
+      same-thing-named-differently inconsistencies.`}
       ⚠️ Do NOT comment on font size / weight / color — that is L1.
          Judge only whether the WORDS are well-written.
 
