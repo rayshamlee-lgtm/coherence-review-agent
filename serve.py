@@ -31,9 +31,13 @@ import urllib.parse
 import urllib.request
 from pathlib import Path
 
-# Verify upstream TLS on hosted deployments. For a local Python installation
-# without a CA bundle, configure SSL_CERT_FILE rather than disabling checks.
+# Verify upstream TLS. python.org's macOS builds can ship without a wired-up
+# CA bundle; use the OS trust bundle in that case, never disable verification.
 SSL_CTX = ssl.create_default_context()
+if (sys.platform == "darwin" and not SSL_CTX.get_ca_certs()
+        and not os.environ.get("SSL_CERT_FILE") and not os.environ.get("SSL_CERT_DIR")
+        and Path("/etc/ssl/cert.pem").is_file()):
+    SSL_CTX.load_verify_locations(cafile="/etc/ssl/cert.pem")
 
 # Render / Railway / Fly all provide $PORT. Local dev keeps 8000.
 PORT = int(os.environ.get("PORT") or (sys.argv[1] if len(sys.argv) > 1 else 8000))
